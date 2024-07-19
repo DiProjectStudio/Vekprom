@@ -1,0 +1,55 @@
+.breadcrumbs {
+    margin: 20px auto 30px;
+    padding: 0 $container;
+
+    @include breakpoint(md) {
+        margin-bottom: 40px;
+    }
+
+    @include breakpoint(hd) {
+        margin-bottom: 60px;
+    }
+}
+
+.breadcrumbs-wrapper {
+    display: flex;
+    align-items: center;
+
+    @include breakpointMax(md) {
+        overflow-x: scroll;
+    }
+}
+
+.breadcrumbs-item {
+    padding: 4px 8px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #666;
+    white-space: nowrap;
+    border-radius: 4px;
+
+    &:last-child span {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 290px;
+    }
+}
+
+.breadcrumbs-item span {
+    user-select: none;
+}
+
+.breadcrumbs-separator {
+    margin: 0 4px;
+    display: flex;
+}
+
+.breadcrumbs ~ .title {
+    padding: 0 var(--container);
+}

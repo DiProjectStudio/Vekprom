@@ -1,0 +1,43 @@
+.fancybox__slide {
+    padding: 0;
+}
+
+.fancybox__content {
+    padding: 10px;
+    color: #000;
+}
+
+.fancybox__content :focus:not(.carousel__button.is-close-btn) {
+    outline: none;
+}
+
+.f-button.is-close-btn {
+    box-shadow: none !important;
+}
+
+.fancybox__carousel .fancybox__content > .f-button.is-close-btn {
+    --f-button-color: #fff;
+    --f-button-svg-width: 18px;
+    --f-button-svg-height: 18px;
+    --f-button-hover-color: #666;
+    --f-button-border-radius: 10px;
+    --f-button-outline-color: unset;
+    --f-button-bg: #231f20;
+    --f-button-active-bg: unset;
+    --f-button-hover-bg: unset;
+    --f-button-svg-stroke-width: 3px;
+    --f-button-width: 44px;
+    --f-button-height: 44px;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+
+    @include breakpoint(md) {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.fancybox__container {
+    --fancybox-bg: rgba(0, 0, 0, 0.5);
+}
