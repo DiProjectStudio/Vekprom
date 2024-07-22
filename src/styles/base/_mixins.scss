@@ -1,8 +1,8 @@
 $s: 360px;
 $xs: 425px;
 $sm: 576px;
-$md: 744px;
-$lg: 1200px;
+$md: 768px;
+$lg: 1280px;
 $xl: 1440px;
 $hd: 1920px;
 
@@ -93,8 +93,4 @@ $hd: 1920px;
     -webkit-line-clamp: $val;
     line-clamp: $val;
     -webkit-box-orient: vertical;
-}
-
-@mixin ratio($width, $height) {
-    padding-bottom: calc($height * 100% / $width);
 }

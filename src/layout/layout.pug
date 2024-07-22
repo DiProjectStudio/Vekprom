@@ -31,21 +31,19 @@ html(lang="ru")
 
     body(class= page ? page : '')
 
-        #page
+        // Header::Start
+        block header
+            include ../includes/_header
+        // Header::End
 
-            // Header::Start
-            block header
-                include ../includes/_header
-            // Header::End
+        // Main::Start
+        main
+            block main
+        // Main::End
 
-            // Main::Start
-            main
-                block main
-            // Main::End
-
-            // Footer::Start
-            block footer
-                include ../includes/_footer
-            // Footer::End
+        // Footer::Start
+        block footer
+            include ../includes/_footer
+        // Footer::End
 
         include ../components/_popup

@@ -1,16 +1,301 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 :root {
-    --color-brand: #231f20;
-    --color-bg: #f1f4f5;
-    --color-accent: #d81823;
-
-    --transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+  --base-neutral: #283142; /* Базовое значение цвета, от него высчитывается палитра neutral */
+  --base-accent: #f5851a; /* Базовое значение цвета, от него высчитывается палитра accent */
+  --base-success: #019f3c; /* Базовое значение цвета, от него высчитывается палитра success */
+  --base-warning: #f29100; /* Базовое значение цвета, от него высчитывается палитра warning */
+  --base-error: #d91528; /* Базовое значение цвета, от него высчитывается палитра error */
+  --base-info: #1998ff; /* Базовое значение цвета, от него высчитывается палитра info */
+  --base-status-01: #00b288; /* Базовое значение цвета, от него высчитывается палитра status-01 */
+  --base-status-02: #1192bb; /* Базовое значение цвета, от него высчитывается палитра status-02 */
+  --base-status-03: #6952f5; /* Базовое значение цвета, от него высчитывается палитра status-03 */
+  --base-status-04: #9924ff; /* Базовое значение цвета, от него высчитывается палитра status-04 */
+  --base-status-05: #e33a82; /* Базовое значение цвета, от него высчитывается палитра status-05 */
+  --base-status-06: #fa5300; /* Базовое значение цвета, от него высчитывается палитра status-06 */
+  --neutral-1000: rgb(0% 0% 0%);
+  --neutral-990: rgb(3.14% 3.84% 5.18%);
+  --neutral-950: rgb(5.49% 6.73% 9.06%);
+  --neutral-925: rgb(6.75% 8.26% 11.1%);
+  --neutral-900: rgb(7.84% 9.61% 12.9%);
+  --neutral-800: rgb(9.41% 11.5% 15.5%);
+  --neutral-700: rgb(11% 13.5% 18.1%);
+  --neutral-600: rgb(13.3% 16.3% 22%);
+  --neutral-500: #283142;
+  --neutral-400: rgb(32.5% 35.4% 40.7%);
+  --neutral-300: rgb(45.2% 47.5% 51.8%);
+  --neutral-200: rgb(57.8% 59.6% 62.9%);
+  --neutral-100: rgb(78.9% 79.8% 81.5%);
+  --neutral-50: rgb(91.6% 91.9% 92.6%);
+  --neutral-25: rgb(95.8% 96% 96.3%);
+  --neutral-10: rgb(97.5% 97.6% 97.8%);
+  --neutral-0: rgb(100% 100% 100%);
+  --accent-1000: rgb(0% 0% 0%);
+  --accent-990: rgb(19.2% 10.4% 2.04%);
+  --accent-950: rgb(33.6% 18.3% 3.57%);
+  --accent-925: rgb(41.3% 22.4% 4.38%);
+  --accent-900: rgb(48% 26.1% 5.1%);
+  --accent-800: rgb(57.6% 31.3% 6.12%);
+  --accent-700: rgb(67.3% 36.5% 7.14%);
+  --accent-600: rgb(81.7% 44.3% 8.67%);
+  --accent-500: #f5851a;
+  --accent-400: rgb(96.9% 61.7% 28.2%);
+  --accent-300: rgb(97.5% 68.9% 41.6%);
+  --accent-200: rgb(98% 76.1% 55.1%);
+  --accent-100: rgb(99% 88% 77.5%);
+  --accent-50: rgb(99.6% 95.2% 91%);
+  --accent-25: rgb(99.8% 97.6% 95.5%);
+  --accent-10: rgb(99.9% 98.6% 97.3%);
+  --accent-0: rgb(100% 100% 100%);
+  --success-1000: rgb(0% 0% 0%);
+  --success-990: rgb(0.08% 12.5% 4.71%);
+  --success-950: rgb(0.14% 21.8% 8.24%);
+  --success-925: rgb(0.17% 26.8% 10.1%);
+  --success-900: rgb(0.2% 31.2% 11.8%);
+  --success-800: rgb(0.24% 37.4% 14.1%);
+  --success-700: rgb(0.27% 43.6% 16.5%);
+  --success-600: rgb(0.33% 53% 20%);
+  --success-500: #019f3c;
+  --success-400: rgb(20.3% 69.9% 38.8%);
+  --success-300: rgb(35.3% 75.5% 50.3%);
+  --success-200: rgb(50.2% 81.2% 61.8%);
+  --success-100: rgb(75.1% 90.6% 80.9%);
+  --success-50: rgb(90% 96.2% 92.4%);
+  --success-25: rgb(95% 98.1% 96.2%);
+  --success-10: rgb(97% 98.9% 97.7%);
+  --success-0: rgb(100% 100% 100%);
+  --warning-1000: rgb(0% 0% 0%);
+  --warning-990: rgb(19% 11.4% 0%);
+  --warning-950: rgb(33.2% 19.9% 0%);
+  --warning-925: rgb(40.8% 24.5% 0%);
+  --warning-900: rgb(47.5% 28.4% 0%);
+  --warning-800: rgb(56.9% 34.1% 0%);
+  --warning-700: rgb(66.4% 39.8% 0%);
+  --warning-600: rgb(80.7% 48.3% 0%);
+  --warning-500: #f29100;
+  --warning-400: rgb(95.9% 65.5% 20%);
+  --warning-300: rgb(96.7% 72% 35%);
+  --warning-200: rgb(97.5% 78.4% 50%);
+  --warning-100: rgb(98.7% 89.2% 75%);
+  --warning-50: rgb(99.5% 95.7% 90%);
+  --warning-25: rgb(99.7% 97.8% 95%);
+  --warning-10: rgb(99.8% 98.7% 97%);
+  --warning-0: rgb(100% 100% 100%);
+  --error-1000: rgb(0% 0% 0%);
+  --error-990: rgb(17% 1.65% 3.14%);
+  --error-950: rgb(29.8% 2.88% 5.49%);
+  --error-925: rgb(36.6% 3.54% 6.75%);
+  --error-900: rgb(42.5% 4.12% 7.84%);
+  --error-800: rgb(51.1% 4.94% 9.41%);
+  --error-700: rgb(59.6% 5.76% 11%);
+  --error-600: rgb(72.3% 7% 13.3%);
+  --error-500: #d91528;
+  --error-400: rgb(88.1% 26.6% 32.5%);
+  --error-300: rgb(90.3% 40.4% 45.2%);
+  --error-200: rgb(92.5% 54.1% 57.8%);
+  --error-100: rgb(96.3% 77.1% 78.9%);
+  --error-50: rgb(98.5% 90.8% 91.6%);
+  --error-25: rgb(99.3% 95.4% 95.8%);
+  --error-10: rgb(99.6% 97.2% 97.5%);
+  --error-0: rgb(100% 100% 100%);
+  --info-1000: rgb(0% 0% 0%);
+  --info-990: rgb(1.96% 11.9% 20%);
+  --info-950: rgb(3.43% 20.9% 35%);
+  --info-925: rgb(4.22% 25.6% 43%);
+  --info-900: rgb(4.9% 29.8% 50%);
+  --info-800: rgb(5.88% 35.8% 60%);
+  --info-700: rgb(6.86% 41.7% 70%);
+  --info-600: rgb(8.33% 50.7% 85%);
+  --info-500: #1998ff;
+  --info-400: rgb(27.8% 67.7% 100%);
+  --info-300: rgb(41.4% 73.7% 100%);
+  --info-200: rgb(54.9% 79.8% 100%);
+  --info-100: rgb(77.5% 89.9% 100%);
+  --info-50: rgb(91% 96% 100%);
+  --info-25: rgb(95.5% 98% 100%);
+  --info-10: rgb(97.3% 98.8% 100%);
+  --info-0: rgb(100% 100% 100%);
+  --status-01-1000: rgb(0% 0% 0%);
+  --status-01-990: rgb(0% 14% 10.7%);
+  --status-01-950: rgb(0% 24.4% 18.7%);
+  --status-01-925: rgb(0% 30% 22.9%);
+  --status-01-900: rgb(0% 34.9% 26.7%);
+  --status-01-800: rgb(0% 41.9% 32%);
+  --status-01-700: rgb(0% 48.9% 37.3%);
+  --status-01-600: rgb(0% 59.3% 45.3%);
+  --status-01-500: #00b288;
+  --status-01-400: rgb(20% 75.8% 62.7%);
+  --status-01-300: rgb(35% 80.4% 69.7%);
+  --status-01-200: rgb(50% 84.9% 76.7%);
+  --status-01-100: rgb(75% 92.5% 88.3%);
+  --status-01-50: rgb(90% 97% 95.3%);
+  --status-01-25: rgb(95% 98.5% 97.7%);
+  --status-01-10: rgb(97% 99.1% 98.6%);
+  --status-01-0: rgb(100% 100% 100%);
+  --status-02-1000: rgb(0% 0% 0%);
+  --status-02-990: rgb(1.33% 11.5% 14.7%);
+  --status-02-950: rgb(2.33% 20% 25.7%);
+  --status-02-925: rgb(2.87% 24.6% 31.5%);
+  --status-02-900: rgb(3.33% 28.6% 36.7%);
+  --status-02-800: rgb(4% 34.4% 44%);
+  --status-02-700: rgb(4.67% 40.1% 51.3%);
+  --status-02-600: rgb(5.67% 48.7% 62.3%);
+  --status-02-500: #1192bb;
+  --status-02-400: rgb(25.3% 65.8% 78.7%);
+  --status-02-300: rgb(39.3% 72.2% 82.7%);
+  --status-02-200: rgb(53.3% 78.6% 86.7%);
+  --status-02-100: rgb(76.7% 89.3% 93.3%);
+  --status-02-50: rgb(90.7% 95.7% 97.3%);
+  --status-02-25: rgb(95.3% 97.9% 98.7%);
+  --status-02-10: rgb(97.2% 98.7% 99.2%);
+  --status-02-0: rgb(100% 100% 100%);
+  --status-03-1000: rgb(0% 0% 0%);
+  --status-03-990: rgb(8.24% 6.43% 19.2%);
+  --status-03-950: rgb(14.4% 11.3% 33.6%);
+  --status-03-925: rgb(17.7% 13.8% 41.3%);
+  --status-03-900: rgb(20.6% 16.1% 48%);
+  --status-03-800: rgb(24.7% 19.3% 57.6%);
+  --status-03-700: rgb(28.8% 22.5% 67.3%);
+  --status-03-600: rgb(35% 27.3% 81.7%);
+  --status-03-500: #6952f5;
+  --status-03-400: rgb(52.9% 45.7% 96.9%);
+  --status-03-300: rgb(61.8% 55.9% 97.5%);
+  --status-03-200: rgb(70.6% 66.1% 98%);
+  --status-03-100: rgb(85.3% 83% 99%);
+  --status-03-50: rgb(94.1% 93.2% 99.6%);
+  --status-03-25: rgb(97.1% 96.6% 99.8%);
+  --status-03-10: rgb(98.2% 98% 99.9%);
+  --status-03-0: rgb(100% 100% 100%);
+  --status-04-1000: rgb(0% 0% 0%);
+  --status-04-990: rgb(12% 2.82% 20%);
+  --status-04-950: rgb(21% 4.94% 35%);
+  --status-04-925: rgb(25.8% 6.07% 43%);
+  --status-04-900: rgb(30% 7.06% 50%);
+  --status-04-800: rgb(36% 8.47% 60%);
+  --status-04-700: rgb(42% 9.88% 70%);
+  --status-04-600: rgb(51% 12% 85%);
+  --status-04-500: #9924ff;
+  --status-04-400: rgb(68% 31.3% 100%);
+  --status-04-300: rgb(74% 44.2% 100%);
+  --status-04-200: rgb(80% 57.1% 100%);
+  --status-04-100: rgb(90% 78.5% 100%);
+  --status-04-50: rgb(96% 91.4% 100%);
+  --status-04-25: rgb(98% 95.7% 100%);
+  --status-04-10: rgb(98.8% 97.4% 100%);
+  --status-04-0: rgb(100% 100% 100%);
+  --status-05-1000: rgb(0% 0% 0%);
+  --status-05-990: rgb(17.8% 4.55% 10.2%);
+  --status-05-950: rgb(31.2% 7.96% 17.8%);
+  --status-05-925: rgb(38.3% 9.78% 21.9%);
+  --status-05-900: rgb(44.5% 11.4% 25.5%);
+  --status-05-800: rgb(53.4% 13.6% 30.6%);
+  --status-05-700: rgb(62.3% 15.9% 35.7%);
+  --status-05-600: rgb(75.7% 19.3% 43.3%);
+  --status-05-500: #e33a82;
+  --status-05-400: rgb(91.2% 38.2% 60.8%);
+  --status-05-300: rgb(92.9% 49.8% 68.1%);
+  --status-05-200: rgb(94.5% 61.4% 75.5%);
+  --status-05-100: rgb(97.3% 80.7% 87.7%);
+  --status-05-50: rgb(98.9% 92.3% 95.1%);
+  --status-05-25: rgb(99.5% 96.1% 97.5%);
+  --status-05-10: rgb(99.7% 97.7% 98.5%);
+  --status-05-0: rgb(100% 100% 100%);
+  --status-06-1000: rgb(0% 0% 0%);
+  --status-06-990: rgb(19.6% 6.51% 0%);
+  --status-06-950: rgb(34.3% 11.4% 0%);
+  --status-06-925: rgb(42.2% 14% 0%);
+  --status-06-900: rgb(49% 16.3% 0%);
+  --status-06-800: rgb(58.8% 19.5% 0%);
+  --status-06-700: rgb(68.6% 22.8% 0%);
+  --status-06-600: rgb(83.3% 27.7% 0%);
+  --status-06-500: #fa5300;
+  --status-06-400: rgb(98.4% 46% 20%);
+  --status-06-300: rgb(98.7% 56.2% 35%);
+  --status-06-200: rgb(99% 66.3% 50%);
+  --status-06-100: rgb(99.5% 83.1% 75%);
+  --status-06-50: rgb(99.8% 93.3% 90%);
+  --status-06-25: rgb(99.9% 96.6% 95%);
+  --status-06-10: rgb(99.9% 98% 97%);
+  --status-06-0: rgb(100% 100% 100%);
+  --font-family-main: Stapel; /* Базовая гарнитура шрифта */
+  --font-family-secondary: 'Helvetica Neue'; /* Дополнительная гарнитура шрифта */
+  --font-family-display: Stapel; /* Гарнитура для display типографики */
+  --font-family-heading: Stapel; /* Гарнитура для heading типографики */
+  --font-family-body: Stapel; /* Гарнитура для body типографики */
+  --font-family-description: Stapel; /* Гарнитура для description типографики */
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-display-l: 400 56px/1 Stapel;
+  --font-display-l-strong: 500 56px/1 Stapel;
+  --font-display-m: 400 42px/1 Stapel;
+  --font-display-m-strong: 500 42px/1 Stapel;
+  --font-display-s: 400 36px/1 Stapel;
+  --font-display-s-strong: 500 36px/1.1 Stapel;
+  --font-display-xs: 400 28px/1 Stapel;
+  --font-display-xs-strong: 500 28px/1 Stapel;
+  --font-heading-h1: 500 32px/1 Stapel;
+  --font-heading-h2: 500 26px/1 Stapel;
+  --font-heading-h3: 500 20px/1.1 Stapel;
+  --font-heading-h4: 500 16px/1.2 Stapel;
+  --font-body-l: 400 18px/1.4 Stapel;
+  --font-body-l-strong: 500 18px/1.4 Stapel;
+  --font-body-m: 400 16px/1.4 Stapel;
+  --font-body-m-strong: 500 16px/1.4 Stapel;
+  --font-body-s: 400 14px/1.4 Stapel;
+  --font-body-s-strong: 500 14px/1.4 Stapel;
+  --font-description-l: 400 12px/1.4 Stapel;
+  --font-description-m: 400 10px/1.4 Stapel;
+  --none: rgba(255, 255, 255, 0); /* Токен для значения none. Используется в фигме, так как даже при none токен должен быть назначен. При трансформации токенов из json в CSS переменные заменяется на none */
+  --white: #ffffff;
+  --black: #000000;
+  --fg-default: #283142;
+  --fg-soft: rgb(57.8% 59.6% 62.9%);
+  --fg-muted: rgb(78.9% 79.8% 81.5%);
+  --bg-surface1: rgb(100% 100% 100%);
+  --bg-surface2: rgb(95.8% 96% 96.3%);
+  --bg-surface3: rgb(91.6% 91.9% 92.6%);
+  --bg-surface4: rgb(78.9% 79.8% 81.5%);
+  --bg-surface5: rgb(9.41% 11.5% 15.5%);
+  --border-default: rgb(91.6% 91.9% 92.6%);
+  --border-soft: rgb(95.8% 96% 96.3%);
+  --border-hard: rgb(78.9% 79.8% 81.5%);
+  --border-hard2: rgb(57.8% 59.6% 62.9%);
+  --accent-default: #f5851a;
+  --accent-soft: rgb(96.9% 61.7% 28.2%);
+  --accent-muted: rgb(97.5% 68.9% 41.6%);
+  --accent-hover: rgb(81.7% 44.3% 8.67%);
+  --accent-active: rgb(67.3% 36.5% 7.14%);
+  --accent-on-accent: rgb(100% 100% 100%);
+  --neutral-default: #283142;
+  --neutral-soft: rgb(45.2% 47.5% 51.8%);
+  --neutral-hover: rgb(32.5% 35.4% 40.7%);
+  --neutral-active: rgb(11% 13.5% 18.1%);
+  --neutral-on-neutral: rgb(100% 100% 100%);
+  --static-white: #ffffff;
+  --static-black: #000000;
+  --border-radius-none: 0rem;
+  --border-radius-full: 999px;
+  --border-radius-2px: 2px;
+  --border-radius-4px: 4px;
+  --border-radius-6px: 6px;
+  --border-radius-8px: 8px;
+  --border-radius-10px: 10px;
+  --border-radius-12px: 12px;
+  --border-radius-14px: 14px;
+  --border-radius-16px: 16px;
+  --border-radius-20px: 20px;
+  --border-radius-24px: 24px;
+  --border-radius-32px: 32px;
+  --border-width-default: 1px;
+  --triger-icons-bg1: #e2fdff;
+  --triger-icons-fg1: #004a4f;
+  --triger-icons-bg2: #ceffdf;
+  --triger-icons-fg2: #00521c;
+  --triger-icons-bg3: #fff0cd;
+  --triger-icons-fg3: #674800;
+  --triger-icons-bg4: #ebeaff;
+  --triger-icons-fg4: #08005e;
+  --shadow-elevate1: 0 4px 10px 0 rgba(0,0,0,0.05);
 }
-
-$brand: var(--color-brand);
-$bg: var(--color-bg);
-$accent: var(--color-accent);
-
-$filter-black: brightness(0) saturate(100%) invert(11%) sepia(6%) saturate(752%) hue-rotate(295deg)
-    brightness(90%) contrast(93%);
-
-$transition: var(--transition);

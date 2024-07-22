@@ -7,12 +7,14 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "build:tokens": "node build-tokens.js"
     },
     "browserslist": [
         "cover 99.5%"
     ],
     "devDependencies": {
+        "@tokens-studio/sd-transforms": "^1.2.0",
         "@vituum/vite-plugin-pug": "^1.1.0",
         "autoprefixer": "^10.4.4",
         "cssnano": "^7.0.1",
@@ -22,6 +24,7 @@
         "postcss-sort-media-queries": "^5.2.0",
         "postcss-url": "^10.1.3",
         "sass": "^1.72.0",
+        "style-dictionary": "^4.0.1",
         "terser": "^5.31.1",
         "vite": "^5.2.10",
         "vituum": "^1"
