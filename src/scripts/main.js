@@ -25,3 +25,24 @@ Inputmask({
     showMaskOnFocus: false,
     placeholder: ''
 }).mask('[number-only]');
+
+$('.qty-input .qty').on('click', (e) => {
+    if (
+        $(e.currentTarget).hasClass('qty-minus') &&
+        $(e.currentTarget).parent().find('input').val() > 1
+    ) {
+        $(e.currentTarget)
+            .parent()
+            .find('input')
+            .val(Number($(e.currentTarget).parent().find('input').val()) - 1);
+    }
+    if (
+        $(e.currentTarget).hasClass('qty-plus') &&
+        $(e.currentTarget).parent().find('input').val() < 999
+    ) {
+        $(e.currentTarget)
+            .parent()
+            .find('input')
+            .val(Number($(e.target).parent().find('input').val()) + 1);
+    }
+});

@@ -6,6 +6,12 @@ block title
 
 block main
 
-    .container
+    .container(style="background: #fff;height: 500px")
 
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, nemo quibusdam facere veniam placeat totam facilis exercitationem nisi ut optio officia, reiciendis maxime impedit tempora adipisci sit, enim tenetur? In.
+        .qty-input(style="width: 226px;")
+            .qty.qty-minus
+                include ../icons/Minus.svg
+            input(type="text" name="qty" value="10" number-only)
+            .qty.qty-plus
+                svg(width="24" height="24")
+                    use(href="/__spritemap#sprite-Plus")

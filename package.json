@@ -14,6 +14,7 @@
         "cover 99.5%"
     ],
     "devDependencies": {
+        "@spiriit/vite-plugin-svg-spritemap": "^2.2.4",
         "@tokens-studio/sd-transforms": "^1.2.0",
         "@vituum/vite-plugin-pug": "^1.1.0",
         "autoprefixer": "^10.4.4",
@@ -27,6 +28,7 @@
         "style-dictionary": "^4.0.1",
         "terser": "^5.31.1",
         "vite": "^5.2.10",
+        "vite-plugin-svg-sprite": "^0.5.2",
         "vituum": "^1"
     },
     "dependencies": {

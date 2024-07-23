@@ -5,7 +5,7 @@ import { register } from '@tokens-studio/sd-transforms';
 // See docs: https://github.com/tokens-studio/sd-transforms
 register(StyleDictionary, {
     expand: {
-        composition: false,
+        composition: true,
         typography: false,
         border: false,
         shadow: false

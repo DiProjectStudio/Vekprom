@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vituum from 'vituum';
 import pug from '@vituum/vite-plugin-pug';
 import rollupConfig from './rollup.config.js'; // Импорт конфигурации Rollup
+import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 const noAttribute = () => {
     return {
@@ -42,6 +43,13 @@ export default defineConfig({
             root: './src',
             options: {
                 pretty: true
+            }
+        }),
+
+        VitePluginSvgSpritemap('./src/icons/*.svg', {
+            prefix: '',
+            output: {
+                filename: '[name].svg'
             }
         }),
 

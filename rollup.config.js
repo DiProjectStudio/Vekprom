@@ -10,6 +10,6 @@ export default {
         },
         entryFileNames: 'assets/js/[name].js',
         chunkFileNames: 'assets/js/[name].min.js',
-        assetFileNames: 'assets/css/[name].min.css'
+        assetFileNames: 'assets/css/[name].min.[ext]'
     }
 };
