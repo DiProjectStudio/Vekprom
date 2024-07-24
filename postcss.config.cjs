@@ -12,17 +12,17 @@ module.exports = (ctx) => ({
 
         ...(process.env.NODE_ENV === 'production'
             ? [
-                  // postcssUrl({
-                  //   url: function (asset) {
-                  //     // Проверяем, содержит ли URL подстроку "/assets"
-                  //     if (asset.url.includes('/assets')) {
-                  //       // Заменяем "/assets" на ".."
-                  //       return asset.url.replace('/assets', '..');
-                  //     }
+                  postcssUrl({
+                      url: function (asset) {
+                          // Проверяем, содержит ли URL подстроку "/assets"
+                          if (asset.url.includes('/assets')) {
+                              // Заменяем "/assets" на ".."
+                              return asset.url.replace('/assets', '..');
+                          }
 
-                  //     return asset.url;
-                  //   }
-                  // }),
+                          return asset.url;
+                      }
+                  }),
                   postcssPxtorem({
                       rootValue: 10,
                       unitPrecision: 5,

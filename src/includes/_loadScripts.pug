@@ -1,4 +1,8 @@
 script(data-skip-moving="true").
     const home_dir = './';
-script(data-skip-moving="true" src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous")
+
+if isDev == false
+    script(data-skip-moving="true" src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous")
+else
+    script(src="/node_modules/jquery/dist/jquery.min.js")
 script(type="module", src="/src/scripts/main.js")

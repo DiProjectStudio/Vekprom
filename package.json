@@ -1,6 +1,5 @@
 {
     "name": "Vekprom",
-    "author": "Damir S.",
     "private": true,
     "version": "1.0.0",
     "type": "module",
@@ -28,7 +27,7 @@
         "style-dictionary": "^4.0.1",
         "terser": "^5.31.1",
         "vite": "^5.2.10",
-        "vite-plugin-svg-sprite": "^0.5.2",
+        "vite-plugin-restart": "^0.4.1",
         "vituum": "^1"
     },
     "dependencies": {

@@ -70,13 +70,17 @@ main {
 
 svg {
     pointer-events: none;
+
+    &.icon {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 48px;
     font: var(--font-body-m-strong);
     border-radius: 8px;
     user-select: none;
@@ -86,86 +90,158 @@ svg {
         pointer-events: none;
     }
 
-    &-md {
+    &--sm {
+        height: 48px;
+    }
+
+    &--md {
         height: 60px;
         font: var(--font-body-l-strong);
         border-radius: 12px;
     }
+}
 
-    &--primary {
-        background: var(--Accent-Gradient);
-        color: var(--accent-on-accent, #fff);
+.btn-promo {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 
-        &:hover {
-            background: var(--accent-hover, #d07116);
-            color: var(--accent-25, #fef9f4);
-        }
+    & .icon {
+        margin-left: auto;
+        stroke: var(--accent-on-accent);
+    }
 
-        &:active {
-            background: var(--accent-active, #ac5d12);
-        }
+    &--sm {
+        padding: 6px 6px 6px 12px;
+        width: 168px;
+        height: 80px;
+        font: var(--font-body-s-strong);
 
-        &[disabled] {
-            background: var(--accent-50, #fef3e8);
+        & .icon {
+            width: 16px;
+            height: 16px;
         }
     }
 
-    &--secondary-gray {
-        background: var(--bg-surface3, #eaeaec);
-        color: var(--fg-default, #283142);
-
-        &:hover {
-            background: var(--bg-surface2, #f4f5f6);
-            color: var(--neutral-hover, #535a68);
-        }
-
-        &:active {
-            background: var(--bg-surface2, #f4f5f6);
-            color: var(--neutral-active, #1c222e);
-        }
-
-        &[disabled] {
-            background: var(--bg-surface2, #f4f5f6);
-            color: var(--fg-muted, #c9cbd0);
-        }
+    &--md {
+        padding: 6px 6px 6px 12px;
+        width: 220px;
+        height: 80px;
     }
 
-    &--secondary-orange {
+    &--lg {
+        padding: 12px 12px 12px 16px;
+        width: 220px;
+        height: 119px;
+        font: var(--font-body-l-strong);
+    }
+}
+
+.btn--primary {
+    background: var(--Accent-Gradient);
+    color: var(--accent-on-accent, #fff);
+
+    &:hover {
+        background: var(--accent-hover, #d07116);
+        color: var(--accent-25, #fef9f4);
+    }
+
+    &:active {
+        background: var(--accent-active, #ac5d12);
+    }
+
+    &[disabled] {
         background: var(--accent-50, #fef3e8);
-        color: var(--accent-default, #f5851a);
+    }
+}
 
-        &:hover {
-            background: var(--accent-25, #fef9f4);
-            color: var(--accent-hover, #d07116);
-        }
+.btn--secondary-gray {
+    background: var(--bg-surface3, #eaeaec);
+    color: var(--fg-default, #283142);
 
-        &:active {
-            background: var(--accent-25, #fef9f4);
-            color: var(--accent-active, #ac5d12);
-        }
+    &:hover {
+        background: var(--bg-surface2, #f4f5f6);
+        color: var(--neutral-hover, #535a68);
+    }
 
-        &[disabled] {
-            color: var(--accent-on-accent, #fff);
+    &:active {
+        background: var(--bg-surface2, #f4f5f6);
+        color: var(--neutral-active, #1c222e);
+    }
+
+    &[disabled] {
+        background: var(--bg-surface2, #f4f5f6);
+        color: var(--fg-muted, #c9cbd0);
+    }
+}
+
+.btn--secondary-orange {
+    background: var(--accent-50, #fef3e8);
+    color: var(--accent-default, #f5851a);
+
+    &:hover {
+        background: var(--accent-25, #fef9f4);
+        color: var(--accent-hover, #d07116);
+    }
+
+    &:active {
+        background: var(--accent-25, #fef9f4);
+        color: var(--accent-active, #ac5d12);
+    }
+
+    &[disabled] {
+        color: var(--accent-on-accent, #fff);
+    }
+}
+
+.btn--tertialy {
+    background: var(--bg-surface1, #fff);
+    border: var(--Number, 1px) solid var(--neutral-100, #c9cbd0);
+
+    &:hover {
+        color: var(--neutral-hover, #535a68);
+        border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
+    }
+
+    &:active {
+        color: var(--neutral-active, #1c222e);
+        border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
+    }
+
+    &[disabled] {
+        color: var(--fg-muted, #c9cbd0);
+        border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
+    }
+}
+
+.btn--white {
+    background: var(--bg-surface1, #fff);
+
+    & .icon {
+        stroke: var(--accent-default);
+    }
+
+    &:hover {
+        color: var(--accent-hover, #d07116);
+
+        & .icon {
+            stroke: var(--accent-hover);
         }
     }
 
-    &--tertialy {
-        background: var(--bg-surface1, #fff);
-        border: var(--Number, 1px) solid var(--neutral-100, #c9cbd0);
+    &:active {
+        color: var(--accent-active, #d07116);
 
-        &:hover {
-            color: var(--neutral-hover, #535a68);
-            border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
+        & .icon {
+            stroke: var(--accent-active);
         }
+    }
 
-        &:active {
-            color: var(--neutral-active, #1c222e);
-            border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
-        }
+    &[disabled] {
+        color: var(--accent-100);
 
-        &[disabled] {
-            color: var(--fg-muted, #c9cbd0);
-            border: var(--Number, 1px) solid var(--neutral-50, #eaeaec);
+        & .icon {
+            stroke: var(--accent-100);
         }
     }
 }
@@ -187,22 +263,39 @@ svg {
         background: transparent;
         width: 100%;
         height: 100%;
+        font: var(--font-body-l);
         text-align: center;
         border: none;
         outline: none;
     }
+}
 
-    & .qty {
-        padding: 4px;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        cursor: pointer;
+.qty {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
 
-        &:hover {
-            & path {
-                stroke: var(--accent-hover);
-            }
+    & .icon {
+        stroke: var(--accent-default);
+    }
+
+    &:hover {
+        & .icon {
+            stroke: var(--accent-hover);
+        }
+    }
+
+    &:active {
+        & .icon {
+            stroke: var(--accent-active);
+        }
+    }
+
+    &[disabled] {
+        & .icon {
+            stroke: var(--fg-muted);
         }
     }
 }

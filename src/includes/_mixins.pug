@@ -1,2 +1,7 @@
 mixin img(link)
 	img(src= "./assets/images/" + link, alt="")
+
+mixin svg(name, width, height)
+	- const url = isDev ? `__spritemap#${name}` : `./assets/spritemap.svg#${name}`
+	svg(class=`icon icon-${name}` width=width height=height)
+		use(xlink:href=url)

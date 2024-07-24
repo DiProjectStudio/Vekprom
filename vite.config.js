@@ -3,6 +3,7 @@ import vituum from 'vituum';
 import pug from '@vituum/vite-plugin-pug';
 import rollupConfig from './rollup.config.js'; // Импорт конфигурации Rollup
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
+import ViteRestart from 'vite-plugin-restart';
 
 const noAttribute = () => {
     return {
@@ -49,8 +50,26 @@ export default defineConfig({
         VitePluginSvgSpritemap('./src/icons/*.svg', {
             prefix: '',
             output: {
-                filename: '[name].svg'
-            }
+                filename: '[name].svg',
+                name: 'spritemap.svg',
+                view: false,
+                use: true
+            },
+            svgo: {
+                plugins: [
+                    {
+                        name: 'removeAttrs',
+                        params: {
+                            attrs: '(fill|stroke)'
+                        }
+                    }
+                ]
+            },
+            injectSVGOnDev: true
+        }),
+
+        ViteRestart({
+            restart: ['./src/icons/*']
         }),
 
         noAttribute()

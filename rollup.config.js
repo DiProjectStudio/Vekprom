@@ -2,9 +2,9 @@ export default {
     output: {
         manualChunks(id) {
             if (id.includes('node_modules')) {
-                // if (id.includes('jquery')) {
-                //     return 'jquery';
-                // }
+                if (id.includes('jquery')) {
+                    return 'jquery';
+                }
                 return 'vendor';
             }
         },

@@ -2,9 +2,9 @@
 import Inputmask from 'inputmask';
 
 // Import Scripts
-import './js/map.js';
-import './js/popup.js';
-import './js/slider.js';
+import './includes/map.js';
+import './includes/popup.js';
+import './includes/slider.js';
 
 /* INPUT MASK PHONE NUMBER */
 Inputmask({
@@ -35,14 +35,31 @@ $('.qty-input .qty').on('click', (e) => {
             .parent()
             .find('input')
             .val(Number($(e.currentTarget).parent().find('input').val()) - 1);
+
+        $(e.currentTarget).parent().find('input').val() <
+        Number($(e.currentTarget).parent().find('input').attr('max-number'))
+            ? $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled')
+            : null;
     }
     if (
         $(e.currentTarget).hasClass('qty-plus') &&
-        $(e.currentTarget).parent().find('input').val() < 999
+        $(e.currentTarget).parent().find('input').val() <
+            Number($(e.currentTarget).parent().find('input').attr('max-number'))
     ) {
         $(e.currentTarget)
             .parent()
             .find('input')
             .val(Number($(e.target).parent().find('input').val()) + 1);
+
+        $(e.currentTarget).parent().find('input').val() ==
+        $(e.currentTarget).parent().find('input').attr('max-number')
+            ? $(e.currentTarget).attr('disabled', true)
+            : null;
     }
+});
+
+$('.qty-input input').on('input', (e) => {
+    Number($(e.currentTarget).val()) < Number($(e.currentTarget).attr('max-number'))
+        ? $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled')
+        : $(e.currentTarget).parent().find('.qty-plus').attr('disabled', true);
 });

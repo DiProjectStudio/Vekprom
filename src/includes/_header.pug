@@ -1,3 +1,86 @@
 block header
 
     header#header.header
+
+        .container
+
+            .header__top
+
+                nav.header__nav
+                    ul.header__menu
+                        li.header__menu-item
+                            a.header__menu-link О компании
+                            ul.submenu
+                                li
+                                    a(href="#") О компании
+                                li
+                                    a(href="#") Пресс-центр
+                                li
+                                    a(href="#") Проекты
+                                li
+                                    a(href="#") Лицензии
+                                li
+                                    a(href="#") Отзывы
+
+                        li.header__menu-item
+                            a.header__menu-link(href="#") Контакты
+
+                        li.header__menu-item
+                            a.header__menu-link(href="#") Вакансии
+
+                        li.header__menu-item
+                            a.header__menu-link(href="#") Сервис и поддержка
+
+                        li.header__menu-item
+                            a.header__menu-link(href="#") Демозал
+                            +svg('badge-3d')
+
+                    .header__bar
+
+                        .header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
+                        .header__phone
+                            a(href="tel:+74952151645") +7 (495) 215-16-45
+                        .header__location
+                            +svg('Map')
+                            p Москва
+
+            .header__inner
+
+                .header__logo
+                    a(href="/")
+                        +img('Logo_main.svg')
+                
+                .header__search
+                    +svg('Search')
+                
+                .header__burger
+                    +svg('Burger')
+                
+                .header__category
+                    a(href="#").header__category-item
+                        +svg('saw')
+                        p Металлообработка
+
+                    a(href="#").header__category-item
+                        +svg('laser')
+                        p Лазерное оборудование
+
+                    a(href="#").header__category-item
+                        +svg('press')
+                        p Прессовое оборудование
+
+                    a(href="#").header__category-item
+                        +svg('welder')
+                        p Сварочное оборудование
+
+                    a(href="#").header__category-item
+                        +svg('helmet')
+                        p Строительное оборудование
+
+                    a(href="#").header__category-item
+                        +svg('crane')
+                        p Инструмент
+
+                    a(href="#").header__category-item
+                        +svg('gear')
+                        p Запасные части
