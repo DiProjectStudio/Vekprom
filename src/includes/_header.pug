@@ -33,29 +33,41 @@ block header
 
                         li.header__menu-item
                             a.header__menu-link(href="#") Демозал
-                            +svg('badge-3d')
+                            +img('badge-3d.svg')
 
-                    .header__bar
+                    ul.header__bar
 
-                        .header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
-                        .header__phone
-                            a(href="tel:+74952151645") +7 (495) 215-16-45
-                        .header__location
-                            +svg('Map')
-                            p Москва
+                        li.header__bar-item
+                            a.header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
 
-            .header__inner
+                        li.header__bar-item
+                            a.header__phone(href="tel:+74952151645") +7 (495) 215-16-45
+
+                        li.header__bar-item
+                            .header__location
+                                +svg('Map')
+                                p Москва
+
+            .header__main
 
                 .header__logo
                     a(href="/")
                         +img('Logo_main.svg')
-                
+
+                button.header__catalog
+                    +svg('catalog')
+                    p Каталог
+
                 .header__search
+                    .input-style
+                        input#header_search(type="search", name="header_search", placeholder="Поиск по сайту")
                     +svg('Search')
-                
+
+                button.header__selection Подобрать станок
+
                 .header__burger
                     +svg('Burger')
-                
+
                 .header__category
                     a(href="#").header__category-item
                         +svg('saw')

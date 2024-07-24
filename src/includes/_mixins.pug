@@ -1,5 +1,5 @@
 mixin img(link)
-	img(src= "./assets/images/" + link, alt="")
+	img(src= "./assets/images/" + link, alt="img")
 
 mixin svg(name, width, height)
 	- const url = isDev ? `__spritemap#${name}` : `./assets/spritemap.svg#${name}`

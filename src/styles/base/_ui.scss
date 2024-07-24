@@ -84,6 +84,7 @@ svg {
     font: var(--font-body-m-strong);
     border-radius: 8px;
     user-select: none;
+    transition: $transition;
     cursor: pointer;
 
     &[disabled] {
