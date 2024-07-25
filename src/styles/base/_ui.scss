@@ -68,6 +68,12 @@ main {
     display: none !important;
 }
 
+.icon,
+a,
+button {
+    transition: $transition;
+}
+
 svg {
     pointer-events: none;
 
@@ -139,12 +145,34 @@ svg {
 }
 
 .btn--primary {
-    background: var(--Accent-Gradient);
+    background: #fff;
+    position: relative;
     color: var(--accent-on-accent, #fff);
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background: var(
+            --Accent-Gradient,
+            linear-gradient(101deg, #f5b316 -6.09%, #f5851a 105.07%)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition;
+        z-index: -1;
+    }
 
     &:hover {
         background: var(--accent-hover, #d07116);
         color: var(--accent-25, #fef9f4);
+
+        &::before {
+            opacity: 0;
+        }
     }
 
     &:active {
@@ -153,6 +181,10 @@ svg {
 
     &[disabled] {
         background: var(--accent-50, #fef3e8);
+
+        &::before {
+            content: none;
+        }
     }
 }
 
@@ -297,6 +329,57 @@ svg {
     &[disabled] {
         & .icon {
             stroke: var(--fg-muted);
+        }
+    }
+}
+
+.input-search {
+    position: relative;
+
+    @include breakpoint(lg) {
+        padding: 0 12px;
+        background: var(--bg-surface2, #f4f5f6);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 36px;
+    }
+
+    & .search-icon {
+        display: flex;
+
+        @include breakpoint(lg) {
+            margin-right: 8px;
+        }
+
+        & .icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--fg-soft);
+
+            @include breakpoint(lg) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    & input {
+        padding: 8px 0;
+        background: transparent;
+        width: 100%;
+        height: 100%;
+        font: var(--font-body-s);
+        border-radius: 6px;
+        border: none;
+        outline: none;
+
+        @include breakpointMax(lg) {
+            display: none;
+        }
+
+        &::placeholder {
+            color: var(--fg-soft, #9398a0);
         }
     }
 }

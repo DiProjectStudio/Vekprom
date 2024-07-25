@@ -59,11 +59,37 @@ block header
                     p Каталог
 
                 .header__search
-                    .input-style
+                    .input-search
+                        .search-icon
+                            +svg('Search')
                         input#header_search(type="search", name="header_search", placeholder="Поиск по сайту")
-                    +svg('Search')
 
                 button.header__selection Подобрать станок
+
+                .header__icons
+                    a(href="#").header__home.header__icons-item
+                        +svg('Home')
+                        p Главная
+                        
+                    a(href="#").header__home.header__icons-item
+                        +svg('catalog')
+                        p Каталог
+
+                    a(href="#").header__compare.header__icons-item
+                        +svg('Compare')
+                        p Сравнение
+                        
+                    a(href="#").header__favourite.header__icons-item
+                        +svg('Heart')
+                        p Избранное
+
+                    a(href="#").header__basket.header__icons-item
+                        +svg('Basket')
+                        p Корзина
+
+                    a(href="#").header__user.header__icons-item
+                        +svg('User')
+                        p Войти
 
                 .header__burger
                     +svg('Burger')

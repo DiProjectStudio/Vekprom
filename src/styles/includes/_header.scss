@@ -13,20 +13,8 @@
         margin-top: 0;
     }
 
-    & a {
-        transition: $transition;
-
-        & .icon {
-            transition: $transition;
-        }
-
-        &:hover {
-            color: var(--base-accent, #f5851a);
-
-            & .icon {
-                fill: var(--base-accent, #f5851a);
-            }
-        }
+    & a:hover {
+        color: var(--base-accent, #f5851a);
     }
 }
 
@@ -37,6 +25,10 @@
 
     @include breakpoint(lg) {
         padding: 4px 16px;
+    }
+
+    @include breakpoint(xl) {
+        padding: 8px 16px;
     }
 }
 
@@ -52,6 +44,10 @@
         & li {
             font: var(--font-description-l);
             color: var(--fg-soft, #9398a0);
+
+            @include breakpoint(xl) {
+                font: var(--font-body-s);
+            }
         }
     }
 }
@@ -119,7 +115,7 @@
 }
 
 .header__main {
-    padding: 0 8px;
+    padding: 0 16px;
     background: var(--bg-surface1, #fff);
     display: flex;
     align-items: center;
@@ -127,13 +123,11 @@
     height: var(--header-height);
     border-radius: 16px;
 
-    @include breakpoint(md) {
-        padding: 0 16px;
-    }
-
     @include breakpoint(lg) {
         padding: 8px 16px;
         flex-wrap: wrap;
+        justify-content: initial;
+        column-gap: 16px;
     }
 }
 
@@ -146,14 +140,163 @@
     }
 }
 
+.header__catalog {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0 12px;
+        background: var(--base-neutral, #283142);
+        display: flex;
+        align-items: center;
+        width: 105px;
+        height: 36px;
+        font: var(--font-body-s-strong);
+        color: var(--accent-on-accent, #fff);
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    &:hover {
+        background: var(--neutral-400, #535a68);
+    }
+
+    & .icon {
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        fill: var(--accent-on-accent, #fff);
+    }
+}
+
 .header__search {
     margin-left: auto;
     margin-right: 20px;
     display: flex;
 
-    & .icon {
-        fill: var(--fg-soft);
+    @include breakpoint(lg) {
+        margin: 0;
+        flex-grow: 1;
     }
+}
+
+.header__selection {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        padding: 10px 12px;
+        background: #fff;
+        position: relative;
+        width: 150px;
+        height: 36px;
+        font: var(--font-body-s-strong);
+        color: var(--accent-on-accent, #fff);
+        border-radius: 6px;
+        isolation: isolate;
+        overflow: hidden;
+    }
+
+    &::before {
+        content: '';
+        background: var(
+            --Accent-Gradient,
+            linear-gradient(101deg, #f5b316 -6.09%, #f5851a 105.07%)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition;
+        z-index: -1;
+    }
+
+    &:hover {
+        background: var(--accent-hover, #d07116);
+
+        &::before {
+            opacity: 0;
+        }
+    }
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+
+    @include breakpointMax(lg) {
+        padding: 12px 24px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        border-radius: 16px 16px 0px 0px;
+        background: var(--bg-surface1, #fff);
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(lg) {
+        column-gap: 24px;
+    }
+}
+
+.header__icons-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    fill: var(--fg-default);
+
+    @include breakpoint(lg) {
+        cursor: pointer;
+    }
+
+    & svg {
+        margin-bottom: 4px;
+
+        @include breakpointMax(lg) {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    & p {
+        font: var(--font-description-m);
+        color: var(--fg-soft, #9398a0);
+        transition: $transition;
+
+        @include breakpoint(lg) {
+            font: var(--font-description-l);
+        }
+
+        @include breakpoint(xl) {
+            font: var(--font-body-s);
+        }
+    }
+
+    &:hover {
+        & p {
+            color: var(--accent-default, #f5851a);
+        }
+    }
+}
+
+.header__compare {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+}
+
+.header__favourite {
+    fill: none;
+    stroke: var(--fg-default);
+}
+
+.header__user {
+    fill: none;
+    stroke: var(--fg-default);
 }
 
 .header__burger {
@@ -164,7 +307,7 @@
     }
 
     @include breakpoint(lg) {
-        display: non;
+        display: none;
     }
 }
 
@@ -209,5 +352,16 @@
     & p {
         margin-left: 6px;
         font: var(--font-description-l);
+
+        @include breakpoint(xl) {
+            margin-left: 10px;
+            font: var(--font-body-s);
+        }
+    }
+
+    &:hover {
+        & .icon {
+            fill: var(--base-accent, #f5851a);
+        }
     }
 }
