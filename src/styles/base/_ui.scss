@@ -68,6 +68,10 @@ main {
     display: none !important;
 }
 
+button {
+    background: none;
+}
+
 .icon,
 a,
 button {
@@ -334,23 +338,17 @@ svg {
 }
 
 .input-search {
+    padding: 0 12px;
+    background: var(--bg-surface2, #f4f5f6);
     position: relative;
-
-    @include breakpoint(lg) {
-        padding: 0 12px;
-        background: var(--bg-surface2, #f4f5f6);
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 36px;
-    }
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 36px;
 
     & .search-icon {
+        margin-right: 8px;
         display: flex;
-
-        @include breakpoint(lg) {
-            margin-right: 8px;
-        }
 
         & .icon {
             width: 24px;
@@ -381,6 +379,17 @@ svg {
         &::placeholder {
             color: var(--fg-soft, #9398a0);
         }
+    }
+}
+
+.chevron {
+    display: flex;
+
+    & svg.icon {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: var(--fg-default);
     }
 }
 

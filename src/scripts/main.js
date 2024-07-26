@@ -6,7 +6,7 @@ import './includes/map.js';
 import './includes/popup.js';
 import './includes/slider.js';
 
-/* INPUT MASK PHONE NUMBER */
+// Inputmask for phone number
 Inputmask({
     mask: '+7 (999) 999-99-99',
     showMaskOnHover: false,
@@ -17,7 +17,7 @@ Inputmask({
     }
 }).mask('[phone-number]');
 
-// INPUT MASK FOR NUMBERS
+// Inputmask for numbers
 Inputmask({
     regex: '^[0-9]*$',
     allowMinus: false,
@@ -26,6 +26,13 @@ Inputmask({
     placeholder: ''
 }).mask('[number-only]');
 
+// Burger menu
+// $('#burger').on('click', (e) => {
+//     $('#header').append('<div id="mobile-menu" class="mobile-menu"></div>');
+//     $('#mobile-menu').append('');
+// });
+
+// Quantity buttons
 $('.qty-input .qty').on('click', (e) => {
     if (
         $(e.currentTarget).hasClass('qty-minus') &&

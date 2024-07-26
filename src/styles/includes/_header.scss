@@ -62,10 +62,8 @@
 }
 
 .header__menu-item {
-    @include breakpoint(lg) {
-        display: flex;
-        align-items: center;
-    }
+    display: flex;
+    align-items: center;
 
     &:nth-child(2) {
         @include breakpoint(lg) {
@@ -76,9 +74,21 @@
     }
 
     & img {
-        margin-left: 4px;
-        width: 18px;
-        height: 18px;
+        margin-left: 6px;
+        width: 20px;
+        height: 20px;
+
+        @include breakpoint(lg) {
+            margin-left: 4px;
+            width: 18px;
+            height: 18px;
+        }
+
+        @include breakpoint(xl) {
+            margin-left: 6px;
+            width: 20px;
+            height: 20px;
+        }
     }
 }
 
@@ -138,6 +148,10 @@
     @include breakpoint(lg) {
         width: 149px;
     }
+
+    .mobile-menu-active & {
+        z-index: 21;
+    }
 }
 
 .header__catalog {
@@ -173,11 +187,19 @@
 .header__search {
     margin-left: auto;
     margin-right: 20px;
-    display: flex;
 
     @include breakpoint(lg) {
         margin: 0;
         flex-grow: 1;
+    }
+
+    .header :not(.mobile-menu) & {
+        & .input-search {
+            @include breakpointMax(lg) {
+                padding: 0;
+                background: none;
+            }
+        }
     }
 }
 
@@ -228,14 +250,19 @@
     align-items: center;
 
     @include breakpointMax(lg) {
-        padding: 12px 24px;
+        padding: 12px 56px;
         position: fixed;
         left: 0;
         bottom: 0;
         border-radius: 16px 16px 0px 0px;
         background: var(--bg-surface1, #fff);
         width: 100%;
+        height: 60px;
         justify-content: space-between;
+    }
+
+    @include breakpointMax(md) {
+        padding: 12px 24px;
     }
 
     @include breakpoint(lg) {
@@ -244,6 +271,7 @@
 }
 
 .header__icons-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,12 +281,47 @@
         cursor: pointer;
     }
 
-    & svg {
+    & .icon-item {
         margin-bottom: 4px;
+        position: relative;
+        width: 16px;
+        height: 16px;
 
-        @include breakpointMax(lg) {
-            width: 16px;
-            height: 16px;
+        @include breakpoint(lg) {
+            width: 24px;
+            height: 24px;
+        }
+
+        &[data-count]::after {
+            content: attr(data-count);
+            padding: 2px 6px 1px;
+            background: var(--base-accent, #f5851a);
+            position: absolute;
+            top: -6px;
+            left: calc(100% - 2px);
+            font: var(--font-description-m);
+            color: var(--accent-on-accent, #fff);
+            text-align: center;
+            border-radius: 40px;
+
+            @include breakpoint(md) {
+                left: calc(100% + 4px);
+            }
+
+            @include breakpoint(lg) {
+                padding: 2px 8px 1px;
+                left: calc(100% - 2px);
+                font: var(--font-description-l);
+            }
+
+            @include breakpoint(xl) {
+                left: calc(100% - 7px);
+            }
+        }
+
+        & .icon {
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -266,6 +329,10 @@
         font: var(--font-description-m);
         color: var(--fg-soft, #9398a0);
         transition: $transition;
+
+        @include breakpoint(md) {
+            font: var(--font-body-s);
+        }
 
         @include breakpoint(lg) {
             font: var(--font-description-l);
@@ -283,31 +350,39 @@
     }
 }
 
-.header__compare {
+.header-home {
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.header-catalog {
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.header-compare {
     @include breakpointMax(lg) {
         display: none;
     }
 }
 
-.header__favourite {
+.header-favourite {
     fill: none;
     stroke: var(--fg-default);
-}
 
-.header__user {
-    fill: none;
-    stroke: var(--fg-default);
-}
-
-.header__burger {
-    display: flex;
-
-    & .icon {
-        fill: var(--fg-soft);
+    @include breakpointMax(lg) {
+        order: 2;
     }
+}
 
-    @include breakpoint(lg) {
-        display: none;
+.header-user {
+    fill: none;
+    stroke: var(--fg-default);
+
+    @include breakpointMax(lg) {
+        order: 3;
     }
 }
 
@@ -337,11 +412,9 @@
 }
 
 .header__category-item {
-    @include breakpoint(lg) {
-        padding: 4px 0;
-        display: flex;
-        align-items: center;
-    }
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
 
     & .icon {
         width: 20px;
@@ -360,8 +433,99 @@
     }
 
     &:hover {
-        & .icon {
+        & > .icon {
             fill: var(--base-accent, #f5851a);
         }
+    }
+}
+
+.header__burger {
+    display: flex;
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+
+    & .icon {
+        fill: var(--fg-soft);
+    }
+
+    .mobile-menu-active & {
+        z-index: 21;
+    }
+}
+
+.mobile-menu {
+    padding: 78px var(--container) 40px;
+    background: var(--bg-surface1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 20;
+
+    &::before {
+        content: '';
+        background: var(--bg-surface1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 78px;
+        z-index: 1;
+    }
+
+    .header__search {
+        margin: 0;
+
+        & .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        & input {
+            background: var(--bg-surface2, #f4f5f6);
+            display: block;
+            border-radius: 6px;
+        }
+    }
+
+    & .header__category {
+        padding: 16px 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        border-bottom: 1px solid var(--border-default, #eaeaec);
+    }
+
+    & .header__category-item {
+        padding: 5px 4px;
+
+        & p {
+            margin-left: 16px;
+            font: var(--font-body-m);
+        }
+
+        & .chevron {
+            margin-left: auto;
+        }
+    }
+
+    & .header__nav {
+        padding: 0 8px;
+
+        & a {
+            font: var(--font-body-m);
+        }
+    }
+
+    & .header__menu {
+        margin-bottom: 16px;
+        padding: 16px 0;
+        display: grid;
+        row-gap: 16px;
+        border-bottom: 1px solid var(--border-default, #eaeaec);
     }
 }
