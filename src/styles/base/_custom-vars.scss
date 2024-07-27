@@ -24,3 +24,5 @@
 }
 
 $transition: 0.2s ease-in-out;
+$transitionColor: color 0.2s ease-in-out, fill 0.2s ease-in-out, stroke 0.2s ease-in-out;
+$border: 1px solid var(--border-default, #eaeaec);
