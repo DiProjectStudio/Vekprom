@@ -1,6 +1,6 @@
 block header
 
-    header#header.header.mobile-menu-active
+    header#header.header
 
         .container
 
@@ -64,6 +64,8 @@ block header
                             button(type="submit" aria-label="Поиск").search-icon
                                 +svg('Search')
                             input#header_search(type="search", name="header_search", placeholder="Поиск по сайту" autocomplete="off")
+                            .input-search__clear
+                                +svg('X')
 
                 button.header__selection.btn.btn--primary Подобрать станок
 
@@ -103,6 +105,15 @@ block header
                         a(href="#")
                             +svg('saw')
                             p Металлообработка
+                        .header__subcategory
+                            a(href="#" data-count=123) Сверление и обработка отверстий
+                            a(href="#" data-count=123) Металлорежущий инструмент
+                            a(href="#" data-count=123) Обработка кромки, снятие фаски
+                            a(href="#" data-count=123) Шлифовка и полировка
+                            a(href="#" data-count=123) Труборезы
+                            a(href="#" data-count=123) Обработка профиля
+                            a(href="#" data-count=123) Фрезерные станки
+                            a(href="#" data-count=123) Токарные станки
 
                     .header__category-item
                         a(href="#")
@@ -136,9 +147,10 @@ block header
 
                 button(aria-label="Меню")#burger.header__burger
                     +svg('Burger')
+                    +svg('X')
 
 
-        #mobile-menu.mobile-menu
+        //- #mobile-menu.mobile-menu
 
             .header__search
                 form
