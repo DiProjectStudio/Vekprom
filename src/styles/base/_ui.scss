@@ -14,6 +14,10 @@ body {
     line-height: 140%;
     color: var(--fg-default);
 
+    @include breakpointMax(lg) {
+        padding-bottom: 60px;
+    }
+
     &.overflow-hidden {
         overflow: hidden;
     }
@@ -113,38 +117,20 @@ svg {
 }
 
 .btn-promo {
+    padding: 6px 6px 6px 12px;
+    display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    height: 80px;
+    font: var(--font-body-s-strong);
 
     & .icon {
         margin-left: auto;
         stroke: var(--accent-on-accent);
-    }
-
-    &--sm {
-        padding: 6px 6px 6px 12px;
-        width: 168px;
-        height: 80px;
-        font: var(--font-body-s-strong);
-
-        & .icon {
-            width: 16px;
-            height: 16px;
-        }
-    }
-
-    &--md {
-        padding: 6px 6px 6px 12px;
-        width: 220px;
-        height: 80px;
-    }
-
-    &--lg {
-        padding: 12px 12px 12px 16px;
-        width: 220px;
-        height: 119px;
-        font: var(--font-body-l-strong);
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -283,6 +269,40 @@ svg {
     }
 }
 
+.btn-cart {
+    width: 80px;
+    height: 48px;
+    border: 1px solid var(--accent-default, #f5851a);
+
+    & .icon {
+        fill: var(--accent-default, #f5851a);
+    }
+
+    &:hover {
+        border-color: var(--accent-hover);
+
+        & .icon {
+            fill: var(--accent-hover);
+        }
+    }
+
+    &:active {
+        border-color: var(--accent-active);
+
+        & .icon {
+            fill: var(--accent-active);
+        }
+    }
+
+    &[disabled] {
+        border-color: var(--accent-100);
+
+        & .icon {
+            fill: var(--accent-100);
+        }
+    }
+}
+
 .qty-input {
     background: var(--bg-surface2, #f4f5f6);
     padding: var(--Number, 0px) 12px;
@@ -405,74 +425,45 @@ svg {
     }
 }
 
-//////////////////////////////////////
-/// SWIPER SLIDER
-//////////////////////////////////////
-.swiper {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.title {
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
+
+    @include breakpoint(lg) {
+        font: var(--font-display-l-strong);
+    }
 }
 
-.swiper.swiper-initialized {
-    opacity: 1;
+.head-block {
+    padding: 0 16px 24px;
+
+    @include breakpoint(lg) {
+        padding: 0 32px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(xl) {
+        padding: 0 32px 48px;
+    }
 }
 
-.swiper-pagination {
-    --swiper-pagination-bullet-width: 14px;
-    --swiper-pagination-bullet-height: 5px;
-    --swiper-pagination-bullet-horizontal-gap: 2px;
-    --swiper-pagination-bullet-border-radius: 2px;
-    --swiper-pagination-color: #231f20;
-    --swiper-pagination-bullet-inactive-color: #c1c1c1;
-    --swiper-pagination-bullet-inactive-opacity: 1;
-    margin-top: 10px;
-    position: static;
+.section-title {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    font: var(--font-heading-h2);
+    letter-spacing: var(--lp-heading-h2);
 
     @include breakpoint(md) {
-        display: none;
+        font: var(--font-display-s-strong);
+        letter-spacing: var(--lp-display-s-strong);
     }
-}
 
-.swiper.swiper-initialized .swiper-pagination {
-    display: flex;
-}
-
-.swiper-navigation {
-    @include breakpointMax(md) {
-        display: none;
+    @include breakpoint(lg) {
+        font: var(--font-display-l-strong);
     }
-}
 
-.swiper-navigation .btn {
-    position: absolute;
-    top: 50%;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    transform: translateY(-50%);
-    z-index: 1;
-
-    @include breakpoint(md) {
-        --position: 30px;
+    .section-dark & {
+        color: var(--accent-on-accent, #fff);
     }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.swiper-navigation .swiper-btn-next {
-    right: var(--position);
-}
-
-.swiper-navigation .swiper-btn-prev {
-    left: var(--position);
-    transform: translateY(-50%) rotate(180deg);
 }

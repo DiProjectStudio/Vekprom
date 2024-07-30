@@ -5,3 +5,101 @@ block title
     - var page = 'page-main'
 
 block main
+
+    section.section-hero
+
+        .container
+
+            .hero
+
+                .hero-main
+
+                    .hero__title.title Поставляем промышленное оборудование
+                        span с&nbsp;2008 года
+
+                    .hero__img
+                        +img('stanok_1.png')
+
+                    a(href="#").hero__btn.btn.btn-promo.btn--white
+                        +svg('Arrow-narrow-up-right')
+                        | В каталог
+
+                .hero-slider.widget(data-autoplay=3000)
+
+                    .swiper
+
+                        .swiper-pagination
+
+                        .swiper-wrapper
+
+                            .swiper-slide.hero-slider__item
+                                .hero-slider__item-img
+                                    +img('widget_1.jpg')
+
+                                .hero-slider__item-title Демозал площадью более 3000 м2
+
+                                .hero-slider__item-action
+                                    .hero-slider__item-btn.btn.btn-promo.btn--primary
+                                        +svg('Arrow-narrow-up-right')
+                                        | Записаться в демозал
+
+                                    .hero-slider__item-links
+                                        a(href="#")
+                                            +svg('bi_badge-vr-fill')
+                                            | Виртуальный тур
+
+                                        a(href="#")
+                                            +svg('mdi_eye')
+                                            | Читать подробнее
+
+                            .swiper-slide.hero-slider__item
+                                .hero-slider__item-img
+                                    +img('widget_2.jpg')
+
+                                .hero-slider__item-title Сервис 24/7
+
+                                .hero-slider__item-text Многолетний опыт работы со специализированным оборудованием дает нам четкое понимание, что необходимо для качественного сервиса и ремонта
+
+                                .hero-slider__item-action
+                                    .hero-slider__item-btn.btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        | Подробнее
+
+                            .swiper-slide.hero-slider__item
+                                .hero-slider__item-img
+                                    +img('widget_3.jpg')
+
+                                .hero-slider__item-title Проводим обучение персонала
+
+                                .hero-slider__item-action
+                                    .hero-slider__item-btn.btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        | Подробнее
+
+                .hero-tape
+
+                    .swiper-wrapper
+
+                        .swiper-slide.hero-tape__item
+                            .hero-tape__item-icon(style="background-color: var(--triger-icons-bg1);")
+                                include ../icons/Truck_Loading.svg
+                            .hero-tape__item-title Выездная демонстрация
+
+                        .swiper-slide.hero-tape__item
+                            .hero-tape__item-icon(style="background-color: var(--triger-icons-bg2);")
+                                include ../icons/Line.svg
+                            .hero-tape__item-title В наличии более 20 000 позиций
+
+                        .swiper-slide.hero-tape__item
+                            .hero-tape__item-icon(style="background-color: var(--triger-icons-bg3);")
+                                include ../icons/Truck_Speed.svg
+                            .hero-tape__item-title Быстрая доставка  от 1 дня
+
+                        .swiper-slide.hero-tape__item
+                            .hero-tape__item-icon(style="background-color: var(--triger-icons-bg4);")
+                                include ../icons/gravity-ui_tag-ruble.svg
+                            .hero-tape__item-title Выгодный лизинг
+
+    include ../components/section/_section-category
+
+    include ../components/section/_section-sale

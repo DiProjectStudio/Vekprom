@@ -1,0 +1,11 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flash-on">
+<path id="Icon" d="M31.8289 18.4783L20.1528 35.534C19.5647 36.3816 18.1809 36.001 18.1809 34.9804L18.1636 25.2244C18.1636 24.1001 17.2122 23.2006 16.036 23.1833L9.06491 23.0968C8.21731 23.0795 7.71568 22.1973 8.18272 21.5227L19.8588 4.46698C20.4469 3.61939 21.8307 3.99995 21.8307 5.02053L21.8481 14.7765C21.8481 15.9009 22.7994 16.8004 23.9757 16.8177L30.9467 16.9042C31.777 16.9042 32.2787 17.8036 31.8289 18.4783Z" stroke="url(#paint0_linear_16432_51539)" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="LinearGradient" x1="8.33093" y1="-10.5682" x2="39.422" y2="-6.15907" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F5B316"/>
+<stop offset="1" stop-color="#F5851A"/>
+</linearGradient>
+</defs>
+</svg>

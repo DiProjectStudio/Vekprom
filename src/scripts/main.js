@@ -69,7 +69,7 @@ const mobileSubmenu = () => {
 
     $categoryItems.off('click').on('click', (e) => {
         e.preventDefault();
-        toggleSubMenu($(e.currentTarget).parent(), '.header__category-item');
+        toggleCategorySubMenu($(e.currentTarget).parent(), '.header__category-item');
     });
 
     $menuItems.off('click').on('click', (e) => {
@@ -77,7 +77,7 @@ const mobileSubmenu = () => {
         toggleSubMenu($(e.currentTarget).parent(), '.header__menu-item');
     });
 
-    function toggleSubMenu($item, itemSelector) {
+    function toggleCategorySubMenu($item, itemSelector) {
         if (!$item.hasClass('active')) {
             $mobileMenu.addClass('expanded');
             $item.addClass('active');
@@ -88,6 +88,24 @@ const mobileSubmenu = () => {
             $item.removeClass('active');
             $mobileMenu.find(`${itemSelector}`).show();
             $mobileMenu.find('.header__search, .header__nav, .header__selection').show();
+        }
+    }
+
+    function toggleSubMenu($item, itemSelector) {
+        if (!$item.hasClass('active')) {
+            $mobileMenu.addClass('expanded');
+            $item.addClass('active');
+            $mobileMenu.find(`${itemSelector}:not(.active)`).hide();
+            $mobileMenu
+                .find('.header__search, .header__category, .header__bar, .header__selection')
+                .hide();
+        } else {
+            $mobileMenu.removeClass('expanded');
+            $item.removeClass('active');
+            $mobileMenu.find(`${itemSelector}`).show();
+            $mobileMenu
+                .find('.header__search, .header__category, .header__bar, .header__selection')
+                .show();
         }
     }
 

@@ -1,0 +1,59 @@
+.swiper {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.swiper.swiper-initialized {
+    opacity: 1;
+}
+
+.swiper.swiper-initialized .swiper-pagination {
+    display: flex;
+}
+
+// WIDGET
+.widget {
+    position: relative;
+
+    & .swiper-pagination {
+        padding: 0 16px;
+        top: 16px;
+        justify-content: center;
+        column-gap: 11px;
+        height: 2px;
+
+        @include breakpoint(md) {
+            padding: 0 20px;
+            top: 20px;
+        }
+
+        @include breakpoint(xl) {
+            padding: 0 24px;
+            top: 24px;
+        }
+    }
+
+    & .swiper-pagination-bullet {
+        --swiper-pagination-bullet-horizontal-gap: 0;
+        background: rgba(255, 255, 255, 0.4);
+        position: relative;
+        flex: 1 0 0;
+        height: 100%;
+        border-radius: 4px;
+        opacity: 1;
+    }
+
+    & .swiper-pagination-bullet-active {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    & .progress-bar {
+        background: #fff;
+        width: 0;
+        height: 100%;
+    }
+
+    // & .swiper-pagination-bullet-active .progress-bar {
+    //     transition: width 2s linear;
+    // }
+}

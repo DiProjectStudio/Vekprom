@@ -1,0 +1,27 @@
+section.section-sale.section-dark
+
+    .container
+
+        .head-block
+
+            .section-title Распродажа
+                +svg('flash-on')
+
+        .sale
+
+            .swiper
+
+                .swiper-wrapper
+
+                    .swiper-slide
+                        include ../_card
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+
+                .swiper-pagination
+
+                .swiper-navigation
+                    .swiper-button-prev
+                    .swiper-button-next
