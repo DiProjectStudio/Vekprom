@@ -54,8 +54,62 @@ const heroTape = new Swiper('.hero-tape', {
     freeMode: true
 });
 
-const saleSlider = new Swiper('.sale .swiper', {
-    modules: [Navigation, Pagination],
+const cardItem = document.querySelectorAll('.card-item');
+
+cardItem.forEach((slider, index) => {
+    // Находим элемент пагинации внутри текущего слайдера
+    const paginationElement = slider.querySelector('.nested-pagination');
+
+    // Устанавливаем уникальный атрибут data-slider для элемента пагинации
+    if (paginationElement) {
+        paginationElement.setAttribute('data-slide', index + 1);
+    }
+
+    const swiper = slider.querySelector('.swiper');
+
+    // Инициализируем новый Swiper с уникальным селектором пагинации
+    new Swiper(swiper, {
+        modules: [Pagination],
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: `.nested-pagination[data-slide="${index + 1}"]`,
+            clickable: true
+        }
+    });
+});
+
+const saleSlider = new Swiper('.sale .main-swiper', {
+    modules: [Navigation, Pagination, FreeMode],
     slidesPerView: 'auto',
-    spaceBetween: 10
+    spaceBetween: 10,
+    freeMode: true,
+    slidesOffsetBefore: 10,
+    slidesOffsetAfter: 10,
+
+    pagination: {
+        el: '.main-pagination',
+        clickable: true
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+
+    breakpoints: {
+        768: {
+            spaceBetween: 16,
+            slidesOffsetBefore: 16,
+            slidesOffsetAfter: 16
+        },
+
+        1280: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+            freeMode: false,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0
+        }
+    }
 });

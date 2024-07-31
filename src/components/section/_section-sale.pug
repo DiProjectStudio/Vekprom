@@ -2,26 +2,40 @@ section.section-sale.section-dark
 
     .container
 
-        .head-block
+        .section-wrapper
 
-            .section-title Распродажа
-                +svg('flash-on')
+            .head-block
 
-        .sale
+                .section-title Распродажа
+                    +svg('flash-on')
 
-            .swiper
+            .sale
 
-                .swiper-wrapper
+                .swiper.main-swiper
 
-                    .swiper-slide
+                    .swiper-wrapper
+                        
                         include ../_card
-                        +card
-                        +card('Под заказ')
-                        +card
-                        +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card
 
-                .swiper-pagination
+                    .swiper-pagination.main-pagination
 
-                .swiper-navigation
-                    .swiper-button-prev
-                    .swiper-button-next
+                    .swiper-navigation
+                        .swiper-button.swiper-button-prev
+                            +svg('Arrow-left')
+                        .swiper-button.swiper-button-next
+                            +svg('Arrow-right')
+
+            a(href="#").sale-link.btn.btn--xs.btn--primary Все акции
+                +svg('Arrow-narrow-up-right')

@@ -1,15 +1,37 @@
 mixin card(order)
-
+    
     if order
+        
+
         .card-item
-            .tag-instock
-                +svg('Check')
+            .card-tag.tag-order
+                +svg('clock-forward')
                 |Под заказ
 
-            .card-item__img
-                +img('image.png')
+            .card-action
+                .card-action__item.card-favourite
+                    +svg('Heart')
 
-            .card-item__name Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                .card-action__item.card-compare
+                    +svg('Compare')
+
+            .card-item__img
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                .swiper-pagination.nested-pagination
+
+            .card-item__name
+                a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
             .card-item__badge
                 .badge(style="color: #F9B06A") Специальная цена
                 .badge(style="color: #BD71FF") В демозале
@@ -21,19 +43,48 @@ mixin card(order)
                 .card-item__property-row
                     p Мощность
                     p от 1000 до 3000 Вт
+                .card-item__property-row
+                    p Вес
+                    p 866 кг
             .card-item__price Цена по запросу
             .card-item__buy
-                .btn.btn--primary Узнать цену
+                .card-item__buy-ask.btn.btn--primary Узнать цену
+
+
+
+
     else
+
+    
         .card-item
-            .tag-instock
+            .card-tag.tag-instock
                 +svg('Check')
                 |В наличии
 
-            .card-item__img
-                +img('image.png')
+            .card-action
+                .card-action__item.card-favourite
+                    +svg('Heart')
 
-            .card-item__name Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                .card-action__item.card-compare
+                    +svg('Compare')
+
+            .card-item__img
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                        .swiper-slide
+                            +img('image.png')
+                .swiper-pagination.nested-pagination
+
+            .card-item__name
+                a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
             .card-item__badge
                 .badge(style="color: #F9B06A") Специальная цена
                 .badge(style="color: #BD71FF") В демозале
@@ -45,9 +96,12 @@ mixin card(order)
                 .card-item__property-row
                     p Мощность
                     p от 1000 до 3000 Вт
+                .card-item__property-row
+                    p Вес
+                    p 866 кг
             .card-item__price 3 553 232 ₽
                 .discount 3 850 600 ₽
             .card-item__buy
-                .btn.btn--primary Заказать в 1 клик
-                .btn.btn-cart
+                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                .card-item__buy-add.btn.btn-cart
                     +svg('Basket')

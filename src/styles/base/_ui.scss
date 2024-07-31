@@ -105,6 +105,12 @@ svg {
         pointer-events: none;
     }
 
+    &--xs {
+        width: 120px;
+        height: 36px;
+        font: var(--font-body-s-strong);
+    }
+
     &--sm {
         height: 48px;
     }
