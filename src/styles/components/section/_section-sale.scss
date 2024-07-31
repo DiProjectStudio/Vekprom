@@ -14,7 +14,7 @@
         }
 
         @include breakpoint(xl) {
-            padding-top: 76px;
+            padding: 76px var(--container) 24px;
         }
     }
 
@@ -41,17 +41,15 @@
 
 .sale {
     & .swiper-navigation {
-        @include breakpointMax(lg) {
-            display: none;
-        }
-    }
-
-    & .swiper-navigation {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         column-gap: 12px;
         height: 44px;
+
+        @include breakpointMax(lg) {
+            display: none;
+        }
     }
 
     & .swiper-button {
@@ -68,6 +66,17 @@
             width: 24px;
             height: 24px;
             stroke: #fff;
+        }
+    }
+
+    .main-pagination .swiper-pagination-bullet {
+        flex: 1 1 auto;
+        transition: $transition;
+
+        &-active {
+            @include breakpoint(lg) {
+                width: 915px;
+            }
         }
     }
 }

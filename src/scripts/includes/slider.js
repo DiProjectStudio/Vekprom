@@ -110,6 +110,14 @@ const saleSlider = new Swiper('.sale .main-swiper', {
             freeMode: false,
             slidesOffsetBefore: 0,
             slidesOffsetAfter: 0
+        },
+
+        1440: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            freeMode: false,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0
         }
     }
 });
