@@ -1,0 +1,29 @@
+section.section-banner
+
+    .container
+
+        .banner
+        
+            .banner__img
+                +img('Bg-Image.jpg')
+            .banner__title С вас задача —
+                br
+                |с нас решение
+            .banner__wrap
+                .banner__block
+                    .banner__block-item
+                        .banner__block-item-icon
+                            +svg('Rub')
+                        p Подберем оборудование под ваши задачи и бюджет
+                    .banner__block-item
+                        .banner__block-item-icon
+                            +svg('flash-on')
+                        p Желаемую производительность и назначение
+                    .banner__block-item
+                        .banner__block-item-icon
+                            +svg('Gear-lg')
+                        p Технические требования к точности обработки деталей, габаритов, требования к установке и безопасности, доступность электрических подключений
+
+                .banner__link.btn.btn-promo.btn--primary
+                    +svg('Arrow-narrow-up-right')
+                    |Подобрать оборудование

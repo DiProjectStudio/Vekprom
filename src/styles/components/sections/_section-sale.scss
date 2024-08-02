@@ -1,0 +1,102 @@
+.section-sale {
+    & .section-wrapper {
+        padding: 50px 0 24px;
+        background: var(--neutral-800, #181d28);
+        position: relative;
+        border-radius: 24px;
+
+        @include breakpoint(md) {
+            padding-top: 56px;
+        }
+
+        @include breakpoint(lg) {
+            padding: 64px var(--container) 24px;
+        }
+
+        @include breakpoint(xl) {
+            padding: 76px var(--container) 24px;
+        }
+    }
+
+    & .container {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+
+    & .title {
+        align-items: center;
+
+        & .icon {
+            margin-left: 8px;
+            stroke: #f5851a;
+
+            @include breakpoint(lg) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+.sale {
+    & .swiper-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 12px;
+        height: 44px;
+
+        @include breakpointMax(lg) {
+            display: none;
+        }
+    }
+
+    & .swiper-button {
+        margin: 0;
+        background: #282d37;
+        width: 125px;
+        border-radius: 12px;
+
+        &::after {
+            content: none;
+        }
+
+        & .icon {
+            width: 24px;
+            height: 24px;
+            stroke: #fff;
+        }
+    }
+
+    .main-pagination .swiper-pagination-bullet {
+        flex: 1 1 auto;
+        transition: $transition;
+
+        &-active {
+            @include breakpoint(lg) {
+                width: 915px;
+            }
+        }
+    }
+}
+
+.sale__item {
+    height: auto;
+
+    @include breakpointMax(lg) {
+        width: 300px;
+    }
+}
+
+.sale-link {
+    @include breakpointMax(lg) {
+        margin: auto;
+    }
+
+    @include breakpoint(lg) {
+        position: absolute;
+        top: calc(20px + 64px);
+        right: 48px;
+    }
+}

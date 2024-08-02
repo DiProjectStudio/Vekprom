@@ -121,3 +121,43 @@ const saleSlider = new Swiper('.sale .main-swiper', {
         }
     }
 });
+
+const initSwiper = () => {
+    if (window.innerWidth < 1280) {
+        // Инициализируем слайдер, если ширина экрана меньше 1280px
+        return new Swiper('.projects', {
+            modules: [FreeMode],
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            freeMode: true,
+            slidesOffsetBefore: 10,
+            slidesOffsetAfter: 10,
+
+            breakpoints: {
+                768: {
+                    spaceBetween: 16,
+                    slidesOffsetBefore: 16,
+                    slidesOffsetAfter: 16
+                }
+            }
+        });
+    } else {
+        // Возвращаем null, если ширина экрана 1280px и больше
+        return null;
+    }
+};
+
+let projectsSlider = initSwiper();
+
+// Обработчик изменения размера окна
+const handleResize = () => {
+    if (window.innerWidth >= 1280 && projectsSlider !== null) {
+        projectsSlider.destroy(true, true); // Уничтожаем слайдер
+        projectsSlider = null;
+    } else if (window.innerWidth < 1280 && projectsSlider === null) {
+        projectsSlider = initSwiper(); // Инициализируем слайдер
+    }
+};
+
+// Слушаем изменения размера окна
+window.addEventListener('resize', handleResize);

@@ -1,0 +1,483 @@
+.section-about {
+    padding: 16px 0 24px;
+
+    @include breakpoint(lg) {
+        padding: 120px 0 64px;
+    }
+
+    @include breakpoint(xl) {
+        padding: 150px 0 80px;
+    }
+}
+
+.about-wrapper {
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
+}
+
+.about {
+    padding: 16px 16px 24px;
+
+    @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 24px 32px 48px;
+    }
+}
+
+.about__title {
+    @include breakpointMax(md) {
+        margin-bottom: 64px;
+    }
+}
+
+.about__text {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-default);
+
+    @include breakpoint(lg) {
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        font: var(--font-body-m);
+    }
+}
+
+.about__info {
+    display: grid;
+    row-gap: 48px;
+
+    @include breakpoint(md) {
+        order: 1;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        gap: 32px 24px;
+    }
+
+    @include breakpoint(lg) {
+        row-gap: 64px;
+    }
+}
+
+.about__info-item {
+    @include breakpoint(md) {
+        width: max-content;
+    }
+
+    & p {
+        @include breakpoint(lg) {
+            font: var(--font-body-m);
+        }
+    }
+
+    & p:first-child {
+        font: var(--font-display-s-strong);
+        letter-spacing: var(--lp-display-s-strong);
+
+        @include breakpoint(lg) {
+            margin-bottom: 16px;
+            font: var(--font-display-m-strong);
+        }
+    }
+}
+
+.about__link {
+    margin-top: 64px;
+    width: 220px;
+
+    @include breakpoint(md) {
+        margin-top: auto;
+    }
+}
+
+.about-banner {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 620px;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 16px;
+
+    @include breakpointMax(md) {
+        flex-direction: column;
+    }
+
+    @include breakpoint(md) {
+        padding: 16px;
+        height: 420px;
+    }
+
+    @include breakpoint(lg) {
+        margin: 0 32px;
+        padding: 32px;
+        height: 756px;
+    }
+}
+
+.about-banner__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::before {
+        content: '';
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.61) 92.59%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.about-banner__title {
+    font: var(--font-heading-h1);
+    letter-spacing: var(--lp-heading-h1);
+    color: var(--accent-on-accent, #fff);
+
+    @include breakpointMax(md) {
+        padding: 6px 6px 20px;
+    }
+
+    @include breakpoint(md) {
+        margin-bottom: 20px;
+        max-width: 384px;
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 24px;
+        max-width: 607px;
+    }
+}
+
+.about-banner__link {
+    padding: 8px 18px;
+    display: inline-flex;
+    font: var(--font-description-l);
+
+    @include breakpointMax(md) {
+        margin: 0 6px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 12px 16px;
+        font: var(--font-body-l);
+    }
+
+    & .icon {
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+        fill: var(--accent-default);
+        stroke: none;
+
+        @include breakpoint(lg) {
+            margin-left: 8px;
+            width: 24px;
+            height: 24px;
+        }
+
+        :hover &,
+        :active & {
+            stroke: none;
+        }
+    }
+}
+
+.about-banner__contacts {
+    background: var(--bg-surface1, #fff);
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+
+    @include breakpointMax(md) {
+        margin-top: auto;
+    }
+
+    @include breakpoint(md) {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    @include breakpoint(xl) {
+        top: 20px;
+        right: 20px;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 350px;
+    }
+}
+
+.about-banner__contacts-item {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 16px;
+
+    @include breakpoint(lg) {
+        column-gap: 24px;
+    }
+}
+
+.about-banner__contacts-item-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid var(--border-default, #eaeaec);
+
+    @include breakpoint(lg) {
+        width: 32px;
+        height: 32px;
+    }
+
+    & .icon {
+        width: 16px;
+        height: 16px;
+
+        @include breakpoint(lg) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.about-banner__contacts-item--address {
+    padding: 16px 16px 24px;
+
+    @include breakpoint(lg) {
+        padding: 24px;
+    }
+
+    & .icon-Map {
+        fill: none;
+        stroke: var(--fg-default);
+    }
+}
+
+.about-banner__contacts-item--worktime {
+    padding: 0 16px 16px;
+
+    @include breakpoint(lg) {
+        padding: 0 24px 32px;
+    }
+
+    & .icon {
+        fill: var(--fg-default);
+    }
+
+    & p {
+        margin-bottom: 4px;
+    }
+}
+
+.about-banner__contacts-info {
+    & p,
+    a {
+        font: var(--font-description-l);
+
+        @include breakpoint(lg) {
+            font: var(--font-body-s);
+        }
+    }
+}
+
+a.about-banner__contacts-info-link {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    font: var(--font-body-s);
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpoint(lg) {
+        font: var(--font-body-m);
+    }
+
+    & .icon {
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-soft, #9398a0);
+    }
+}
+
+.about-banner__btn {
+    margin: 0 10px 10px;
+    width: 230px;
+}
+
+.about-press {
+    padding: 48px 16px 24px;
+
+    @include breakpoint(md) {
+        padding-top: 56px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 48px 32px;
+    }
+}
+
+.about-press__head {
+    @include breakpoint(lg) {
+        margin-bottom: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(xl) {
+        margin-bottom: 70px;
+    }
+}
+
+.about-press__title {
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
+
+    @include breakpoint(md) {
+        margin-bottom: 24px;
+        font: var(--font-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 0;
+        font: var(--font-display-m-strong);
+    }
+}
+
+.about-press__link {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    & .icon {
+        stroke: var(--fg-default);
+    }
+}
+
+.about-press__wrap {
+    @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 65px;
+        row-gap: 32px;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.about-press__item {
+    padding: 32px 0;
+
+    @include breakpoint(md) {
+        padding: 16px;
+        position: relative;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0;
+    }
+
+    & ~ .about-press__item {
+        @include breakpointMax(md) {
+            border-top: 1px solid var(--border-default, #eaeaec);
+        }
+
+        &::after {
+            @include breakpoint(lg) {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -32px;
+                height: 100%;
+                border-right: 1px solid var(--border-default, #eaeaec);
+            }
+        }
+    }
+
+    &:last-child {
+        @include breakpointMax(md) {
+            padding-bottom: 0;
+        }
+    }
+
+    &:nth-child(odd) {
+        &::after {
+            @include breakpoint(md) {
+                @include breakpointMax(lg) {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: -32px;
+                    height: 100%;
+                    border-right: 1px solid var(--border-default, #eaeaec);
+                }
+            }
+        }
+    }
+
+    & a {
+        position: relative;
+
+        @include breakpointMax(md) {
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+        }
+    }
+
+    & .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        stroke: var(--accent-default);
+    }
+}
+
+.about-press__item-date {
+    padding: 6px 8px;
+    background: var(--bg-surface2, #f4f5f6);
+    width: max-content;
+    border-radius: 10px;
+
+    @include breakpoint(md) {
+        margin-bottom: 64px;
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 80px;
+    }
+}
+
+.about-press__item-title {
+    font: var(--font-body-m-strong);
+    transition: $transition;
+
+    @include breakpointMax(md) {
+        margin-top: auto;
+    }
+
+    .about-press__item a:hover & {
+        color: var(--accent-default);
+    }
+}

@@ -1,0 +1,41 @@
+section.section-sale.section-dark
+
+    .container
+
+        .section-wrapper
+
+            .head-block
+
+                .title Распродажа
+                    +svg('flash-on')
+
+            .sale
+
+                .swiper.main-swiper
+
+                    .swiper-wrapper
+                        
+                        include ../_card
+                        .swiper-slide.sale__item
+                            +card
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card('Под заказ')
+                        .swiper-slide.sale__item
+                            +card
+
+                    .swiper-pagination.main-pagination
+
+                    .swiper-navigation
+                        .swiper-button.swiper-button-prev
+                            +svg('Arrow-left')
+                        .swiper-button.swiper-button-next
+                            +svg('Arrow-right')
+
+            a(href="#").sale-link.btn.btn-mini.btn--primary Все акции
+                +svg('Arrow-narrow-up-right')
