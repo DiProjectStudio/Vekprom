@@ -1,3 +1,73 @@
 block footer
 
     footer#footer.footer
+
+        .container
+
+            .footer__logo
+                a(href="/")
+                    +img('Logo_main_white.svg')
+
+            .footer__inner
+
+                .footer__nav
+                    .footer__nav-item
+                        a.footer__nav-link(href="#") Компания
+                        .footer__subnav
+                            a(href="#") О компании
+                            a(href="#") Пресс-центр
+                            a(href="#") Проекты
+                            a(href="#") Лицензии и сертификаты
+                            a(href="#") Отзывы
+
+                    .footer__nav-item
+                        a.footer__nav-link(href="#") Демозал
+
+                    .footer__nav-item
+                        a.footer__nav-link(href="#") Вакансии
+
+                    .footer__nav-item
+                        a.footer__nav-link(href="#") Контакты
+
+                    .footer__nav-item
+                        a.footer__nav-link(href="#") Покупателям
+                        .footer__subnav
+                            a(href="#") Доставка и оплата
+                            a(href="#") Услуги и сервисы
+                            a(href="#") Гарантия
+                            a(href="#") Ремонт
+
+                    .footer-widget
+                        +img('yandex-widget.jpg')
+
+                .footer__category
+                    a(href="#") Обработка металла
+                    a(href="#") Лазерное оборудование
+                    a(href="#") Преcсовое оборудование
+                    a(href="#") Сварочное оборудование
+                    a(href="#") Строительное оборудование
+                    a(href="#") Инструмент
+                    a(href="#") Запчасти
+
+                .footer__contacts
+                    a(href="tel:+74951205913") +7 (495) 120-59-13
+                    a(href="mailto:info@vekprom.ru") info@vekprom.ru
+
+                    .footer__contacts-socials
+                        a(href="#")
+                            +svg('VK')
+                        a(href="#")
+                            +svg('TG')
+                        a(href="#")
+                            +svg('Dzen')
+                        a(href="#")
+                            +svg('Youtube')
+
+                    .btn.btn-promo.btn--primary
+                        +svg('Arrow-narrow-up-right')
+                        |Написать нам
+
+            .footer__bottom
+                .footer-copyright 2008-2024 © ПГ ВЕКПРОМ
+                a.footer-policy(href="#") Политика конфиденциальности
+                a.footer-personal(href="#") Персональные данные

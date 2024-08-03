@@ -62,6 +62,7 @@
 }
 
 .header__menu-item {
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -90,29 +91,77 @@
             height: 20px;
         }
     }
+}
 
-    &.has-child a {
-        display: flex;
-        align-items: center;
-    }
+.header__menu-link {
+    display: flex;
+    align-items: center;
 
-    &.has-child a::after {
-        content: '';
-        margin-left: 4px;
-        background: url(/assets/images/Chevron-left.svg) no-repeat;
-        width: 16px;
-        height: 16px;
-        filter: brightness(0) saturate(100%) invert(18%) sepia(26%) saturate(568%)
-            hue-rotate(181deg) brightness(95%) contrast(98%);
+    &::after {
+        .has-child & {
+            content: '';
+            margin-left: 4px;
+            background: url(/assets/images/Chevron-left.svg) no-repeat;
+            width: 16px;
+            height: 16px;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(26%) saturate(568%)
+                hue-rotate(181deg) brightness(95%) contrast(98%);
 
-        @include breakpoint(lg) {
-            transform: rotate(90deg);
+            @include breakpoint(lg) {
+                transform: rotate(90deg);
+            }
         }
     }
 }
 
 .submenu {
-    display: none;
+    @include breakpoint(lg) {
+        padding: 16px;
+        background: var(--bg-surface1, #fff);
+        position: absolute;
+        top: calc(100% + 4px);
+        left: -16px;
+        display: none;
+        width: 160px;
+        row-gap: 8px;
+        border-radius: 16px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+    }
+
+    @include breakpoint(xl) {
+        top: calc(100% + 8px);
+    }
+
+    &::before {
+        @include breakpoint(lg) {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 16px;
+            width: 88px;
+            height: 5px;
+        }
+
+        @include breakpoint(xl) {
+            top: -10px;
+            width: 100px;
+            height: 10px;
+        }
+    }
+
+    & a {
+        @include breakpoint(lg) {
+            font: var(--font-body-s);
+            color: var(--fg-default, #283142);
+        }
+    }
+
+    .has-child:hover & {
+        @include breakpoint(lg) {
+            display: grid;
+        }
+    }
 }
 
 .header__bar {
@@ -152,7 +201,7 @@
     border-radius: 16px;
 
     @include breakpoint(lg) {
-        padding: 8px 16px;
+        padding: 1px 16px 8px;
         flex-wrap: wrap;
         justify-content: initial;
         column-gap: 16px;
@@ -208,7 +257,10 @@
 
     @include breakpoint(lg) {
         margin: 0;
+        background: var(--bg-surface1, #fff);
         flex-grow: 1;
+        padding: 8px;
+        border-radius: 8px;
     }
 
     .input-search__clear {
@@ -246,6 +298,10 @@
                     display: block;
                 }
             }
+        }
+
+        @include breakpoint(lg) {
+            z-index: 10;
         }
     }
 
@@ -347,12 +403,13 @@
 
             @include breakpoint(lg) {
                 padding: 2px 8px 1px;
-                left: calc(100% - 2px);
+                top: 0;
+                left: 100%;
                 font: var(--font-description-l);
             }
 
             @include breakpoint(xl) {
-                left: calc(100% - 7px);
+                left: calc(100% - 5px);
             }
         }
 
@@ -451,8 +508,6 @@
 .header__category-item {
     & a {
         padding: 4px 0;
-        display: flex;
-        align-items: center;
     }
 
     & .icon {
@@ -478,6 +533,11 @@
             }
         }
     }
+}
+
+.header__category-link {
+    display: flex;
+    align-items: center;
 }
 
 .header__subcategory {
@@ -541,6 +601,9 @@
     }
 }
 
+//////////////////////////////////////////////////////////
+// Mobile menu
+//////////////////////////////////////////////////////////
 .mobile-menu {
     padding: 78px var(--container) 40px;
     background: var(--bg-surface1);
@@ -590,22 +653,23 @@
         animation: $fadeInUp;
 
         & a {
-            padding: 5px 4px;
-            display: flex;
-            align-items: center;
+            padding: 5px 20px 5px 4px;
+            position: relative;
 
             &::before {
                 content: '';
                 margin-left: auto;
                 background: url(/assets/images/Chevron-left.svg) no-repeat;
+                position: absolute;
+                top: 50%;
+                right: 4px;
                 width: 16px;
                 height: 16px;
-                order: 1;
+                transform: translateY(-50%);
             }
         }
 
         & p {
-            margin-left: 16px;
             font: var(--font-body-m);
         }
 
@@ -617,7 +681,7 @@
                 &::before {
                     margin-left: 0;
                     background: url(/assets/images/Arrow-left.svg) no-repeat;
-                    order: initial;
+                    right: auto;
                 }
 
                 &::after {
@@ -631,6 +695,10 @@
 
                 & .icon {
                     display: none;
+                }
+
+                & p {
+                    margin-left: 32px;
                 }
             }
         }

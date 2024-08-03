@@ -55,9 +55,11 @@ $('#burger').on('click', (e) => {
     if (!$header.hasClass('mobile-menu-active')) {
         $header.addClass('mobile-menu-active');
         $mobileMenu.fadeIn(200);
+        $('body').addClass('overflow-hidden');
     } else {
         $header.removeClass('mobile-menu-active');
         $mobileMenu.fadeOut(200);
+        $('body').addClass('overflow-hidden');
     }
 });
 
@@ -156,41 +158,68 @@ $('.header__main .search-icon').on('click', (e) => {
     }
 });
 
+// Search focus action
+const searchFocus = () => {
+    const $headerSearch = $('.header__search');
+    const $inputSearch = $headerSearch.find('.input-search');
+    const $inputField = $inputSearch.find('input');
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (checkIsDesktop) {
+        $inputField.on('focus', () => {
+            $('body').addClass('bg-overlay overflow-hidden');
+            $('body').css('padding-right', `${scrollBarWidth}px`);
+            $inputSearch.addClass('focus');
+            $headerSearch.addClass('active');
+        });
+
+        $inputField.on('blur', () => {
+            $('body').removeClass('bg-overlay overflow-hidden');
+            $('body').css('padding-right', '0');
+            $inputSearch.removeClass('focus');
+            $headerSearch.removeClass('active');
+        });
+    }
+};
+
+searchFocus();
+
 // Для кнопок "-" и "+"
 $('.qty-input .qty').on('click', (e) => {
-    if (
-        $(e.currentTarget).hasClass('qty-minus') &&
-        $(e.currentTarget).parent().find('input').val() > 1
-    ) {
-        $(e.currentTarget)
-            .parent()
-            .find('input')
-            .val(Number($(e.currentTarget).parent().find('input').val()) - 1);
+    let $input = $(e.currentTarget).parent().find('input');
+    let currentValue = Number($input.val());
+    let maxValue = Number($input.attr('max-number'));
 
-        $(e.currentTarget).parent().find('input').val() <
-        Number($(e.currentTarget).parent().find('input').attr('max-number'))
-            ? $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled')
-            : null;
+    if ($(e.currentTarget).hasClass('qty-minus') && currentValue > 1) {
+        $input.val(currentValue - 1);
+
+        if (currentValue - 1 < maxValue) {
+            $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled');
+        }
     }
-    if (
-        $(e.currentTarget).hasClass('qty-plus') &&
-        $(e.currentTarget).parent().find('input').val() <
-            Number($(e.currentTarget).parent().find('input').attr('max-number'))
-    ) {
-        $(e.currentTarget)
-            .parent()
-            .find('input')
-            .val(Number($(e.target).parent().find('input').val()) + 1);
 
-        $(e.currentTarget).parent().find('input').val() ==
-        $(e.currentTarget).parent().find('input').attr('max-number')
-            ? $(e.currentTarget).attr('disabled', true)
-            : null;
+    if ($(e.currentTarget).hasClass('qty-plus') && currentValue < maxValue) {
+        $input.val(currentValue + 1);
+
+        if (currentValue + 1 === maxValue) {
+            $(e.currentTarget).attr('disabled', true);
+        }
     }
 });
 
 $('.qty-input input').on('input', (e) => {
-    Number($(e.currentTarget).val()) < Number($(e.currentTarget).attr('max-number'))
-        ? $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled')
-        : $(e.currentTarget).parent().find('.qty-plus').attr('disabled', true);
+    let $input = $(e.currentTarget);
+    let currentValue = Number($input.val());
+    let maxValue = Number($input.attr('max-number'));
+
+    if (currentValue < maxValue) {
+        $input.parent().find('.qty-plus').removeAttr('disabled');
+    } else {
+        $input.parent().find('.qty-plus').attr('disabled', true);
+    }
+
+    // Дополнительная проверка на минимальное значение
+    if (currentValue < 1 || isNaN(currentValue)) {
+        $input.val(1);
+    }
 });

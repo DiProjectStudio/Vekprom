@@ -27,10 +27,6 @@ $hd: 1920px;
         @media (min-width: $lg) {
             @content;
         }
-    } @else if $point==bg {
-        @media (min-width: $bg) {
-            @content;
-        }
     } @else if $point==xl {
         @media (min-width: $xl) {
             @content;
@@ -65,10 +61,6 @@ $hd: 1920px;
         }
     } @else if $point==lg {
         @media (max-width: $lg - 1px) {
-            @content;
-        }
-    } @else if $point==bg {
-        @media (max-width: $bg - 1px) {
             @content;
         }
     } @else if $point==xl {
