@@ -27,7 +27,7 @@ html(lang="ru")
 
     include ../includes/_mixins
 
-    body(class= page ? page : '')
+    body.bg-overlay.overflow-hidden(class= page ? page : '')
 
         // Header::Start
         block header

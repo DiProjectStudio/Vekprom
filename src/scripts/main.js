@@ -184,6 +184,26 @@ const searchFocus = () => {
 
 searchFocus();
 
+// Header category focus
+const categoryFocus = () => {
+    if (checkIsDesktop) {
+        $('.header__category-item')
+            .on('mouseenter', () => {
+                $('body').addClass('bg-overlay');
+                $('.header__main').addClass('focus');
+            })
+            .on('mouseleave', () => {
+                $('body').removeClass('bg-overlay');
+                $('.header__main').removeClass('focus');
+            });
+    }
+};
+
+categoryFocus();
+
+// Header catalog btn
+$('#header-catalog-btn').on('click', (e) => {});
+
 // Для кнопок "-" и "+"
 $('.qty-input .qty').on('click', (e) => {
     let $input = $(e.currentTarget).parent().find('input');
