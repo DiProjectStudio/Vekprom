@@ -126,7 +126,7 @@
         row-gap: 8px;
         border-radius: 16px;
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-        z-index: 1;
+        z-index: 11;
     }
 
     @include breakpoint(xl) {
@@ -259,6 +259,22 @@
         width: 16px;
         height: 16px;
         fill: var(--accent-on-accent, #fff);
+    }
+
+    &:not(.active) .icon-X {
+        display: none;
+    }
+
+    &.active {
+        z-index: 11;
+
+        & .icon {
+            stroke: var(--accent-on-accent, #fff);
+        }
+
+        & .icon-catalog {
+            display: none;
+        }
     }
 }
 
@@ -633,7 +649,7 @@
     }
 }
 
-.header__subcategory-link {
+.header__subcategory-banner {
     @include breakpointMax(lg) {
         display: none;
     }
@@ -646,6 +662,10 @@
         height: 100%;
         border-radius: 12px;
         overflow: hidden;
+    }
+
+    & img {
+        object-fit: cover;
     }
 
     & .btn {
@@ -686,12 +706,9 @@
 }
 
 .header__catalog {
-    @include breakpointMax(lg) {
-        display: none;
-    }
+    display: none;
 
     @include breakpoint(lg) {
-        padding: 10px;
         background: #fff;
         position: absolute;
         top: calc(100% - 44px);
@@ -699,12 +716,30 @@
         width: calc(100% - 32px);
         height: 680px;
         border-radius: 16px;
+        overflow: hidden;
         z-index: 10;
     }
 
     @include breakpoint(xl) {
         left: 20px;
         width: calc(100% - 40px);
+    }
+
+    &.active {
+        @include breakpoint(lg) {
+            display: flex;
+        }
+    }
+}
+
+.header__catalog-wrap {
+    @include breakpoint(lg) {
+        padding: 10px;
+        border-right: 1px solid var(--neutral-25, #f4f5f6);
+    }
+
+    @include breakpoint(xl) {
+        padding: 20px;
     }
 }
 
@@ -715,6 +750,7 @@
     transition: $transition;
     cursor: pointer;
 
+    &.active,
     &:hover {
         background: var(--neutral-25, #f4f5f6);
     }
@@ -722,12 +758,14 @@
 
 .header__catalog-link {
     display: inline-flex;
+    align-items: center;
 
     & .icon {
         width: 16px;
         height: 16px;
         fill: var(--fg-muted);
 
+        .header__catalog-item.active &,
         .header__catalog-item:hover & {
             fill: var(--base-accent);
         }
@@ -739,28 +777,121 @@
 }
 
 .header__subcatalog {
-    padding: 0;
-    position: absolute;
-    top: 20px;
-    left: 286px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    row-gap: 40px;
-    column-gap: 20px;
-    max-height: 900px;
-    overflow: auto;
-    list-style: none;
+    margin: 0 20px;
+    padding: 20px 10px 10px 0;
+    display: none;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: initial;
+    scrollbar-color: initial;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 12px;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 40px;
+        column-gap: 20px;
+        height: 1024px;
+        max-width: 530px;
+        list-style: none;
+
+        @include breakpoint(xl) {
+            height: 650px;
+        }
+    }
+}
+
+.header__subcatalog-item {
+    width: 255px;
 }
 
 .header__subcatalog-link {
     font: var(--font-body-s-strong);
+
+    &::after {
+        content: attr(data-count);
+        margin-left: 4px;
+        font: var(--font-body-s);
+        color: var(--accent-muted, #f9b06a);
+    }
 }
 
 .header__sublist {
     margin-top: 8px;
     padding: 0;
+    display: grid;
+    row-gap: 8px;
     list-style: none;
+
+    & li {
+        display: flex;
+    }
+
+    & li a {
+        font: var(--font-description-l);
+        color: var(--fg-soft, #9398a0);
+    }
+}
+
+.header__catalog-banner {
+    margin: 10px 10px 0 auto;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: 263px;
+    height: 492px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    & p {
+        margin: 16px 16px 0;
+        position: relative;
+        max-width: 224px;
+        font: var(--font-heading-h2);
+        letter-spacing: var(--lp-heading-h2);
+        color: var(--bg-surface1, #fff);
+    }
+
+    & .btn {
+        margin: auto 10px 10px 10px;
+        font: var(--font-body-m-strong);
+
+        & .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.header__catalog-banner-img {
+    position: absolute;
+
+    &::before {
+        content: '';
+        background: linear-gradient(284deg, rgba(0, 0, 0, 0) 27.33%, rgba(0, 0, 0, 0.5) 69.63%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & img {
+        object-fit: cover;
+    }
 }
 
 //////////////////////////////////////////////////////////

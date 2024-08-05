@@ -202,7 +202,29 @@ const categoryFocus = () => {
 categoryFocus();
 
 // Header catalog btn
-$('#header-catalog-btn').on('click', (e) => {});
+$('#header-catalog-btn').on('click', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('#header-catalog').toggleClass('active');
+    $('body').toggleClass('bg-overlay');
+});
+
+$(document).on('click', (e) => {
+    if (!$(e.target).closest('#header-catalog, #header-catalog-btn').length) {
+        $('body').removeClass('bg-overlay');
+        $('#header-catalog').removeClass('active');
+        $('#header-catalog-btn').removeClass('active');
+    }
+});
+
+// Header catalog categories
+$('.header__catalog-item').hover((e) => {
+    $('.header__catalog-item').removeClass('active');
+    $('.header__subcatalog').removeClass('active');
+    $(`.header__subcatalog[data-active=${$(e.currentTarget).attr('data-catalog')}]`).addClass(
+        'active'
+    );
+    $(e.currentTarget).addClass('active');
+});
 
 // Для кнопок "-" и "+"
 $('.qty-input .qty').on('click', (e) => {
