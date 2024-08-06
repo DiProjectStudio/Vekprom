@@ -2,17 +2,23 @@
 import Inputmask from 'inputmask';
 
 // Import Scripts
-import './includes/map.js';
-import './includes/popup.js';
-import './includes/slider.js';
+import { initializeMap } from './includes/map.js';
+import { initializePopup } from './includes/popup.js';
+import { initializeSlider } from './includes/slider.js';
 
-// Check and update isDesktop variable
+document.addEventListener('DOMContentLoaded', (event) => {
+    initializeMap();
+    initializePopup();
+    initializeSlider();
+});
+
+// Функция для проверки переменной isDesktop
 const checkIsDesktop = () => {
     return $(window).width() >= 1280;
 };
 
-// Initial check
-checkIsDesktop();
+// Переменная для проверки десктопной версии
+let isDesktop = checkIsDesktop();
 
 // Inputmask for phone number
 Inputmask({
@@ -115,7 +121,7 @@ const mobileSubmenu = () => {
     $(window)
         .off('resize.mobileSubmenu')
         .on('resize.mobileSubmenu', () => {
-            if (!checkIsDesktop()) {
+            if (!isDesktop) {
                 mobileSubmenu();
             }
         });
@@ -130,7 +136,7 @@ $('.header__main .search-icon').on('click', (e) => {
     const $inputSearch = $headerSearch.find('.input-search');
 
     if (
-        !checkIsDesktop() &&
+        !isDesktop &&
         $(e.currentTarget).closest('.header__main').length &&
         !$headerSearch.hasClass('active')
     ) {
@@ -165,8 +171,10 @@ const searchFocus = () => {
     const $inputField = $inputSearch.find('input');
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    if (checkIsDesktop) {
+    if (isDesktop) {
+        console.log('Desktop detected');
         $inputField.on('focus', () => {
+            console.log('Input field focused');
             $('body').addClass('bg-overlay overflow-hidden');
             $('body').css('padding-right', `${scrollBarWidth}px`);
             $inputSearch.addClass('focus');
@@ -186,8 +194,12 @@ searchFocus();
 
 // Header category focus
 const categoryFocus = () => {
-    if (checkIsDesktop) {
-        $('.header__category-item')
+    if (isDesktop) {
+        const $categoryItems = $('.header__category-item');
+
+        $categoryItems.off('mouseenter mouseleave');
+
+        $categoryItems
             .on('mouseenter', () => {
                 $('body').addClass('bg-overlay');
                 $('.header__main').addClass('focus');
@@ -209,7 +221,7 @@ $('#header-catalog-btn').on('click', (e) => {
 });
 
 $(document).on('click', (e) => {
-    if (!$(e.target).closest('#header-catalog, #header-catalog-btn').length) {
+    if (!$(e.target).closest('#header-catalog, #header-catalog-btn, #header_search').length) {
         $('body').removeClass('bg-overlay');
         $('#header-catalog').removeClass('active');
         $('#header-catalog-btn').removeClass('active');
