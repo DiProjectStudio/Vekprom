@@ -1,0 +1,45 @@
+.product {
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.product__gallery {
+}
+
+.product__main {
+    position: relative;
+
+    & .swiper-slide {
+        text-align: center;
+
+        & img {
+            max-width: 425px;
+            aspect-ratio: 340 / 280;
+        }
+    }
+}
+
+.product__label-link {
+    padding: 4px 6px;
+    background: var(--status-04-50, #f5e9ff);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    font: var(--font-description-l);
+    border-radius: 8px;
+    z-index: 2;
+
+    & .icon {
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.product__thumbs {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+}

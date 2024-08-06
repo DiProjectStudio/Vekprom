@@ -247,6 +247,7 @@
         font: var(--font-body-s-strong);
         color: var(--accent-on-accent, #fff);
         border-radius: 6px;
+        transition: $transition;
         cursor: pointer;
     }
 

@@ -1,0 +1,92 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница товара'
+    - var page = 'page-product'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('', 'Каталог', 'Обработка металла', 'Сверление и обработка отверстий', 'Вертикально-сверлильные станки')
+
+    section
+
+        .container
+
+            .product
+
+                .product__gallery
+
+                    .product__main
+
+                        a.product__label-link(href="#")
+                            +svg('Eye-open')
+                            |Смотреть в демозале
+
+                        .swiper
+
+                            .swiper-wrapper
+
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+
+                        .swiper-pagination
+
+                    .product__thumbs
+
+                        .swiper
+
+                            .swiper-wrapper
+
+                                .swiper-slide
+
+                .product__info
+
+                    .product__title Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
+
+                    .product__block
+                        .product__block-action
+                            p
+                                +svg('Compare')
+                                |Сравнить
+                            p
+                                +svg('Share')
+                                |Поделиться
+                            p
+                                +svg('Heart')
+                                |В избранное
+
+                        .product__block-labels
+                            .product__block-label(style="color: #F5851A;") Специальная цена
+                            .product__block-label(style="color: #1998FF") Лизинг 0%
+
+                        .product__price
+                            .product__price-current 35 246 000 ₽
+                            .product__price-discount 35 850 600 ₽
+
+                        .btn.btn--sm.btn--primary Заказать в 1 клик
+                        .btn.btn--sm.btn--secondary-orange В корзину
+
+                    .product__article
+                        p Артикул: 3006 3236
+                        #copy.article-copy
+                            +svg('Copy')
+
+                    .product__stock
+                        +svg('Check')
+                        |В наличии
+
+                    .product__type
+                        p Модель
+                        .product__type-wrap
+                            .product__type-item VМС1160
+                            .product__type-item VМС1161
+                            .product__type-item VМС1162

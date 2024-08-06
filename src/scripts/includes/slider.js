@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, FreeMode, Thumbs } from 'swiper/modules';
 
 export function initializeSlider() {
     // Получаем значение 'data-autoplay'
@@ -166,6 +166,30 @@ export function initializeSlider() {
 
     // Слушаем изменения размера окна
     window.addEventListener('resize', handleResize);
+
+    // Миниатюрная пагинация слайдера для карточки товара
+    const productThumbs = new Swiper('.product__thumbs .swiper', {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        direction: 'horizontal'
+    });
+
+    // Слайдер карточки товара
+    const product = new Swiper('.product__main .swiper', {
+        modules: [Pagination, Thumbs],
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        thumbs: {
+            swiper: productThumbs
+        },
+
+        pagination: {
+            el: '.product__main .swiper-pagination',
+            clickable: true
+        }
+    });
 
     console.log('slider.js initialized');
 }

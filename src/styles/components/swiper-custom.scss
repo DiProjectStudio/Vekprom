@@ -7,13 +7,10 @@
     opacity: 1;
 }
 
-.swiper.swiper-initialized .swiper-pagination {
-    display: flex;
-}
-
 .swiper-pagination {
     padding: 24px;
     position: static;
+    display: flex;
     justify-content: center;
     column-gap: 11px;
 }
@@ -65,5 +62,21 @@
         background: #fff;
         width: 0;
         height: 100%;
+    }
+}
+
+// Product slider
+.product {
+    .swiper-pagination {
+        padding: 14px 20px;
+        column-gap: 8px;
+    }
+
+    .swiper-pagination-bullet {
+        background: var(--bg-surface4, #c9cbd0);
+
+        &-active {
+            background: var(--fg-default, #283142);
+        }
     }
 }

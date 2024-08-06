@@ -1,43 +1,30 @@
 .breadcrumbs {
-    margin: 20px auto 30px;
-    padding: 0 $container;
-
-    @include breakpoint(md) {
-        margin-bottom: 40px;
-    }
-
-    @include breakpoint(hd) {
-        margin-bottom: 60px;
-    }
+    margin: 16px auto;
+    max-width: $max-width;
 }
 
 .breadcrumbs-wrapper {
+    padding: 0 $container 0 26px;
     display: flex;
     align-items: center;
+    overflow-x: auto;
 
-    @include breakpointMax(md) {
-        overflow-x: scroll;
+    @include breakpoint(md) {
+        padding-left: 32px;
+    }
+
+    @include breakpoint(lg) {
+        padding-left: 40px;
     }
 }
 
 .breadcrumbs-item {
-    padding: 4px 8px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 140%;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    color: #666;
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
     white-space: nowrap;
-    border-radius: 4px;
 
-    &:last-child span {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 290px;
+    @include breakpoint(lg) {
+        font: var(--font-body-s);
     }
 }
 
@@ -46,10 +33,12 @@
 }
 
 .breadcrumbs-separator {
-    margin: 0 4px;
+    margin: 0 8px;
     display: flex;
-}
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
 
-.breadcrumbs ~ .title {
-    padding: 0 var(--container);
+    @include breakpoint(lg) {
+        font: var(--font-body-s);
+    }
 }
