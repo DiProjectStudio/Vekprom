@@ -70,10 +70,19 @@
     .swiper-pagination {
         padding: 14px 20px;
         column-gap: 8px;
+
+        @include breakpoint(lg) {
+            display: none;
+        }
     }
 
     .swiper-pagination-bullet {
         background: var(--bg-surface4, #c9cbd0);
+
+        @include breakpoint(md) {
+            flex: unset;
+            width: 54px;
+        }
 
         &-active {
             background: var(--fg-default, #283142);

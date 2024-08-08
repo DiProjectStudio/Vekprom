@@ -181,7 +181,6 @@
     & .icon {
         width: 16px;
         height: 16px;
-        fill: none;
         stroke: var(--fg-default);
     }
 
@@ -476,11 +475,19 @@
     @include breakpoint(lg) {
         display: none;
     }
+
+    & .icon {
+        fill: var(--fg-default);
+    }
 }
 
 .header-catalog {
     @include breakpoint(lg) {
         display: none;
+    }
+
+    & .icon {
+        fill: var(--fg-default);
     }
 }
 
@@ -488,23 +495,35 @@
     @include breakpointMax(lg) {
         display: none;
     }
+
+    & .icon {
+        fill: var(--fg-default);
+    }
 }
 
 .header-favourite {
-    fill: none;
-    stroke: var(--fg-default);
-
     @include breakpointMax(lg) {
         order: 2;
+    }
+
+    & .icon {
+        stroke: var(--fg-default);
+    }
+}
+
+.header-basket {
+    & .icon {
+        fill: var(--fg-default);
     }
 }
 
 .header-user {
-    fill: none;
-    stroke: var(--fg-default);
-
     @include breakpointMax(lg) {
         order: 3;
+    }
+
+    & .icon {
+        stroke: var(--fg-default);
     }
 }
 
@@ -778,21 +797,11 @@
 }
 
 .header__subcatalog {
-    margin: 0 20px;
+    margin: 0 10px 0 20px;
     padding: 20px 10px 10px 0;
     display: none;
     width: 100%;
     overflow-y: auto;
-    scrollbar-width: initial;
-    scrollbar-color: initial;
-
-    &::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 12px;
-    }
 
     &.active {
         display: block;

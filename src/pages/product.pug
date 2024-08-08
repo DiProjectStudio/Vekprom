@@ -27,16 +27,31 @@ block main
 
                             .swiper-wrapper
 
-                                .swiper-slide
+                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
                                     +img('image-product.jpg')
-                                .swiper-slide
+                                    .zoom-in
+                                        +svg('Zoom-in')
+                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
                                     +img('image-product.jpg')
-                                .swiper-slide
+                                    .zoom-in
+                                        +svg('Zoom-in')
+                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
                                     +img('image-product.jpg')
-                                .swiper-slide
+                                    .zoom-in
+                                        +svg('Zoom-in')
+                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
                                     +img('image-product.jpg')
-                                .swiper-slide
+                                    .zoom-in
+                                        +svg('Zoom-in')
+                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
                                     +img('image-product.jpg')
+                                    .zoom-in
+                                        +svg('Zoom-in')
+                                .swiper-slide(data-src="./assets/images/demo.mp4" data-fancybox="gallery")
+                                    video(playsinline muted autoplay loop)
+                                        source(src="./assets/images/demo.mp4" type="video/mp4")
+                                    .zoom-in
+                                        +svg('Zoom-in')
 
                         .swiper-pagination
 
@@ -47,6 +62,18 @@ block main
                             .swiper-wrapper
 
                                 .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    +img('image-product.jpg')
+                                .swiper-slide
+                                    .thumb-play
+                                        +svg('Play')
 
                 .product__info
 
@@ -64,29 +91,100 @@ block main
                                 +svg('Heart')
                                 |В избранное
 
-                        .product__block-labels
-                            .product__block-label(style="color: #F5851A;") Специальная цена
-                            .product__block-label(style="color: #1998FF") Лизинг 0%
+                        .product__block-wrap
+                            .product__price
+                                .product__price-special
+                                    .product__price-label(style="background-color: #FEF3E8;color: #F5851A;") Специальная цена
+                                    .product__price-label(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                                .product__price-current 35 246 000 ₽
+                                .product__price-discount 35 850 600 ₽
 
-                        .product__price
-                            .product__price-current 35 246 000 ₽
-                            .product__price-discount 35 850 600 ₽
+                            .product__btn
+                                .product__btn-fast.btn.btn--sm.btn--primary Заказать в 1 клик
+                                .product__btn-cart.btn.btn--sm.btn--secondary-orange
+                                    p В корзину
+                                    +svg('Basket')
 
-                        .btn.btn--sm.btn--primary Заказать в 1 клик
-                        .btn.btn--sm.btn--secondary-orange В корзину
-
-                    .product__article
-                        p Артикул: 3006 3236
-                        #copy.article-copy
-                            +svg('Copy')
+                        .product__block-leasing
+                            p Этот товар можно приобрести в лизинг
+                            a(href="#") Подробнее
+                                +svg('Arrow-narrow-up-right')
 
                     .product__stock
-                        +svg('Check')
-                        |В наличии
+                        .product__article
+                            p Артикул: 3006 3236
+                            #copy.article-copy
+                                +svg('Copy')
 
-                    .product__type
-                        p Модель
-                        .product__type-wrap
-                            .product__type-item VМС1160
-                            .product__type-item VМС1161
-                            .product__type-item VМС1162
+                        .product__status
+                            +svg('Check')
+                            |В наличии
+
+                    .product__internals
+
+                        .product__type
+                            .product__internals-title Модель
+                            .product__type-wrap
+                                .product__type-item.selected VМС1160
+                                .product__type-item VМС1161
+                                .product__type-item VМС1162
+
+                        .product__props
+                            .product__internals-title Основные характеристики
+                            .product__props-wrap
+                                .product__props-item
+                                    .product__props-name Производитель
+                                    .product__props-value АТТА
+                                .product__props-item
+                                    .product__props-name Страна
+                                    .product__props-value Китай
+                                .product__props-item
+                                    .product__props-name Размер стола, мм
+                                    .product__props-value 1200х600
+                                .product__props-item
+                                    .product__props-name Мощность шпинделя, кВт
+                                    .product__props-value 11/18.5
+                                .product__props-item
+                                    .product__props-name Вес, кг
+                                    .product__props-value 7000
+                        
+                            .product__props-anchor
+                                |Все характеристики
+                                +svg('Chevron-down')
+
+                    .product__features
+                        .product__features-item
+                            .product__features-icon
+                                +svg('Sheild')
+                            .product__features-wrap
+                                .product__features-title Гарантия
+                                .product__features-value от 12 мес
+                                    .tooltip-icon
+                                        +svg('Help-circle-contained')
+
+                        .product__features-item
+                            .product__features-icon
+                                +svg('Truck')
+                            .product__features-wrap
+                                .product__features-title Доставка
+                                .product__features-value от 1 дня
+                                    .tooltip-icon
+                                        +svg('Help-circle-contained')
+
+                        .product__features-item
+                            .product__features-icon
+                                +svg('settings')
+                            .product__features-wrap
+                                .product__features-title Сервис 24/7
+                                .product__features-value установим, обслужим 
+                                    .tooltip-icon
+                                        +svg('Help-circle-contained')
+
+                        .product__features-item
+                            .product__features-icon
+                                +svg('Card-down')
+                            .product__features-wrap
+                                .product__features-title Оплата
+                                .product__features-value картой или на счет
+                                    .tooltip-icon
+                                        +svg('Help-circle-contained')

@@ -169,7 +169,7 @@ export function initializeSlider() {
 
     // Миниатюрная пагинация слайдера для карточки товара
     const productThumbs = new Swiper('.product__thumbs .swiper', {
-        slidesPerView: 5,
+        slidesPerView: 'auto',
         spaceBetween: 10,
         watchSlidesProgress: true,
         direction: 'horizontal'

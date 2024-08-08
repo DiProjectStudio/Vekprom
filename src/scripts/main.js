@@ -2,15 +2,23 @@
 import Inputmask from 'inputmask';
 
 // Import Scripts
+import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
 });
+
+// Если браузер определен, добавляем соответствующий класс к тегу html
+const browser = getBrowserName();
+if (browser) {
+    document.documentElement.classList.add('browser-' + browser);
+}
 
 // Функция для проверки переменной isDesktop
 const checkIsDesktop = () => {
@@ -65,7 +73,7 @@ $('#burger').on('click', (e) => {
     } else {
         $header.removeClass('mobile-menu-active');
         $mobileMenu.fadeOut(200);
-        $('body').addClass('overflow-hidden');
+        $('body').removeClass('overflow-hidden');
     }
 });
 
@@ -172,7 +180,6 @@ const searchFocus = () => {
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
     if (isDesktop) {
-        console.log('Desktop detected');
         $inputField.on('focus', () => {
             console.log('Input field focused');
             $('body').addClass('bg-overlay overflow-hidden');
@@ -214,17 +221,38 @@ const categoryFocus = () => {
 categoryFocus();
 
 // Header catalog btn
-$('#header-catalog-btn').on('click', (e) => {
-    $(e.currentTarget).toggleClass('active');
-    $('#header-catalog').toggleClass('active');
-    $('body').toggleClass('bg-overlay');
+const $catalogBtn = $('#header-catalog-btn');
+const $catalog = $('#header-catalog');
+const $body = $('body');
+
+// Функция для закрытия каталога
+function closeCatalog() {
+    $body.removeClass('bg-overlay');
+    $catalog.removeClass('active');
+    $catalogBtn.removeClass('active');
+}
+
+// Обработчик клика на кнопку каталога
+$catalogBtn.on('click', (e) => {
+    $catalogBtn.toggleClass('active');
+    $catalog.toggleClass('active');
+    $body.toggleClass('bg-overlay');
 });
 
+// Закрытие каталога при клике вне его области
 $(document).on('click', (e) => {
-    if (!$(e.target).closest('#header-catalog, #header-catalog-btn, #header_search').length) {
-        $('body').removeClass('bg-overlay');
-        $('#header-catalog').removeClass('active');
-        $('#header-catalog-btn').removeClass('active');
+    if (
+        !$(e.target).closest('#header-catalog, #header-catalog-btn, #header_search').length &&
+        $catalog.hasClass('active')
+    ) {
+        closeCatalog();
+    }
+});
+
+// Закрытие каталога при нажатии клавиши Escape
+$(document).on('keyup', (e) => {
+    if (e.key === 'Escape' && $catalog.hasClass('active')) {
+        closeCatalog();
     }
 });
 
@@ -275,5 +303,13 @@ $('.qty-input input').on('input', (e) => {
     // Дополнительная проверка на минимальное значение
     if (currentValue < 1 || isNaN(currentValue)) {
         $input.val(1);
+    }
+});
+
+// Для выбора модели (карточка товара)
+$('.product__type-item').on('click', (e) => {
+    if (!$(e.currentTarget).hasClass('selected')) {
+        $(e.currentTarget).parent().find('.product__type-item').removeClass('selected');
+        $(e.currentTarget).addClass('selected');
     }
 });
