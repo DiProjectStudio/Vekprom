@@ -35,6 +35,10 @@
     padding: 90px 0;
 }
 
+.fancybox__content {
+    max-width: 800px;
+}
+
 .is-compact .fancybox__footer {
     margin-top: 20px;
     background: none;
