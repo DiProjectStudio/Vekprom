@@ -216,12 +216,6 @@
         grid-template-columns: auto 340px;
         column-gap: 75px;
     }
-
-    & .tooltip-icon {
-        margin-left: 2px;
-        height: 16px;
-        cursor: pointer;
-    }
 }
 
 .product__title {
@@ -268,30 +262,36 @@
 
 .product__block-action {
     padding: 6px 12px;
+    background: var(--neutral-10, #f9f9f9);
     display: flex;
     column-gap: 20px;
+    border-radius: 8px;
+
+    @include breakpointMax(xl) {
+        width: max-content;
+    }
 
     @include breakpointMax(md) {
         margin: 0 8px;
     }
 
     @include breakpoint(md) {
+        margin-left: auto;
         order: 1;
         flex-shrink: 0;
         column-gap: 30px;
     }
 
     @include breakpoint(lg) {
+        margin-left: 0;
         margin-bottom: 10px;
         order: unset;
         column-gap: 8px;
     }
 
-    & p {
-        display: flex;
-        align-items: center;
-        font: var(--font-description-l);
-        cursor: pointer;
+    @include breakpoint(xl) {
+        justify-content: space-between;
+        width: 100%;
     }
 
     & .icon:not(.icon-Compare) {
@@ -306,6 +306,32 @@
         width: 16px;
         height: 16px;
         fill: var(--fg-soft);
+    }
+}
+
+.product__block-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font: var(--font-description-l);
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--base-accent, #f5851a);
+
+        & .icon:not(.icon-Compare) {
+            stroke: var(--base-accent, #f5851a);
+        }
+
+        & .icon-Compare {
+            fill: var(--base-accent, #f5851a);
+        }
+    }
+
+    & .tooltip__content {
+        left: 50%;
+        bottom: calc(100% + 7px);
     }
 }
 
@@ -515,16 +541,40 @@
         margin-bottom: 24px;
     }
 
-    & .article-copy {
-        margin-left: 4px;
-        display: flex;
-        cursor: pointer;
+    & p {
+        margin-right: 5px;
     }
+
+    & .tooltip__content {
+        left: auto;
+
+        @include breakpointMax(md) {
+            transform: translateX(-75%);
+        }
+    }
+}
+
+.article-copy {
+    margin-left: 4px;
+    position: relative;
+    display: flex;
+    user-select: none;
+    cursor: pointer;
 
     & .icon {
         width: 16px;
         height: 16px;
         stroke: var(--fg-soft);
+    }
+
+    &:hover .icon {
+        stroke: var(--fg-default);
+    }
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
     }
 }
 
@@ -670,12 +720,19 @@
 }
 
 .product__features-item {
+    position: relative;
     display: flex;
     align-items: flex-start;
     column-gap: 16px;
 
     @include breakpoint(lg) {
         column-gap: 12px;
+    }
+
+    &:last-child .tooltip__content {
+        @include breakpoint(lg) {
+            left: -78px;
+        }
     }
 }
 
@@ -732,10 +789,85 @@
 .product__features-value {
     display: flex;
     font: var(--font-description-l);
+}
+
+.tooltip__icon {
+    margin-left: 2px;
+    position: relative;
+    height: 16px;
+    user-select: none;
+    cursor: pointer;
 
     & .icon {
         width: 16px;
         height: 16px;
         stroke: var(--fg-muted);
+    }
+
+    &:hover,
+    .tooltip.active & {
+        & .icon {
+            stroke: var(--fg-default);
+        }
+    }
+}
+
+.tooltip__content {
+    padding: 8px 10px;
+    background: var(--bg-surface5, #181d28);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 2px);
+    display: none;
+    width: 276px;
+    border-radius: 12px;
+    z-index: 1;
+
+    @include breakpointMax(lg) {
+        transform: translateX(-50%);
+    }
+
+    @include breakpoint(lg) {
+        left: -12px;
+    }
+
+    .tooltip.active & {
+        display: block;
+    }
+}
+
+.tooltip-show {
+    & .tooltip__content {
+        display: block;
+        width: max-content;
+        animation: $fadeOut;
+
+        @include breakpoint(lg) {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.tooltip__title {
+    font: var(--font-body-s-strong);
+    color: var(--bg-surface1, #fff);
+}
+
+.tooltip__text {
+    margin-top: 6px;
+    font: var(--font-description-l);
+    color: var(--fg-muted, #c9cbd0);
+}
+
+.tooltip__link {
+    margin-top: 12px;
+    display: inline-flex;
+    color: var(--accent-default, #f5851a);
+
+    & .icon {
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--accent-default, #f5851a);
     }
 }

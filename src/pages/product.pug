@@ -81,13 +81,13 @@ block main
 
                     .product__block
                         .product__block-action
-                            p
+                            .product__block-btn
                                 +svg('Compare')
                                 |Сравнить
-                            p
+                            #copy-link.product__block-btn
                                 +svg('Share')
                                 |Поделиться
-                            p
+                            .product__block-btn
                                 +svg('Heart')
                                 |В избранное
 
@@ -112,8 +112,9 @@ block main
 
                     .product__stock
                         .product__article
-                            p Артикул: 3006 3236
-                            #copy.article-copy
+                            p Артикул:
+                                #article 3006 3236
+                            #copy-article.article-copy
                                 +svg('Copy')
 
                         .product__status
@@ -147,7 +148,7 @@ block main
                                 .product__props-item
                                     .product__props-name Вес, кг
                                     .product__props-value 7000
-                        
+
                             .product__props-anchor
                                 |Все характеристики
                                 +svg('Chevron-down')
@@ -159,8 +160,14 @@ block main
                             .product__features-wrap
                                 .product__features-title Гарантия
                                 .product__features-value от 12 мес
-                                    .tooltip-icon
-                                        +svg('Help-circle-contained')
+                                    .tooltip
+                                        .tooltip__icon
+                                            +svg('Help-circle-contained')
+                                        .tooltip__content
+                                            .tooltip__title Гарантия предоставляется заводом изготовителем
+                                            .tooltip__text Гарантийный ремонт осуществляется в отделе гарантийного обслуживания нашей компаии
+                                            a.tooltip__link(href="#") Подробнее про гарантию
+                                                +svg('Arrow-narrow-up-right')
 
                         .product__features-item
                             .product__features-icon
@@ -168,17 +175,29 @@ block main
                             .product__features-wrap
                                 .product__features-title Доставка
                                 .product__features-value от 1 дня
-                                    .tooltip-icon
-                                        +svg('Help-circle-contained')
+                                    .tooltip
+                                        .tooltip__icon
+                                            +svg('Help-circle-contained')
+                                        .tooltip__content
+                                            .tooltip__title Доставка осуществляется по М+МО до Вашего склада/офиса, до терминала ТК, в аэропорт
+                                            .tooltip__text Если оборудование является крупногабаритным, то действуют индивидуальные условия доставки. Возможен самовывоз с нашего склада в МО, г. Жуковский по предварительному согласованию
+                                            a.tooltip__link(href="#") Подробнее про доставку
+                                                +svg('Arrow-narrow-up-right')
 
                         .product__features-item
                             .product__features-icon
                                 +svg('settings')
                             .product__features-wrap
                                 .product__features-title Сервис 24/7
-                                .product__features-value установим, обслужим 
-                                    .tooltip-icon
-                                        +svg('Help-circle-contained')
+                                .product__features-value установим, обслужим
+                                    .tooltip
+                                        .tooltip__icon
+                                            +svg('Help-circle-contained')
+                                        .tooltip__content
+                                            .tooltip__title Установка и шеф монтаж на вашей территории, пусконаладка оборудования
+                                            .tooltip__text ВЕКПРОМ предлагает шеф-монтаж сложного оборудования на территории заказчика. Технические специалисты ВЕКПРОМ выполнят установку и запуск станка, а также проведут инструктаж и обучение ваших специалистов (по необходимости).
+                                            a.tooltip__link(href="#") Все сервисы и услуги
+                                                +svg('Arrow-narrow-up-right')
 
                         .product__features-item
                             .product__features-icon
@@ -186,5 +205,61 @@ block main
                             .product__features-wrap
                                 .product__features-title Оплата
                                 .product__features-value картой или на счет
-                                    .tooltip-icon
-                                        +svg('Help-circle-contained')
+                                    .tooltip
+                                        .tooltip__icon
+                                            +svg('Help-circle-contained')
+                                        .tooltip__content
+                                            .tooltip__title Оплата производится в рублях на расчетный счет компании или картой при получении на складе.
+                                            a.tooltip__link(href="#") Подробнее про оплату
+                                                +svg('Arrow-narrow-up-right')
+
+    section
+
+        .container
+
+            .details
+
+                .tabs
+                    .tab(data-show=1)
+                        +svg('Info')
+                        |Описание
+                    .tab(data-show=2)
+                        +svg('Gear')
+                        |Характеристики
+                    .tab(data-show=3)
+                        +svg('File-check')
+                        |Комплектация
+                    .tab(data-show=4)
+                        +svg('Wrench')
+                        |Запасные части
+                    .tab(data-show=5)
+                        +svg('Package-plus')
+                        |Расходные материалы
+                    .tab(data-show=6)
+                        +svg('File')
+                        |Документация
+
+                .detail
+
+                    .detail-content(data-active=1)
+                        h2 Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
+                        p V1160L предназначен для фрезерной обработки деталей, тяжелых работ. Благодаря станине, изготовленной по технологии «минерального литья» он обладает лучшим поглощением вибрации, более низким коэффициентом теплового расширения и более низким коэффициентом теплопроводности.
+                            br
+                            br
+                            |Суппорт, стол и шпиндельная бабка изготовлены по немецкой технологии сварки стали, что позволяет повысить жесткость, уменьшить вес движущихся частей, уменьшить инерцию движения, а также повысить скорость отклика станка и точность перемещения. Он сочетает конструкцию с поперечным перемещением стола и линейные направляющие. 
+
+                        h2 Сильное поглощение вибрации
+                        p Вибропоглощение минеральных (композитных) материалов в 10 раз выше, чем у чугуна. При больших динамических нагрузках гарантируется общая точность и стабильность станка, качество обработки поверхности заготовки повышается на 20 %, а срок службы инструмента увеличивается на 10 %. Общий ресурс работы оборудования также увеличивается.
+
+                        +img('img-2423.jpg')
+
+                        h2 Преимущества станка
+
+                        +img('img-32569.jpg')
+                        +img('img-25952.jpg')
+
+                        p Основание и колонны изготовлены методом «МИНЕРАЛЬНОГО ЛИТЬЯ» по немецкой технологии
+
+                        h2 Превосходная термическая стабильность
+
+                        p

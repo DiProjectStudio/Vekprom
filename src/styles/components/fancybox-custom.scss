@@ -1,0 +1,98 @@
+.fancybox__toolbar {
+    --f-button-bg: #fff;
+    --f-button-width: 48px;
+    --f-button-height: 48px;
+    --f-button-color: #9398a0;
+    --f-button-border-radius: 12px;
+    --f-button-border: 1px solid #eaeaec;
+    --f-button-svg-filter: none;
+}
+
+.f-button {
+    margin: 20px 20px 0 0;
+
+    @include breakpoint(xl) {
+        margin: 40px 40px 0 0;
+    }
+}
+
+.fancybox__container {
+    --fancybox-bg: #fff;
+}
+
+.fancybox__nav {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+}
+
+.fancybox__carousel {
+    padding: 0 var(--container);
+    flex: none;
+}
+
+.fancybox__viewport {
+    padding: 90px 0;
+}
+
+.fancybox__content {
+    max-width: 800px;
+}
+
+.is-compact .fancybox__footer {
+    margin-top: 20px;
+    background: none;
+    position: static;
+}
+
+.fancybox__thumbs.is-classic {
+    --f-thumb-gap: 10px;
+    --f-thumb-width: 87px;
+    --f-thumb-height: 87px;
+    --f-thumb-border-radius: 8px;
+    --f-thumb-outline: 1px;
+    --f-thumb-outline-color: var(--accent-200, #fac28d);
+    --f-thumb-opacity: 1;
+
+    padding: 0;
+}
+
+.f-thumbs {
+    &.is-horizontal {
+        & .f-thumbs__track {
+            padding: 0;
+        }
+
+        & .f-thumbs__slide:first-child {
+            margin-left: 10px;
+        }
+    }
+
+    &__slide.for-video {
+        background: var(--bg-surface2, #f4f5f6);
+        border-radius: 8px;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9InBsYXktMDMiPgo8cGF0aCBpZD0iSWNvbiIgZD0iTTE3Ljk3MzMgMTAuOTM3M0MxOS4zMzk3IDExLjY5ODggMTkuMzQ0NyAxMi42NTY4IDE3Ljk3MzMgMTMuNTE3N0w3LjM3NjI3IDIwLjY2NDVDNi4wNDQ3OCAyMS4zNzUxIDUuMTQwNDYgMjAuOTU1NiA1LjA0NTUzIDE5LjQxOEw1LjAwMDU3IDQuNDU5ODJDNC45NzA1OSAzLjA0MzU1IDYuMTM3MjEgMi42NDM0IDcuMjQ4ODcgMy4zMjI0NEwxNy45NzMzIDEwLjkzNzNaIiBzdHJva2U9IiNGOUIwNkEiIHN0cm9rZS13aWR0aD0iMiIvPgo8L2c+Cjwvc3ZnPgo=)
+                no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__slide__button {
+        padding: 14px 8px;
+    }
+
+    &__slide__img {
+        position: static;
+    }
+}

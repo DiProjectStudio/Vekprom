@@ -26,3 +26,14 @@ $fadeIn: fadeIn 0.2s ease forwards;
         opacity: 1;
     }
 }
+
+$fadeOut: fadeOut 2s ease forwards;
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

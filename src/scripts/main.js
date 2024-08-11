@@ -313,3 +313,63 @@ $('.product__type-item').on('click', (e) => {
         $(e.currentTarget).addClass('selected');
     }
 });
+
+// Копируем значение в буфер обмена
+$('#copy-article, #copy-link').on('click', (e) => {
+    // Удаляем уже существующие временные элементы, если они есть
+    $('#copy-temp').remove();
+    $(e.currentTarget).find('.tooltip').remove();
+
+    // Создаем временное поле input
+    var $tempInput = $('<input id="copy-temp">');
+    $('body').append($tempInput); // Добавляем input в body
+
+    let textToCopy = '';
+
+    if ($(e.currentTarget).attr('id') === 'copy-article') {
+        // Если нажата кнопка для копирования текста артикула
+        textToCopy = $('#article').text();
+    } else if ($(e.currentTarget).attr('id') === 'copy-link') {
+        // Если нажата кнопка для копирования ссылки
+        textToCopy = window.location.href;
+    }
+
+    // Копируем выбранный текст
+    $tempInput.val(textToCopy).select();
+    document.execCommand('copy');
+
+    // Удаляем временное поле
+    $tempInput.remove();
+
+    // Создаем тултип
+    var $tooltip = $(
+        '<div class="tooltip"><div class="tooltip__content"><div class="tooltip__title">Скопировано в буфер обмена</div></div></div>'
+    );
+    $(e.currentTarget).append($tooltip);
+    $tooltip.addClass('tooltip-show');
+
+    // Убираем тултип через определенное кол-во секунды (указываем в мс)
+    // setTimeout(() => {
+    //     $tooltip.remove();
+    // }, 2000);
+});
+
+// Tooltip
+const $tooltip = $('.tooltip');
+const $tooltipIcon = $('.tooltip__icon');
+
+$tooltipIcon.on('click', (e) => {
+    if (!$(e.currentTarget).parent().hasClass('active')) {
+        $tooltip.removeClass('active');
+        $(e.currentTarget).parent().addClass('active');
+    } else {
+        $(e.currentTarget).parent().removeClass('active');
+    }
+});
+
+// Закрытие Tooltip при клике вне его области
+$(document).on('click', (e) => {
+    if (!$(e.target).closest($tooltip).length && $tooltip.hasClass('active')) {
+        $tooltip.removeClass('active');
+    }
+});
