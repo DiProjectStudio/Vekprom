@@ -315,6 +315,7 @@
     align-items: center;
     font: var(--font-description-l);
     transition: $transition;
+    user-select: none;
     cursor: pointer;
 
     &:hover {
@@ -869,5 +870,275 @@
         width: 16px;
         height: 16px;
         stroke: var(--accent-default, #f5851a);
+    }
+}
+
+.fixed-bar {
+    padding: 11px 10px 11px 24px;
+    background: var(--bg-surface1, #fff);
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    width: calc(100% - (var(--container) * 2));
+    height: 70px;
+    max-width: 1400px;
+    border-top: 1px solid var(--border-default, #eaeaec);
+    border-radius: var(--Number, 0px) var(--Number, 0px) 16px 16px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    transform: translateX(-50%);
+    transition: top 0.2s ease;
+    z-index: 11;
+}
+
+.product-fixed-bar {
+    --offsetLeft: calc(((100vw - 1248px) / 2) + 10px);
+    --offsetRight: calc(((100vw - 1248px) / 2) + 10px);
+
+    --img-width: 65px;
+
+    --productBtn-margin: 12px;
+    --productBtn-width: 80px;
+    --productBtnFast-width: 218px;
+
+    @include breakpoint(xl) {
+        --offsetLeft: calc(((100vw - 1400px) / 2) + 10px);
+        --offsetRight: calc(((100vw - 1400px) / 2) + 10px);
+    }
+
+    & .fixed-bar img {
+        width: var(--img-width);
+        height: 55px;
+    }
+
+    & .product__title {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        left: calc(var(--offsetLeft) + var(--img-width) + 24px);
+        top: 16px;
+        max-width: 560px;
+        font: var(--font-heading-h4);
+        animation: $fadeInUp;
+        z-index: 11;
+
+        @include textLimit(2);
+    }
+
+    & .product__block-action {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 11px;
+        right: calc(
+            var(--offsetRight) + var(--productBtn-width) + (var(--productBtn-margin) * 2) +
+                var(--productBtnFast-width)
+        );
+        align-items: center;
+        column-gap: unset;
+        width: 120px;
+        height: 48px;
+        animation: $fadeInUp;
+        z-index: 11;
+    }
+
+    & .product__block-btn {
+        padding: 0 12px;
+        height: 36px;
+
+        & ~ .product__block-btn {
+            border-left: 1px solid var(--border-default, #eaeaec);
+        }
+
+        & .icon {
+            margin-right: 0;
+        }
+
+        & p {
+            display: none;
+        }
+
+        & .tooltip__content {
+            bottom: calc(100% - 80px);
+        }
+    }
+
+    & .product__btn {
+        position: fixed;
+        top: 11px;
+        right: var(--offsetRight);
+        flex-direction: row-reverse;
+        animation: $fadeInUp;
+        z-index: 11;
+    }
+
+    & .product__btn-fast {
+        width: var(--productBtnFast-width);
+        font: var(--font-body-l-strong);
+    }
+
+    & .product__btn-cart {
+        margin-right: var(--productBtn-margin);
+        background: var(--bg-surface1, #fff);
+        width: var(--productBtn-width);
+        border: 1px solid #f5b316;
+        border-radius: 6px;
+
+        & p {
+            display: none;
+        }
+
+        & .icon {
+            display: block;
+        }
+    }
+}
+
+.section-details {
+    & .container {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+}
+
+.details {
+    @include breakpoint(lg) {
+        margin-top: 16px;
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 335px auto;
+        column-gap: 16px;
+    }
+}
+
+.tabs {
+    @include breakpointMax(lg) {
+        margin: 10px 0;
+        padding: 0 var(--container);
+        display: flex;
+        overflow-x: auto;
+    }
+
+    @include breakpoint(md) {
+        @include breakpointMax(lg) {
+            margin: 16px 0;
+        }
+    }
+
+    @include breakpoint(lg) {
+        padding: 10px;
+        background: var(--bg-surface1, #fff);
+        position: sticky;
+        top: 90px;
+        border-radius: 16px;
+    }
+}
+
+.tab {
+    user-select: none;
+
+    @include breakpointMax(lg) {
+        padding: 8px;
+        background: var(--bg-surface1, #fff);
+        flex-shrink: 0;
+        font: var(--font-body-m);
+    }
+
+    @include breakpoint(lg) {
+        cursor: pointer;
+    }
+
+    &:first-child {
+        @include breakpointMax(lg) {
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+    }
+
+    &:last-child {
+        @include breakpointMax(lg) {
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+    }
+
+    & .icon {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-soft);
+
+        @include breakpoint(lg) {
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &.active {
+        & .icon {
+            stroke: var(--accent-default, #f5851a);
+        }
+    }
+}
+
+.tab__item {
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(lg) {
+        padding: 12.5px 12px;
+        font: var(--font-body-l);
+    }
+
+    .tab.active & {
+        background: var(--accent-50, #fef3e8);
+        border-radius: 8px;
+    }
+}
+
+.detail {
+    padding: 24px 16px;
+    background: var(--bg-surface1, #fff);
+    display: none;
+    border-radius: 16px;
+
+    @include breakpointMax(lg) {
+        margin: 0 var(--container);
+    }
+
+    @include breakpoint(lg) {
+        padding: 32px 48px;
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.detail-content {
+    max-width: 664px;
+
+    & h2 {
+        margin-bottom: 24px;
+        font: var(--font-heading-h4);
+
+        @include breakpoint(md) {
+            font: var(--font-heading-h3);
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 32px;
+            font: var(--font-heading-h2);
+        }
+    }
+
+    & p {
+        @include breakpoint(md) {
+            font: var(--font-body-m);
+        }
     }
 }

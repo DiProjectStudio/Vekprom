@@ -342,16 +342,23 @@ $('#copy-article, #copy-link').on('click', (e) => {
     $tempInput.remove();
 
     // Создаем тултип
-    var $tooltip = $(
-        '<div class="tooltip"><div class="tooltip__content"><div class="tooltip__title">Скопировано в буфер обмена</div></div></div>'
-    );
+    if ($(e.currentTarget).attr('id') === 'copy-article') {
+        var $tooltip = $(
+            '<div class="tooltip"><div class="tooltip__content"><div class="tooltip__title">Скопировано в буфер обмена</div></div></div>'
+        );
+    } else if ($(e.currentTarget).attr('id') === 'copy-link') {
+        var $tooltip = $(
+            '<div class="tooltip"><div class="tooltip__content"><div class="tooltip__title">Ссылка скопирована в буфер обмена</div></div></div>'
+        );
+    }
+
     $(e.currentTarget).append($tooltip);
     $tooltip.addClass('tooltip-show');
 
     // Убираем тултип через определенное кол-во секунды (указываем в мс)
-    // setTimeout(() => {
-    //     $tooltip.remove();
-    // }, 2000);
+    setTimeout(() => {
+        $tooltip.remove();
+    }, 2000);
 });
 
 // Tooltip
@@ -373,3 +380,48 @@ $(document).on('click', (e) => {
         $tooltip.removeClass('active');
     }
 });
+
+// Создаем контейнер с классом .fixed-bar и добавляем изображение
+let $fixed = $('<div class="fixed-bar"></div>');
+let $firstSlideImg = $('.product__main .swiper-slide:first-child img').clone();
+$fixed.append($firstSlideImg);
+
+// Добавляем контейнер .fixed в body
+$('body').prepend($fixed);
+
+// Определяем высоту, при которой блок должен стать фиксированным
+const updateStickyTop = () => {
+    return (
+        $('.breadcrumbs').innerHeight() + $('.product').innerHeight() + $('.header').innerHeight()
+    );
+};
+
+let stickyTop = updateStickyTop();
+
+// Функция для проверки ширины экрана и обработки скроллинга
+const handleScroll = () => {
+    let scrollTop = $(window).scrollTop();
+    let windowWidth = $(window).width();
+
+    if (windowWidth >= 1280) {
+        if (scrollTop >= stickyTop) {
+            $('body').addClass('product-fixed-bar');
+            $fixed.css({ top: '0%' });
+        } else {
+            $('body').removeClass('product-fixed-bar');
+            $fixed.css({ top: '-10%' });
+        }
+    } else {
+        $('body').removeClass('product-fixed-bar');
+        $fixed.css({ top: '-10%' });
+    }
+};
+
+// Обрабатываем скроллинг
+$(window).on('scroll resize', function () {
+    stickyTop = updateStickyTop(); // Пересчитываем значение при изменении размера окна
+    handleScroll();
+});
+
+// Начальная проверка при загрузке страницы
+handleScroll();
