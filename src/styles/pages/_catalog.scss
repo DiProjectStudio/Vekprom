@@ -9,3 +9,48 @@
         padding-bottom: 80px;
     }
 }
+
+.catalog {
+    @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        column-gap: 10px;
+    }
+
+    @include breakpoint(xl) {
+        column-gap: 20px;
+    }
+}
+
+.catalog__aside {
+    @include breakpoint(lg) {
+        padding: 20px;
+        background: var(--bg-surface1, #fff);
+        border-radius: 12px;
+    }
+}
+
+.catalog__wrap {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100%;
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    & .card-item {
+        border: 1px solid transparent;
+        transition: $transition;
+
+        &:hover {
+            border-color: var(--neutral-200, #9398a0);
+        }
+    }
+}

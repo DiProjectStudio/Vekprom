@@ -80,6 +80,7 @@
         }
 
         @include breakpoint(lg) {
+            margin-left: 16px;
             font: var(--font-display-s);
             letter-spacing: var(--lp-display-s);
         }
@@ -89,9 +90,16 @@
 .catalog-header {
     padding: 10px 10px 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     border-top: 1px solid var(--border-default, #eaeaec);
+
+    @include breakpointMax(lg) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(lg) {
+        padding: 10px 16px 0 10px;
+    }
 
     .input-search {
         & .search-icon {
@@ -110,8 +118,14 @@
 }
 
 .filter-search {
-    margin-bottom: 10px;
-    width: 100%;
+    @include breakpointMax(lg) {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    @include breakpoint(lg) {
+        width: 325px;
+    }
 }
 
 .filter-btn {
@@ -125,10 +139,20 @@
     border: 1px solid var(--border-default, #eaeaec);
     cursor: pointer;
 
+    @include breakpoint(lg) {
+        display: none;
+    }
+
     & .icon {
         width: 16px;
         height: 16px;
         stroke: var(--fg-default);
+    }
+}
+
+.sorting {
+    @include breakpoint(lg) {
+        margin-left: 20px;
     }
 }
 
@@ -148,5 +172,36 @@
         width: 16px;
         height: 16px;
         stroke: var(--fg-soft);
+    }
+}
+
+.view-style {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+
+    & .icon {
+        width: 20px;
+        height: 20px;
+        fill: var(--bg-surface3);
+    }
+}
+
+.view-style__item {
+    @include breakpoint(lg) {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    &.active .icon {
+        fill: var(--accent-default);
     }
 }

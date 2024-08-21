@@ -1,0 +1,67 @@
+.pagination {
+    margin: 32px auto 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+
+    @include breakpoint(lg) {
+        margin-top: 40px;
+        width: max-content;
+    }
+}
+
+.pagination-item {
+    padding: 13px 0;
+    background: var(--bg-surface1, #fff);
+    width: 48px;
+    height: 48px;
+    font: var(--font-body-m);
+    text-align: center;
+    border-radius: 12px;
+    transition: $transition;
+
+    &.active {
+        background: var(--accent-default, #f5851a);
+        color: #fff;
+    }
+
+    & .icon {
+        stroke: var(--fg-default);
+        transition: $transition;
+    }
+
+    &.disabled {
+        pointer-events: none;
+
+        .icon {
+            stroke: var(--fg-muted);
+        }
+    }
+
+    &:hover:not(.disabled) {
+        background: var(--accent-default, #f5851a);
+        color: #fff;
+
+        & .icon {
+            stroke: #fff;
+        }
+    }
+}
+
+.pagination-arrow {
+    &:first-child {
+        margin-right: auto;
+
+        @include breakpoint(lg) {
+            margin-right: 24px;
+        }
+    }
+
+    &:last-child {
+        margin-left: auto;
+
+        @include breakpoint(lg) {
+            margin-left: 24px;
+        }
+    }
+}

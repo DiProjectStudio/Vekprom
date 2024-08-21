@@ -14,3 +14,67 @@ block main
         .container
 
             .catalog
+
+                .catalog__aside
+
+                    form(action="/") 
+
+                        .filter
+
+                            .filter__item
+                                .filter__category-item.active Обработка металла
+                                    ul
+
+                                        li Сверление и обработка отверстий
+                                            ul
+                                                li Магнитные сверлильные станки
+
+                                        li Магнитные сверлильные станки
+                                        li Вертикально-сверлильные станки
+                                        li Радиально-сверлильные станки
+                                        li Вертикально-сверлильные станки
+                                        li Радиально-сверлильные станки
+
+                                .filter__category-item Сверление и обработка отверстий
+                                .filter__category-item Металлорежущий инструмент
+                                .filter__category-item Обработка кромки, снятие фаски
+                                .filter__category-item Шлифовка и полировка
+                                .filter__category-item Сверление и обработка отверстий
+                                .filter__category-item Металлорежущий инструмент
+                                .filter__category-item Обработка кромки, снятие фаски
+                                .filter__category-item Шлифовка и полировка
+                                .filter__category-item Сверление и обработка отверстий
+                                .filter__category-item Металлорежущий инструмент
+                                .filter__category-item Обработка кромки, снятие фаски
+
+                            .filter__item
+                                .filter__item-name В наличии
+                                .filter__checkbox
+                                    input#switch(type="checkbox", name="switch")
+                                    label(for="switch") 
+
+                            .filter__item
+                                .filter__item-name Мощность
+                                    span кВт
+
+
+                .catalog__inner
+
+                    .catalog__wrap
+
+                        include ../components/_card-white
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+
+                    include ../components/_pagination
+            
