@@ -1,0 +1,45 @@
+.section-slider {
+    padding-top: 42px;
+
+    @include breakpoint(md) {
+        padding-top: 44px;
+    }
+
+    @include breakpoint(lg) {
+        padding-top: 96px;
+    }
+
+    & .container {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+
+    & .head-block {
+        @include breakpointMax(lg) {
+            margin-left: var(--container);
+        }
+    }
+}
+
+.slider {
+    & .main-swiper {
+        @include breakpoint(lg) {
+            opacity: 1;
+        }
+    }
+}
+
+.slider__item {
+    width: 300px;
+
+    @include breakpoint(lg) {
+        width: calc(25% - (30px / 4));
+    }
+
+    & ~ .slider__item {
+        @include breakpoint(lg) {
+            margin-left: 10px;
+        }
+    }
+}

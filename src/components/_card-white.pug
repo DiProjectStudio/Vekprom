@@ -3,7 +3,7 @@ mixin card(order)
     if order
 
 
-        .card-item
+        .card-item.card-white
             .card-tag.tag-order
                 +svg('clock-forward')
                 |Под заказ
@@ -30,9 +30,9 @@ mixin card(order)
             .card-item__name
                 a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
             .card-item__badge
-                .badge(style="color: #F9B06A") Специальная цена
-                .badge(style="color: #BD71FF") В демозале
-                .badge(style="color: #6ABCFF") Лизинг 0%
+                .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
             .card-item__property
                 .card-item__property-row
                     p Мощность
@@ -53,7 +53,7 @@ mixin card(order)
     else
 
 
-        .card-item
+        .card-item.card-white
             .card-tag.tag-instock
                 +svg('Check')
                 |В наличии
@@ -80,9 +80,9 @@ mixin card(order)
             .card-item__name
                 a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
             .card-item__badge
-                .badge(style="color: #F9B06A") Специальная цена
-                .badge(style="color: #BD71FF") В демозале
-                .badge(style="color: #6ABCFF") Лизинг 0%
+                .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
             .card-item__property
                 .card-item__property-row
                     p Мощность

@@ -1,0 +1,26 @@
+section.section-slider
+
+    .container
+
+        .head-block
+
+            .title Аналоги
+
+        .slider
+
+            .swiper.main-swiper
+
+                .swiper-wrapper
+
+                    include ../_card-white
+                    .swiper-slide.slider__item
+                        +card
+
+                    .swiper-slide.slider__item
+                        +card('Под заказ')
+
+                    .swiper-slide.slider__item
+                        +card
+
+                    .swiper-slide.slider__item
+                        +card('Под заказ')

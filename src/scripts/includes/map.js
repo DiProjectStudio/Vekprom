@@ -30,6 +30,4 @@ export function initializeMap() {
 
         addYaMaps();
     }
-
-    console.log('map.js initialized');
 }

@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница товара</title>
+    <!-- Scripts::Start-->
+    <script data-skip-moving="true">
+      const home_dir = './';
+      
+    </script>
+    <script data-skip-moving="true" src="https://code.jquery.com/jquery-3.7.1.js"="anonymous"></script>
+    <!-- Scripts::End-->
+    <!-- Styles::Start-->
+    <!-- Styles::End-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script type="module" src="./assets/js/vendor.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <link rel="stylesheet" href="./assets/css/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body class="page-product">
+    <!-- Header::Start-->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__top">
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li class="header__menu-item has-child"><a class="header__menu-link">О компании</a>
+                <ul class="submenu">
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Пресс-центр</a></li>
+                  <li><a href="#">Проекты</a></li>
+                  <li><a href="#">Лицензии</a></li>
+                  <li><a href="#">Отзывы</a></li>
+                </ul>
+              </li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Контакты</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Вакансии</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Сервис и поддержка</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Демозал</a><img src="./assets/images/badge-3d.svg" alt="img">
+              </li>
+            </ul>
+            <ul class="header__bar">
+              <li class="header__bar-item"><a class="header__callback">Заказать звонок</a></li>
+              <li class="header__bar-item"><a class="header__phone" href="tel:+74952151645">+7 (495) 215-16-45</a></li>
+              <li class="header__bar-item">
+                <div class="header__location">
+                    <svg class="icon icon-Map">
+                      <use xlink:href="./assets/spritemap.svg#Map"></use>
+                    </svg>
+                  <p>Москва</p>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__main">
+          <div class="header__logo"><a href="/"><img src="./assets/images/Logo_main.svg" alt="img"></a></div>
+          <button class="header-catalog-btn" id="header-catalog-btn">
+              <svg class="icon icon-catalog">
+                <use xlink:href="./assets/spritemap.svg#catalog"></use>
+              </svg>
+              <svg class="icon icon-X">
+                <use xlink:href="./assets/spritemap.svg#X"></use>
+              </svg>
+            <p>Каталог</p>
+          </button>
+          <div class="header__search">
+            <form>
+              <div class="input-search">
+                <button class="search-icon" type="submit" aria-label="Поиск">
+                    <svg class="icon icon-Search">
+                      <use xlink:href="./assets/spritemap.svg#Search"></use>
+                    </svg>
+                </button>
+                <input id="header_search" type="search" name="header_search" placeholder="Поиск по сайту" autocomplete="off">
+                <div class="input-search__clear">
+                    <svg class="icon icon-X">
+                      <use xlink:href="./assets/spritemap.svg#X"></use>
+                    </svg>
+                </div>
+              </div>
+            </form>
+          </div>
+          <button class="header__selection btn btn--primary">Подобрать станок</button>
+          <div class="header__icons"><a class="header__icons-item header-home" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-Home">
+                    <use xlink:href="./assets/spritemap.svg#Home"></use>
+                  </svg>
+              </div>
+              <p>Главная</p></a><a class="header__icons-item header-catalog" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-catalog">
+                    <use xlink:href="./assets/spritemap.svg#catalog"></use>
+                  </svg>
+              </div>
+              <p>Каталог</p></a><a class="header__icons-item header-compare" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Compare">
+                    <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                  </svg>
+              </div>
+              <p>Сравнение</p></a><a class="header__icons-item header-favourite" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Heart">
+                    <use xlink:href="./assets/spritemap.svg#Heart"></use>
+                  </svg>
+              </div>
+              <p>Избранное</p></a><a class="header__icons-item header-basket" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Basket">
+                    <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                  </svg>
+              </div>
+              <p>Корзина</p></a><a class="header__icons-item header-user" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-User">
+                    <use xlink:href="./assets/spritemap.svg#User"></use>
+                  </svg>
+              </div>
+              <p>Войти</p></a></div>
+          <div class="header__category">
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-saw">
+                    <use xlink:href="./assets/spritemap.svg#saw"></use>
+                  </svg>
+                <p>Металлообработка</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="123">Сверление и обработка отверстий</a></li>
+                  <li><a href="#" data-count="120">Металлорежущий инструмент</a></li>
+                  <li><a href="#" data-count="19">Обработка кромки, снятие фаски</a></li>
+                  <li><a href="#" data-count="286">Шлифовка и полировка</a></li>
+                  <li><a href="#" data-count="44">Ленточнопильные станки</a></li>
+                  <li><a href="#" data-count="120">Труборезы</a></li>
+                  <li><a href="#" data-count="120">Обработка профиля</a></li>
+                  <li><a href="#" data-count="120">Обработка листа</a></li>
+                  <li><a href="#" data-count="120">Термическая резка</a></li>
+                  <li><a href="#" data-count="120">Фрезерные станки</a></li>
+                  <li><a href="#" data-count="120">Токарные станки</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-001.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-laser">
+                    <use xlink:href="./assets/spritemap.svg#laser"></use>
+                  </svg>
+                <p>Лазерное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="123">Лазерные установки резки</a></li>
+                  <li><a href="#" data-count="120">Лазерная сварка</a></li>
+                  <li><a href="#" data-count="19">Лазерная очистка</a></li>
+                  <li><a href="#" data-count="286">Лазерные граверы-резчики</a></li>
+                  <li><a href="#" data-count="44">Лазерные маркираторы</a></li>
+                  <li><a href="#" data-count="120">Оснастка для лазерного оборудования</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-002.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-press">
+                    <use xlink:href="./assets/spritemap.svg#press"></use>
+                  </svg>
+                <p>Прессовое оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-003.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-welder">
+                    <use xlink:href="./assets/spritemap.svg#welder"></use>
+                  </svg>
+                <p>Сварочное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-004.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-helmet">
+                    <use xlink:href="./assets/spritemap.svg#helmet"></use>
+                  </svg>
+                <p>Строительное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-005.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-crane">
+                    <use xlink:href="./assets/spritemap.svg#crane"></use>
+                  </svg>
+                <p>Инструмент</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-006.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-gear">
+                    <use xlink:href="./assets/spritemap.svg#gear"></use>
+                  </svg>
+                <p>Запасные части</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-007.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="header__burger" aria-label="Меню" id="burger">
+              <svg class="icon icon-Burger">
+                <use xlink:href="./assets/spritemap.svg#Burger"></use>
+              </svg>
+              <svg class="icon icon-X">
+                <use xlink:href="./assets/spritemap.svg#X"></use>
+              </svg>
+          </button>
+        </div>
+        <div class="header__catalog" id="header-catalog">
+          <div class="header__catalog-wrap">
+            <div class="header__catalog-item" data-catalog="1"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-bxs_discount">
+                    <use xlink:href="./assets/spritemap.svg#bxs_discount"></use>
+                  </svg>
+                <p>Распродажа</p></a></div>
+            <div class="header__catalog-item active" data-catalog="2"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-saw">
+                    <use xlink:href="./assets/spritemap.svg#saw"></use>
+                  </svg>
+                <p>Металлообработка</p></a></div>
+            <div class="header__catalog-item" data-catalog="3"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-laser">
+                    <use xlink:href="./assets/spritemap.svg#laser"></use>
+                  </svg>
+                <p>Лазерное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-press">
+                    <use xlink:href="./assets/spritemap.svg#press"></use>
+                  </svg>
+                <p>Прессовое оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-welder">
+                    <use xlink:href="./assets/spritemap.svg#welder"></use>
+                  </svg>
+                <p>Сварочное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-helmet">
+                    <use xlink:href="./assets/spritemap.svg#helmet"></use>
+                  </svg>
+                <p>Строительное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-crane">
+                    <use xlink:href="./assets/spritemap.svg#crane"></use>
+                  </svg>
+                <p>Инструмент</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-gear">
+                    <use xlink:href="./assets/spritemap.svg#gear"></use>
+                  </svg>
+                <p>Запасные части</p></a></div>
+          </div>
+          <div class="header__subcatalog" data-active="1">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__subcatalog active" data-active="2">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="286">Шлифовка и полировка</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="44">Ленточнопильные станки</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                  <li><a href="#">Отрезные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Труборезы</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Труборезы</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__subcatalog" data-active="3">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__catalog-banner">
+            <div class="header__catalog-banner-img"><img src="./assets/images/banner-bg-image.jpg" alt="img">
+            </div>
+            <p>Подберем станок под ваши задачи и бюджет</p>
+            <div class="btn btn-promo btn--primary">
+                <svg class="icon icon-Arrow-narrow-up-right">
+                  <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                </svg>Подобрать станок
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header::End-->
+    <!-- Main::Start-->
+    <main>
+            <div class="breadcrumbs">
+              <div class="breadcrumbs-wrapper">
+                <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
+                <div class="breadcrumbs-item"><a href="#">Каталог</a></div><span class="breadcrumbs-separator">/</span>
+                <div class="breadcrumbs-item"><a href="#">Обработка металла</a></div><span class="breadcrumbs-separator">/</span>
+                <div class="breadcrumbs-item"><a href="#">Сверление и обработка отверстий</a></div><span class="breadcrumbs-separator">/</span>
+                <div class="breadcrumbs-item"><span>Вертикально-сверлильные станки</span></div>
+              </div>
+            </div>
+      <section>
+        <div class="container">
+          <div class="product">
+            <div class="product__gallery">
+              <div class="product__main"><a class="product__label-link" href="#">
+                    <svg class="icon icon-Eye-open">
+                      <use xlink:href="./assets/spritemap.svg#Eye-open"></use>
+                    </svg>Смотреть в демозале</a>
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-src="./assets/images/image-product.jpg" data-fancybox="gallery"><img src="./assets/images/image-product.jpg" alt="img">
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" data-src="./assets/images/image-product.jpg" data-fancybox="gallery"><img src="./assets/images/image-product.jpg" alt="img">
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" data-src="./assets/images/image-product.jpg" data-fancybox="gallery"><img src="./assets/images/image-product.jpg" alt="img">
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" data-src="./assets/images/image-product.jpg" data-fancybox="gallery"><img src="./assets/images/image-product.jpg" alt="img">
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" data-src="./assets/images/image-product.jpg" data-fancybox="gallery"><img src="./assets/images/image-product.jpg" alt="img">
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" data-src="./assets/images/demo.mp4" data-fancybox="gallery">
+                      <video playsinline muted autoplay loop>
+                        <source src="./assets/images/demo.mp4" type="video/mp4">
+                      </video>
+                      <div class="zoom-in">
+                          <svg class="icon icon-Zoom-in">
+                            <use xlink:href="./assets/spritemap.svg#Zoom-in"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <div class="product__thumbs">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./assets/images/image-product.jpg" alt="img">
+                    </div>
+                    <div class="swiper-slide"><img src="./assets/images/image-product.jpg" alt="img">
+                    </div>
+                    <div class="swiper-slide"><img src="./assets/images/image-product.jpg" alt="img">
+                    </div>
+                    <div class="swiper-slide"><img src="./assets/images/image-product.jpg" alt="img">
+                    </div>
+                    <div class="swiper-slide"><img src="./assets/images/image-product.jpg" alt="img">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-play">
+                          <svg class="icon icon-Play">
+                            <use xlink:href="./assets/spritemap.svg#Play"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product__info">
+              <div class="product__title">Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон</div>
+              <div class="product__block">
+                <div class="product__block-action">
+                  <div class="product__block-btn">
+                      <svg class="icon icon-Compare">
+                        <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                      </svg>
+                    <p>Сравнить</p>
+                  </div>
+                  <div class="product__block-btn" id="copy-link">
+                      <svg class="icon icon-Share">
+                        <use xlink:href="./assets/spritemap.svg#Share"></use>
+                      </svg>
+                    <p>Поделиться</p>
+                  </div>
+                  <div class="product__block-btn">
+                      <svg class="icon icon-Heart">
+                        <use xlink:href="./assets/spritemap.svg#Heart"></use>
+                      </svg>
+                    <p>В избранное</p>
+                  </div>
+                </div>
+                <div class="product__block-wrap">
+                  <div class="product__price">
+                    <div class="product__price-special">
+                      <div class="product__price-label" style="background-color: #FEF3E8;color: #F5851A;">Специальная цена</div>
+                      <div class="product__price-label" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                    </div>
+                    <div class="product__price-current">35 246 000 ₽</div>
+                    <div class="product__price-discount">35 850 600 ₽</div>
+                  </div>
+                  <div class="product__btn">
+                    <div class="product__btn-fast btn btn--sm btn--primary">Заказать в 1 клик</div>
+                    <div class="product__btn-cart btn btn--sm btn--secondary-orange">
+                      <p>В корзину</p>
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__block-leasing">
+                  <p>Этот товар можно приобрести в лизинг</p><a href="#">Подробнее
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg></a>
+                </div>
+              </div>
+              <div class="product__stock">
+                <div class="product__article">
+                  <p>Артикул:
+                    <div id="article">3006 3236</div>
+                  </p>
+                  <div class="article-copy" id="copy-article">
+                      <svg class="icon icon-Copy">
+                        <use xlink:href="./assets/spritemap.svg#Copy"></use>
+                      </svg>
+                  </div>
+                </div>
+                <div class="product__status">
+                    <svg class="icon icon-Check">
+                      <use xlink:href="./assets/spritemap.svg#Check"></use>
+                    </svg>В наличии
+                </div>
+              </div>
+              <div class="product__internals">
+                <div class="product__type">
+                  <div class="product__internals-title">Модель</div>
+                  <div class="product__type-wrap">
+                    <div class="product__type-item selected">VМС1160</div>
+                    <div class="product__type-item">VМС1161</div>
+                    <div class="product__type-item">VМС1162</div>
+                  </div>
+                </div>
+                <div class="product__props">
+                  <div class="product__internals-title">Основные характеристики</div>
+                  <div class="product__props-wrap">
+                    <div class="product__props-item">
+                      <div class="product__props-name">Производитель</div>
+                      <div class="product__props-value">АТТА</div>
+                    </div>
+                    <div class="product__props-item">
+                      <div class="product__props-name">Страна</div>
+                      <div class="product__props-value">Китай</div>
+                    </div>
+                    <div class="product__props-item">
+                      <div class="product__props-name">Размер стола, мм</div>
+                      <div class="product__props-value">1200х600</div>
+                    </div>
+                    <div class="product__props-item">
+                      <div class="product__props-name">Мощность шпинделя, кВт</div>
+                      <div class="product__props-value">11/18.5</div>
+                    </div>
+                    <div class="product__props-item">
+                      <div class="product__props-name">Вес, кг</div>
+                      <div class="product__props-value">7000</div>
+                    </div>
+                  </div>
+                  <div class="product__props-anchor">Все характеристики
+                      <svg class="icon icon-Chevron-down">
+                        <use xlink:href="./assets/spritemap.svg#Chevron-down"></use>
+                      </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="product__features">
+                <div class="product__features-item">
+                  <div class="product__features-icon">
+                      <svg class="icon icon-Sheild">
+                        <use xlink:href="./assets/spritemap.svg#Sheild"></use>
+                      </svg>
+                  </div>
+                  <div class="product__features-wrap">
+                    <div class="product__features-title">Гарантия</div>
+                    <div class="product__features-value">от 12 мес
+                      <div class="tooltip">
+                        <div class="tooltip__icon">
+                            <svg class="icon icon-Help-circle-contained">
+                              <use xlink:href="./assets/spritemap.svg#Help-circle-contained"></use>
+                            </svg>
+                        </div>
+                        <div class="tooltip__content">
+                          <div class="tooltip__title">Гарантия предоставляется заводом изготовителем</div>
+                          <div class="tooltip__text">Гарантийный ремонт осуществляется в отделе гарантийного обслуживания нашей компаии</div><a class="tooltip__link" href="#">Подробнее про гарантию
+                              <svg class="icon icon-Arrow-narrow-up-right">
+                                <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                              </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__features-item">
+                  <div class="product__features-icon">
+                      <svg class="icon icon-Truck">
+                        <use xlink:href="./assets/spritemap.svg#Truck"></use>
+                      </svg>
+                  </div>
+                  <div class="product__features-wrap">
+                    <div class="product__features-title">Доставка</div>
+                    <div class="product__features-value">от 1 дня
+                      <div class="tooltip">
+                        <div class="tooltip__icon">
+                            <svg class="icon icon-Help-circle-contained">
+                              <use xlink:href="./assets/spritemap.svg#Help-circle-contained"></use>
+                            </svg>
+                        </div>
+                        <div class="tooltip__content">
+                          <div class="tooltip__title">Доставка осуществляется по М+МО до Вашего склада/офиса, до терминала ТК, в аэропорт</div>
+                          <div class="tooltip__text">Если оборудование является крупногабаритным, то действуют индивидуальные условия доставки. Возможен самовывоз с нашего склада в МО, г. Жуковский по предварительному согласованию</div><a class="tooltip__link" href="#">Подробнее про доставку
+                              <svg class="icon icon-Arrow-narrow-up-right">
+                                <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                              </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__features-item">
+                  <div class="product__features-icon">
+                      <svg class="icon icon-settings">
+                        <use xlink:href="./assets/spritemap.svg#settings"></use>
+                      </svg>
+                  </div>
+                  <div class="product__features-wrap">
+                    <div class="product__features-title">Сервис 24/7</div>
+                    <div class="product__features-value">установим, обслужим
+                      <div class="tooltip">
+                        <div class="tooltip__icon">
+                            <svg class="icon icon-Help-circle-contained">
+                              <use xlink:href="./assets/spritemap.svg#Help-circle-contained"></use>
+                            </svg>
+                        </div>
+                        <div class="tooltip__content">
+                          <div class="tooltip__title">Установка и шеф монтаж на вашей территории, пусконаладка оборудования</div>
+                          <div class="tooltip__text">ВЕКПРОМ предлагает шеф-монтаж сложного оборудования на территории заказчика. Технические специалисты ВЕКПРОМ выполнят установку и запуск станка, а также проведут инструктаж и обучение ваших специалистов (по необходимости).</div><a class="tooltip__link" href="#">Все сервисы и услуги
+                              <svg class="icon icon-Arrow-narrow-up-right">
+                                <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                              </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__features-item">
+                  <div class="product__features-icon">
+                      <svg class="icon icon-Card-down">
+                        <use xlink:href="./assets/spritemap.svg#Card-down"></use>
+                      </svg>
+                  </div>
+                  <div class="product__features-wrap">
+                    <div class="product__features-title">Оплата</div>
+                    <div class="product__features-value">картой или на счет
+                      <div class="tooltip">
+                        <div class="tooltip__icon">
+                            <svg class="icon icon-Help-circle-contained">
+                              <use xlink:href="./assets/spritemap.svg#Help-circle-contained"></use>
+                            </svg>
+                        </div>
+                        <div class="tooltip__content">
+                          <div class="tooltip__title">Оплата производится в рублях на расчетный счет компании или картой при получении на складе.</div><a class="tooltip__link" href="#">Подробнее про оплату
+                              <svg class="icon icon-Arrow-narrow-up-right">
+                                <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                              </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-details">
+        <div class="container">
+          <div class="details">
+            <div class="tabs">
+              <div class="tab active" data-show="1">
+                <div class="tab__item">
+                    <svg class="icon icon-Info">
+                      <use xlink:href="./assets/spritemap.svg#Info"></use>
+                    </svg>Описание
+                </div>
+              </div>
+              <div class="tab" data-show="2">
+                <div class="tab__item">
+                    <svg class="icon icon-Gear-lg">
+                      <use xlink:href="./assets/spritemap.svg#Gear-lg"></use>
+                    </svg>Характеристики
+                </div>
+              </div>
+              <div class="tab" data-show="3">
+                <div class="tab__item">
+                    <svg class="icon icon-File-check">
+                      <use xlink:href="./assets/spritemap.svg#File-check"></use>
+                    </svg>Комплектация
+                </div>
+              </div>
+              <div class="tab" data-show="4">
+                <div class="tab__item">
+                    <svg class="icon icon-Wrench">
+                      <use xlink:href="./assets/spritemap.svg#Wrench"></use>
+                    </svg>Запасные части
+                </div>
+              </div>
+              <div class="tab" data-show="5">
+                <div class="tab__item">
+                    <svg class="icon icon-Package-plus">
+                      <use xlink:href="./assets/spritemap.svg#Package-plus"></use>
+                    </svg>Расходные материалы
+                </div>
+              </div>
+              <div class="tab" data-show="6">
+                <div class="tab__item">
+                    <svg class="icon icon-File">
+                      <use xlink:href="./assets/spritemap.svg#File"></use>
+                    </svg>Документация
+                </div>
+              </div>
+            </div>
+            <div class="detail active" data-active="1">
+              <div class="detail-desc hidden-block">
+                <div class="detail-desc__wrap">
+                  <div class="content-block">
+                    <h2>Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон</h2>
+                    <p>V1160L предназначен для фрезерной обработки деталей, тяжелых работ. Благодаря станине, изготовленной по технологии «минерального литья» он обладает лучшим поглощением вибрации, более низким коэффициентом теплового расширения и более низким коэффициентом теплопроводности.<br><br>Суппорт, стол и шпиндельная бабка изготовлены по немецкой технологии сварки стали, что позволяет повысить жесткость, уменьшить вес движущихся частей, уменьшить инерцию движения, а также повысить скорость отклика станка и точность перемещения. Он сочетает конструкцию с поперечным перемещением стола и линейные направляющие. </p>
+                  </div>
+                  <div class="content-block">
+                    <h2>Сильное поглощение вибрации</h2>
+                    <p>Вибропоглощение минеральных (композитных) материалов в 10 раз выше, чем у чугуна. При больших динамических нагрузках гарантируется общая точность и стабильность станка, качество обработки поверхности заготовки повышается на 20 %, а срок службы инструмента увеличивается на 10 %. Общий ресурс работы оборудования также увеличивается.</p><img src="./assets/images/img-2423.jpg" alt="img">
+                  </div>
+                  <div class="content-block">
+                    <h2>Преимущества станка</h2><img src="./assets/images/img-32569.jpg" alt="img">
+                    <p>Основание и колонны изготовлены методом «МИНЕРАЛЬНОГО ЛИТЬЯ» по немецкой технологии</p>
+                  </div>
+                  <div class="content-block">
+                    <h2>Превосходная термическая стабильность</h2>
+                    <p>Теплопроводность составляет 1/20 от таковой у чугуна, а удельная теплоемкость в 2,1 раза больше, чем у чугуна. Он обладает превосходной термической стабильностью, которая эффективно контролирует деформацию станка из-за перепадов температуры и обеспечивает стабильность точности обработки станка.<br>- Высокие антикоррозийные свойств<br>- Высокая точность.<br><br>Станки для инструментальной обработки на станинах из минерального литья, такие как токарные, фрезерные и шлифовальные, работают со значительно большей точностью и позволяют достичь более высокого качества поверхности обрабатываемой детали. Также заметно сокращается износ инструмента.</p>
+                  </div>
+                  <div class="content-block">
+                    <h2>Управляющее программное обеспечение</h2>
+                    <p>Мощное управление FANUC 0i-MF имеет комплект программного обеспечения, включающего вращение координат, масштабирование, спиральную интерполяцию, жесткую нарезку резьбы, ориентацию шпинделя, которые входят в число многих стандартных функций. Подключение Ethernet, легкий доступ, слот для карт памяти спереди, USB также входят в число многих стандартных функций. Этот элемент управления обеспечивает наиболее популярную функцию в рамках его стандартных функций. Дополнительный режим высокоскоростной обработки AICC обеспечивает функцию предварительного просмотра до 200 блоков и плавную интерполяцию. Это самый мощный и ценный элемент управления в своем классе.</p>
+                  </div>
+                </div>
+                <div class="expand-btn">
+                    <svg class="icon icon-Chevron-down">
+                      <use xlink:href="./assets/spritemap.svg#Chevron-down"></use>
+                    </svg>
+                </div>
+              </div>
+            </div>
+            <div class="detail" data-active="2">
+              <div class="detail-props">
+                <h2>Характеристики</h2>
+                <table>
+                  <tr>
+                    <th>Производитель</th>
+                    <td>АТТА<a href="#">
+                          <svg class="icon icon-Arrow-narrow-up-right">
+                            <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                          </svg></a></td>
+                  </tr>
+                  <tr>
+                    <th>Конус шпинделя</th>
+                    <td>BT40</td>
+                  </tr>
+                  <tr>
+                    <th>Крутящий момент шпинделя, Нм</th>
+                    <td>52,5/118</td>
+                  </tr>
+                  <tr>
+                    <th>Размер стола, мм</th>
+                    <td>1200х600</td>
+                  </tr>
+                  <tr>
+                    <th>Мощность шпинделя, кВт</th>
+                    <td>11/18,5</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Y, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Габариты (Д*Ш*В)</th>
+                    <td>2900x2800x3200 мм</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                  <tr>
+                    <th>Перемещение по оси Х, мм</th>
+                    <td>1100</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="detail" data-active="3">
+              <div class="detail-props">
+                <div class="wrapper">
+                  <h2>Стандартная комплектация</h2>
+                  <table>
+                    <tr>
+                      <th>1</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>4</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>5</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                  </table>
+                  <h2>Дополнительная комплектация</h2>
+                  <table>
+                    <tr>
+                      <th>1</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>4</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                    <tr>
+                      <th>5</th>
+                      <td>Шпиндель</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="detail" data-active="4">
+              <div class="detail-card">
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail" data-active="5">
+              <div class="detail-card">
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="card-item__buy-add btn btn-cart">
+                        <svg class="icon icon-Basket">
+                          <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="card-tag tag-order">
+                      <svg class="icon icon-clock-forward">
+                        <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                      </svg>Под заказ
+                  </div>
+                  <div class="card-item__img"><img src="./assets/images/img-342.jpg" alt="img">
+                  </div>
+                  <div class="card-item__name"><a href="#">Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510</a></div>
+                  <div class="card-item__price">550 ₽</div>
+                  <div class="card-item__buy">
+                    <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                    <div class="qty-input">
+                      <div class="qty qty-minus">
+                          <svg class="icon icon-Minus">
+                            <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                          </svg>
+                      </div>
+                      <input type="text" name="qty" value="1" max-number="99">
+                      <div class="qty qty-plus">
+                          <svg class="icon icon-Plus">
+                            <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail" data-active="6">
+              <div class="detail-docs">
+                <h2>Документация</h2><a class="detail-docs__item" href="#">
+                  <div class="detail-docs__icon">
+                      <svg class="icon icon-Document-pdf">
+                        <use xlink:href="./assets/spritemap.svg#Document-pdf"></use>
+                      </svg>
+                  </div>Чертежи</a><a class="detail-docs__item" href="#">
+                  <div class="detail-docs__icon">
+                      <svg class="icon icon-Document-xls">
+                        <use xlink:href="./assets/spritemap.svg#Document-xls"></use>
+                      </svg>
+                  </div>ГОСТ</a><a class="detail-docs__item" href="#">
+                  <div class="detail-docs__icon">
+                      <svg class="icon icon-Document-doc">
+                        <use xlink:href="./assets/spritemap.svg#Document-doc"></use>
+                      </svg>
+                  </div>Документация</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-slider">
+        <div class="container">
+          <div class="head-block">
+            <div class="title">Аналоги</div>
+          </div>
+          <div class="slider">
+            <div class="swiper main-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-instock">
+                                        <svg class="icon icon-Check">
+                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                                        </svg>В наличии
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite">
+                                          <svg class="icon icon-Heart-filled">
+                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
+                                          </svg>
+                                      </div>
+                                      <div class="card-action__item card-compare">
+                                          <svg class="icon icon-Compare">
+                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">3 553 232 ₽
+                                      <div class="discount">3 850 600 ₽</div>
+                                    </div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                                      <div class="card-item__buy-add btn btn-cart">
+                                          <svg class="icon icon-Basket">
+                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-instock">
+                                        <svg class="icon icon-Check">
+                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                                        </svg>В наличии
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite">
+                                          <svg class="icon icon-Heart-filled">
+                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
+                                          </svg>
+                                      </div>
+                                      <div class="card-action__item card-compare">
+                                          <svg class="icon icon-Compare">
+                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">3 553 232 ₽
+                                      <div class="discount">3 850 600 ₽</div>
+                                    </div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                                      <div class="card-item__buy-add btn btn-cart">
+                                          <svg class="icon icon-Basket">
+                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-instock">
+                                        <svg class="icon icon-Check">
+                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                                        </svg>В наличии
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite">
+                                          <svg class="icon icon-Heart-filled">
+                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
+                                          </svg>
+                                      </div>
+                                      <div class="card-action__item card-compare">
+                                          <svg class="icon icon-Compare">
+                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">3 553 232 ₽
+                                      <div class="discount">3 850 600 ₽</div>
+                                    </div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                                      <div class="card-item__buy-add btn btn-cart">
+                                          <svg class="icon icon-Basket">
+                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-instock">
+                                        <svg class="icon icon-Check">
+                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                                        </svg>В наличии
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite">
+                                          <svg class="icon icon-Heart-filled">
+                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
+                                          </svg>
+                                      </div>
+                                      <div class="card-action__item card-compare">
+                                          <svg class="icon icon-Compare">
+                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">3 553 232 ₽
+                                      <div class="discount">3 850 600 ₽</div>
+                                    </div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                                      <div class="card-item__buy-add btn btn-cart">
+                                          <svg class="icon icon-Basket">
+                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-banner">
+        <div class="container">
+          <div class="banner">
+            <div class="banner__img"><img src="./assets/images/Bg-Image_2.jpg" alt="img">
+            </div>
+            <div class="banner__title">Поможем с выбором, ответим на вопросы</div>
+            <div class="banner__wrap">
+              <div class="banner__block">
+                <div class="banner__block-item">
+                  <div class="banner__block-item-icon">
+                      <svg class="icon icon-Rub">
+                        <use xlink:href="./assets/spritemap.svg#Rub"></use>
+                      </svg>
+                  </div>
+                  <p>Подберем оборудование под ваши задачи и бюджет</p>
+                </div>
+                <div class="banner__block-item">
+                  <div class="banner__block-item-icon">
+                      <svg class="icon icon-flash-on">
+                        <use xlink:href="./assets/spritemap.svg#flash-on"></use>
+                      </svg>
+                  </div>
+                  <p>Желаемую производительность и назначение</p>
+                </div>
+                <div class="banner__block-item">
+                  <div class="banner__block-item-icon">
+                      <svg class="icon icon-Gear-lg">
+                        <use xlink:href="./assets/spritemap.svg#Gear-lg"></use>
+                      </svg>
+                  </div>
+                  <p>Технические требования к точности обработки деталей, габаритов, требования к установке и безопасности, доступность электрических подключений</p>
+                </div>
+              </div>
+              <div class="banner__link btn btn-promo btn--primary">
+                  <svg class="icon icon-Arrow-narrow-up-right">
+                    <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                  </svg>Подобрать оборудование
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main::End-->
+    <!-- Footer::Start-->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__logo"><a href="/"><img src="./assets/images/Logo_main_white.svg" alt="img"></a></div>
+        <div class="footer__inner">
+          <div class="footer__nav">
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Компания</a>
+              <div class="footer__subnav"><a href="#">О компании</a><a href="#">Пресс-центр</a><a href="#">Проекты</a><a href="#">Лицензии и сертификаты</a><a href="#">Отзывы</a></div>
+            </div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Покупателям</a>
+              <div class="footer__subnav"><a href="#">Доставка и оплата</a><a href="#">Услуги и сервисы</a><a href="#">Гарантия</a><a href="#">Ремонт</a></div>
+            </div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Демозал</a></div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Вакансии</a></div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Контакты</a></div>
+            <div class="footer-widget"><img src="./assets/images/yandex-widget.jpg" alt="img">
+            </div>
+          </div>
+          <div class="footer__category"><a href="#">Обработка металла</a><a href="#">Лазерное оборудование</a><a href="#">Преcсовое оборудование</a><a href="#">Сварочное оборудование</a><a href="#">Строительное оборудование</a><a href="#">Инструмент</a><a href="#">Запчасти</a></div>
+          <div class="footer__contacts"><a class="footer__contacts-item" href="tel:+74951205913">+7 (495) 120-59-13</a><a class="footer__contacts-item" href="mailto:info@vekprom.ru">info@vekprom.ru</a>
+            <div class="footer__contacts-socials"><a href="#" target="_blank">
+                  <svg class="icon icon-VK">
+                    <use xlink:href="./assets/spritemap.svg#VK"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-TG">
+                    <use xlink:href="./assets/spritemap.svg#TG"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-Dzen">
+                    <use xlink:href="./assets/spritemap.svg#Dzen"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-Youtube">
+                    <use xlink:href="./assets/spritemap.svg#Youtube"></use>
+                  </svg></a></div>
+            <div class="footer__contacts-btn btn btn-promo btn--primary">
+                <svg class="icon icon-Arrow-narrow-up-right">
+                  <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                </svg>Написать нам
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer-copyright">2008-2024 © ПГ ВЕКПРОМ</div><a class="footer-policy" href="#">Политика конфиденциальности</a><a class="footer-personal" href="#">Персональные данные</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer::End-->
+  </body>
+</html>

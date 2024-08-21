@@ -1,0 +1,16 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница каталога'
+    - var page = 'page-catalog'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Обработка металла', 'Каталог', 'Обработка металла')
+
+    section.section-catalog
+
+        .container
+
+            .catalog

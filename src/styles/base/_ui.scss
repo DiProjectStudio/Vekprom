@@ -468,15 +468,6 @@ video {
     }
 }
 
-.main-title {
-    font: var(--font-display-xs-strong);
-    letter-spacing: var(--lp-display-xs-strong);
-
-    @include breakpoint(lg) {
-        font: var(--font-display-l-strong);
-    }
-}
-
 .head-block {
     padding: 0 16px 24px;
 

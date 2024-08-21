@@ -1,5 +1,58 @@
 .page-product {
-    padding-bottom: 81px;
+    @include breakpointMax(lg) {
+        padding-bottom: 130px;
+    }
+
+    & .page-header {
+        margin: 10px auto;
+        padding: 0;
+        background: transparent;
+
+        & .breadcrumbs {
+            margin: 16px auto;
+            padding: 0;
+        }
+
+        & .breadcrumbs-wrapper {
+            padding-left: 26px;
+
+            @include breakpoint(md) {
+                padding-left: 32px;
+            }
+
+            @include breakpoint(lg) {
+                padding-left: 40px;
+            }
+
+            @include breakpoint(xl) {
+                padding-left: 16px;
+            }
+        }
+    }
+
+    & main {
+        padding-bottom: 20px;
+
+        @include breakpoint(md) {
+            padding-bottom: 30px;
+        }
+
+        @include breakpoint(lg) {
+            padding-bottom: 50px;
+        }
+
+        @include breakpoint(xl) {
+            padding-bottom: 120px;
+        }
+    }
+
+    & .section-banner {
+        margin: 10px 0;
+
+        @include breakpoint(md) {
+            margin: 30px 0;
+        }
+    }
 }
 
 .product {
@@ -336,6 +389,39 @@
     }
 }
 
+.product__block-btn.active {
+    &::before {
+        content: '';
+        margin-right: 4px;
+        background-size: contain;
+        display: none;
+        width: 16px;
+        height: 16px;
+    }
+
+    &.product-compare {
+        &::before {
+            background-image: $compareFilled;
+            display: block;
+        }
+
+        & .icon {
+            display: none;
+        }
+    }
+
+    &.product-favourite {
+        &::before {
+            background-image: $heartFilled;
+            display: block;
+        }
+
+        & .icon {
+            display: none;
+        }
+    }
+}
+
 .product__block-wrap {
     @include breakpoint(lg) {
         padding: 16px;
@@ -531,7 +617,6 @@
 .product__article {
     order: 1;
     display: flex;
-    align-items: center;
     color: var(--fg-soft, #9398a0);
 
     @include breakpointMax(xl) {
@@ -890,6 +975,10 @@
     transform: translateX(-50%);
     transition: top 0.2s ease;
     z-index: 11;
+
+    @include breakpointMax(lg) {
+        display: none;
+    }
 }
 
 .product-fixed-bar {
@@ -1011,6 +1100,10 @@
         grid-template-columns: 335px auto;
         column-gap: 16px;
     }
+
+    @include breakpoint(xl) {
+        column-gap: 20px;
+    }
 }
 
 .tabs {
@@ -1101,7 +1194,6 @@
 }
 
 .detail {
-    padding: 24px 16px;
     background: var(--bg-surface1, #fff);
     display: none;
     border-radius: 16px;
@@ -1110,29 +1202,50 @@
         margin: 0 var(--container);
     }
 
-    @include breakpoint(lg) {
-        padding: 32px 48px;
-    }
-
     &.active {
         display: block;
     }
-}
-
-.detail-content {
-    max-width: 664px;
 
     & h2 {
         margin-bottom: 24px;
         font: var(--font-heading-h4);
 
         @include breakpoint(md) {
+            margin-bottom: 32px;
             font: var(--font-heading-h3);
         }
 
         @include breakpoint(lg) {
-            margin-bottom: 32px;
             font: var(--font-heading-h2);
+        }
+    }
+}
+
+.detail-desc {
+    padding: 24px 16px;
+    max-width: 664px;
+
+    @include breakpoint(lg) {
+        padding: 32px 48px;
+    }
+
+    & table {
+        margin-top: 24px;
+
+        @include breakpointMax(md) {
+            display: block;
+        }
+    }
+
+    & tr {
+        @include breakpointMax(md) {
+            padding-right: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include breakpoint(md) {
+            padding: 8px 0;
         }
     }
 
@@ -1140,5 +1253,230 @@
         @include breakpoint(md) {
             font: var(--font-body-m);
         }
+    }
+
+    & img {
+        margin-bottom: 24px;
+        border-radius: 8px;
+
+        @include breakpoint(md) {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.detail-desc__wrap {
+    position: relative;
+
+    .hidden-block & {
+        height: 240px;
+        overflow: hidden;
+
+        @include breakpoint(md) {
+            height: 360px;
+        }
+
+        &::after {
+            content: '';
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            position: absolute;
+            top: 56px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 56px);
+        }
+    }
+}
+
+.content-block {
+    @include breakpoint(md) {
+        padding-bottom: 24px;
+    }
+
+    & ~ .content-block {
+        margin-top: 24px;
+
+        @include breakpoint(md) {
+            margin-top: 32px;
+        }
+    }
+}
+
+.expand-btn {
+    padding: 6px 10px;
+    background: var(--bg-surface2, #f4f5f6);
+    display: flex;
+    align-items: center;
+    width: max-content;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+
+    &::before {
+        content: 'Развернуть';
+        display: inline-block;
+        font: var(--font-body-m);
+    }
+
+    & .icon {
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-muted);
+    }
+
+    &.expanded {
+        margin-top: 24px;
+
+        @include breakpoint(md) {
+            margin-top: 32px;
+        }
+
+        &::before {
+            content: 'Свернуть';
+        }
+
+        & .icon {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.detail-props {
+    padding: 24px 16px;
+
+    @include breakpoint(lg) {
+        padding: 32px 48px;
+    }
+
+    & table {
+        width: 100%;
+        max-width: 520px;
+        border-collapse: collapse;
+
+        & tr {
+            border-top: 1px solid var(--border-default, #eaeaec);
+        }
+
+        & th {
+            padding: 6px 0 8px;
+            color: var(--fg-soft);
+            text-align: left;
+
+            @include breakpointMax(md) {
+                font: var(--font-description-l);
+            }
+
+            @include breakpoint(md) {
+                font: var(--font-body-s);
+            }
+        }
+
+        & td {
+            margin-left: auto;
+            padding: 6px 0 8px;
+            display: flex;
+            align-items: center;
+            width: max-content;
+
+            & a {
+                margin-left: 10px;
+                width: 16px;
+                height: 16px;
+            }
+
+            & .icon {
+                width: 16px;
+                height: 16px;
+                stroke: var(--fg-muted);
+            }
+        }
+    }
+
+    & .wrapper {
+        @include breakpoint(lg) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 48px;
+            max-width: 854px;
+        }
+
+        & table {
+            margin-bottom: 48px;
+
+            @include breakpoint(md) {
+                grid-row: 2;
+            }
+        }
+    }
+}
+
+.detail-card {
+    padding: 16px;
+    display: grid;
+    row-gap: 10px;
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 16px;
+        column-gap: 16px;
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+    }
+}
+
+.detail-docs {
+    padding: 24px 16px;
+    display: grid;
+
+    @include breakpoint(md) {
+        grid-auto-flow: column;
+        column-gap: 24px;
+        justify-content: flex-start;
+    }
+
+    @include breakpoint(lg) {
+        padding: 32px 48px;
+    }
+
+    & h2 {
+        @include breakpoint(md) {
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+.detail-docs__item {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    font: var(--font-body-s-strong);
+
+    @include breakpoint(md) {
+        grid-row: 2;
+    }
+
+    & ~ .detail-docs__item {
+        @include breakpointMax(md) {
+            margin-top: 24px;
+        }
+    }
+}
+
+.detail-docs__icon {
+    margin-right: 12px;
+    background: var(--bg-surface2, #f4f5f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+
+    & .icon {
+        fill: var(--fg-default);
     }
 }

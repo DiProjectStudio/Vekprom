@@ -381,47 +381,108 @@ $(document).on('click', (e) => {
     }
 });
 
-// Создаем контейнер с классом .fixed-bar и добавляем изображение
-let $fixed = $('<div class="fixed-bar"></div>');
-let $firstSlideImg = $('.product__main .swiper-slide:first-child img').clone();
-$fixed.append($firstSlideImg);
+if ($('body').hasClass('page-product')) {
+    // Создаем контейнер с классом .fixed-bar и добавляем изображение
+    let $fixed = $('<div class="fixed-bar"></div>');
+    let $firstSlideImg = $('.product__main .swiper-slide:first-child img').clone();
+    $fixed.append($firstSlideImg);
 
-// Добавляем контейнер .fixed в body
-$('body').prepend($fixed);
+    // Добавляем контейнер .fixed в body
+    $('body').prepend($fixed);
 
-// Определяем высоту, при которой блок должен стать фиксированным
-const updateStickyTop = () => {
-    return (
-        $('.breadcrumbs').innerHeight() + $('.product').innerHeight() + $('.header').innerHeight()
-    );
-};
+    // Определяем высоту, при которой блок должен стать фиксированным
+    const updateStickyTop = () => {
+        return (
+            $('.breadcrumbs').innerHeight() +
+            $('.product').innerHeight() +
+            $('.header').innerHeight()
+        );
+    };
 
-let stickyTop = updateStickyTop();
+    let stickyTop = updateStickyTop();
 
-// Функция для проверки ширины экрана и обработки скроллинга
-const handleScroll = () => {
-    let scrollTop = $(window).scrollTop();
-    let windowWidth = $(window).width();
+    // Функция для проверки ширины экрана и обработки скроллинга
+    const handleScroll = () => {
+        let scrollTop = $(window).scrollTop();
+        let windowWidth = $(window).width();
 
-    if (windowWidth >= 1280) {
-        if (scrollTop >= stickyTop) {
-            $('body').addClass('product-fixed-bar');
-            $fixed.css({ top: '0%' });
+        if (windowWidth >= 1280) {
+            if (scrollTop >= stickyTop) {
+                $('body').addClass('product-fixed-bar');
+                $fixed.css({ top: '0%' });
+            } else {
+                $('body').removeClass('product-fixed-bar');
+                $fixed.css({ top: '-10%' });
+            }
         } else {
             $('body').removeClass('product-fixed-bar');
             $fixed.css({ top: '-10%' });
         }
-    } else {
-        $('body').removeClass('product-fixed-bar');
-        $fixed.css({ top: '-10%' });
-    }
-};
+    };
 
-// Обрабатываем скроллинг
-$(window).on('scroll resize', function () {
-    stickyTop = updateStickyTop(); // Пересчитываем значение при изменении размера окна
+    // Обрабатываем скроллинг
+    $(window).on('scroll resize', function () {
+        stickyTop = updateStickyTop(); // Пересчитываем значение при изменении размера окна
+        handleScroll();
+    });
+
+    // Начальная проверка при загрузке страницы
     handleScroll();
+}
+
+// Кнопка "Развернуть"
+$('.expand-btn').on('click', (e) => {
+    if (!$(e.currentTarget).hasClass('expanded')) {
+        $(e.currentTarget).addClass('expanded');
+        $(e.currentTarget).closest('.detail-desc').removeClass('hidden-block');
+    } else {
+        $(e.currentTarget).removeClass('expanded');
+        $(e.currentTarget).closest('.detail-desc').addClass('hidden-block');
+    }
 });
 
-// Начальная проверка при загрузке страницы
-handleScroll();
+// Кнопка избранное и сравнение в карточке '.card'
+$('.card-action__item').on('click', (e) => {
+    if (!$(e.currentTarget).hasClass('active')) {
+        $(e.currentTarget).addClass('active');
+    } else {
+        $(e.currentTarget).removeClass('active');
+    }
+});
+
+// Кнопка избранное и сравнение в карточке товара '.product'
+$('.product__block-btn').on('click', (e) => {
+    if (!$(e.currentTarget).hasClass('active')) {
+        $(e.currentTarget).addClass('active');
+    } else {
+        $(e.currentTarget).removeClass('active');
+    }
+});
+
+// Табы в карточке товара
+$('.tab').on('click', (e) => {
+    $(e.currentTarget).closest('.tabs').find('.tab').removeClass('active');
+    $(e.currentTarget).addClass('active');
+
+    $('.detail').removeClass('active');
+    $(`.detail[data-active=${$(e.currentTarget).attr('data-show')}]`).addClass('active');
+});
+
+const $propsAnchor = $('#props-anchor');
+const $detailsElement = $('.details');
+
+$propsAnchor.on('click', (e) => {
+    if ($detailsElement.length) {
+        $detailsElement[0].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'start'
+        });
+
+        $('.tab').removeClass('active');
+        $('.tab[data-show="2"]').addClass('active');
+
+        $('.detail').removeClass('active');
+        $('.detail[data-active="2"]').addClass('active');
+    }
+});

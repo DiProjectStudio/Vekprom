@@ -55,6 +55,7 @@
     right: 16px;
     display: grid;
     row-gap: 12px;
+    z-index: 2;
 
     @include breakpoint(lg) {
         display: none;
@@ -70,12 +71,58 @@
     height: 24px;
     cursor: pointer;
 
+    &::before {
+        content: '';
+        background-size: contain;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
     & .icon:not(.icon-Compare) {
         stroke: var(--accent-on-accent);
     }
 
     & .icon-Compare {
         fill: var(--accent-on-accent);
+    }
+
+    &.active {
+        & .icon:not(.icon-Compare) {
+            stroke: #f5851a !important;
+            fill: #f5851a !important;
+        }
+
+        & .icon-Compare {
+            stroke: #f5851a !important;
+            fill: #f5851a !important;
+        }
+    }
+}
+
+.card-item:not(.card-white) .card-action__item {
+    &:not(.active)::before {
+        filter: brightness(100);
+    }
+}
+
+.card-favourite {
+    &::before {
+        background-image: $heart;
+    }
+
+    &.active::before {
+        background-image: $heartFilled;
+    }
+}
+
+.card-compare {
+    &::before {
+        background-image: $compare;
+    }
+
+    &.active::before {
+        background-image: $compareFilled;
     }
 }
 
@@ -86,12 +133,11 @@
     height: 220px;
 
     @include breakpoint(lg) {
-        padding: 0 25px;
+        margin: 0 auto 18px;
+        padding: 0;
+        width: 100%;
         height: 288px;
-    }
-
-    @include breakpoint(xl) {
-        padding: 0 55px;
+        max-width: 311px;
     }
 
     & .swiper {
@@ -203,6 +249,10 @@
             font: var(--font-body-l-strong);
         }
     }
+
+    & .btn-cart {
+        flex-shrink: 0;
+    }
 }
 
 .card-item__buy-fast {
@@ -211,4 +261,124 @@
 
 .card-item__buy-ask {
     width: 100%;
+}
+
+///////////////////////////
+/// WHITE CARD
+//////////////////////////
+.card-white {
+    .tag-order {
+        background: var(--bg-surface3, #eaeaec);
+        color: var(--fg-soft, #9398a0);
+
+        & .icon {
+            stroke: var(--fg-soft, #9398a0);
+        }
+    }
+
+    .tag-instock {
+        background: var(--success-50, #e6f5ec);
+        color: var(--base-success);
+
+        & .icon {
+            stroke: var(--base-success);
+        }
+    }
+
+    .card-action__item {
+        & .icon:not(.icon-Compare) {
+            stroke: var(--fg-default);
+        }
+
+        & .icon-Compare {
+            fill: var(--fg-default);
+        }
+    }
+
+    .card-item__name {
+        color: var(--fg-default, #283142);
+    }
+
+    .swiper-pagination-bullet {
+        background: var(--bg-surface4, #c9cbd0);
+
+        &-active {
+            background: var(--fg-default, #283142);
+        }
+    }
+
+    .card-item__badge .badge {
+        border: none;
+    }
+
+    .card-item__property {
+        &::before {
+            border-color: var(--border-soft, #f4f5f6);
+        }
+    }
+
+    .card-item__property-row p {
+        color: var(--fg-soft, #9398a0);
+    }
+
+    .card-item__price {
+        color: var(--fg-default, #283142);
+
+        & .discount {
+            color: var(--fg-muted);
+        }
+    }
+}
+
+///////////////////////////
+/// DETAIL CARD
+//////////////////////////
+.detail-card {
+    & .card-item {
+        border: 1px solid var(--border-default, #eaeaec);
+    }
+
+    & .card-tag {
+        background: var(--bg-surface3, #eaeaec);
+        color: var(--fg-soft);
+
+        & .icon {
+            stroke: var(--fg-soft);
+        }
+    }
+
+    & .card-item__img {
+        padding: 51px 69px 52px 68px;
+        height: 288px;
+    }
+
+    & .card-item__name {
+        margin-bottom: 8px;
+        font: var(--font-body-l-strong);
+        color: var(--fg-default, #283142);
+    }
+
+    & .card-item__price {
+        font: var(--font-heading-h3);
+        letter-spacing: var(--lp-heading-h3);
+        color: var(--fg-default, #283142);
+    }
+
+    & .card-item__buy {
+        & .qty-input {
+            padding: 6px 4px;
+            flex-shrink: 0;
+            width: 100px;
+        }
+
+        & .qty-input input {
+            margin: 0 4px;
+            width: 32px;
+        }
+
+        & .qty .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
 }

@@ -1,0 +1,11 @@
+.section-catalog {
+    padding-bottom: 32px;
+
+    @include breakpoint(md) {
+        padding-bottom: 64px;
+    }
+
+    @include breakpoint(xl) {
+        padding-bottom: 80px;
+    }
+}

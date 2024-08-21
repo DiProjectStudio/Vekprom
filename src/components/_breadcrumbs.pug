@@ -1,23 +1,45 @@
 mixin breadcrumbs(title, ...items)
 
-    .breadcrumbs
+    .page-header
 
-        .breadcrumbs-wrapper
+        .breadcrumbs
 
-            .breadcrumbs-item
-                a(href='/') Главная
+            .breadcrumbs-wrapper
 
-            each item in items
+                .breadcrumbs-item
+                    a(href='/') Главная
 
-                if item == items[items.length - 1]
-                    span.breadcrumbs-separator /
-                    .breadcrumbs-item
-                        span= item
+                each item in items
 
-                else
-                    span.breadcrumbs-separator /
-                    .breadcrumbs-item
-                        a(href="#")= item
+                    if item == items[items.length - 1]
+                        span.breadcrumbs-separator /
+                        .breadcrumbs-item
+                            span= item
 
-    if title
-        h1.main-title= title
+                    else
+                        span.breadcrumbs-separator /
+                        .breadcrumbs-item
+                            a(href="#")= item
+
+        if title
+            h1.main-title= title
+                span (34)
+
+        if page == 'page-catalog'
+
+            .catalog-header
+
+                .filter-search
+                    form(action="/")
+                        .input-search
+                            button(type="submit" aria-label="Поиск").search-icon
+                                +svg('Search')
+                            input(type="search" placeholder="Поиск по категории" autocomplete="off")
+
+                .filter-btn
+                    +svg('Filter-edit')
+
+                .sorting
+                    .sorting__btn
+                        +svg('Arrow-switch-horizontal')
+                        | Сначала новые

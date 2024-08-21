@@ -37,6 +37,4 @@ export function initializePopup() {
             MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
         }
     });
-
-    console.log('popup.js initialized');
 }

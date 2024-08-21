@@ -41,10 +41,13 @@
 
 .hero__title {
     padding: 20px 16px 0;
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
     color: var(--accent-on-accent, #fff);
 
     @include breakpoint(lg) {
         padding: 24px 32px 0;
+        font: var(--font-display-l-strong);
     }
 
     & span {
