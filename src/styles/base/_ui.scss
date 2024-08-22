@@ -300,7 +300,8 @@ video {
 
 .btn-mini {
     padding: 0 12px;
-    display: inline-flex;
+    display: flex;
+    width: max-content;
     height: 36px;
     font: var(--font-body-s-strong);
 

@@ -73,7 +73,7 @@
             <p>Каталог</p>
           </button>
           <div class="header__search">
-            <form>
+            <form action="/">
               <div class="input-search">
                 <button class="search-icon" type="submit" aria-label="Поиск">
                     <svg class="icon icon-Search">
@@ -557,13 +557,15 @@
     <!-- Header::End-->
     <!-- Main::Start-->
     <main>
-            <div class="breadcrumbs">
-              <div class="breadcrumbs-wrapper">
-                <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
-                <div class="breadcrumbs-item"><a href="#">Каталог</a></div><span class="breadcrumbs-separator">/</span>
-                <div class="breadcrumbs-item"><a href="#">Обработка металла</a></div><span class="breadcrumbs-separator">/</span>
-                <div class="breadcrumbs-item"><a href="#">Сверление и обработка отверстий</a></div><span class="breadcrumbs-separator">/</span>
-                <div class="breadcrumbs-item"><span>Вертикально-сверлильные станки</span></div>
+            <div class="page-header">
+              <div class="breadcrumbs">
+                <div class="breadcrumbs-wrapper">
+                  <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><a href="#">Каталог</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><a href="#">Обработка металла</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><a href="#">Сверление и обработка отверстий</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><span>Вертикально-сверлильные станки</span></div>
+                </div>
               </div>
             </div>
       <section>
@@ -653,7 +655,7 @@
               <div class="product__title">Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон</div>
               <div class="product__block">
                 <div class="product__block-action">
-                  <div class="product__block-btn">
+                  <div class="product__block-btn product-compare">
                       <svg class="icon icon-Compare">
                         <use xlink:href="./assets/spritemap.svg#Compare"></use>
                       </svg>
@@ -665,7 +667,7 @@
                       </svg>
                     <p>Поделиться</p>
                   </div>
-                  <div class="product__block-btn">
+                  <div class="product__block-btn product-favourite">
                       <svg class="icon icon-Heart">
                         <use xlink:href="./assets/spritemap.svg#Heart"></use>
                       </svg>
@@ -748,7 +750,7 @@
                       <div class="product__props-value">7000</div>
                     </div>
                   </div>
-                  <div class="product__props-anchor">Все характеристики
+                  <div class="product__props-anchor" id="props-anchor">Все характеристики
                       <svg class="icon icon-Chevron-down">
                         <use xlink:href="./assets/spritemap.svg#Chevron-down"></use>
                       </svg>
@@ -1399,16 +1401,8 @@
                                         </svg>В наличии
                                     </div>
                                     <div class="card-action">
-                                      <div class="card-action__item card-favourite">
-                                          <svg class="icon icon-Heart-filled">
-                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
-                                          </svg>
-                                      </div>
-                                      <div class="card-action__item card-compare">
-                                          <svg class="icon icon-Compare">
-                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
-                                          </svg>
-                                      </div>
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
                                     </div>
                                     <div class="card-item__img">
                                       <div class="swiper">
@@ -1462,22 +1456,68 @@
                 </div>
                 <div class="swiper-slide slider__item">
                                   <div class="card-item card-white">
+                                    <div class="card-tag tag-order">
+                                        <svg class="icon icon-clock-forward">
+                                          <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                                        </svg>Под заказ
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">Цена по запросу</div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-ask btn btn--primary">Узнать цену</div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
                                     <div class="card-tag tag-instock">
                                         <svg class="icon icon-Check">
                                           <use xlink:href="./assets/spritemap.svg#Check"></use>
                                         </svg>В наличии
                                     </div>
                                     <div class="card-action">
-                                      <div class="card-action__item card-favourite">
-                                          <svg class="icon icon-Heart-filled">
-                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
-                                          </svg>
-                                      </div>
-                                      <div class="card-action__item card-compare">
-                                          <svg class="icon icon-Compare">
-                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
-                                          </svg>
-                                      </div>
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
                                     </div>
                                     <div class="card-item__img">
                                       <div class="swiper">
@@ -1531,35 +1571,27 @@
                 </div>
                 <div class="swiper-slide slider__item">
                                   <div class="card-item card-white">
-                                    <div class="card-tag tag-instock">
-                                        <svg class="icon icon-Check">
-                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
-                                        </svg>В наличии
+                                    <div class="card-tag tag-order">
+                                        <svg class="icon icon-clock-forward">
+                                          <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                                        </svg>Под заказ
                                     </div>
                                     <div class="card-action">
-                                      <div class="card-action__item card-favourite">
-                                          <svg class="icon icon-Heart-filled">
-                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
-                                          </svg>
-                                      </div>
-                                      <div class="card-action__item card-compare">
-                                          <svg class="icon icon-Compare">
-                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
-                                          </svg>
-                                      </div>
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
                                     </div>
                                     <div class="card-item__img">
                                       <div class="swiper">
                                         <div class="swiper-wrapper">
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
                                           </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
                                           </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
                                           </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
                                           </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
                                           </div>
                                         </div>
                                       </div>
@@ -1585,85 +1617,9 @@
                                         <p>866 кг</p>
                                       </div>
                                     </div>
-                                    <div class="card-item__price">3 553 232 ₽
-                                      <div class="discount">3 850 600 ₽</div>
-                                    </div>
+                                    <div class="card-item__price">Цена по запросу</div>
                                     <div class="card-item__buy">
-                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
-                                      <div class="card-item__buy-add btn btn-cart">
-                                          <svg class="icon icon-Basket">
-                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
-                                          </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                </div>
-                <div class="swiper-slide slider__item">
-                                  <div class="card-item card-white">
-                                    <div class="card-tag tag-instock">
-                                        <svg class="icon icon-Check">
-                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
-                                        </svg>В наличии
-                                    </div>
-                                    <div class="card-action">
-                                      <div class="card-action__item card-favourite">
-                                          <svg class="icon icon-Heart-filled">
-                                            <use xlink:href="./assets/spritemap.svg#Heart-filled"></use>
-                                          </svg>
-                                      </div>
-                                      <div class="card-action__item card-compare">
-                                          <svg class="icon icon-Compare">
-                                            <use xlink:href="./assets/spritemap.svg#Compare"></use>
-                                          </svg>
-                                      </div>
-                                    </div>
-                                    <div class="card-item__img">
-                                      <div class="swiper">
-                                        <div class="swiper-wrapper">
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
-                                          </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
-                                          </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
-                                          </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
-                                          </div>
-                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="swiper-pagination nested-pagination"></div>
-                                    </div>
-                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
-                                    <div class="card-item__badge">
-                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
-                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
-                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
-                                    </div>
-                                    <div class="card-item__property">
-                                      <div class="card-item__property-row">
-                                        <p>Мощность</p>
-                                        <p>от 1000 до 3000 Вт</p>
-                                      </div>
-                                      <div class="card-item__property-row">
-                                        <p>Мощность</p>
-                                        <p>от 1000 до 3000 Вт</p>
-                                      </div>
-                                      <div class="card-item__property-row">
-                                        <p>Вес</p>
-                                        <p>866 кг</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-item__price">3 553 232 ₽
-                                      <div class="discount">3 850 600 ₽</div>
-                                    </div>
-                                    <div class="card-item__buy">
-                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
-                                      <div class="card-item__buy-add btn btn-cart">
-                                          <svg class="icon icon-Basket">
-                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
-                                          </svg>
-                                      </div>
+                                      <div class="card-item__buy-ask btn btn--primary">Узнать цену</div>
                                     </div>
                                   </div>
                 </div>
@@ -1709,6 +1665,134 @@
                   <svg class="icon icon-Arrow-narrow-up-right">
                     <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
                   </svg>Подобрать оборудование
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-slider">
+        <div class="container">
+          <div class="head-block">
+            <div class="title">Вы смотрели</div>
+          </div>
+          <div class="slider">
+            <div class="swiper main-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-instock">
+                                        <svg class="icon icon-Check">
+                                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                                        </svg>В наличии
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image.png" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">3 553 232 ₽
+                                      <div class="discount">3 850 600 ₽</div>
+                                    </div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                                      <div class="card-item__buy-add btn btn-cart">
+                                          <svg class="icon icon-Basket">
+                                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                                          </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="swiper-slide slider__item">
+                                  <div class="card-item card-white">
+                                    <div class="card-tag tag-order">
+                                        <svg class="icon icon-clock-forward">
+                                          <use xlink:href="./assets/spritemap.svg#clock-forward"></use>
+                                        </svg>Под заказ
+                                    </div>
+                                    <div class="card-action">
+                                      <div class="card-action__item card-favourite"></div>
+                                      <div class="card-action__item card-compare"></div>
+                                    </div>
+                                    <div class="card-item__img">
+                                      <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                          <div class="swiper-slide"><img src="./assets/images/image-sample.jpg" alt="img">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-pagination nested-pagination"></div>
+                                    </div>
+                                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</a></div>
+                                    <div class="card-item__badge">
+                                      <div class="badge" style="background-color: #FEF3E8;color: #F5851A">Специальная цена</div>
+                                      <div class="badge" style="background-color: #F5E9FF;color: #9924FF">В демозале</div>
+                                      <div class="badge" style="background-color: #E8F5FF;color: #1998FF">Лизинг 0%</div>
+                                    </div>
+                                    <div class="card-item__property">
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Мощность</p>
+                                        <p>от 1000 до 3000 Вт</p>
+                                      </div>
+                                      <div class="card-item__property-row">
+                                        <p>Вес</p>
+                                        <p>866 кг</p>
+                                      </div>
+                                    </div>
+                                    <div class="card-item__price">Цена по запросу</div>
+                                    <div class="card-item__buy">
+                                      <div class="card-item__buy-ask btn btn--primary">Узнать цену</div>
+                                    </div>
+                                  </div>
+                </div>
               </div>
             </div>
           </div>
