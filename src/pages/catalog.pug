@@ -56,6 +56,19 @@ block main
                             .filter__item
                                 .filter__item-name Мощность
                                     span кВт
+                                
+                                .switch
+                                    input#check(type="checkbox", name="check")
+                                    label(for="check") 
+
+                                .slider-container
+                                    .range-slider
+                                        input#range-min(type='range' min='0' max='100' value='25')
+                                        input#range-max(type='range' min='0' max='100' value='75')
+                                    .range-values
+                                        span#min-value 25
+                                        span#max-value 75
+
 
 
                 .catalog__inner

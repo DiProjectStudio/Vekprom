@@ -6,12 +6,14 @@ import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
+import { initializeFilter } from './includes/filter.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
+    initializeFilter();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html
