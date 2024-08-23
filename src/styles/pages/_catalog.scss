@@ -23,6 +23,9 @@
 }
 
 .catalog__aside {
+    margin-bottom: 50px;
+    width: 310px;
+
     @include breakpoint(lg) {
         padding: 20px;
         background: var(--bg-surface1, #fff);

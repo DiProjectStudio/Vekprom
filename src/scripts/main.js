@@ -39,7 +39,7 @@ Inputmask({
     onBeforePaste: (pastedValue, opts) => {
         return pastedValue.replace(/^8/, '');
     }
-}).mask('[phone-number]');
+}).mask('[data-phone-number]');
 
 // Inputmask for numbers
 Inputmask({
@@ -48,7 +48,15 @@ Inputmask({
     showMaskOnHover: false,
     showMaskOnFocus: false,
     placeholder: ''
-}).mask('[number-only]');
+}).mask('[data-number-only]');
+
+Inputmask({
+    alias: 'numeric',
+    groupSeparator: ' ',
+    autoGroup: true,
+    digits: 0,
+    rightAlign: false
+}).mask('[data-financial]');
 
 // Burger menu
 $('#burger').on('click', (e) => {

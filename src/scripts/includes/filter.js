@@ -1,26 +1,41 @@
 export function initializeFilter() {
-    const $min = $('#range-min');
-    const $max = $('#range-max');
-    const $minValue = $('#min-value');
-    const $maxValue = $('#max-value');
+    // Filter catalog
+    $('.range').each(function () {
+        const $container = $(this);
+        const $min = $container.find('.range-min');
+        const $max = $container.find('.range-max');
+        const $minValue = $container.find('.min-value');
+        const $maxValue = $container.find('.max-value');
+        const $highlight = $container.find('.range-highlight');
 
-    function updateValues() {
-        const minValue = parseInt($min.val());
-        const maxValue = parseInt($max.val());
+        function updateValues() {
+            let minValue = parseInt($min.val());
+            let maxValue = parseInt($max.val());
 
-        if (minValue > maxValue - 5) {
-            $min.val(maxValue - 5);
+            const minPercent = (minValue / $min.attr('max')) * 100;
+            const maxPercent = (maxValue / $max.attr('max')) * 100;
+
+            if (minValue > maxValue) {
+                $min.val(maxValue);
+                minValue = maxValue;
+            }
+            if (maxValue < minValue) {
+                $max.val(minValue);
+                maxValue = minValue;
+            }
+
+            $highlight.css({
+                left: `${minPercent}%`,
+                right: `${100 - maxPercent}%`
+            });
+
+            $minValue.val(minValue);
+            $maxValue.val(maxValue);
         }
-        if (maxValue < minValue + 5) {
-            $max.val(minValue + 5);
-        }
 
-        $minValue.text($min.val());
-        $maxValue.text($max.val());
-    }
+        $min.on('input', updateValues);
+        $max.on('input', updateValues);
 
-    $min.on('input', updateValues);
-    $max.on('input', updateValues);
-
-    updateValues();
+        updateValues();
+    });
 }

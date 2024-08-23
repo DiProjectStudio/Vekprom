@@ -49,27 +49,54 @@ block main
 
                             .filter__item
                                 .filter__item-name В наличии
-                                .filter__checkbox
+                                .filter__checkbox.switch
                                     input#switch(type="checkbox", name="switch")
                                     label(for="switch") 
 
                             .filter__item
                                 .filter__item-name Мощность
                                     span кВт
-                                
-                                .switch
-                                    input#check(type="checkbox", name="check")
-                                    label(for="check") 
 
-                                .slider-container
-                                    .range-slider
-                                        input#range-min(type='range' min='0' max='100' value='25')
-                                        input#range-max(type='range' min='0' max='100' value='75')
+                                .range
                                     .range-values
-                                        span#min-value 25
-                                        span#max-value 75
+                                        input.min-value(type="text" name="range" min='1' max='100' value='1')
+                                        input.max-value(type="text" name="range" min='1' max='100' value='100')
+                                    .range-slider
+                                        .range-highlight
+                                        input.range-min(type='range' name="range" min='1' max='100' value='1')
+                                        input.range-max(type='range' name="range" min='1' max='100' value='100')                
 
+                            .filter__item
+                                .filter__item-name Цена
+                                    span ₽
 
+                                .range
+                                    .range-values
+                                        input.min-value(type="text" data-financial name="range" min='1' max='2755000' value='1')
+                                        input.max-value(type="text" data-financial name="range" min='1' max='2755000' value='2755000')
+                                    .range-slider
+                                        .range-highlight
+                                        input.range-min(type='range' min='1' name="range" max='2755000' value='1')
+                                        input.range-max(type='range' min='1' name="range" max='2755000' value='2755000')
+
+                            .filter__item
+                                .filter__item-name Тип привода
+
+                                .checkbox
+                                    input#type-1(type="checkbox")
+                                    label(for="type-1") Электрический (18)
+                                
+                                .checkbox
+                                    input#type-2(type="checkbox")
+                                    label(for="type-2") Гидравлический (16)
+                                
+                                .checkbox
+                                    input#type-3(type="checkbox")
+                                    label(for="type-3") Пневматический (14)
+                                
+                                .checkbox
+                                    input#type-4(type="checkbox")
+                                    label(for="type-4") Механический (12)
 
                 .catalog__inner
 
