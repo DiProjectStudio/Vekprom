@@ -124,12 +124,14 @@
     }
 
     @include breakpoint(lg) {
+        flex-shrink: 0;
         width: 325px;
     }
 }
 
 .filter-btn {
     background: var(--bg-surface1, #fff);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,10 +139,23 @@
     height: 36px;
     border-radius: 8px;
     border: 1px solid var(--border-default, #eaeaec);
-    cursor: pointer;
 
     @include breakpoint(lg) {
         display: none;
+    }
+
+    &.active {
+        &::after {
+            content: '';
+            background: var(--accent-default, #f5851a);
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
     }
 
     & .icon {
@@ -151,8 +166,11 @@
 }
 
 .sorting {
+    position: relative;
+
     @include breakpoint(lg) {
         margin-left: 20px;
+        flex-shrink: 0;
     }
 }
 
@@ -164,6 +182,7 @@
     max-width: max-content;
     border-radius: 8px;
     border: 1px solid var(--border-default, #eaeaec);
+    transition: $transition;
     user-select: none;
     cursor: pointer;
 
@@ -172,6 +191,98 @@
         width: 16px;
         height: 16px;
         stroke: var(--fg-soft);
+    }
+
+    &:hover {
+        color: var(--neutral-hover, #535a68);
+
+        & .icon {
+            stroke: var(--accent-default);
+        }
+    }
+}
+
+.sorting__dropdown {
+    padding: 4px;
+    background: var(--bg-surface1, #fff);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top center;
+    visibility: hidden;
+    transition: $transition;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    z-index: 5;
+
+    .dropdown & {
+        transform: scaleY(1);
+        visibility: visible;
+    }
+
+    & .radio {
+        & label {
+            padding: 4px 8px 4px 10px;
+            border-radius: 6px;
+
+            &::before {
+                margin-right: 10px;
+            }
+        }
+
+        & input:checked + label {
+            background: var(--bg-surface2, #f4f5f6);
+        }
+    }
+}
+
+.filter-props {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        margin-left: 12px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 8px;
+        row-gap: 8px;
+    }
+}
+
+.filter-props__item {
+    padding: 4px 16px;
+    background: var(--accent-500, #f5851a);
+    display: flex;
+    align-items: center;
+    color: var(--Static-white, #fff);
+    border-radius: 9999px;
+    cursor: default;
+}
+
+.filter-props__remove {
+    margin-left: 2px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    & .icon {
+        width: 100%;
+        height: 100%;
+        stroke: var(--accent-on-accent);
+    }
+}
+
+.filter-reset {
+    background: transparent;
+    color: var(--fg-default, #283142);
+    border: var(--Number, 1px) solid var(--neutral-100, #c9cbd0);
+
+    & .icon {
+        stroke: var(--fg-default);
     }
 }
 

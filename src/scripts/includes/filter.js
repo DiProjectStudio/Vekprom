@@ -1,5 +1,15 @@
 export function initializeFilter() {
     // Filter catalog
+    $('.js-filter-btn').on('click', (e) => {
+        $('.catalog__aside').addClass('show');
+        $('body').addClass('overflow-hidden');
+    });
+
+    $('.js-filter-close').on('click', (e) => {
+        $('.catalog__aside').removeClass('show');
+        $('body').removeClass('overflow-hidden');
+    });
+
     $('.range').each(function () {
         const $container = $(this);
         const $min = $container.find('.range-min');
@@ -37,5 +47,36 @@ export function initializeFilter() {
         $max.on('input', updateValues);
 
         updateValues();
+    });
+
+    $('.js-sorting').on('click', (e) => {
+        if (!$(e.currentTarget).closest('.sorting').hasClass('dropdown')) {
+            $(e.currentTarget).closest('.sorting').addClass('dropdown');
+
+            $(document).on('click', (i) => {
+                if (
+                    !$(i.target).closest('.js-sorting').length &&
+                    $('.sorting').hasClass('dropdown')
+                ) {
+                    $('.sorting').removeClass('dropdown');
+                }
+            });
+        } else {
+            $(e.currentTarget).closest('.sorting').removeClass('dropdown');
+        }
+    });
+
+    $('.js-view').on('click', (e) => {
+        $('.js-view').removeClass('active');
+
+        if (!$(e.currentTarget).hasClass('active')) {
+            $(e.currentTarget).addClass('active');
+        }
+
+        if ($(e.currentTarget).hasClass('js-table-list')) {
+            $('.catalog__wrap').addClass('table-list');
+        } else {
+            $('.catalog__wrap').removeClass('table-list');
+        }
     });
 }

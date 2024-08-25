@@ -14,22 +14,209 @@
     @include breakpoint(lg) {
         display: grid;
         grid-template-columns: 3fr 9fr;
-        column-gap: 10px;
+        column-gap: 16px;
     }
 
     @include breakpoint(xl) {
+        grid-template-columns: 335px 9fr;
         column-gap: 20px;
     }
 }
 
 .catalog__aside {
-    margin-bottom: 50px;
-    width: 310px;
+    background: var(--bg-surface1, #fff);
+    height: max-content;
+    border-radius: 12px;
+
+    @include breakpointMax(lg) {
+        padding-bottom: 100px;
+        position: fixed;
+        top: 84px;
+        left: -100%;
+        width: calc(100% - (var(--container) * 2));
+        transition: $transition;
+        z-index: 20;
+    }
+
+    @include breakpointMax(md) {
+        top: 78px;
+    }
 
     @include breakpoint(lg) {
         padding: 20px;
-        background: var(--bg-surface1, #fff);
-        border-radius: 12px;
+    }
+
+    &.show {
+        left: var(--container);
+        height: 100%;
+        overflow-y: scroll;
+    }
+}
+
+.catalog__aside-title {
+    padding: 20px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    font: var(--font-heading-h3);
+    letter-spacing: var(--lp-heading-h3);
+    z-index: 5;
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+
+    & .close {
+        width: 24px;
+        height: 24px;
+        stroke: var(--fg-muted);
+    }
+}
+
+.filter {
+    display: grid;
+    row-gap: 40px;
+
+    @include breakpointMax(lg) {
+        padding: 0 20px;
+        position: relative;
+    }
+}
+
+.filter__item {
+    & label span {
+        margin-left: 5px;
+        color: var(--fg-muted, #c9cbd0);
+    }
+
+    & .show-all {
+        margin-top: 12px;
+        width: max-content;
+        font: var(--font-description-l);
+        color: var(--accent-default, #f5851a);
+    }
+}
+
+.filter__item-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__item-name {
+    margin-bottom: 12px;
+    font: var(--font-body-s-strong);
+
+    & span {
+        margin-left: 4px;
+        font: var(--font-body-s);
+        color: var(--fg-soft, #9398a0);
+    }
+
+    .filter__item-wrap & {
+        margin-bottom: 0;
+    }
+}
+
+.filter__category-item {
+    padding-left: 20px;
+    border-radius: 8px;
+
+    & ~ .filter__category-item {
+        margin-top: 12px;
+    }
+
+    &.active {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background: var(--neutral-10, #f9f9f9);
+        font: var(--font-body-s-strong);
+
+        & + .filter__category-item {
+            margin-top: 4px;
+        }
+    }
+
+    & ul {
+        padding: 0;
+        list-style: none;
+    }
+}
+
+.filter__subcategory {
+    display: none;
+}
+
+.filter__element {
+    display: none;
+}
+
+.filter__action {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 40px;
+    }
+
+    & .btn {
+        height: 46px;
+
+        & ~ .btn {
+            @include breakpoint(lg) {
+                margin-top: 12px;
+            }
+        }
+
+        & span {
+            @include breakpointMax(lg) {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.filter__mobile {
+    @include breakpointMax(lg) {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        display: none;
+        grid-template-columns: 200px 200px;
+        column-gap: 8px;
+        width: max-content;
+        transform: translate(-50%);
+        z-index: 5;
+    }
+
+    @include breakpointMax(md) {
+        grid-template-columns: 156px 156px;
+    }
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+
+    .catalog__aside.show & {
+        display: grid;
+    }
+
+    & .btn {
+        height: 46px;
+
+        & ~ .btn {
+            @include breakpointMax(lg) {
+                order: -1;
+            }
+        }
+
+        & span {
+            @include breakpointMax(lg) {
+                margin-left: 5px;
+            }
+        }
     }
 }
 
@@ -54,6 +241,114 @@
 
         &:hover {
             border-color: var(--neutral-200, #9398a0);
+        }
+    }
+}
+
+.catalog__wrap.table-list {
+    @include breakpoint(lg) {
+        grid-template-columns: auto;
+    }
+
+    & .card-item {
+        @include breakpoint(lg) {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: flex-start;
+            column-gap: 16px;
+        }
+
+        @include breakpoint(xl) {
+            column-gap: 20px;
+        }
+    }
+
+    & .card-action {
+        @include breakpoint(xl) {
+            left: 315px;
+        }
+    }
+
+    & .card-item__img {
+        @include breakpoint(lg) {
+            margin: 0 4px 0 20px;
+            grid-row: 1 / 4;
+            width: 211px;
+            height: 170px;
+        }
+
+        @include breakpoint(xl) {
+            margin: 0 57.5px;
+        }
+
+        & .swiper-pagination {
+            @include breakpoint(lg) {
+                position: absolute;
+                left: 36px;
+                bottom: 14px;
+                width: 211px;
+            }
+
+            @include breakpoint(xl) {
+                left: 74px;
+            }
+        }
+    }
+
+    & .card-item__name {
+        @include breakpoint(lg) {
+            margin-bottom: 14px;
+            grid-column: 2;
+        }
+    }
+
+    & .card-item__badge {
+        @include breakpoint(lg) {
+            align-items: flex-start;
+            grid-column: 3;
+            width: 284px;
+        }
+
+        @include breakpoint(xl) {
+            width: 318px;
+        }
+    }
+
+    & .card-item__property {
+        @include breakpoint(lg) {
+            margin-top: 0;
+            grid-column: 2;
+            grid-row: 2 / 4;
+        }
+
+        &::before {
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    & .card-item__price {
+        @include breakpoint(lg) {
+            margin: auto 0 8px;
+            padding-top: 0;
+            grid-column: 3;
+            justify-content: flex-start;
+            column-gap: 12px;
+            width: 284px;
+        }
+    }
+
+    & .card-item__buy {
+        @include breakpoint(lg) {
+            grid-column: 3;
+            width: 284px;
+        }
+    }
+
+    & .card-item__buy-fast {
+        @include breakpoint(xl) {
+            flex-shrink: 0;
+            width: 226px;
         }
     }
 }

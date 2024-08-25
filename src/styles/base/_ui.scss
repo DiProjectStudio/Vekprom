@@ -511,10 +511,14 @@ video {
     }
 
     & label {
+        display: flex;
+        align-items: center;
+        user-select: none;
         cursor: pointer;
 
         &::before {
             content: '';
+            margin-right: 12px;
             width: 16px;
             height: 16px;
             border-radius: 4px;
@@ -528,9 +532,12 @@ video {
             background-color: var(--accent-default, #f5851a);
             background-image: $check;
             background-size: contain;
-            display: block;
             border-color: var(--accent-default, #f5851a);
         }
+    }
+
+    & ~ .checkbox {
+        margin-top: 8px;
     }
 }
 
@@ -542,26 +549,31 @@ video {
     & label {
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        border: 1px solid var(--fg-muted, #c9cbd0);
+        user-select: none;
         cursor: pointer;
-    }
-
-    & input:checked + label {
-        background: var(--accent-default, #f5851a);
-        border-color: var(--accent-default, #f5851a);
 
         &::before {
             content: '';
-            background: #fff;
-            display: block;
-            width: 8px;
-            height: 8px;
+            margin-right: 12px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
+            border: 1px solid var(--fg-muted, #c9cbd0);
         }
+    }
+
+    & input:checked + label {
+        &::before {
+            content: '';
+            background-color: var(--accent-default, #f5851a);
+            background-image: $radio;
+            background-size: contain;
+            border-color: var(--accent-default, #f5851a);
+        }
+    }
+
+    & ~ .radio {
+        margin-top: 8px;
     }
 }
 

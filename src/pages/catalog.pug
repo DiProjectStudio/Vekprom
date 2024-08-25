@@ -17,41 +17,46 @@ block main
 
                 .catalog__aside
 
-                    form(action="/") 
+                    .catalog__aside-title Фильтры
+                        .close.js-filter-close
+                            +svg('Close')
+
+                    form(action="/")
 
                         .filter
 
                             .filter__item
-                                .filter__category-item.active Обработка металла
-                                    ul
-
-                                        li Сверление и обработка отверстий
-                                            ul
-                                                li Магнитные сверлильные станки
-
-                                        li Магнитные сверлильные станки
-                                        li Вертикально-сверлильные станки
-                                        li Радиально-сверлильные станки
-                                        li Вертикально-сверлильные станки
-                                        li Радиально-сверлильные станки
-
-                                .filter__category-item Сверление и обработка отверстий
-                                .filter__category-item Металлорежущий инструмент
-                                .filter__category-item Обработка кромки, снятие фаски
-                                .filter__category-item Шлифовка и полировка
-                                .filter__category-item Сверление и обработка отверстий
-                                .filter__category-item Металлорежущий инструмент
-                                .filter__category-item Обработка кромки, снятие фаски
-                                .filter__category-item Шлифовка и полировка
-                                .filter__category-item Сверление и обработка отверстий
-                                .filter__category-item Металлорежущий инструмент
-                                .filter__category-item Обработка кромки, снятие фаски
+                                .filter__category-item.active
+                                    a(href="#") Обработка металла
+                                .filter__category-item
+                                    a(href="#") Сверление и обработка отверстий
+                                .filter__category-item
+                                    a(href="#") Металлорежущий инструмент
+                                .filter__category-item
+                                    a(href="#") Обработка кромки, снятие фаски
+                                .filter__category-item
+                                    a(href="#") Шлифовка и полировка
+                                .filter__category-item
+                                    a(href="#") Сверление и обработка отверстий
+                                .filter__category-item
+                                    a(href="#") Металлорежущий инструмент
+                                .filter__category-item
+                                    a(href="#") Обработка кромки, снятие фаски
+                                .filter__category-item
+                                    a(href="#") Шлифовка и полировка
+                                .filter__category-item
+                                    a(href="#") Сверление и обработка отверстий
+                                .filter__category-item
+                                    a(href="#") Металлорежущий инструмент
+                                .filter__category-item
+                                    a(href="#") Обработка кромки, снятие фаски
 
                             .filter__item
-                                .filter__item-name В наличии
-                                .filter__checkbox.switch
-                                    input#switch(type="checkbox", name="switch")
-                                    label(for="switch") 
+                                .filter__item-wrap
+                                    .filter__item-name В наличии
+                                    .filter__checkbox.switch
+                                        input#switch(type="checkbox", name="switch")
+                                        label(for="switch")
 
                             .filter__item
                                 .filter__item-name Мощность
@@ -64,7 +69,7 @@ block main
                                     .range-slider
                                         .range-highlight
                                         input.range-min(type='range' name="range" min='1' max='100' value='1')
-                                        input.range-max(type='range' name="range" min='1' max='100' value='100')                
+                                        input.range-max(type='range' name="range" min='1' max='100' value='100')
 
                             .filter__item
                                 .filter__item-name Цена
@@ -83,20 +88,71 @@ block main
                                 .filter__item-name Тип привода
 
                                 .checkbox
-                                    input#type-1(type="checkbox")
-                                    label(for="type-1") Электрический (18)
-                                
+                                    input#type-1(type="checkbox" name="type")
+                                    label(for="type-1") Электрический
+                                        span (18)
                                 .checkbox
-                                    input#type-2(type="checkbox")
-                                    label(for="type-2") Гидравлический (16)
-                                
+                                    input#type-2(type="checkbox" name="type")
+                                    label(for="type-2") Гидравлический
+                                        span (16)
                                 .checkbox
-                                    input#type-3(type="checkbox")
-                                    label(for="type-3") Пневматический (14)
-                                
+                                    input#type-3(type="checkbox" name="type")
+                                    label(for="type-3") Пневматический
+                                        span (14)
                                 .checkbox
-                                    input#type-4(type="checkbox")
-                                    label(for="type-4") Механический (12)
+                                    input#type-4(type="checkbox" name="type")
+                                    label(for="type-4") Механический
+                                        span (12)
+
+                            .filter__item
+                                .filter__item-name Материал
+
+                                .radio
+                                    input#material-1(type="radio" name="material")
+                                    label(for="material-1") Металл
+                                        span (10)
+                                .radio
+                                    input#material-2(type="radio" name="material")
+                                    label(for="material-2") Пластик
+                                        span (8)
+                                .radio
+                                    input#material-3(type="radio" name="material")
+                                    label(for="material-3") Композитный материал
+                                        span (6)
+
+                            .filter__item
+                                .filter__item-name Производитель
+
+                                .checkbox
+                                    input#prod-1(type="checkbox" name="prod")
+                                    label(for="prod-1") ATTA
+                                        span (23)
+                                .checkbox
+                                    input#prod-2(type="checkbox" name="prod")
+                                    label(for="prod-2") Векамак
+                                        span (15)
+                                .checkbox
+                                    input#prod-3(type="checkbox" name="prod")
+                                    label(for="prod-3") Tokagama
+                                        span (11)
+                                .checkbox
+                                    input#prod-4(type="checkbox" name="prod")
+                                    label(for="prod-4") King-Macc
+                                        span (9)
+                                .checkbox
+                                    input#prod-5(type="checkbox" name="prod")
+                                    label(for="prod-5") Practic
+                                        span (6)
+
+                                a(href="#").show-all Показать еще
+
+                        .filter__action
+                            a.btn.btn--primary(href="#") Применить
+                            a.btn.btn--tertialy(href="#") Сбросить фильтр
+
+                        .filter__mobile
+                            a.btn.btn--primary(href="#") Показать (390)
+                            a.btn.btn--tertialy(href="#") Сбросить
 
                 .catalog__inner
 
@@ -117,4 +173,3 @@ block main
                         +card('Под заказ')
 
                     include ../components/_pagination
-            
