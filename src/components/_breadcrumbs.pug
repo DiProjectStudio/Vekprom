@@ -21,11 +21,10 @@ mixin breadcrumbs(title, ...items)
                         .breadcrumbs-item
                             a(href="#")= item
 
-        if title
+        if page == 'page-catalog'
+
             h1.main-title= title
                 span (34)
-
-        if page == 'page-catalog'
 
             .catalog-header
 
@@ -61,6 +60,40 @@ mixin breadcrumbs(title, ...items)
                     .filter-props__item.filter-reset Сбросить фильтры
                         .filter-props__remove
                             +svg('Close')
+
+                .view-style
+                    .view-style__item.js-view.active
+                        +svg('tile')
+                    .view-style__item.js-view.js-table-list
+                        +svg('list-line')
+
+        if page == 'page-search'
+
+            h1.main-title= title
+
+            .catalog-header
+
+                .filter-search
+                    form(action="/")
+                        .input-search
+                            button(type="submit" aria-label="Поиск").search-icon
+                                +svg('Search')
+                            input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
+
+                .filter-btn.js-filter-btn
+                    +svg('Filter-edit')
+
+                .sorting
+                    .sorting__btn.js-sorting
+                        +svg('Arrow-switch-horizontal')
+                        | Сначала новые
+                    .sorting__dropdown
+                        .radio
+                            input#sort-new(type="radio" name="sorting" checked)
+                            label(for="sort-new") Сначала новые
+                        .radio
+                            input#sort-old(type="radio" name="sorting")
+                            label(for="sort-old") Сначала старые
 
                 .view-style
                     .view-style__item.js-view.active

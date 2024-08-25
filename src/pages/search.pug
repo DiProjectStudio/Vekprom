@@ -1,0 +1,133 @@
+extends /layout/layout
+
+block title
+    - var title = 'Найдено'
+    - var page = 'page-search'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Найдено', 'Поиск')
+
+    section.section-catalog
+
+        .container
+
+            .catalog
+
+                .catalog__aside
+
+                    .catalog__aside-title Фильтры
+                        .close.js-filter-close
+                            +svg('Close')
+
+                    form(action="/")
+
+                        .filter
+
+                            .filter__item
+                                .filter__item-name Категории
+
+                                .checkbox
+                                    input#cat-1(type="checkbox" name="prod")
+                                    label(for="cat-1") Лазерные установки резки
+                                        span (24)
+                                .checkbox
+                                    input#cat-2(type="checkbox" name="prod")
+                                    label(for="cat-2") Лазерная сварка
+                                        span (18)
+                                .checkbox
+                                    input#cat-3(type="checkbox" name="prod")
+                                    label(for="cat-3") Лазерная очистка
+                                        span (12)
+                                .checkbox
+                                    input#cat-4(type="checkbox" name="prod")
+                                    label(for="cat-4") Лазерные граверы-резчики
+                                        span (8)
+
+                            .filter__item
+                                .filter__item-wrap
+                                    .filter__item-name В наличии
+                                    .filter__checkbox.switch
+                                        input#switch(type="checkbox", name="switch")
+                                        label(for="switch")
+
+                            .filter__item
+                                .filter__item-name Мощность
+                                    span кВт
+
+                                .range
+                                    .range-values
+                                        input.min-value(type="text" name="range" min='1' max='100' value='1')
+                                        input.max-value(type="text" name="range" min='1' max='100' value='100')
+                                    .range-slider
+                                        .range-highlight
+                                        input.range-min(type='range' name="range" min='1' max='100' value='1')
+                                        input.range-max(type='range' name="range" min='1' max='100' value='100')
+
+                            .filter__item
+                                .filter__item-name Цена
+                                    span ₽
+
+                                .range
+                                    .range-values
+                                        input.min-value(type="text" data-financial name="range" min='1' max='2755000' value='1')
+                                        input.max-value(type="text" data-financial name="range" min='1' max='2755000' value='2755000')
+                                    .range-slider
+                                        .range-highlight
+                                        input.range-min(type='range' min='1' name="range" max='2755000' value='1')
+                                        input.range-max(type='range' min='1' name="range" max='2755000' value='2755000')
+
+                            .filter__item
+                                .filter__item-name Производитель
+
+                                .checkbox
+                                    input#prod-1(type="checkbox" name="prod")
+                                    label(for="prod-1") ATTA
+                                        span (23)
+                                .checkbox
+                                    input#prod-2(type="checkbox" name="prod")
+                                    label(for="prod-2") Векамак
+                                        span (15)
+                                .checkbox
+                                    input#prod-3(type="checkbox" name="prod")
+                                    label(for="prod-3") Tokagama
+                                        span (11)
+                                .checkbox
+                                    input#prod-4(type="checkbox" name="prod")
+                                    label(for="prod-4") King-Macc
+                                        span (9)
+                                .checkbox
+                                    input#prod-5(type="checkbox" name="prod")
+                                    label(for="prod-5") Practic
+                                        span (6)
+
+                                a(href="#").show-all Показать еще
+
+                        .filter__action
+                            a.btn.btn--primary(href="#") Применить
+                            a.btn.btn--tertialy(href="#") Сбросить фильтр
+
+                        .filter__mobile
+                            a.btn.btn--primary(href="#") Показать (390)
+                            a.btn.btn--tertialy(href="#") Сбросить
+
+                .catalog__inner
+
+                    .catalog__wrap
+
+                        include ../components/_card-white
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+                        +card
+                        +card('Под заказ')
+
+                    include ../components/_pagination
