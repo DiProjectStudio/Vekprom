@@ -709,3 +709,43 @@ video {
     margin: 0;
     -webkit-appearance: none;
 }
+
+.input {
+    position: relative;
+
+    & label {
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+
+    & input {
+        padding: 16px 20px;
+        background: var(--bg-surface1, #fff);
+        width: 100%;
+        font: var(--font-body-m);
+        height: 54px;
+        border: none;
+        border-radius: 12px;
+        border: 1px solid var(--border-default, #eaeaec);
+
+        &:focus {
+            border-color: var(--fg-default, #283142);
+        }
+
+        &:disabled {
+            background: var(--bg-surface2, #f4f5f6);
+            border-color: var(--bg-surface2, #f4f5f6);
+        }
+    }
+
+    &.error {
+        & input {
+            border-color: var(--base-error);
+        }
+
+        & p {
+            margin-top: 4px;
+            color: var(--base-error, #d91528);
+        }
+    }
+}

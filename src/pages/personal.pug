@@ -6,6 +6,93 @@ block title
 
 block main
 
-    section.section-catalog
+    section.section-personal
 
         .container
+
+            .personal
+
+                .personal-aside
+
+                    .personal__user
+                        span К
+                        p Константин
+
+                    ul.personal__nav
+                        li
+                            a(href="#").active
+                                +svg('Info')
+                                |Личные данные
+                        li
+                            a(href="#").notice
+                                +svg('Basket')
+                                |Мои заказы
+                                span (2)
+                        li
+                            a(href="#")
+                                +svg('Heart')
+                                |Избранное
+                                span (2)
+                        li
+                            a(href="#")
+                                +svg('Password-Show')
+                                |Просмотренное
+                        li
+                            a(href="#")
+                                +svg('Message-text')
+                                |Мои отзывы
+
+                    a.personal__exit(href="#") Выйти
+
+                .personal-main
+                    
+                    .personal__title Личные данные
+
+                    form(action="/")
+
+                        .personal__data
+                            
+                            .personal__data-item
+                                .input
+                                    label(for="name") Имя
+                                    input#name(type="text" name="name" disabled value="Максим" autocomplete="off")
+                                .edit(onclick="personalEdit(this)")
+                                    +svg('Pencil')
+
+                                .personal__data-action
+                                    .btn.btn--primary Сохранить
+                                    .btn.btn--tertialy(onclick="editCancel(this)") Отменить
+                            
+                            .personal__data-item
+                                .input
+                                    label(for="lastname") Фамилия
+                                    input#lastname(type="text" name="name" disabled value="Максимов" autocomplete="off")
+                                .edit(onclick="personalEdit(this)")
+                                    +svg('Pencil')
+
+                                .personal__data-action
+                                    .btn.btn--primary Сохранить
+                                    .btn.btn--tertialy(onclick="editCancel(this)") Отменить
+
+                            .personal__data-item
+                                .input
+                                    label(for="phone") Телефон
+                                    input#phone(type="text" name="name" disabled value="+7 (999) 999-99-99" autocomplete="off" data-phone-number)
+                                
+                                .edit(onclick="personalEdit(this)")
+                                    +svg('Pencil')
+
+                                .personal__data-action
+                                    .btn.btn--primary Сохранить
+                                    .btn.btn--tertialy(onclick="editCancel(this)") Отменить
+
+                            .personal__data-item
+                                .input
+                                    label(for="email") Электронная почта
+                                    input#email(type="text" name="name" disabled value="maksim@mail.ru" autocomplete="off")
+                                .edit(onclick="personalEdit(this)")
+                                    +svg('Pencil')
+
+                                .personal__data-action
+                                    .btn.btn--primary Сохранить
+                                    .btn.btn--tertialy(onclick="editCancel(this)") Отменить

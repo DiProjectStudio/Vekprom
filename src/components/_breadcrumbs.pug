@@ -73,24 +73,16 @@ mixin breadcrumbs(title, ...items)
 
             .catalog-header
 
-                .filter-search
-                    form(action="/")
-                        .input-search
-                            button(type="submit" aria-label="Поиск").search-icon
-                                +svg('Search')
-                            input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
-
-                .filter-btn.js-filter-btn
-                    +svg('Filter-edit')
+                .result <span>1234</span> товара в <span>4</span> категориях
 
                 .sorting
                     .sorting__btn.js-sorting
                         +svg('Arrow-switch-horizontal')
-                        | Сначала новые
+                        | Сначала популярные
                     .sorting__dropdown
                         .radio
                             input#sort-new(type="radio" name="sorting" checked)
-                            label(for="sort-new") Сначала новые
+                            label(for="sort-new") Сначала популярные
                         .radio
                             input#sort-old(type="radio" name="sorting")
                             label(for="sort-old") Сначала старые

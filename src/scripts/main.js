@@ -7,6 +7,7 @@ import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
 import { initializeFilter } from './includes/filter.js';
+import { initializePersonal } from './includes/personal.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializePopup();
     initializeSlider();
     initializeFilter();
+    initializePersonal();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

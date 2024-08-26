@@ -117,6 +117,30 @@
     }
 }
 
+.result {
+    margin-bottom: 16px;
+    padding: 7px 70px 7px 6px;
+    font: var(--font-body-m);
+
+    @include breakpoint(md) {
+        margin-bottom: 0;
+        padding: 7px 70px 7px 16px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 7px 0 7px 22px;
+        width: 290px;
+    }
+
+    @include breakpoint(xl) {
+        width: 325px;
+    }
+
+    & span {
+        color: var(--accent-default, #f5851a);
+    }
+}
+
 .filter-search {
     @include breakpointMax(lg) {
         margin-bottom: 10px;
