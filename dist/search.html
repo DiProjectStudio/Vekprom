@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница каталога</title>
+    <title>Найдено</title>
     <!-- Scripts::Start-->
     <script data-skip-moving="true">
       const home_dir = './';
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
-  <body class="page-catalog">
+  <body class="page-search">
     <!-- Header::Start-->
     <header class="header" id="header">
       <div class="container">
@@ -561,66 +561,26 @@
               <div class="breadcrumbs">
                 <div class="breadcrumbs-wrapper">
                   <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
-                  <div class="breadcrumbs-item"><a href="#">Каталог</a></div><span class="breadcrumbs-separator">/</span>
-                  <div class="breadcrumbs-item"><span>Обработка металла</span></div>
+                  <div class="breadcrumbs-item"><span>Поиск</span></div>
                 </div>
               </div>
-              <h1 class="main-title">Обработка металла<span>(34)</span></h1>
+              <h1 class="main-title">Найдено</h1>
               <div class="catalog-header">
-                <div class="filter-search">
-                  <form action="/">
-                    <div class="input-search">
-                      <button class="search-icon" type="submit" aria-label="Поиск">
-                          <svg class="icon icon-Search">
-                            <use xlink:href="./assets/spritemap.svg#Search"></use>
-                          </svg>
-                      </button>
-                      <input type="search" name="search" placeholder="Поиск по категории" autocomplete="off">
-                    </div>
-                  </form>
-                </div>
-                <div class="filter-btn js-filter-btn">
-                    <svg class="icon icon-Filter-edit">
-                      <use xlink:href="./assets/spritemap.svg#Filter-edit"></use>
-                    </svg>
-                </div>
+                <div class="result"><span>1234</span> товара в <span>4</span> категориях</div>
                 <div class="sorting">
                   <div class="sorting__btn js-sorting">
                       <svg class="icon icon-Arrow-switch-horizontal">
                         <use xlink:href="./assets/spritemap.svg#Arrow-switch-horizontal"></use>
-                      </svg>Сначала новые
+                      </svg>Сначала популярные
                   </div>
                   <div class="sorting__dropdown">
                     <div class="radio">
                       <input id="sort-new" type="radio" name="sorting" checked>
-                      <label for="sort-new">Сначала новые</label>
+                      <label for="sort-new">Сначала популярные</label>
                     </div>
                     <div class="radio">
                       <input id="sort-old" type="radio" name="sorting">
                       <label for="sort-old">Сначала старые</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="filter-props">
-                  <div class="filter-props__item">В наличии
-                    <div class="filter-props__remove">
-                        <svg class="icon icon-Close">
-                          <use xlink:href="./assets/spritemap.svg#Close"></use>
-                        </svg>
-                    </div>
-                  </div>
-                  <div class="filter-props__item">Металлорежущий инструмент
-                    <div class="filter-props__remove">
-                        <svg class="icon icon-Close">
-                          <use xlink:href="./assets/spritemap.svg#Close"></use>
-                        </svg>
-                    </div>
-                  </div>
-                  <div class="filter-props__item filter-reset">Сбросить фильтры
-                    <div class="filter-props__remove">
-                        <svg class="icon icon-Close">
-                          <use xlink:href="./assets/spritemap.svg#Close"></use>
-                        </svg>
                     </div>
                   </div>
                 </div>
@@ -652,18 +612,23 @@
               <form action="/">
                 <div class="filter">
                   <div class="filter__item">
-                    <div class="filter__category-item active"><a href="#">Обработка металла</a></div>
-                    <div class="filter__category-item"><a href="#">Сверление и обработка отверстий</a></div>
-                    <div class="filter__category-item"><a href="#">Металлорежущий инструмент</a></div>
-                    <div class="filter__category-item"><a href="#">Обработка кромки, снятие фаски</a></div>
-                    <div class="filter__category-item"><a href="#">Шлифовка и полировка</a></div>
-                    <div class="filter__category-item"><a href="#">Сверление и обработка отверстий</a></div>
-                    <div class="filter__category-item"><a href="#">Металлорежущий инструмент</a></div>
-                    <div class="filter__category-item"><a href="#">Обработка кромки, снятие фаски</a></div>
-                    <div class="filter__category-item"><a href="#">Шлифовка и полировка</a></div>
-                    <div class="filter__category-item"><a href="#">Сверление и обработка отверстий</a></div>
-                    <div class="filter__category-item"><a href="#">Металлорежущий инструмент</a></div>
-                    <div class="filter__category-item"><a href="#">Обработка кромки, снятие фаски</a></div>
+                    <div class="filter__item-name">Категории</div>
+                    <div class="checkbox">
+                      <input id="cat-1" type="checkbox" name="prod">
+                      <label for="cat-1">Лазерные установки резки<span>(24)</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <input id="cat-2" type="checkbox" name="prod">
+                      <label for="cat-2">Лазерная сварка<span>(18)</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <input id="cat-3" type="checkbox" name="prod">
+                      <label for="cat-3">Лазерная очистка<span>(12)</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <input id="cat-4" type="checkbox" name="prod">
+                      <label for="cat-4">Лазерные граверы-резчики<span>(8)</span></label>
+                    </div>
                   </div>
                   <div class="filter__item">
                     <div class="filter__item-wrap">
@@ -700,40 +665,6 @@
                         <input class="range-min" type="range" min="1" name="range" max="2755000" value="1">
                         <input class="range-max" type="range" min="1" name="range" max="2755000" value="2755000">
                       </div>
-                    </div>
-                  </div>
-                  <div class="filter__item">
-                    <div class="filter__item-name">Тип привода</div>
-                    <div class="checkbox">
-                      <input id="type-1" type="checkbox" name="type">
-                      <label for="type-1">Электрический<span>(18)</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="type-2" type="checkbox" name="type">
-                      <label for="type-2">Гидравлический<span>(16)</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="type-3" type="checkbox" name="type">
-                      <label for="type-3">Пневматический<span>(14)</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="type-4" type="checkbox" name="type">
-                      <label for="type-4">Механический<span>(12)</span></label>
-                    </div>
-                  </div>
-                  <div class="filter__item">
-                    <div class="filter__item-name">Материал</div>
-                    <div class="radio">
-                      <input id="material-1" type="radio" name="material">
-                      <label for="material-1">Металл<span>(10)</span></label>
-                    </div>
-                    <div class="radio">
-                      <input id="material-2" type="radio" name="material">
-                      <label for="material-2">Пластик<span>(8)</span></label>
-                    </div>
-                    <div class="radio">
-                      <input id="material-3" type="radio" name="material">
-                      <label for="material-3">Композитный материал<span>(6)</span></label>
                     </div>
                   </div>
                   <div class="filter__item">

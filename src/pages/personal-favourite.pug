@@ -1,0 +1,57 @@
+extends /layout/layout
+
+block title
+    - var title = 'Избранное'
+    - var page = 'page-personal'
+
+block main
+
+    section.section-personal
+
+        .container
+
+            .personal
+
+                .personal-aside
+
+                    .personal__user
+                        span К
+                        p Константин
+
+                    ul.personal__nav
+                        li
+                            a(href="#")
+                                +svg('Info')
+                                |Личные данные
+                        li
+                            a(href="#").notice
+                                +svg('Basket')
+                                |Мои заказы
+                                span (2)
+                        li
+                            a(href="#").active
+                                +svg('Heart')
+                                |Избранное
+                                span (2)
+                        li
+                            a(href="#")
+                                +svg('Password-Show')
+                                |Просмотренное
+                        li
+                            a(href="#")
+                                +svg('Message-text')
+                                |Мои отзывы
+
+                    a.personal__exit(href="#") Выйти
+
+                .personal-main.personal-products
+
+                    include ../components/_card-white
+                    +card
+                    +card
+                    +card
+
+                    .personal-empty
+                        .personal-empty__title У вас еще нет избранных товаров
+                        .personal-empty__text Здесь будет храниться товары, которые вам понравились
+                        a(href="#").btn.btn--primary Перейти в каталог

@@ -1,0 +1,131 @@
+.orders {
+    display: grid;
+    row-gap: 12px;
+}
+
+.order {
+    border: 1px solid var(--border-default, #eaeaec);
+    border-radius: 12px;
+}
+
+.order__head {
+    padding: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 120px;
+    font: var(--font-body-m);
+}
+
+.order__number {
+    width: 180px;
+}
+
+.order__date {
+    width: 180px;
+}
+
+.order__state {
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+
+    &::before {
+        content: '';
+        margin-right: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    &--success {
+        background: var(--success-50, #e6f5ec);
+
+        &::before {
+            background: var(--success-500, #019f3c);
+        }
+    }
+
+    &--pending {
+        background: var(--warning-50, #fef4e6);
+
+        &::before {
+            background: var(--warning-500, #f29100);
+        }
+    }
+
+    &--cancel {
+        background: var(--error-25, #fdf3f4);
+
+        &::before {
+            background: var(--error-500, #d91528);
+        }
+    }
+}
+
+.order__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    transition: $transition;
+    cursor: pointer;
+
+    & .icon {
+        width: 100%;
+        height: 100%;
+        stroke: var(--fg-default);
+    }
+
+    .expanded & {
+        transform: rotate(-180deg);
+    }
+}
+
+.order__body {
+    padding: 0 12px;
+}
+
+.order__item {
+    margin-bottom: 12px;
+    padding: 16px;
+    background: var(--bg-surface2, #f4f5f6);
+    display: grid;
+    grid-template-columns: 68px auto auto;
+    column-gap: 16px;
+    border-radius: 12px;
+}
+
+.order__item-img {
+    background: var(--bg-surface1, #fff);
+    grid-row: 1 / 3;
+    height: 68px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #eaeaec);
+}
+
+.order__item-title {
+    grid-column: 2;
+    font: var(--font-body-m);
+
+    & .amount {
+        margin-top: 4px;
+        color: var(--fg-soft, #9398a0);
+    }
+}
+
+.order__item-price {
+    grid-column: 3;
+    grid-row: 1;
+    font: var(--font-body-m-strong);
+    text-align: right;
+
+    & .discount {
+        margin-top: 4px;
+        color: var(--fg-soft, #9398a0);
+        font: var(--font-body-s);
+        text-decoration: line-through;
+    }
+}

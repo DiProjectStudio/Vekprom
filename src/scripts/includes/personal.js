@@ -14,11 +14,18 @@ export function initializePersonal() {
     const editCancel = (e) => {
         var parent = e.parentNode;
         var editBtn = parent.closest('.personal__data-item').querySelector('.edit');
+        var input = parent.closest('.personal__data-item').querySelector('input');
 
         editBtn.style.display = 'flex';
         parent.classList.remove('active');
+        input.setAttribute('disabled', '');
     };
 
     window.personalEdit = personalEdit;
     window.editCancel = editCancel;
+
+    $('.order__btn').on('click', (e) => {
+        $(e.currentTarget).closest('.order').toggleClass('expanded');
+        $(e.currentTarget).closest('.order').find('.order__body').slideToggle();
+    });
 }

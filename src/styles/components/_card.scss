@@ -57,20 +57,22 @@
     display: grid;
     row-gap: 12px;
     z-index: 2;
-
-    @include breakpoint(lg) {
-        display: none;
-    }
-
-    .card-item:hover & {
-        display: grid;
-    }
 }
 
 .card-action__item {
     width: 24px;
     height: 24px;
     cursor: pointer;
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+
+    .card-item:hover & {
+        @include breakpoint(lg) {
+            display: block;
+        }
+    }
 
     &::before {
         content: '';
@@ -89,6 +91,8 @@
     }
 
     &.active {
+        display: block;
+
         & .icon:not(.icon-Compare) {
             stroke: #f5851a !important;
             fill: #f5851a !important;
@@ -124,6 +128,14 @@
 
     &.active::before {
         background-image: $compareFilled;
+    }
+}
+
+.card-remove {
+    display: block !important;
+
+    &::before {
+        background-image: $x;
     }
 }
 
