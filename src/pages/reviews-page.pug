@@ -1,0 +1,54 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница отзывов'
+    - var page = 'reviews-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Отзывы наших клиентов', 'Отзывы')
+
+    section.section-reviews.section-sample
+
+        .container
+            .section-sample__inner
+                .section-sidebar
+                    .section-sidebar__wrapper
+                        .section-sidebar-info.two-column
+                            .info-row
+                                .info-cell Благодарственные письма
+                                .info-cell 23
+                            .info-row
+                                .info-cell Отзывы
+                                .info-cell 234
+                            .info-action
+                                .btn.btn--primary Оставить отзыв
+
+                .section-content
+                    .content-thanks-letter
+
+                    .content-reviews
+                        .reviews-wrapper
+                            .review
+                                .review__info
+                                    .review__user-photo
+                                    .review__media
+                                        .media-cover
+                                            +img('image-47.jpg')
+                                    .review__date 28.06.2024
+                                    .review__user-name Константин Константинопольский
+                                    .review__company ООО НПП "Тепловодохран"
+                                .review__text Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, договорились о цене, а Мякошина Елена помогла все оформить и быстро отправить в наш адрес по вменяемой цене! Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, договорились о цене, а Мякошина Елена помогла все оформить и быстро отправить в наш адрес по вменяемой цене!
+
+                            .review
+                                .review__info
+                                    .review__user-photo
+                                    .review__date 28.06.2024
+                                    .review__user-name Владимир Дудь
+                                    .review__company ООО НПП "Тепловодохран"
+                                .review__text Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, договорились о цене, а Мякошина Елена помогла все оформить и быстро отправить в наш адрес по вменяемой цене! Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, договорились о цене, а Мякошина Елена помогла все оформить и быстро отправить в наш адрес по вменяемой цене!
+
+
+
+            

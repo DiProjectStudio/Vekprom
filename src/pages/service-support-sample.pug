@@ -1,0 +1,34 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница сервиса и поддержки - текстовый шаблон'
+    - var page = 'service-support-sample-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Гарантийное обслуживание', 'Cервис и поддержка', 'Гарантийное обслуживание')
+
+    section.section-sample
+
+        .container
+            .section-sample__inner
+                .section-sidebar
+                    .section-sidebar__wrapper
+                        .section-sidebar-info.single-column
+                            .info-row.active
+                                .info-cell Гарантийное обслуживание
+
+                .section-content
+                    .content-text(id='id1')
+                        p В процессе эксплуатации продукции Клиенты, к сожалению, могут столкнуться с выходом из строя узлов и деталей.
+                            | Если в гарантийный или послегарантийный период произошла поломка оборудования, и не требуется капитальный ремонт, специалисты нашей сервисной службы могут устранить неисправность как в нашем сервисном центре, так и непосредственно
+                            | на Вашем предприятии.
+
+                    .content-action
+                        .btn.btn--primary(data-src="#popup-request" data-fancybox)
+                            span Оставить заявку
+
+                    .content-image-block.image-large
+                        .image-wrapper
+                            +img('image-54.jpg')

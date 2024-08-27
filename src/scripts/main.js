@@ -498,3 +498,24 @@ $propsAnchor.on('click', (e) => {
         $('.detail[data-active="2"]').addClass('active');
     }
 });
+
+// скролл к якорным ссылкам
+const $sidebarRow = $('.section-sidebar-info .info-row');
+const offset = 30;
+
+$sidebarRow.on('click', function () {
+    $sidebarRow.removeClass('active');
+    $(this).addClass('active');
+    const targetId = $(this).find('a').attr('href');
+    $('html, body').animate({
+        scrollTop: $(targetId).offset().top - offset
+    }, 800);
+});
+
+// Первая буква имени у пользователя в отзывах
+$('.review').each(function() {
+    let userName = $(this).find('.review__user-name').text().trim();
+    let firstLetter = userName.charAt(0);
+    $(this).find('.review__user-photo').text(firstLetter);
+});
+

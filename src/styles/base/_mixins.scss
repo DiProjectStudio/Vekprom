@@ -86,3 +86,19 @@ $hd: 1920px;
     line-clamp: $val;
     -webkit-box-orient: vertical;
 }
+
+@mixin sectionPaddingBottom {
+    padding-bottom: 32px;
+    @include breakpoint(md) {
+        padding-bottom: 64px;
+    }
+    @include breakpoint(xl) {
+        padding-bottom: 80px;
+    }
+}
+
+@mixin flexCenterCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
