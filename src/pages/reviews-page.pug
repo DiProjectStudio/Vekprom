@@ -7,7 +7,7 @@ block title
 block main
 
     include ../components/_breadcrumbs
-    +breadcrumbs('Отзывы наших клиентов', 'Отзывы')
+    +breadcrumbs('Отзывы', 'Отзывы')
 
     section.section-reviews.section-sample
 
@@ -27,6 +27,33 @@ block main
 
                 .section-content
                     .content-thanks-letter
+                        .swiper
+
+                            .swiper-wrapper
+                                .swiper-slide.thanks-letter__item
+                                    .item-image
+                                        +img('thanks-letter.jpg')
+                                    .item-title АО "ОЭЗ "Технополис Москва"
+
+                                .swiper-slide.thanks-letter__item
+                                    .item-image
+                                        +img('thanks-letter.jpg')
+                                    .item-title АО "ОЭЗ "Технополис Москва"
+
+                                .swiper-slide.thanks-letter__item
+                                    .item-image
+                                        +img('thanks-letter.jpg')
+                                    .item-title АО "ОЭЗ "Технополис Москва"
+
+                                .swiper-slide.thanks-letter__item
+                                    .item-image
+                                        +img('thanks-letter.jpg')
+                                    .item-title АО "ОЭЗ "Технополис Москва"
+
+
+                            .swiper-navigation
+                                .swiper-button.swiper-button-prev
+                                .swiper-button.swiper-button-next
 
                     .content-reviews
                         .reviews-wrapper

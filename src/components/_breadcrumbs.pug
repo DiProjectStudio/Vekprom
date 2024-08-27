@@ -67,7 +67,7 @@ mixin breadcrumbs(title, ...items)
                     .view-style__item.js-view.js-table-list
                         +svg('list-line')
 
-        if page == 'page-search'
+        else if page == 'page-search'
 
             h1.main-title= title
 
@@ -92,3 +92,33 @@ mixin breadcrumbs(title, ...items)
                         +svg('tile')
                     .view-style__item.js-view.js-table-list
                         +svg('list-line')
+
+        else if page == 'brands-page'
+
+            h1.main-title= title
+
+
+            .brands-header
+
+                .filter-btn.js-filter-btn
+                    +svg('Filter-edit')
+
+
+
+        else if page == 'project-page'
+
+            h1.main-title= title
+
+            .messengers
+                .container
+
+                    .messengers-wrapper
+
+                        .messenger
+                            +svg('TG')
+                        .messenger
+                            +svg('WhatsApp')
+
+        else
+            h1.main-title= title
+

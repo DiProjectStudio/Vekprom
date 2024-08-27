@@ -14,9 +14,18 @@ block main
     section.brands
         .container
             .brands__inner
+                .brands__inner-title Фильтры
+                    .close.js-filter-close
+                        +svg('Close')
                 .brands__inner-letters
                   each letter in letters
                     .letter= letter
+                .brands__inner-clear
+                    +svg('Trash')
+                    span Очистить категорию
+                .brands__inner-actions
+                    .btn.btn--white Сбросить
+                    .btn.btn--primary Показать(390)
 
     section.brands-list
         .container
