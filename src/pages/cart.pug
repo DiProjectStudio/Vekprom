@@ -1,0 +1,86 @@
+extends /layout/layout
+
+block title
+    - var title = 'Корзина'
+    - var page = 'page-cart'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Корзина', 'Корзина')
+
+    section.section-cart
+
+        .container
+
+            form(action="/") 
+
+                .cart
+
+                    .cart-wrap
+
+                        .cart-header
+
+                            .cart__title
+                                h1 Корзина
+
+                            .cart-header__action
+                                .cart-header__action-item
+                                    +svg('Print')
+                                    |Распечатать
+                                .cart-header__action-item
+                                    +svg('Download')
+                                    |Скачать
+                                .cart-header__action-item
+                                    +svg('Share')
+                                    |Поделиться
+
+                        .cart-main
+
+                            .card-item.card-white
+                
+                                .card-tag.tag-instock
+                                    +svg('Check')
+                                    |В наличии
+
+                                .card-item__img
+                                    +img('image-sample.jpg')
+
+                                .card-item__name
+                                    a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                                .card-item__badge
+                                    .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                                    .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                                    .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                                .card-item__property
+                                    .card-item__property-row
+                                        p Мощность
+                                        p от 1000 до 3000 Вт
+                                    .card-item__property-row
+                                        p Мощность
+                                        p от 1000 до 3000 Вт
+                                    .card-item__property-row
+                                        p Вес
+                                        p 866 кг
+                                .card-item__price 3 553 232 ₽
+                                    .discount 3 850 600 ₽
+
+                    .cart-total
+
+                        .cart-total__title Ваш заказ
+
+                        .cart-total__info
+
+                            .cart-total__info-total
+                                p 3 товара
+                                p 7 232 232 ₽ 
+
+                            .cart-total__info-discount
+                                p Скидка
+                                p -1 232 232 ₽
+
+                        .cart-total__sum
+                            .cart-total__sum-title Итого
+                            .cart-total__sum-value 6 246 000 ₽
+
+                        button.btn.btn--primary(type="submit") Оформить заказ

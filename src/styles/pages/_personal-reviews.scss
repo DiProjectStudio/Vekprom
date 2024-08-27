@@ -1,0 +1,70 @@
+.personal-review {
+    display: grid;
+    row-gap: 20px;
+}
+
+.personal-review__item {
+    padding: 16px;
+    background: var(--bg-surface2, #f4f5f6);
+    border-radius: 12px;
+
+    @include breakpoint(lg) {
+        padding: 20px 24px;
+    }
+}
+
+.personal-review__name {
+    margin-bottom: 4px;
+    font: var(--font-body-s-strong);
+
+    @include breakpoint(lg) {
+        font: var(--font-body-m-strong);
+    }
+}
+
+.personal-review__date {
+    margin-bottom: 12px;
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpoint(lg) {
+        font: var(--font-body-m);
+    }
+}
+
+.personal-review__text {
+    @include breakpoint(md) {
+        font: var(--font-body-m);
+    }
+}
+
+.personal-review__media {
+    margin-top: 12px;
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    & .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        fill: white;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    & img {
+        object-fit: cover;
+        filter: blur(2px);
+    }
+}
+
+.personal-review__btn {
+    height: 48px;
+
+    @include breakpoint(lg) {
+        width: 260px;
+    }
+}
