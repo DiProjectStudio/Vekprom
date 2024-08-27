@@ -1,0 +1,21 @@
+.personal-products {
+    padding: 0;
+    background: none;
+    display: grid;
+    row-gap: 10px;
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 16px;
+        column-gap: 10px;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpointMax(lg) {
+        padding: 0;
+        background: none;
+    }
+}

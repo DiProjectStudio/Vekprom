@@ -1,6 +1,6 @@
 .personal {
     margin-top: 10px;
-    padding-bottom: 200px;
+    padding-bottom: 20px;
 
     @include breakpoint(md) {
         margin-top: 16px;
@@ -177,11 +177,16 @@
 
 .personal-main {
     padding: 24px 32px;
+    position: relative;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(min(calc(100vh - 200px), 616px));
     border-radius: 16px;
 
     @include breakpointMax(lg) {
-        display: none;
+        margin-top: 10px;
+        padding: 20px;
     }
 }
 
@@ -196,7 +201,13 @@
     row-gap: 24px;
 
     & .input {
-        width: 300px;
+        @include breakpoint(md) {
+            width: 100%;
+        }
+
+        @include breakpoint(lg) {
+            width: 300px;
+        }
 
         & input {
             height: 40px;
@@ -223,17 +234,85 @@
     align-items: flex-end;
     column-gap: 10px;
 
+    @include breakpointMax(md) {
+        display: grid;
+        grid-template-columns: calc(100% - 50px) auto;
+    }
+
     & .btn {
-        width: 200px;
+        width: 50%;
         height: 40px;
+
+        @include breakpoint(lg) {
+            width: 200px;
+        }
     }
 }
 
 .personal__data-action {
     display: none;
-    column-gap: 10px;
+    column-gap: 8px;
+
+    @include breakpointMax(lg) {
+        flex-direction: row-reverse;
+    }
+
+    @include breakpointMax(md) {
+        margin-top: 10px;
+        grid-row: 2;
+    }
+
+    @include breakpoint(md) {
+        width: 100%;
+    }
+
+    @include breakpoint(lg) {
+        column-gap: 10px;
+        width: auto;
+    }
 
     &.active {
         display: flex;
+    }
+}
+
+.personal-empty {
+    margin: auto;
+    padding: 32px 0;
+    width: 280px;
+    text-align: center;
+
+    & .btn {
+        margin-top: 20px;
+        height: 48px;
+
+        @include breakpoint(lg) {
+            margin-top: 28px;
+        }
+    }
+}
+
+.personal-empty__wrap {
+    width: 280px;
+}
+
+.personal-empty__title {
+    font: var(--font-heading-h3);
+    letter-spacing: var(--lp-heading-h3);
+
+    @include breakpoint(lg) {
+        font: var(--font-heading-h2);
+        letter-spacing: var(--lp-heading-h2);
+    }
+}
+
+.personal-empty__text {
+    margin-top: 9px;
+    font: var(--font-body-s);
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpoint(lg) {
+        margin-top: 12px;
+        font: var(--font-body-m);
     }
 }

@@ -46,11 +46,11 @@ block main
 
                 .personal-main
                     
-                    .personal__title Личные данные
+                    .personal__title Мои заказы
 
                     .orders
 
-                        .order
+                        .order.expanded
                             .order__head
                                 .order__number №123456789
                                 .order__date 28.06.2024
@@ -58,5 +58,44 @@ block main
                                 .order__btn
                                     +svg('Chevron-down')
 
-                            .order__item
+                            .order__body(style="display: block")
+                                .order__item
+                                    .order__item-img
+                                        +img('image-sample.jpg')
+                                    .order__item-title Гибочный пресс Ermaksan серии Power Bend Pro
+                                        .amount Количество: 1 шт.
+                                    .order__item-price 3 553 232 ₽
+                                        .discount 3 850 600 ₽
 
+                                .order__item
+                                    .order__item-img
+                                        +img('image-sample.jpg')
+                                    .order__item-title Оптоволоконный лазерный станок Tokagama TG-CM 1510
+                                        .amount Количество: 1 шт.
+                                    .order__item-price 1 255 990 ₽
+                                        .discount 2 200 990 ₽
+
+                        .order
+                            .order__head
+                                .order__number №999000999
+                                .order__date 24.06.2024
+                                .order__state.order__state--pending Оформлен
+                                .order__btn
+                                    +svg('Chevron-down')
+
+                            .order__body(style="display: none")
+
+                        .order
+                            .order__head
+                                .order__number №123456789
+                                .order__date 28.06.2024
+                                .order__state.order__state--cancel Отменен
+                                .order__btn
+                                    +svg('Chevron-down')
+
+                            .order__body(style="display: none")
+
+                    .personal-empty
+                        .personal-empty__title У вас еще нет заказов
+                        .personal-empty__text Здесь будет храниться история ваших заказов
+                        a(href="#").btn.btn--primary Перейти в каталог

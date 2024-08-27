@@ -1,0 +1,195 @@
+extends /layout/layout
+
+block title
+    - var title = 'Просмотренное'
+    - var page = 'page-personal'
+
+block main
+
+    section.section-personal
+
+        .container
+
+            .personal
+
+                .personal-aside
+
+                    .personal__user
+                        span К
+                        p Константин
+
+                    ul.personal__nav
+                        li
+                            a(href="#")
+                                +svg('Info')
+                                |Личные данные
+                        li
+                            a(href="#").notice
+                                +svg('Basket')
+                                |Мои заказы
+                                span (2)
+                        li
+                            a(href="#")
+                                +svg('Heart')
+                                |Избранное
+                                span (2)
+                        li
+                            a(href="#").active
+                                +svg('Password-Show')
+                                |Просмотренное
+                        li
+                            a(href="#")
+                                +svg('Message-text')
+                                |Мои отзывы
+
+                    a.personal__exit(href="#") Выйти
+
+                .personal-main.personal-products
+
+                    .card-item.card-white
+                        .card-tag.tag-instock
+                            +svg('Check')
+                            |В наличии
+
+                        .card-action
+                            .card-action__item.card-remove
+                            .card-action__item.card-favourite
+                            .card-action__item.card-compare
+
+                        .card-item__img
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                            .swiper-pagination.nested-pagination
+
+                        .card-item__name
+                            a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                        .card-item__badge
+                            .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                            .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                            .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                        .card-item__property
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Вес
+                                p 866 кг
+                        .card-item__price 3 553 232 ₽
+                            .discount 3 850 600 ₽
+                        .card-item__buy
+                            .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                            .card-item__buy-add.btn.btn-cart
+                                +svg('Basket')
+
+                    .card-item.card-white
+                        .card-tag.tag-instock
+                            +svg('Check')
+                            |В наличии
+
+                        .card-action
+                            .card-action__item.card-remove
+                            .card-action__item.card-favourite
+                            .card-action__item.card-compare
+
+                        .card-item__img
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                            .swiper-pagination.nested-pagination
+
+                        .card-item__name
+                            a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                        .card-item__badge
+                            .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                            .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                            .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                        .card-item__property
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Вес
+                                p 866 кг
+                        .card-item__price 3 553 232 ₽
+                            .discount 3 850 600 ₽
+                        .card-item__buy
+                            .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                            .card-item__buy-add.btn.btn-cart
+                                +svg('Basket')
+
+                    .card-item.card-white
+                        .card-tag.tag-instock
+                            +svg('Check')
+                            |В наличии
+
+                        .card-action
+                            .card-action__item.card-remove
+                            .card-action__item.card-favourite
+                            .card-action__item.card-compare
+
+                        .card-item__img
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                                    .swiper-slide
+                                        +img('image.png')
+                            .swiper-pagination.nested-pagination
+
+                        .card-item__name
+                            a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+                        .card-item__badge
+                            .badge(style="background-color: #FEF3E8;color: #F5851A") Специальная цена
+                            .badge(style="background-color: #F5E9FF;color: #9924FF") В демозале
+                            .badge(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                        .card-item__property
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Мощность
+                                p от 1000 до 3000 Вт
+                            .card-item__property-row
+                                p Вес
+                                p 866 кг
+                        .card-item__price 3 553 232 ₽
+                            .discount 3 850 600 ₽
+                        .card-item__buy
+                            .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                            .card-item__buy-add.btn.btn-cart
+                                +svg('Basket')
+
+                    .personal-empty
+                        .personal-empty__title Нет истории просмотра
+                        a(href="#").btn.btn--primary Перейти в каталог
