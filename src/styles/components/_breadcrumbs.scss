@@ -10,7 +10,8 @@
     }
 
     @include breakpoint(xl) {
-        margin: 20px auto 10px;
+        //margin: 20px auto 10px;
+        margin: 20px auto;
     }
 }
 

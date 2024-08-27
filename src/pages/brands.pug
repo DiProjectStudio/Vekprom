@@ -1,0 +1,40 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница бренды'
+    - var page = 'brands-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Бренды', 'Бренды')
+
+    - const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВ'.split('');
+
+    section.brands
+        .container
+            .brands__inner
+                .brands__inner-letters
+                  each letter in letters
+                    .letter= letter
+
+    section.brands-list
+        .container
+            .brands-list__inner
+                .brands-list__items
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+                    a(href='brand-page').brand
+                        +img('brand-logo.png')
+
+                include ../components/_pagination
+
+

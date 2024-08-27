@@ -1,0 +1,67 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница проекта'
+    - var page = 'project-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Пуско-наладочные работы лазерного раскройщика Tokagama CUT Smart', 'Проекты', 'Пуско-наладочные работы лазерного раскройщика Tokagama CUT Smart')
+
+    section.section-project.section-sample
+
+        .container
+            .section-project__inner.section-sample__inner
+                .section-sidebar
+                    .section-sidebar__wrapper
+                        .section-sidebar-title О проекте
+                        .section-sidebar-info.two-column
+                            .info-row
+                                .info-cell Отрасль
+                                .info-cell Производство из металла
+                            .info-row
+                                .info-cell Клиент
+                                .info-cell ООО «АЛЬФАМОБИЛЬ»
+                            .info-row
+                                .info-cell Дата шеф-монтажа
+                                .info-cell 5 апреля 2024
+
+                .section-content
+                    .content-text
+                        .content-text__title Установка в кратчайшие сроки
+                        p 4 апреля в МГТУ им. Н.Э. Баумана прошла ярмарка ведущих работодателей страны с их карьерными предложениями для студентов и выпускников университета. Центр карьеры предоставил возможность студентам лично
+                            |пообщаться с работодателями и получить возможность пройти стажировку или предложение о трудоустройстве.
+                    .content-image-block.image-small
+                        figure
+                            .image-wrapper
+                                +img('image-46.jpg')
+                            figcaption Панель управления
+
+                        figure
+                            .image-wrapper
+                                +img('image-46.jpg')
+                            figcaption Гайка предварительного натяжения 3-осевого винта компании «YSA», Тайвань
+
+                    .content-text
+                        .content-text__title Установка в кратчайшие сроки
+                        p 4 апреля в МГТУ им. Н.Э. Баумана прошла ярмарка ведущих работодателей страны с их карьерными предложениями для студентов и выпускников университета. Центр карьеры предоставил возможность студентам лично
+                            | пообщаться с работодателями и получить возможность пройти стажировку или предложение о трудоустройстве.
+                    .content-image-block.image-large
+                        figure
+                            .image-wrapper
+                                +img('image-46.jpg')
+                            figcaption Гайка предварительного натяжения 3-осевого винта компании «YSA», Тайвань
+
+                        figure
+                            .image-wrapper
+                                +img('image-46.jpg')
+                                .icon
+                                    +img('youtube.svg')
+                            figcaption Гайка предварительного натяжения 3-осевого винта компании «YSA», Тайвань
+
+
+
+
+
+            
