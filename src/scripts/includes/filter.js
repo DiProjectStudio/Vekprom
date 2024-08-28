@@ -1,6 +1,6 @@
 export function initializeFilter() {
     // Filter catalog
-    $('.js-filter-btn').on('click', (e) => {
+    /*$('.js-filter-btn').on('click', (e) => {
         $('.catalog__aside').addClass('show');
         $('body').addClass('overflow-hidden');
     });
@@ -9,6 +9,36 @@ export function initializeFilter() {
         $('.catalog__aside').removeClass('show');
         $('body').removeClass('overflow-hidden');
     });
+
+    $('.js-filter-btn').on('click', (e) => {
+        $('.brands').addClass('show');
+        $('body').addClass('overflow-hidden');
+    });
+
+    $('.js-filter-close').on('click', (e) => {
+        $('.brands').removeClass('show');
+        $('body').removeClass('overflow-hidden');
+    });*/
+
+    // сделала универсальную функцию
+    const toggleClass = (selector, className, action) => {
+        $(selector)[action](className);
+    };
+
+    const handleFilterToggle = (e, action) => {
+        toggleClass('.catalog__aside', 'show', action);
+        toggleClass('.brands', 'show', action);
+        toggleClass('body', 'overflow-hidden', action);
+    };
+
+    $('.js-filter-btn').on('click', (e) => {
+        handleFilterToggle(e, 'addClass');
+    });
+
+    $('.js-filter-close').on('click', (e) => {
+        handleFilterToggle(e, 'removeClass');
+    });
+
 
     $('.range').each(function () {
         const $container = $(this);
@@ -78,5 +108,30 @@ export function initializeFilter() {
         } else {
             $('.catalog__wrap').removeClass('table-list');
         }
+    });
+
+    // фильтр брендов по алфавиту
+
+    const $letters = $('.letter');
+    const $brandsInner = $('.brands__inner');
+
+    $letters.on('click', function() {
+        $letters.removeClass('active');
+        $(this).toggleClass('active');
+        updateBrandsInnerClass();
+    });
+
+    function updateBrandsInnerClass() {
+        const hasActiveLetter = $letters.hasClass('active');
+        if (hasActiveLetter) {
+            $brandsInner.addClass('active');
+        } else {
+            $brandsInner.removeClass('active');
+        }
+    }
+
+    $('.brands__inner-clear').on('click', function() {
+        $letters.removeClass('active');
+        updateBrandsInnerClass();
     });
 }

@@ -241,4 +241,34 @@ export function initializeSlider() {
             clickable: true
         }
     });
+
+    // Слайдер благодарственных писем
+    const thanksLetter = new Swiper('.content-thanks-letter .swiper', {
+        modules: [Navigation, FreeMode],
+        slidesPerView: 1.1,
+        spaceBetween: 8,
+        freeMode: true,
+        slidesOffsetAfter: 8,
+
+        navigation: {
+            nextEl: '.content-thanks-letter .swiper-button-next',
+            prevEl: '.content-thanks-letter .swiper-button-prev'
+        },
+
+        breakpoints: {
+            768: {
+                slidesPerView: 2.1,
+                spaceBetween: 20,
+            },
+
+            1280: {
+                slidesPerView: 2.4,
+                spaceBetween: 20,
+            },
+
+            1440: {
+                slidesPerView: 2.7,
+            }
+        }
+    });
 }

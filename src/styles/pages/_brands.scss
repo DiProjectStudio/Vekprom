@@ -1,7 +1,106 @@
+.brands-header {
+  padding-left: 10px;
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
 .brands {
+  top: 78px;
+
+  @include breakpoint(md) {
+    top: 84px;
+  }
+
+  @include breakpointMax(lg) {
+    padding: 20px;
+    background: var(--bg-surface1);
+    height: fit-content;
+    border-radius: 12px;
+    position: fixed;
+
+    left: -100%;
+    width: calc(100% - var(--container) * 2);
+    transition: 0.2s ease-in-out;
+    z-index: 20;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  @include breakpoint(lg) {
+    top:  unset;
+  }
+
+  &.show {
+    left: var(--container);
+    overflow-y: scroll;
+  }
+
+
+  .brands__inner {
+
+    &.active {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 98px;
+      .brands__inner-clear {
+        display: flex;
+      }
+    }
+
+    .brands__inner-title {
+      @include flexCenterBetween;
+      font: var(--font-heading-h3);
+
+      & .close {
+        width: 24px;
+        height: 24px;
+        stroke: var(--fg-muted);
+      }
+
+    }
+
+    .brands__inner-actions, .brands__inner-title {
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+
+    .brands__inner-letters {
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+
+      @include breakpointMax(lg) {
+        margin-top: 20px;
+      }
+
+      .letter {
+        width: 44px;
+        height: 44px;
+        @include flexCenterCenter;
+        border-radius: 12px;
+        background-color: var(--bg-surface1);
+        cursor: pointer;
+        font-size: 16px;
+        color: var(--fg-muted);
+        transition: $transition;
+
+        @include breakpointMax(lg) {
+          border: 1px solid var(--border-default);
+        }
+
+        @include breakpoint(lg) {
+          width: 48px;
+          height: 48px;
+        }
     @include breakpointMax(lg) {
         display: none;
     }
+
 
     .brands__inner {
         .brands__inner-letters {
@@ -36,6 +135,33 @@
             }
         }
     }
+
+
+    .brands__inner-actions {
+      @include flexCenterBetween;
+      gap: 8px;
+      margin-top: 24px;
+
+      .btn {
+        width: 50%;
+        height: 46px;
+      }
+    }
+    .brands__inner-clear {
+      display: none;
+      align-items: center;
+      align-self: flex-start;
+      //gap
+      svg.icon {
+        stroke: #9398A0;
+      }
+      .icon {
+
+      }
+    }
+
+  }
+
 }
 
 .brands-list {
@@ -84,7 +210,20 @@
 }
 
 .section-brand {
+
+  @include sectionPaddingBottom;
+
+  .section-brand__inner {
+    .section-sidebar {
+      padding: 16px 16px 0;
+
+      .section-sidebar-info.two-column {
+        margin-top: 0;
+        border-top: 1px solid var(--border-default);
+      }
+
     @include sectionPaddingBottom;
+
 
     .section-brand__inner {
         .section-sidebar {
