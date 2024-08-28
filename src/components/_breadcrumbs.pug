@@ -120,5 +120,7 @@ mixin breadcrumbs(title, ...items)
                             +svg('WhatsApp')
 
         else
-            h1.main-title= title
+            
+            if page != 'page-cart'
 
+                h1.main-title= title

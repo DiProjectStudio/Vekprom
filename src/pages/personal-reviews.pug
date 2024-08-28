@@ -20,25 +20,25 @@ block main
 
                     ul.personal__nav
                         li
-                            a(href="#")
+                            a(href="personal")
                                 +svg('Info')
                                 |Личные данные
                         li
-                            a(href="#").notice
+                            a(href="personal-orders").notice
                                 +svg('Basket')
                                 |Мои заказы
                                 span (2)
                         li
-                            a(href="#")
+                            a(href="personal-favourite")
                                 +svg('Heart')
                                 |Избранное
                                 span (2)
                         li
-                            a(href="#")
+                            a(href="personal-viewed")
                                 +svg('Password-Show')
                                 |Просмотренное
                         li
-                            a(href="#").active
+                            a(href="personal-reviews").active
                                 +svg('Message-text')
                                 |Мои отзывы
                                 span (2)
@@ -48,6 +48,26 @@ block main
                 .personal-main
                     
                     .personal__title Мои отзывы
+
+                    .personal-review
+
+                        .personal-review__item
+                            .personal-review__name ООО Техинформ
+                            .personal-review__date 28.06.2024
+                            .personal-review__text Покупали ленточную пилу по металлу OPTIsaw SP 13V. Общение вели с Бордик Павлом, который все прекрасно рассказал, объяснил, договорились о цене, а Мякошина Елена помогла все оформить и быстро отправить в наш адрес по вменяемой цене! Прекрасный и качественный станочек.  Теперь смотрим в сторону Вертикально-сверлильного станка OPTIdrill D 17Pro, который, как нам кажется подойдет для нашего мини предприятия. Очень приятно было вести с этими людьми диалог! Рекомендуем данную компанию, как порядочного и технически грамотного поставщика оборудования!
+                            .personal-review__media(data-src="./assets/images/demo.mp4" data-fancybox)
+                                +svg('Play')
+                                +img('category-005.jpg')
+
+                        .personal-review__item
+                            .personal-review__name Тикиум
+                            .personal-review__date 28.06.2023
+                            .personal-review__text Здравствуйте! Недавно у вас был приобретен лазерный станок для работы по дереву. Покупка была лёгкой и быстрой благодаря вашим сотрудникам. В самом начале мы получили грамотную консультацию отдела продаж. Отдельная благодарность сервисному инженеру Греднёву Кириллу. Грамотный и вежливый молодой человек, приятно общаться! Помог запустить и проверить станок, отвечал на все вопросы после рабочего дня! ☺️ Спасибо огромное, сами мы не справились!Если задумаем покупать ещё станок, обязательно сделаем это у вас!!!
+                            .personal-review__media(data-src="./assets/images/demo.mp4" data-fancybox)
+                                +svg('Play')
+                                +img('category-005.jpg')
+
+                        .personal-review__btn.btn.btn--primary(data-src="#popup-review" data-fancybox) Добавить отзыв
 
                     .personal-empty
                         .personal-empty__title Отзывов пока нет

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница сервиса и поддержки - текстовый шаблон</title>
+    <!-- Scripts::Start-->
+    <script data-skip-moving="true">
+      const home_dir = './';
+      
+    </script>
+    <script data-skip-moving="true" src="https://code.jquery.com/jquery-3.7.1.js"="anonymous"></script>
+    <!-- Scripts::End-->
+    <!-- Styles::Start-->
+    <!-- Styles::End-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script type="module" src="./assets/js/vendor.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <link rel="stylesheet" href="./assets/css/plugins.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body class="service-support-sample-page">
+    <!-- Header::Start-->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__top">
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li class="header__menu-item has-child"><a class="header__menu-link">О компании</a>
+                <ul class="submenu">
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Пресс-центр</a></li>
+                  <li><a href="#">Проекты</a></li>
+                  <li><a href="#">Лицензии</a></li>
+                  <li><a href="#">Отзывы</a></li>
+                </ul>
+              </li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Контакты</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Вакансии</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Сервис и поддержка</a></li>
+              <li class="header__menu-item"><a class="header__menu-link" href="#">Демозал</a><img src="./assets/images/badge-3d.svg" alt="img">
+              </li>
+            </ul>
+            <ul class="header__bar">
+              <li class="header__bar-item"><a class="header__callback">Заказать звонок</a></li>
+              <li class="header__bar-item"><a class="header__phone" href="tel:+74952151645">+7 (495) 215-16-45</a></li>
+              <li class="header__bar-item">
+                <div class="header__location">
+                    <svg class="icon icon-Map">
+                      <use xlink:href="./assets/spritemap.svg#Map"></use>
+                    </svg>
+                  <p>Москва</p>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__main">
+          <div class="header__logo"><a href="/"><img src="./assets/images/Logo_main.svg" alt="img"></a></div>
+          <button class="header-catalog-btn" id="header-catalog-btn">
+              <svg class="icon icon-catalog">
+                <use xlink:href="./assets/spritemap.svg#catalog"></use>
+              </svg>
+              <svg class="icon icon-X">
+                <use xlink:href="./assets/spritemap.svg#X"></use>
+              </svg>
+            <p>Каталог</p>
+          </button>
+          <div class="header__search">
+            <form action="/">
+              <div class="input-search">
+                <button class="search-icon" type="submit" aria-label="Поиск">
+                    <svg class="icon icon-Search">
+                      <use xlink:href="./assets/spritemap.svg#Search"></use>
+                    </svg>
+                </button>
+                <input id="header_search" type="search" name="header_search" placeholder="Поиск по сайту" autocomplete="off">
+                <div class="input-search__clear">
+                    <svg class="icon icon-X">
+                      <use xlink:href="./assets/spritemap.svg#X"></use>
+                    </svg>
+                </div>
+              </div>
+            </form>
+          </div>
+          <button class="header__selection btn btn--primary">Подобрать станок</button>
+          <div class="header__icons"><a class="header__icons-item header-home" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-Home">
+                    <use xlink:href="./assets/spritemap.svg#Home"></use>
+                  </svg>
+              </div>
+              <p>Главная</p></a><a class="header__icons-item header-catalog" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-catalog">
+                    <use xlink:href="./assets/spritemap.svg#catalog"></use>
+                  </svg>
+              </div>
+              <p>Каталог</p></a><a class="header__icons-item header-compare" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Compare">
+                    <use xlink:href="./assets/spritemap.svg#Compare"></use>
+                  </svg>
+              </div>
+              <p>Сравнение</p></a><a class="header__icons-item header-favourite" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Heart">
+                    <use xlink:href="./assets/spritemap.svg#Heart"></use>
+                  </svg>
+              </div>
+              <p>Избранное</p></a><a class="header__icons-item header-basket" href="#">
+              <div class="icon-item" data-count="3">
+                  <svg class="icon icon-Basket">
+                    <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                  </svg>
+              </div>
+              <p>Корзина</p></a><a class="header__icons-item header-user" href="#">
+              <div class="icon-item">
+                  <svg class="icon icon-User">
+                    <use xlink:href="./assets/spritemap.svg#User"></use>
+                  </svg>
+              </div>
+              <p>Войти</p></a></div>
+          <div class="header__category">
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-saw">
+                    <use xlink:href="./assets/spritemap.svg#saw"></use>
+                  </svg>
+                <p>Металлообработка</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="123">Сверление и обработка отверстий</a></li>
+                  <li><a href="#" data-count="120">Металлорежущий инструмент</a></li>
+                  <li><a href="#" data-count="19">Обработка кромки, снятие фаски</a></li>
+                  <li><a href="#" data-count="286">Шлифовка и полировка</a></li>
+                  <li><a href="#" data-count="44">Ленточнопильные станки</a></li>
+                  <li><a href="#" data-count="120">Труборезы</a></li>
+                  <li><a href="#" data-count="120">Обработка профиля</a></li>
+                  <li><a href="#" data-count="120">Обработка листа</a></li>
+                  <li><a href="#" data-count="120">Термическая резка</a></li>
+                  <li><a href="#" data-count="120">Фрезерные станки</a></li>
+                  <li><a href="#" data-count="120">Токарные станки</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-001.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-laser">
+                    <use xlink:href="./assets/spritemap.svg#laser"></use>
+                  </svg>
+                <p>Лазерное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="123">Лазерные установки резки</a></li>
+                  <li><a href="#" data-count="120">Лазерная сварка</a></li>
+                  <li><a href="#" data-count="19">Лазерная очистка</a></li>
+                  <li><a href="#" data-count="286">Лазерные граверы-резчики</a></li>
+                  <li><a href="#" data-count="44">Лазерные маркираторы</a></li>
+                  <li><a href="#" data-count="120">Оснастка для лазерного оборудования</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-002.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-press">
+                    <use xlink:href="./assets/spritemap.svg#press"></use>
+                  </svg>
+                <p>Прессовое оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-003.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-welder">
+                    <use xlink:href="./assets/spritemap.svg#welder"></use>
+                  </svg>
+                <p>Сварочное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-004.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-helmet">
+                    <use xlink:href="./assets/spritemap.svg#helmet"></use>
+                  </svg>
+                <p>Строительное оборудование</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-005.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-crane">
+                    <use xlink:href="./assets/spritemap.svg#crane"></use>
+                  </svg>
+                <p>Инструмент</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-006.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__category-item"><a class="header__category-link" href="#">
+                  <svg class="icon icon-gear">
+                    <use xlink:href="./assets/spritemap.svg#gear"></use>
+                  </svg>
+                <p>Запасные части</p></a>
+              <div class="header__subcategory">
+                <ul>
+                  <li><a href="#" data-count="120">Роликовые вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные позиционеры</a></li>
+                  <li><a href="#" data-count="120">Трубные вращатели</a></li>
+                  <li><a href="#" data-count="120">Сварочные колонны</a></li>
+                  <li><a href="#" data-count="120">Шлифовка, полировка днищ и корпусов емкостей</a></li>
+                  <li><a href="#" data-count="120">Автоматизация и механизация сварки</a></li>
+                  <li><a href="#" data-count="120">Роботизация сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные каретки MIG и тракторы SAW</a></li>
+                  <li><a href="#" data-count="120">Орбитальная сварка</a></li>
+                  <li><a href="#" data-count="120">Машины контактной сварки</a></li>
+                  <li><a href="#" data-count="120">Подготовка кромки под сварку</a></li>
+                  <li><a href="#" data-count="120">Оборудование для ручной сварки</a></li>
+                  <li><a href="#" data-count="120">Средства защиты</a></li>
+                  <li><a href="#" data-count="120">Сварочные магниты и приспособления для сварки</a></li>
+                  <li><a href="#" data-count="120">Сварочные горелки MIG/TIG</a></li>
+                </ul>
+                <div class="header__subcategory-banner"><img src="./assets/images/category-007.jpg" alt="img"><a class="btn btn-promo btn--white" href="#">
+                      <svg class="icon icon-Arrow-narrow-up-right">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                      </svg>Все товары</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="header__burger" aria-label="Меню" id="burger">
+              <svg class="icon icon-Burger">
+                <use xlink:href="./assets/spritemap.svg#Burger"></use>
+              </svg>
+              <svg class="icon icon-X">
+                <use xlink:href="./assets/spritemap.svg#X"></use>
+              </svg>
+          </button>
+        </div>
+        <div class="header__catalog" id="header-catalog">
+          <div class="header__catalog-wrap">
+            <div class="header__catalog-item" data-catalog="1"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-bxs_discount">
+                    <use xlink:href="./assets/spritemap.svg#bxs_discount"></use>
+                  </svg>
+                <p>Распродажа</p></a></div>
+            <div class="header__catalog-item active" data-catalog="2"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-saw">
+                    <use xlink:href="./assets/spritemap.svg#saw"></use>
+                  </svg>
+                <p>Металлообработка</p></a></div>
+            <div class="header__catalog-item" data-catalog="3"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-laser">
+                    <use xlink:href="./assets/spritemap.svg#laser"></use>
+                  </svg>
+                <p>Лазерное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-press">
+                    <use xlink:href="./assets/spritemap.svg#press"></use>
+                  </svg>
+                <p>Прессовое оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-welder">
+                    <use xlink:href="./assets/spritemap.svg#welder"></use>
+                  </svg>
+                <p>Сварочное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-helmet">
+                    <use xlink:href="./assets/spritemap.svg#helmet"></use>
+                  </svg>
+                <p>Строительное оборудование</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-crane">
+                    <use xlink:href="./assets/spritemap.svg#crane"></use>
+                  </svg>
+                <p>Инструмент</p></a></div>
+            <div class="header__catalog-item"><a class="header__catalog-link" href="#">
+                  <svg class="icon icon-gear">
+                    <use xlink:href="./assets/spritemap.svg#gear"></use>
+                  </svg>
+                <p>Запасные части</p></a></div>
+          </div>
+          <div class="header__subcatalog" data-active="1">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__subcatalog active" data-active="2">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="286">Шлифовка и полировка</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="44">Ленточнопильные станки</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                  <li><a href="#">Отрезные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Труборезы</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Труборезы</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__subcatalog" data-active="3">
+            <ul>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="123">Сверление и обработка отверстий</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                  <li><a href="#">Вертикально-сверлильные станки</a></li>
+                  <li><a href="#">Радиально-сверлильные станки</a></li>
+                  <li><a href="#">Магнитные сверлильные станки</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                  <li><a href="#">Оснастка для заточных станков</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="19">Обработка кромки, снятие фаски</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Фаскосъемные станки</a></li>
+                  <li><a href="#">Торцеватели для труб</a></li>
+                  <li><a href="#">Оснастка для обработки кромки, снятия фаски</a></li>
+                </ul>
+              </li>
+              <li class="header__subcatalog-item"><a class="header__subcatalog-link" href="#" data-count="120">Металлорежущий инструмент</a>
+                <ul class="header__sublist">
+                  <li><a href="#">Отрезные станки</a></li>
+                  <li><a href="#">Заточные станки</a></li>
+                  <li><a href="#">Расточные станки</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header__catalog-banner">
+            <div class="header__catalog-banner-img"><img src="./assets/images/banner-bg-image.jpg" alt="img">
+            </div>
+            <p>Подберем станок под ваши задачи и бюджет</p>
+            <div class="btn btn-promo btn--primary">
+                <svg class="icon icon-Arrow-narrow-up-right">
+                  <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                </svg>Подобрать станок
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header::End-->
+    <!-- Main::Start-->
+    <main>
+            <div class="page-header">
+              <div class="breadcrumbs">
+                <div class="breadcrumbs-wrapper">
+                  <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><a href="#">Cервис и поддержка</a></div><span class="breadcrumbs-separator">/</span>
+                  <div class="breadcrumbs-item"><span>Гарантийное обслуживание</span></div>
+                </div>
+              </div>
+            </div>
+      <section class="section-sample">
+        <div class="container">
+          <div class="section-sample__inner">
+            <div class="section-sidebar">
+              <div class="section-sidebar__wrapper">
+                <div class="section-sidebar-info single-column">
+                  <div class="info-row active">
+                    <div class="info-cell">Гарантийное обслуживание</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-content">
+              <div class="content-text" id="id1">
+                <p>
+                  В процессе эксплуатации продукции Клиенты, к сожалению, могут столкнуться с выходом из строя узлов и деталей.Если в гарантийный или послегарантийный период произошла поломка оборудования, и не требуется капитальный ремонт, специалисты нашей сервисной службы могут устранить неисправность как в нашем сервисном центре, так и непосредственно
+                  на Вашем предприятии.
+                </p>
+              </div>
+              <div class="content-action">
+                <div class="btn btn--primary" data-src="#popup-request" data-fancybox><span>Оставить заявку</span></div>
+              </div>
+              <div class="content-image-block image-large">
+                <div class="image-wrapper"><img src="./assets/images/image-54.jpg" alt="img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main::End-->
+    <!-- Footer::Start-->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__logo"><a href="/"><img src="./assets/images/Logo_main_white.svg" alt="img"></a></div>
+        <div class="footer__inner">
+          <div class="footer__nav">
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Компания</a>
+              <div class="footer__subnav"><a href="#">О компании</a><a href="#">Пресс-центр</a><a href="#">Проекты</a><a href="#">Лицензии и сертификаты</a><a href="#">Отзывы</a></div>
+            </div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Покупателям</a>
+              <div class="footer__subnav"><a href="#">Доставка и оплата</a><a href="#">Услуги и сервисы</a><a href="#">Гарантия</a><a href="#">Ремонт</a></div>
+            </div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Демозал</a></div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Вакансии</a></div>
+            <div class="footer__nav-item"><a class="footer__nav-link" href="#">Контакты</a></div>
+            <div class="footer-widget"><img src="./assets/images/yandex-widget.jpg" alt="img">
+            </div>
+          </div>
+          <div class="footer__category"><a href="#">Обработка металла</a><a href="#">Лазерное оборудование</a><a href="#">Преcсовое оборудование</a><a href="#">Сварочное оборудование</a><a href="#">Строительное оборудование</a><a href="#">Инструмент</a><a href="#">Запчасти</a></div>
+          <div class="footer__contacts"><a class="footer__contacts-item" href="tel:+74951205913">+7 (495) 120-59-13</a><a class="footer__contacts-item" href="mailto:info@vekprom.ru">info@vekprom.ru</a>
+            <div class="footer__contacts-socials"><a href="#" target="_blank">
+                  <svg class="icon icon-VK">
+                    <use xlink:href="./assets/spritemap.svg#VK"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-TG">
+                    <use xlink:href="./assets/spritemap.svg#TG"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-Dzen">
+                    <use xlink:href="./assets/spritemap.svg#Dzen"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="icon icon-Youtube">
+                    <use xlink:href="./assets/spritemap.svg#Youtube"></use>
+                  </svg></a></div>
+            <div class="footer__contacts-btn btn btn-promo btn--primary">
+                <svg class="icon icon-Arrow-narrow-up-right">
+                  <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                </svg>Написать нам
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer-copyright">2008-2024 © ПГ ВЕКПРОМ</div><a class="footer-policy" href="#">Политика конфиденциальности</a><a class="footer-personal" href="#">Персональные данные</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer::End-->
+  </body>
+</html>
