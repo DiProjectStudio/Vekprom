@@ -5,39 +5,19 @@
       position: relative;
     }
 
-  }
+    .messengers {
+      @include breakpoint(lg) {
+        position: absolute;
+        right: 5px;
+        bottom: 35px;
+      }
 
-
-  .messengers {
-
-    @include breakpoint(lg) {
-      position: absolute;
-      right: 5px;
-      bottom: 40px;
-    }
-
-    @include breakpoint(xl) {
-      right: 10px;
-    }
-
-    .messengers-wrapper {
-      width: fit-content;
-      @include flexCenterBetween;
-      gap: 8px;
-
-      .messenger {
-        width: 40px;
-        height: 40px;
-        @include flexCenterCenter;
-        border-radius: 10px;
-        background-color: var(--bg-surface2);
-
-        svg {
-          fill: var(--fg-default);
-        }
+      @include breakpoint(xl) {
+        right: 10px;
       }
     }
   }
+
 }
 
 .section-project {

@@ -1,0 +1,109 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница о компании'
+    - var page = 'about-page'
+
+block main
+
+    //include ../components/_breadcrumbs
+    //+breadcrumbs('О компании', 'О компании')
+
+    section.general-list-section
+        .container
+            .general-list__inner
+                .general-list__inner-title С 2008 года мы содействуем развитию российской промышленности
+                .general-list__inner-list
+                    ul
+                        li решаем технические задачи клиентов
+                        li предлагаем технологии изготовления деталей по чертежам заказчикам
+                        li поставляем партнерам комплексное оборудование, предназначенное для выполнения любых производственных задач
+                        li проводим технический инструктаж и/или обучение персонала покупателя
+                        li обеспечиваем монтаж, запуск, наладку, диагностику, сервисное обслуживание оборудования на протяжении его жизненного цикла, модернизацию производственных процессов
+                .equipment__inner-btn.btn.btn-promo.btn--white
+                    +svg('Arrow-narrow-up-right')
+                    | Миссия, видение  и ценности
+
+    section.section-about
+
+        .container
+
+            .about-wrapper
+
+                .about
+
+                    .about__title.title Компания в цифрах
+
+                    .about__info
+                        .about__info-item
+                            p 15 000 м²
+                            p Складских помещений
+                        .about__info-item
+                            p 500+
+                            p Проектов реализовано
+                        .about__info-item
+                            p 50 000+
+                            p Позиций в ассортименте
+                        .about__info-item
+                            p 300+
+                            p Профессионалов в штате
+
+
+    section.section-about
+
+        .container
+
+            .about-wrapper
+
+                .about
+
+                    .about__title.title О компании
+                    .about__text Векпром — интегратор решений для создания высокотехнологичных производств. С 2008 года мы развиваем российскую промышленность, решая сложные задачи наших клиентов.
+
+                    .about__info
+                        .about__info-item
+                            p 15 000 м²
+                            p Складских помещений
+                        .about__info-item
+                            p 500+
+                            p Проектов реализовано
+                        .about__info-item
+                            p 50 000+
+                            p Позиций в ассортименте
+
+                    .about__link.btn.btn-promo.btn--white
+                        +svg('Arrow-narrow-up-right')
+                        | Подробнее
+
+                .about-banner
+
+                    .about-banner__image
+                        +img('banner-img.jpg')
+
+                    .about-banner__head
+
+                        .about-banner__title.title Демозал площадью более 3000 м2
+
+                        .about-banner__link.btn.btn--white Смотреть видео
+                            +svg('Play')
+
+                    .about-banner__contacts
+                        .about-banner__contacts-item.about-banner__contacts-item--address
+                            .about-banner__contacts-item-icon
+                                +svg('Map')
+                            .about-banner__contacts-info
+                                p Московская область<br>Раменский городской округ<br>поселок Спартак, с48/4
+                                a.about-banner__contacts-info-link(href="#") Смотреть на карте
+                                    +svg('Arrow-narrow-up-right')
+                        .about-banner__contacts-item.about-banner__contacts-item--worktime
+                            .about-banner__contacts-item-icon
+                                +svg('Clock')
+                            .about-banner__contacts-info
+                                p Пн-Пт 09:00-18:00
+                                a(href="tel:+74952606090") + 7 (495) 260 60 90
+
+                        .about-banner__btn.btn.btn-promo.btn--primary
+                            +svg('Arrow-narrow-up-right')
+                            | Записаться в демозал
+
+

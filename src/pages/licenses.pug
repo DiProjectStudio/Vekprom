@@ -1,0 +1,39 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница лицензии'
+    - var page = 'licenses-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Лицензии', 'Лицензии')
+
+
+    section.licenses-list
+        .container
+            .licenses-list__inner
+                .licenses-list__items
+                    .license__item
+                        .item-image
+                            +img('thanks-letter.jpg')
+                        .item-title Сертификат соответсвия нормам противопожарной безопасности №731676 Сертификат соответсвия нормам противопожарной безопасности №731676
+
+                    .license__item
+                        .item-image
+                            +img('thanks-letter.jpg')
+                        .item-title Сертификат соответсвия нормам противопожарной безопасности №731676 Сертификат соответсвия нормам противопожарной безопасности №731676
+
+                    .license__item
+                        .item-image
+                            +img('thanks-letter.jpg')
+                        .item-title Сертификат соответсвия нормам противопожарной безопасности №731676 Сертификат соответсвия нормам противопожарной безопасности №731676
+
+                    .license__item
+                        .item-image
+                            +img('thanks-letter.jpg')
+                        .item-title Сертификат соответсвия нормам противопожарной безопасности №731676 Сертификат соответсвия нормам противопожарной безопасности №731676
+
+                include ../components/_pagination
+
+

@@ -749,3 +749,13 @@ video {
         }
     }
 }
+
+.tag-date {
+    padding: 6px 8px;
+    font: var(--font-body-s);
+    border-radius: 10px;
+    background-color: var(--bg-surface2);
+
+    height: fit-content;
+    width: max-content;
+}

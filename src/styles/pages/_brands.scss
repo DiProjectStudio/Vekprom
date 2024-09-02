@@ -53,6 +53,7 @@
         .brands__inner-title {
             @include flexCenterBetween;
             font: var(--font-heading-h3);
+            letter-spacing: var(--lp-heading-h3);
 
             & .close {
                 width: 24px;
@@ -206,6 +207,7 @@
             .products__inner {
                 .products__inner-title {
                     font: var(--font-display-m);
+                    letter-spacing: var(--lp-display-m);
                     padding: 42px 16px 16px;
 
                     @include breakpoint(lg) {
