@@ -1,0 +1,43 @@
+.licenses-list {
+
+  @include sectionPaddingBottom;
+
+  .licenses-list__items {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .license__item {
+      padding: 16px;
+      background-color: var(--static-white);
+      border-radius: 16px;
+
+      .item-image {
+        height: 307px;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      .item-title {
+        font: var(--font-body-m-strong);
+        fontletter-spacing: var(--lp-body-m-strong);
+        padding-top: 12px;
+        margin-top: 16px;
+        border-top: 1px solid var(--border-default);
+        @include textLimit(3);
+      }
+    }
+  }
+}

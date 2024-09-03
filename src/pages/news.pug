@@ -1,0 +1,47 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница новостей'
+    - var page = 'news-page'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Пресс-центр', 'Пресс-центр')
+
+
+    section.news-list
+        .container
+            .news-list__inner
+                .news-list__items
+                    a(href='news-inner').news-item.news-item--big
+                        .news-item__image
+                            +img('News-card.jpg')
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+                    a(href='news-inner').news-item.news-item--small
+                        .news-item__date.tag-date 24 июня 2024
+                        .news-item__name «Начало карьеры — 2024. Весна»: Студенты МГТУ им. Н.Э. Баумана подали более  50 анкет на прохождение практики в «ВЕКПРОМ»
+
+
+                include ../components/_pagination

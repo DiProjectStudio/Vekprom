@@ -519,3 +519,72 @@ $('.review').each(function() {
     $(this).find('.review__user-photo').text(firstLetter);
 });
 
+// объединение новостей в 1 обертку на ПК версиях
+
+function groupSmallNewsItems() {
+    const $newsList = $('.news-list__items');
+    const $bigNewsItems = $newsList.find('.news-item.news-item--big');
+    const $smallNewsItems = $newsList.find('.news-item.news-item--small');
+
+    // очищаем новостной список
+    $newsList.empty();
+
+    let smallNewsIndex = 0;
+
+    function createSmallNewsWrapper() {
+        const $wrapper = $('<div>', { class: 'small-news-wrapper' });
+        for (let i = 0; i < 4 && smallNewsIndex < $smallNewsItems.length; i++, smallNewsIndex++) {
+            $wrapper.append($smallNewsItems.eq(smallNewsIndex));
+        }
+
+        if ($wrapper.children('.news-item.news-item--small').length > 2) {
+            $wrapper.children('.news-item.news-item--small').eq(1).after($('<div>', { class: 'devider' }));
+        }
+
+        return $wrapper;
+    }
+
+    // первая новость с изображением
+    if ($bigNewsItems.length > 0) {
+        $newsList.append($bigNewsItems.eq(0));
+    }
+
+    // добавляем обертки для маленьких новостных блоков
+    for (let i = 0; i < 2; i++) {
+        if (smallNewsIndex < $smallNewsItems.length) {
+            $newsList.append(createSmallNewsWrapper());
+        }
+    }
+
+    // добавляем 2 новости с изображениями
+    for (let i = 1; i < 3 && i < $bigNewsItems.length; i++) {
+        $newsList.append($bigNewsItems.eq(i));
+    }
+
+    // добавляем оставшиеся обертки для маленьких новостных блоков
+    while (smallNewsIndex < $smallNewsItems.length) {
+        $newsList.append(createSmallNewsWrapper());
+    }
+}
+
+function handleResize() {
+    if ($(window).width() >= 1280) {
+        groupSmallNewsItems();
+    } else {
+        // убираем обертки
+        const $newsList = $('.news-list__items');
+        const $smallNewsWrappers = $newsList.find('.small-news-wrapper');
+
+        $smallNewsWrappers.each(function() {
+            $(this).children().unwrap();
+        });
+
+        const $allNewsItems = $newsList.find('.news-item');
+        $allNewsItems.sort((a, b) => $(a).index() - $(b).index());
+        $newsList.append($allNewsItems);
+    }
+}
+
+$(window).on('resize', handleResize);
+handleResize();
+

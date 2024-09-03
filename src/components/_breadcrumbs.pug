@@ -67,6 +67,25 @@ mixin breadcrumbs(title, ...items)
                     .view-style__item.js-view.js-table-list
                         +svg('list-line')
 
+        else if page == 'news-page'
+
+            h1.main-title= title
+                span (34)
+
+            .catalog-header
+
+                .sorting
+                    .sorting__btn.js-sorting
+                        +svg('Arrow-switch-horizontal')
+                        | Сначала новые
+                    .sorting__dropdown
+                        .radio
+                            input#sort-new(type="radio" name="sorting" checked)
+                            label(for="sort-new") Сначала новые
+                        .radio
+                            input#sort-old(type="radio" name="sorting")
+                            label(for="sort-old") Сначала старые
+
         else if page == 'page-search'
 
             h1.main-title= title
@@ -110,17 +129,34 @@ mixin breadcrumbs(title, ...items)
             h1.main-title= title
 
             .messengers
-                .container
+                .messengers-wrapper
 
-                    .messengers-wrapper
+                    .messenger
+                        +svg('TG')
+                    .messenger
+                        +svg('WhatsApp')
 
-                        .messenger
-                            +svg('TG')
-                        .messenger
-                            +svg('WhatsApp')
+        else if page == 'news-inner-page'
+
+            h1.main-title= title
+
+            .date
+                .tag-date 24 июня
+
+            .messengers
+                .messengers-wrapper
+
+                    .messenger
+                        +svg('TG')
+                    .messenger
+                        +svg('WhatsApp')
+        else if page == 'licenses-page'
+
+            h1.main-title= title
+                span (34)
 
         else
-            
+
             if page != 'page-cart'
 
                 h1.main-title= title

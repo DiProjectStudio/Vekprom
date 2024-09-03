@@ -1,0 +1,133 @@
+extends /layout/layout
+
+block title
+    - var title = 'Контакты'
+    - var page = 'contacts-page'
+    - var yandexMap = true
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Контакты', 'Контакты')
+
+    section.section-sample.section-contacts
+        .container
+            .section-sample__inner
+                .section-sidebar
+                    .section-sidebar__wrapper
+                        script.
+                            let points = [
+                                {
+                                    title: 'Адрес 1',
+                                    coordinates: [55.67002106905425, 37.5524805],
+                                    address: 'м. Новые Черёмушки, ТЦ «Черёмушки», улица Профсоюзная, дом 56',
+                                },
+                                {
+                                    title: 'Адрес 2',
+                                    coordinates: [55.674839, 37.860953],
+                                },
+                                {
+                                    title: 'Адрес 3',
+                                    coordinates: [51.54715457773867,46.03226526322292],
+                                }
+                            ];
+                        .section-sidebar-info.single-column
+                            .map__wrapper
+                                #map(style="width:100%; height:100%; border-radius: 12px;")
+
+
+                .section-content
+                    .section-content-wrapper
+                        .contacts__items
+                            .contact__item
+                                .contact-heading Офис Жуковский
+                                .contact-info
+                                    .contacts-info__item.contact-address
+                                        .contact-icon
+                                            +svg('Map')
+                                        span Московская область&nbsp;Раменский городской округ&nbsp;поселок Спартак, с48/4
+                                        .show-map Смотреть на карте
+                                            .arrow
+                                                +svg('Arrow-narrow-up-right')
+
+                                    .contacts-info__item.contact-hours
+                                        .contact-icon
+                                            +svg('Clock')
+                                        span Пн-Пт 09:00-18:00
+                                    .contacts-info__item.contact-phone
+                                        .contact-icon
+                                            +svg('Phone')
+                                        span + 7 (495) 260 60 90
+                                    .contacts-info__item.contact-email
+                                        .contact-icon
+                                            +svg('Email')
+                                        span info@vekprom.ru
+                            .contact__item
+                                .contact-heading Офис Жуковский
+                                .contact-info
+                                    .contacts-info__item.contact-address
+                                        .contact-icon
+                                            +svg('Map')
+                                        span Московская область&nbsp;Раменский городской округ&nbsp;поселок Спартак, с48/4
+                                        .show-map Смотреть на карте
+                                            .arrow
+                                                +svg('Arrow-narrow-up-right')
+
+                                    .contacts-info__item.contact-hours
+                                        .contact-icon
+                                            +svg('Clock')
+                                        span Пн-Пт 09:00-18:00
+                                    .contacts-info__item.contact-phone
+                                        .contact-icon
+                                            +svg('Phone')
+                                        span + 7 (495) 260 60 90
+                                    .contacts-info__item.contact-email
+                                        .contact-icon
+                                            +svg('Email')
+                                        span info@vekprom.ru
+                            .contact__item
+                                .contact-heading Офис Жуковский
+                                .contact-info
+                                    .contacts-info__item.contact-address
+                                        .contact-icon
+                                            +svg('Map')
+                                        span Московская область&nbsp;Раменский городской округ&nbsp;поселок Спартак, с48/4
+                                        .show-map Смотреть на карте
+                                            .arrow
+                                                +svg('Arrow-narrow-up-right')
+
+                                    .contacts-info__item.contact-hours
+                                        .contact-icon
+                                            +svg('Clock')
+                                        span Пн-Пт 09:00-18:00
+                                    .contacts-info__item.contact-phone
+                                        .contact-icon
+                                            +svg('Phone')
+                                        span + 7 (495) 260 60 90
+                                    .contacts-info__item.contact-email
+                                        .contact-icon
+                                            +svg('Email')
+                                        span info@vekprom.ru
+                            .contact__item
+                                .contact-heading Офис Жуковский
+                                .contact-info
+                                    .contacts-info__item.contact-address
+                                        .contact-icon
+                                            +svg('Map')
+                                        span Московская область&nbsp;Раменский городской округ&nbsp;поселок Спартак, с48/4
+                                        .show-map Смотреть на карте
+                                            .arrow
+                                                +svg('Arrow-narrow-up-right')
+
+                                    .contacts-info__item.contact-hours
+                                        .contact-icon
+                                            +svg('Clock')
+                                        span Пн-Пт 09:00-18:00
+                                    .contacts-info__item.contact-phone
+                                        .contact-icon
+                                            +svg('Phone')
+                                        span + 7 (495) 260 60 90
+                                    .contacts-info__item.contact-email
+                                        .contact-icon
+                                            +svg('Email')
+                                        span info@vekprom.ru

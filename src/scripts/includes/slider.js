@@ -271,4 +271,22 @@ export function initializeSlider() {
             }
         }
     });
+
+    // Слайдер изображений на странице новости
+    const newsSlider = new Swiper('.section-news-slider .swiper', {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 5,
+        freeMode: true,
+
+        pagination: {
+            el: '.section-news-slider .swiper-pagination',
+            clickable: true
+        },
+
+        navigation: {
+            nextEl: '.section-news-slider .swiper-button-next',
+            prevEl: '.section-news-slider .swiper-button-prev'
+        },
+    });
 }
