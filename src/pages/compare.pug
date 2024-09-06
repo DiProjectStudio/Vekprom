@@ -1,0 +1,10 @@
+extends /layout/layout
+
+block title
+    - var title = 'Сравнение товаров'
+    - var page = 'page-compare'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Сравнение товаров', 'Сравнение товаров')

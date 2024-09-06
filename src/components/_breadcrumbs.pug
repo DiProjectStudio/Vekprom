@@ -67,10 +67,43 @@ mixin breadcrumbs(title, ...items)
                     .view-style__item.js-view.js-table-list
                         +svg('list-line')
 
+        if page == 'page-compare'
+
+            h1.main-title= title
+                span (13)
+
+            .catalog-header
+
+                .filter-search
+                    form(action="/")
+                        .input-search
+                            button(type="submit" aria-label="Поиск").search-icon
+                                +svg('Search')
+                            input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
+
         else if page == 'news-page'
 
             h1.main-title= title
                 span (34)
+
+            .catalog-header
+
+                .sorting
+                    .sorting__btn.js-sorting
+                        +svg('Arrow-switch-horizontal')
+                        | Сначала новые
+                    .sorting__dropdown
+                        .radio
+                            input#sort-new(type="radio" name="sorting" checked)
+                            label(for="sort-new") Сначала новые
+                        .radio
+                            input#sort-old(type="radio" name="sorting")
+                            label(for="sort-old") Сначала старые
+
+        else if page == 'page-projects'
+
+            h1.main-title= title
+                span (80)
 
             .catalog-header
 
@@ -157,6 +190,6 @@ mixin breadcrumbs(title, ...items)
 
         else
 
-            if page != 'page-cart'
+            if (page != 'page-product' && page != 'page-cart')
 
                 h1.main-title= title

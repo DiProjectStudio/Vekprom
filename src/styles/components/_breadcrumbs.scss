@@ -1,378 +1,377 @@
 .page-header {
-  margin: 10px $container;
-  padding: 20px 0 10px;
-  background: var(--bg-surface1, #fff);
-  max-width: calc($max-width - 40px);
-  border-radius: 12px;
+    margin: 10px $container;
+    padding: 20px 0 10px;
+    background: var(--bg-surface1, #fff);
+    max-width: calc($max-width - 40px);
+    border-radius: 12px;
 
-  @include breakpoint(lg) {
-    margin-top: 16px;
-  }
+    @include breakpoint(md) {
+        margin-bottom: 16px;
+    }
 
-  @include breakpoint(xl) {
-    //margin: 20px auto 10px;
-    margin: 20px auto;
-  }
+    @include breakpoint(xl) {
+        margin: 20px auto;
+    }
 }
 
 .breadcrumbs {
-  margin: 0 auto;
-  padding: 0 16px 16px;
-  max-width: calc($max-width - 40px);
+    margin: 0 auto;
+    padding: 0 16px 16px;
+    max-width: calc($max-width - 40px);
 
-  @include breakpoint(lg) {
-    padding: 0 32px 32px;
-  }
+    @include breakpoint(lg) {
+        padding: 0 32px 32px;
+    }
 }
 
 .breadcrumbs-wrapper {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
 }
 
 .breadcrumbs-item {
-  font: var(--font-description-l);
-  color: var(--fg-soft, #9398a0);
-  white-space: nowrap;
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
+    white-space: nowrap;
 
-  @include breakpoint(lg) {
-    font: var(--font-body-s);
-  }
+    @include breakpoint(lg) {
+        font: var(--font-body-s);
+    }
 }
 
 .breadcrumbs-item span {
-  user-select: none;
+    user-select: none;
 }
 
 .breadcrumbs-separator {
-  margin: 0 8px;
-  display: flex;
-  font: var(--font-description-l);
-  color: var(--fg-soft, #9398a0);
+    margin: 0 8px;
+    display: flex;
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
 
-  @include breakpoint(lg) {
-    font: var(--font-body-s);
-  }
+    @include breakpoint(lg) {
+        font: var(--font-body-s);
+    }
 }
 
 .main-title {
-  padding: 16px;
-  font: var(--font-display-xs-strong);
-  letter-spacing: var(--lp-display-xs-strong);
-
-  @include breakpoint(md) {
-    font: var(--font-display-s-strong);
-  }
-
-  @include breakpoint(lg) {
-    padding: 32px 32px 24px;
-    font: var(--font-display-l-strong);
-  }
-
-  & span {
-    margin-left: 10px;
-    font: var(--font-body-l);
-    color: var(--accent-default);
+    padding: 16px;
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
 
     @include breakpoint(md) {
-      font: var(--font-display-xs);
-      letter-spacing: var(--lp-display-xs);
+        font: var(--font-display-s-strong);
     }
 
     @include breakpoint(lg) {
-      margin-left: 16px;
-      font: var(--font-display-s);
-      letter-spacing: var(--lp-display-s);
+        padding: 32px 32px 24px;
+        font: var(--font-display-l-strong);
     }
-  }
+
+    & span {
+        margin-left: 10px;
+        font: var(--font-body-l);
+        color: var(--accent-default);
+
+        @include breakpoint(md) {
+            font: var(--font-display-xs);
+            letter-spacing: var(--lp-display-xs);
+        }
+
+        @include breakpoint(lg) {
+            margin-left: 16px;
+            font: var(--font-display-s);
+            letter-spacing: var(--lp-display-s);
+        }
+    }
 }
 
 .catalog-header {
-  padding: 10px 10px 0;
-  display: flex;
-  border-top: 1px solid var(--border-default, #eaeaec);
+    padding: 10px 10px 0;
+    display: flex;
+    border-top: 1px solid var(--border-default, #eaeaec);
 
-  @include breakpointMax(lg) {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  @include breakpoint(lg) {
-    padding: 10px 16px 0 10px;
-  }
-
-  .input-search {
-    & .search-icon {
-      margin-right: 10px;
-
-      & .icon {
-        width: 20px;
-        height: 20px;
-      }
+    @include breakpointMax(lg) {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    & input {
-      display: block;
+    @include breakpoint(lg) {
+        padding: 10px 16px 0 10px;
     }
-  }
+
+    .input-search {
+        & .search-icon {
+            margin-right: 10px;
+
+            & .icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        & input {
+            display: block;
+        }
+    }
 }
 
 .result {
-  margin-bottom: 16px;
-  padding: 7px 70px 7px 6px;
-  font: var(--font-body-m);
+    margin-bottom: 16px;
+    padding: 7px 70px 7px 6px;
+    font: var(--font-body-m);
 
-  @include breakpoint(md) {
-    margin-bottom: 0;
-    padding: 7px 70px 7px 16px;
-  }
+    @include breakpoint(md) {
+        margin-bottom: 0;
+        padding: 7px 70px 7px 16px;
+    }
 
-  @include breakpoint(lg) {
-    padding: 7px 0 7px 22px;
-    width: 290px;
-  }
+    @include breakpoint(lg) {
+        padding: 7px 0 7px 22px;
+        width: 290px;
+    }
 
-  @include breakpoint(xl) {
-    width: 325px;
-  }
+    @include breakpoint(xl) {
+        width: 325px;
+    }
 
-  & span {
-    color: var(--accent-default, #f5851a);
-  }
+    & span {
+        color: var(--accent-default, #f5851a);
+    }
 }
 
 .filter-search {
-  @include breakpointMax(lg) {
-    margin-bottom: 10px;
-    width: 100%;
-  }
+    @include breakpointMax(lg) {
+        margin-bottom: 10px;
+        width: 100%;
+    }
 
-  @include breakpoint(lg) {
-    flex-shrink: 0;
-    width: 325px;
-  }
+    @include breakpoint(lg) {
+        flex-shrink: 0;
+        width: 325px;
+    }
 }
 
 .filter-btn {
-  background: var(--bg-surface1, #fff);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border-default, #eaeaec);
+    background: var(--bg-surface1, #fff);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #eaeaec);
 
-  @include breakpoint(lg) {
-    display: none;
-  }
-
-  &.active {
-    &::after {
-      content: '';
-      background: var(--accent-default, #f5851a);
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      display: block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
+    @include breakpoint(lg) {
+        display: none;
     }
-  }
 
-  & .icon {
-    width: 16px;
-    height: 16px;
-    stroke: var(--fg-default);
-  }
+    &.active {
+        &::after {
+            content: '';
+            background: var(--accent-default, #f5851a);
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    & .icon {
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-default);
+    }
 }
 
 .sorting {
-  position: relative;
+    position: relative;
 
-  @include breakpoint(lg) {
-    margin-left: 20px;
-    flex-shrink: 0;
-  }
+    @include breakpoint(lg) {
+        margin-left: 20px;
+        flex-shrink: 0;
+    }
 }
 
 .sorting__btn {
-  padding: 8px 16px;
-  background: var(--bg-surface1, #fff);
-  display: flex;
-  align-items: center;
-  max-width: max-content;
-  border-radius: 8px;
-  border: 1px solid var(--border-default, #eaeaec);
-  transition: $transition;
-  user-select: none;
-  cursor: pointer;
-
-  & .icon {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-    stroke: var(--fg-soft);
-  }
-
-  &:hover {
-    color: var(--neutral-hover, #535a68);
+    padding: 8px 16px;
+    background: var(--bg-surface1, #fff);
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #eaeaec);
+    transition: $transition;
+    user-select: none;
+    cursor: pointer;
 
     & .icon {
-      stroke: var(--accent-default);
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-soft);
     }
-  }
+
+    &:hover {
+        color: var(--neutral-hover, #535a68);
+
+        & .icon {
+            stroke: var(--accent-default);
+        }
+    }
 }
 
 .sorting__dropdown {
-  padding: 4px;
-  background: var(--bg-surface1, #fff);
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  width: 100%;
-  transform: scaleY(0);
-  transform-origin: top center;
-  visibility: hidden;
-  transition: $transition;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-  z-index: 5;
+    padding: 4px;
+    background: var(--bg-surface1, #fff);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top center;
+    visibility: hidden;
+    transition: $transition;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    z-index: 5;
 
-  .dropdown & {
-    transform: scaleY(1);
-    visibility: visible;
-  }
-
-  & .radio {
-    & label {
-      padding: 4px 8px 4px 10px;
-      border-radius: 6px;
-
-      &::before {
-        margin-right: 10px;
-      }
+    .dropdown & {
+        transform: scaleY(1);
+        visibility: visible;
     }
 
-    & input:checked + label {
-      background: var(--bg-surface2, #f4f5f6);
+    & .radio {
+        & label {
+            padding: 4px 8px 4px 10px;
+            border-radius: 6px;
+
+            &::before {
+                margin-right: 10px;
+            }
+        }
+
+        & input:checked + label {
+            background: var(--bg-surface2, #f4f5f6);
+        }
     }
-  }
 }
 
 .filter-props {
-  @include breakpointMax(lg) {
-    display: none;
-  }
+    @include breakpointMax(lg) {
+        display: none;
+    }
 
-  @include breakpoint(lg) {
-    margin-left: 12px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 8px;
-    row-gap: 8px;
-  }
+    @include breakpoint(lg) {
+        margin-left: 12px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 8px;
+        row-gap: 8px;
+    }
 }
 
 .filter-props__item {
-  padding: 4px 16px;
-  background: var(--accent-500, #f5851a);
-  display: flex;
-  align-items: center;
-  color: var(--Static-white, #fff);
-  border-radius: 9999px;
-  cursor: default;
+    padding: 4px 16px;
+    background: var(--accent-500, #f5851a);
+    display: flex;
+    align-items: center;
+    color: var(--Static-white, #fff);
+    border-radius: 9999px;
+    cursor: default;
 }
 
 .filter-props__remove {
-  margin-left: 2px;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
+    margin-left: 2px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 
-  & .icon {
-    width: 100%;
-    height: 100%;
-    stroke: var(--accent-on-accent);
-  }
+    & .icon {
+        width: 100%;
+        height: 100%;
+        stroke: var(--accent-on-accent);
+    }
 }
 
 .filter-reset {
-  background: transparent;
-  color: var(--fg-default, #283142);
-  border: var(--Number, 1px) solid var(--neutral-100, #c9cbd0);
+    background: transparent;
+    color: var(--fg-default, #283142);
+    border: var(--Number, 1px) solid var(--neutral-100, #c9cbd0);
 
-  & .icon {
-    stroke: var(--fg-default);
-  }
+    & .icon {
+        stroke: var(--fg-default);
+    }
 }
 
 .view-style {
-  @include breakpointMax(lg) {
-    display: none;
-  }
+    @include breakpointMax(lg) {
+        display: none;
+    }
 
-  @include breakpoint(lg) {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    column-gap: 12px;
-  }
+    @include breakpoint(lg) {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
 
-  & .icon {
-    width: 20px;
-    height: 20px;
-    fill: var(--bg-surface3);
-  }
+    & .icon {
+        width: 20px;
+        height: 20px;
+        fill: var(--bg-surface3);
+    }
 }
 
 .view-style__item {
-  @include breakpoint(lg) {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-  }
-
-  &.active .icon {
-    fill: var(--accent-default);
-  }
-}
-
-.messengers {
-
-  .messengers-wrapper {
-    width: fit-content;
-    @include flexCenterBetween;
-    gap: 8px;
-
-    .messenger {
-      width: 40px;
-      height: 40px;
-      @include flexCenterCenter;
-      border-radius: 10px;
-      background-color: var(--bg-surface2);
-
-      svg {
-        fill: var(--fg-default);
-      }
+    @include breakpoint(lg) {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
     }
-  }
-}
 
-.date, .messengers {
-  padding: 0 16px;
-
-  @include breakpoint(lg) {
-    padding: 0 32px;
-  }
+    &.active .icon {
+        fill: var(--accent-default);
+    }
 }
 
 .messengers {
-  @include breakpoint(lg) {
-    padding-bottom: 24px;
-  }
+    .messengers-wrapper {
+        width: fit-content;
+        @include flexCenterBetween;
+        gap: 8px;
+
+        .messenger {
+            width: 40px;
+            height: 40px;
+            @include flexCenterCenter;
+            border-radius: 10px;
+            background-color: var(--bg-surface2);
+
+            svg {
+                fill: var(--fg-default);
+            }
+        }
+    }
+}
+
+.date,
+.messengers {
+    padding: 0 16px;
+
+    @include breakpoint(lg) {
+        padding: 0 32px;
+    }
+}
+
+.messengers {
+    @include breakpoint(lg) {
+        padding-bottom: 24px;
+    }
 }
