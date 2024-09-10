@@ -45,13 +45,15 @@ export function initializeSlider() {
     });
 
     // Начальная анимация для первого слайда
-    document.addEventListener('DOMContentLoaded', function () {
-        const activeBullet = document.querySelector(
-            '.swiper-pagination-bullet-active .progress-bar'
-        );
-        activeBullet.style.width = '100%';
-        activeBullet.style.transition = `width ${heroSliderAttr / 1000}s linear`;
-    });
+    if (document.querySelector('.swiper-pagination-bullet-active .progress-bar')) {
+        setTimeout(() => {
+            const activeBullet = document.querySelector(
+                '.swiper-pagination-bullet-active .progress-bar'
+            );
+            activeBullet.style.width = '100%';
+            activeBullet.style.transition = `width ${heroSliderAttr / 1000}s linear`;
+        }, 1);
+    }
 
     const heroTape = new Swiper('.hero-tape', {
         modules: [FreeMode],
@@ -258,16 +260,16 @@ export function initializeSlider() {
         breakpoints: {
             768: {
                 slidesPerView: 2.1,
-                spaceBetween: 20,
+                spaceBetween: 20
             },
 
             1280: {
                 slidesPerView: 2.4,
-                spaceBetween: 20,
+                spaceBetween: 20
             },
 
             1440: {
-                slidesPerView: 2.7,
+                slidesPerView: 2.7
             }
         }
     });
@@ -287,6 +289,6 @@ export function initializeSlider() {
         navigation: {
             nextEl: '.section-news-slider .swiper-button-next',
             prevEl: '.section-news-slider .swiper-button-prev'
-        },
+        }
     });
 }

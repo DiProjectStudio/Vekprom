@@ -69,17 +69,25 @@ mixin breadcrumbs(title, ...items)
 
         if page == 'page-compare'
 
-            h1.main-title= title
-                span (13)
+            .compare-header-wrap
+                h1.main-title= title
+                    span (13)
+
+                .clear-btn
+                    +svg('Trash')
+                    |Очистить все
 
             .catalog-header
 
-                .filter-search
-                    form(action="/")
-                        .input-search
-                            button(type="submit" aria-label="Поиск").search-icon
-                                +svg('Search')
-                            input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
+                .compare-categories
+                    .compare-category Вертикально-сверлильные станки
+                        span 4
+                    .compare-category Вертикально-сверлильные станки
+                        span 3
+                    .compare-category Вертикально-сверлильные станки
+                        span 3
+                    .compare-category Вертикально-сверлильные станки
+                        span 3
 
         else if page == 'news-page'
 
