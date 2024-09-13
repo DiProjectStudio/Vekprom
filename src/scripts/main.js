@@ -8,6 +8,7 @@ import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
 import { initializeFilter } from './includes/filter.js';
 import { initializePersonal } from './includes/personal.js';
+import { initializeCompare } from './includes/compare.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
@@ -507,13 +508,16 @@ $sidebarRow.on('click', function () {
     $sidebarRow.removeClass('active');
     $(this).addClass('active');
     const targetId = $(this).find('a').attr('href');
-    $('html, body').animate({
-        scrollTop: $(targetId).offset().top - offset
-    }, 800);
+    $('html, body').animate(
+        {
+            scrollTop: $(targetId).offset().top - offset
+        },
+        800
+    );
 });
 
 // Первая буква имени у пользователя в отзывах
-$('.review').each(function() {
+$('.review').each(function () {
     let userName = $(this).find('.review__user-name').text().trim();
     let firstLetter = userName.charAt(0);
     $(this).find('.review__user-photo').text(firstLetter);
@@ -538,7 +542,10 @@ function groupSmallNewsItems() {
         }
 
         if ($wrapper.children('.news-item.news-item--small').length > 2) {
-            $wrapper.children('.news-item.news-item--small').eq(1).after($('<div>', { class: 'devider' }));
+            $wrapper
+                .children('.news-item.news-item--small')
+                .eq(1)
+                .after($('<div>', { class: 'devider' }));
         }
 
         return $wrapper;
@@ -575,7 +582,7 @@ function handleResize() {
         const $newsList = $('.news-list__items');
         const $smallNewsWrappers = $newsList.find('.small-news-wrapper');
 
-        $smallNewsWrappers.each(function() {
+        $smallNewsWrappers.each(function () {
             $(this).children().unwrap();
         });
 
@@ -588,3 +595,13 @@ function handleResize() {
 $(window).on('resize', handleResize);
 handleResize();
 
+// Категории в сравнении
+$('.compare-category').on('click', (e) => {
+    const $currentCategory = $(e.currentTarget); // Текущий элемент
+    const $parent = $currentCategory.parent(); // Родительский элемент
+
+    if (!$currentCategory.hasClass('active')) {
+        $parent.find('.compare-category').removeClass('active');
+        $currentCategory.addClass('active');
+    }
+});

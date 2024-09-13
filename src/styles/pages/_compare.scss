@@ -1,0 +1,305 @@
+.compare-bar {
+    margin: 0 var(--container);
+    padding: 0 var(--container) 10px;
+    display: flex;
+    column-gap: 24px;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    @include breakpoint(md) {
+        padding: 0 12px 16px;
+    }
+
+    @include breakpoint(xl) {
+        margin: 0 auto;
+        padding: 0 28px 20px;
+        max-width: $max-width;
+    }
+}
+
+.compare-bar__item {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    font: var(--font-description-l);
+    user-select: none;
+
+    & > div {
+        display: flex;
+        column-gap: 4px;
+    }
+
+    & .switch {
+        margin-right: 101px;
+        position: relative;
+    }
+
+    & .switch label::after {
+        content: attr(data-text);
+        display: block;
+        position: absolute;
+        top: 1.6px;
+        left: calc(100% + 12px);
+    }
+
+    & .share {
+        cursor: pointer;
+    }
+
+    & .clear {
+        cursor: pointer;
+    }
+
+    & .icon {
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-soft);
+    }
+}
+
+.compare {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    overflow: hidden;
+
+    @include breakpointMax(lg) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.compare-item {
+    padding-bottom: 8px;
+    background: var(--bg-surface1, #fff);
+    min-width: 0;
+
+    & .swiper-navigation {
+        margin-top: 16px;
+        padding: 0 8px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include breakpoint(lg) {
+            display: none;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: calc(100% - 16px);
+            border-top: 1px solid var(--border-soft);
+        }
+
+        & span {
+            font: var(--font-description-l);
+            color: var(--fg-soft, #9398a0);
+            user-select: none;
+            cursor: default;
+        }
+    }
+
+    & .swiper-button {
+        --swiper-navigation-size: 10px;
+
+        margin: 0;
+        background: var(--bg-surface2, #f4f5f6);
+        width: 36px;
+        height: 36px;
+        font-weight: 600;
+        color: var(--fg-soft);
+        border-radius: 6px;
+    }
+}
+
+.compare-item ~ .compare-item {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-left: 1px solid var(--border-default, #eaeaec);
+        z-index: 2;
+    }
+}
+
+.section-compare {
+    & .card-item {
+        border-radius: 0;
+
+        @include breakpointMax(lg) {
+            padding: 8px 8px 0;
+        }
+
+        &:not(:first-child)::before {
+            @include breakpoint(lg) {
+                content: '';
+                position: absolute;
+                left: 0;
+                height: calc(100% - 16px);
+                border-left: 1px solid var(--border-default, #eaeaec);
+                z-index: 2;
+            }
+        }
+    }
+
+    & .card-tag {
+        @include breakpointMax(lg) {
+            position: static;
+            font: var(--font-description-l);
+        }
+    }
+
+    & .card-action .card-favourite {
+        @include breakpointMax(lg) {
+            display: none;
+        }
+    }
+
+    & .card-item__buy .card-favourite::before {
+        @include breakpointMax(lg) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    & .card-item__img {
+        @include breakpointMax(lg) {
+            margin-bottom: 8px;
+            padding: 0 24px;
+            order: -1;
+            height: 100px;
+
+            @include breakpoint(md) {
+                padding: 0 68px;
+                height: 200px;
+            }
+        }
+    }
+
+    & .card-item__name {
+        @include breakpointMax(lg) {
+            margin-bottom: 4px;
+            height: 44px;
+            font: var(--font-description-m);
+            order: -1;
+
+            @include breakpoint(md) {
+                font: var(--font-body-s-strong);
+            }
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .card-item__price {
+        @include breakpointMax(lg) {
+            padding: 8px 0;
+            flex-direction: column;
+
+            & .discount {
+                margin-top: 8px;
+                font: var(--font-description-l);
+            }
+        }
+    }
+
+    & .card-item__buy {
+        @include breakpointMax(lg) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            column-gap: 8px;
+            row-gap: 8px;
+        }
+
+        & .btn {
+            @include breakpointMax(lg) {
+                font: var(--font-body-s-strong);
+                height: 36px;
+            }
+        }
+
+        & .card-favourite {
+            background: var(--bg-surface2, #f4f5f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+
+            @include breakpoint(lg) {
+                display: none;
+            }
+        }
+
+        & .card-favourite:not(.active)::before {
+            background-image: $heartGray;
+        }
+    }
+
+    & .card-item__buy-fast {
+        @include breakpointMax(lg) {
+            width: 100%;
+        }
+    }
+
+    & .card-item__buy-add {
+        @include breakpointMax(lg) {
+            width: calc(100% - 44px);
+        }
+    }
+}
+
+.compare-desc {
+    margin-bottom: 16px;
+    background: var(--neutral-0, #fff);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    @include breakpoint(xl) {
+        margin-bottom: 20px;
+    }
+}
+
+.compare-desc__row {
+    padding: 4px 0 6px 0;
+    border-top: 1px solid var(--border-default, #eaeaec);
+
+    &:nth-child(odd) {
+        background: var(--neutral-10, #f9f9f9);
+    }
+}
+
+.compare-desc__title {
+    margin-bottom: 5px;
+    padding-left: 16px;
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpointMax(lg) {
+        font: var(--font-description-l);
+    }
+}
+
+.compare-desc__value {
+    display: flex;
+    align-items: center;
+
+    & p {
+        padding-left: 16px;
+        flex: 1 1 100%;
+        font: var(--font-body-m-strong);
+
+        @include breakpoint(lg) {
+            font: var(--font-body-l-strong);
+        }
+    }
+}

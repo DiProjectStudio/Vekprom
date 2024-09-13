@@ -9,3 +9,235 @@ block main
     include ../components/_breadcrumbs
     +breadcrumbs('Сравнение товаров', 'Сравнение товаров')
 
+    .compare-bar
+
+        .compare-bar__item
+            .switch
+                input#switch(type="checkbox", name="switch")
+                label(for="switch" data-text="Только отличия")
+
+        .compare-bar__item
+            .share
+                +svg('Share')
+                |Поделиться
+
+        .compare-bar__item
+            .clear
+                +svg('Trash')
+                |Очистить категорию
+
+    section.section-compare
+
+        .container
+
+            .compare
+
+                .compare-item
+
+                    .swiper
+
+                        .swiper-wrapper
+
+                            .swiper-slide.card-item.card-white
+                                
+                                .card-tag.tag-instock
+                                    +svg('Check')
+                                    |В наличии
+
+                                .card-action
+                                    .card-action__item.card-remove
+                                    .card-action__item.card-favourite
+
+                                .card-item__img
+                                    +img('image.png')
+
+                                .card-item__name
+                                    a(href="#") Оптоволоконный лазерный станок лазерный станок Tokagama TG-CM 1510
+
+                                .card-item__price 3 553 232 ₽
+                                    .discount 3 850 600 ₽
+
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-action__item.card-favourite
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .swiper-slide.card-item.card-white
+                                
+                                .card-tag.tag-instock
+                                    +svg('Check')
+                                    |В наличии
+
+                                .card-action
+                                    .card-action__item.card-remove
+                                    .card-action__item.card-favourite
+
+                                .card-item__img
+                                    +img('image.png')
+
+                                .card-item__name
+                                    a(href="#") Оптоволоконный лазерный станок  Tokagama TG-CM 1428
+
+                                .card-item__price 3 553 232 ₽
+                                    .discount 3 850 600 ₽
+
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-action__item.card-favourite
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .swiper-slide.card-item.card-white
+                                
+                                .card-tag.tag-instock
+                                    +svg('Check')
+                                    |В наличии
+
+                                .card-action
+                                    .card-action__item.card-remove
+                                    .card-action__item.card-favourite
+
+                                .card-item__img
+                                    +img('image.png')
+
+                                .card-item__name
+                                    a(href="#") Оптоволоконный лазерный станок  Lokagama TG-ПЕ 0010
+
+                                .card-item__price 3 553 232 ₽
+                                    .discount 3 850 600 ₽
+
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-action__item.card-favourite
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .swiper-slide.card-item.card-white
+                                
+                                .card-tag.tag-instock
+                                    +svg('Check')
+                                    |В наличии
+
+                                .card-action
+                                    .card-action__item.card-remove
+                                    .card-action__item.card-favourite
+
+                                .card-item__img
+                                    +img('image.png')
+
+                                .card-item__name
+                                    a(href="#") Оптоволоконный лазерный станок  Tokagama VB-CM 1220
+
+                                .card-item__price 3 553 232 ₽
+                                    .discount 3 850 600 ₽
+
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-action__item.card-favourite
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+                                        
+
+                    .swiper-navigation
+                        .swiper-button.swiper-button-prev
+                        span.slide-counter
+                        .swiper-button.swiper-button-next
+
+            .compare-desc
+
+                .compare-desc__row
+                    .compare-desc__title Мощность
+                    .compare-desc__value
+                        p(data-item=1) 1.1 кВт
+                        p(data-item=2) 1.1 кВт
+                        p(data-item=3) 1.1 кВт
+                        p(data-item=4) 1.1 кВт
+
+                .compare-desc__row
+                    .compare-desc__title Макс. диаметр сверления
+                    .compare-desc__value
+                        p(data-item=1) 24 мм
+                        p(data-item=2) 24 мм
+                        p(data-item=3) 24 мм
+                        p(data-item=4) 24 мм
+
+                .compare-desc__row
+                    .compare-desc__title Посадочное отверстие шпинделя
+                    .compare-desc__value
+                        p(data-item=1) КМ3
+                        p(data-item=2) КМ3
+                        p(data-item=3) КМ3
+                        p(data-item=4) КМ3
+
+                .compare-desc__row
+                    .compare-desc__title Напряжение
+                    .compare-desc__value
+                        p(data-item=1) 400 В
+                        p(data-item=2) 400 В
+                        p(data-item=3) 400 В
+                        p(data-item=4) 400 В
+
+                .compare-desc__row
+                    .compare-desc__title Реверс
+                    .compare-desc__value
+                        p(data-item=1) Да
+                        p(data-item=2) Нет
+                        p(data-item=3) Нет
+                        p(data-item=4) Нет
+
+                .compare-desc__row
+                    .compare-desc__title Макс. диаметр глубокого сверления
+                    .compare-desc__value
+                        p(data-item=1) 21 мм
+                        p(data-item=2) 21 мм
+                        p(data-item=3) 21 мм
+                        p(data-item=4) 21 мм
+
+                .compare-desc__row
+                    .compare-desc__title Мощность
+                    .compare-desc__value
+                        p(data-item=1) 1.1 кВт
+                        p(data-item=2) 1.1 кВт
+                        p(data-item=3) 1.1 кВт
+                        p(data-item=4) 1.1 кВт
+
+                .compare-desc__row
+                    .compare-desc__title Макс. диаметр сверления
+                    .compare-desc__value
+                        p(data-item=1) 24 мм
+                        p(data-item=2) 24 мм
+                        p(data-item=3) 24 мм
+                        p(data-item=4) 24 мм
+
+                .compare-desc__row
+                    .compare-desc__title Посадочное отверстие шпинделя
+                    .compare-desc__value
+                        p(data-item=1) КМ3
+                        p(data-item=2) КМ3
+                        p(data-item=3) КМ3
+                        p(data-item=4) КМ3
+
+                .compare-desc__row
+                    .compare-desc__title Напряжение
+                    .compare-desc__value
+                        p(data-item=1) 400 В
+                        p(data-item=2) 400 В
+                        p(data-item=3) 400 В
+                        p(data-item=4) 400 В
+
+                .compare-desc__row
+                    .compare-desc__title Реверс
+                    .compare-desc__value
+                        p(data-item=1) Да
+                        p(data-item=2) Нет
+                        p(data-item=3) Нет
+                        p(data-item=4) Нет
+
+                .compare-desc__row
+                    .compare-desc__title Макс. диаметр глубокого сверления
+                    .compare-desc__value
+                        p(data-item=1) 21 мм
+                        p(data-item=2) 21 мм
+                        p(data-item=3) 21 мм
+                        p(data-item=4) 21 мм

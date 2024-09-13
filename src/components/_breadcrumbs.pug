@@ -80,14 +80,16 @@ mixin breadcrumbs(title, ...items)
             .catalog-header
 
                 .compare-categories
-                    .compare-category Вертикально-сверлильные станки
-                        span 4
-                    .compare-category Вертикально-сверлильные станки
-                        span 3
-                    .compare-category Вертикально-сверлильные станки
-                        span 3
-                    .compare-category Вертикально-сверлильные станки
-                        span 3
+                    .swiper
+                        .swiper-wrapper
+                            .compare-category.swiper-slide.active Вертикально-сверлильные станки
+                                span 4
+                            .compare-category.swiper-slide Вертикально-сверлильные станки
+                                span 3
+                            .compare-category.swiper-slide Вертикально-сверлильные станки
+                                span 3
+                            .compare-category.swiper-slide Вертикально-сверлильные станки
+                                span 3
 
         else if page == 'news-page'
 

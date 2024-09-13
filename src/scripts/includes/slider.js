@@ -291,4 +291,101 @@ export function initializeSlider() {
             prevEl: '.section-news-slider .swiper-button-prev'
         }
     });
+
+    // Категории на странице "Сравнение"
+    const compareCategories = new Swiper('.compare-categories .swiper', {
+        modules: [FreeMode],
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        freeMode: true
+    });
+
+    // Слайдер на странице "Сравнение"
+    const compareItems = document.querySelectorAll('.compare-item');
+    const compareContainer = document.querySelector('.compare');
+
+    const compareItemsSlider = new Swiper('.compare-item .swiper', {
+        modules: [Navigation],
+        slidesPerView: 1,
+        spaceBetween: 5,
+        allowTouchMove: false,
+        loop: true,
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+
+        breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+                allowTouchMove: true,
+                loop: false
+            }
+        },
+
+        on: {
+            slideChange: function () {
+                const currentIndex = this.realIndex + 1;
+                const totalSlides = this.slides.length;
+                document.querySelector(
+                    `.compare-item:first-child .slide-counter`
+                ).textContent = `${currentIndex} из ${totalSlides}`;
+            }
+        }
+    });
+
+    const handleMobileResize = () => {
+        const isMobile = window.innerWidth < 1280; // Установите ширину для мобильных устройств
+
+        // Удаляем все клонированные элементы
+        const clonedItems = compareContainer.querySelectorAll('.compare-item.clone');
+        clonedItems.forEach((item) => item.remove());
+
+        if (isMobile) {
+            // Проверяем, есть ли уже клон
+            const existingClone = compareContainer.querySelector('.compare-item.clone');
+            if (!existingClone) {
+                compareItems.forEach((item) => {
+                    const clone = item.cloneNode(true);
+                    clone.classList.add('clone'); // Добавляем класс для идентификации клона
+
+                    compareContainer.appendChild(clone);
+
+                    // Инициализируем Swiper для клонированного элемента
+                    const swiper = clone.querySelector('.swiper');
+                    new Swiper(swiper, {
+                        modules: [Navigation],
+                        slidesPerView: 1,
+                        spaceBetween: 5,
+                        allowTouchMove: false,
+                        loop: true,
+                        initialSlide: 1, // Начальный слайд для клона
+
+                        navigation: {
+                            nextEl: '.compare-item.clone .swiper-button-next',
+                            prevEl: '.compare-item.clone .swiper-button-prev'
+                        },
+
+                        on: {
+                            slideChange: function () {
+                                const currentIndex = this.realIndex + 1;
+                                const totalSlides = this.slides.length;
+                                document.querySelector(
+                                    '.compare-item.clone .slide-counter'
+                                ).textContent = `${currentIndex} из ${totalSlides}`;
+                            }
+                        }
+                    });
+                });
+            }
+        }
+    };
+
+    // Инициализация при загрузке
+    handleMobileResize();
+
+    // Добавляем обработчик события изменения размера окна
+    window.addEventListener('resize', handleMobileResize);
 }
