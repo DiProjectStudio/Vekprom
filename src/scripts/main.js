@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeSlider();
     initializeFilter();
     initializePersonal();
+    initializeCompare();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

@@ -303,6 +303,10 @@ export function initializeSlider() {
     // Слайдер на странице "Сравнение"
     const compareItems = document.querySelectorAll('.compare-item');
     const compareContainer = document.querySelector('.compare');
+    const compareListMobile = {
+        activeSlideIndexSlider1: 1,
+        activeSlideIndexSlider2: 2
+    };
 
     const compareItemsSlider = new Swiper('.compare-item .swiper', {
         modules: [Navigation],
@@ -332,6 +336,12 @@ export function initializeSlider() {
                 document.querySelector(
                     `.compare-item:first-child .slide-counter`
                 ).textContent = `${currentIndex} из ${totalSlides}`;
+
+                compareListMobile.compareDesc1 = currentIndex;
+                $(
+                    `.js-compare-desc p:not([data-item=${compareListMobile.activeSlideIndexSlider2}])`
+                ).removeClass('active');
+                $(`.js-compare-desc p[data-item=${currentIndex}]`).addClass('active');
             }
         }
     });
@@ -375,6 +385,14 @@ export function initializeSlider() {
                                 document.querySelector(
                                     '.compare-item.clone .slide-counter'
                                 ).textContent = `${currentIndex} из ${totalSlides}`;
+
+                                compareListMobile.compareDesc2 = currentIndex;
+                                $(
+                                    `.js-compare-desc p:not([data-item=${compareListMobile.activeSlideIndexSlider1}])`
+                                ).removeClass('active');
+                                $(`.js-compare-desc p[data-item=${currentIndex}]`).addClass(
+                                    'active'
+                                );
                             }
                         }
                     });

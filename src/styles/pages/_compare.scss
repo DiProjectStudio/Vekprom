@@ -61,10 +61,109 @@
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     overflow: hidden;
+    transition: $transition;
 
     @include breakpointMax(lg) {
+        padding: 0 var(--container);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.sticky {
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 15;
+
+        @include breakpointMax(lg) {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        @include breakpoint(lg) {
+            border-radius: 0;
+        }
+
+        & .compare-item {
+            padding-bottom: 0;
+        }
+
+        & .card-item {
+            @include breakpoint(lg) {
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-content: flex-start;
+                column-gap: 12px;
+                height: auto;
+            }
+        }
+
+        & .card-tag {
+            display: none;
+        }
+
+        & .card-action {
+            display: none;
+        }
+
+        & .card-item__img {
+            padding: 0;
+            width: 54px;
+            height: 50px;
+
+            @include breakpointMax(lg) {
+                margin: auto auto 8px;
+            }
+
+            @include breakpoint(lg) {
+                margin-bottom: 0;
+                width: 95px;
+                height: 82px;
+            }
+        }
+
+        & .card-item__name {
+            margin-bottom: 0;
+
+            @include breakpointMax(lg) {
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+
+            @include breakpoint(lg) {
+                margin-bottom: 20px;
+                height: auto;
+                font: var(--font-body-s-strong);
+            }
+
+            & a {
+                @include breakpoint(lg) {
+                    display: block;
+                }
+            }
+        }
+
+        & .card-item__price {
+            @include breakpointMax(lg) {
+                display: none;
+            }
+
+            @include breakpoint(lg) {
+                margin-top: auto;
+                padding: 0;
+                grid-column: 2;
+                font: var(--font-heading-h4);
+                letter-spacing: var(--lp-heading-h4);
+            }
+
+            & .discount {
+                display: none;
+            }
+        }
+
+        & .card-item__buy {
+            display: none;
+        }
     }
 }
 
@@ -129,6 +228,12 @@
 }
 
 .section-compare {
+    & .container {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+
     & .card-item {
         border-radius: 0;
 
@@ -265,6 +370,10 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 
+    @include breakpointMax(lg) {
+        margin: var(--container);
+    }
+
     @include breakpoint(xl) {
         margin-bottom: 20px;
     }
@@ -284,6 +393,10 @@
     padding-left: 16px;
     color: var(--fg-soft, #9398a0);
 
+    @include breakpointMax(md) {
+        max-width: 170px;
+    }
+
     @include breakpointMax(lg) {
         font: var(--font-description-l);
     }
@@ -298,8 +411,18 @@
         flex: 1 1 100%;
         font: var(--font-body-m-strong);
 
+        @include breakpointMax(lg) {
+            display: none;
+        }
+
         @include breakpoint(lg) {
             font: var(--font-body-l-strong);
+        }
+
+        &.active {
+            @include breakpointMax(lg) {
+                display: block;
+            }
         }
     }
 }
