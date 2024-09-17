@@ -90,14 +90,17 @@
 
 .cart-total {
     margin-top: 16px;
-    padding: 16px;
-    background: var(--bg-surface1, #fff);
-    border-radius: 16px;
 
     & .btn {
         width: 100%;
         height: 48px;
     }
+}
+
+.cart-total__inner {
+    padding: 16px;
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
 }
 
 .cart-total__title {
@@ -111,5 +114,44 @@
         display: block;
         width: 100%;
         height: 1px;
+    }
+}
+
+.cart-total__info-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-total__info-discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-total__sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-total__leasing {
+    margin: 12px 0;
+    text-align: center;
+
+    & a {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font: var(--font-body-m);
+        color: var(--fg-soft, #9398a0);
+
+        & .icon {
+            margin-left: 4px;
+            width: 16px;
+            height: 16px;
+            stroke: var(--fg-soft);
+        }
     }
 }

@@ -13,7 +13,7 @@ block main
 
         .container
 
-            form(action="/") 
+            form(action="/")
 
                 .cart
 
@@ -38,7 +38,7 @@ block main
                         .cart-main
 
                             .card-item.card-white
-                
+
                                 .card-tag.tag-instock
                                     +svg('Check')
                                     |В наличии
@@ -67,20 +67,27 @@ block main
 
                     .cart-total
 
-                        .cart-total__title Ваш заказ
+                        .cart-total__inner
 
-                        .cart-total__info
+                            .cart-total__title Ваш заказ
 
-                            .cart-total__info-total
-                                p 3 товара
-                                p 7 232 232 ₽ 
+                            .cart-total__info
 
-                            .cart-total__info-discount
-                                p Скидка
-                                p -1 232 232 ₽
+                                .cart-total__info-total
+                                    p 3 товара
+                                    p 7 232 232 ₽
 
-                        .cart-total__sum
-                            .cart-total__sum-title Итого
-                            .cart-total__sum-value 6 246 000 ₽
+                                .cart-total__info-discount
+                                    p Скидка
+                                    p -1 232 232 ₽
 
-                        button.btn.btn--primary(type="submit") Оформить заказ
+                            .cart-total__sum
+                                .cart-total__sum-title Итого
+                                .cart-total__sum-value 6 246 000 ₽
+
+                            button.btn.btn--primary(type="submit") Оформить заказ
+
+                        .cart-total__leasing
+                            p Этот товар можно приобрести в лизинг
+                            a(href="#") Подробнее
+                                +svg('Arrow-narrow-up-right')
