@@ -195,7 +195,6 @@ const searchFocus = () => {
 
     if (isDesktop) {
         $inputField.on('focus', () => {
-            console.log('Input field focused');
             $('body').addClass('bg-overlay overflow-hidden');
             $('body').css('padding-right', `${scrollBarWidth}px`);
             $inputSearch.addClass('focus');
@@ -286,17 +285,33 @@ $('.qty-input .qty').on('click', (e) => {
     let currentValue = Number($input.val());
     let maxValue = Number($input.attr('max-number'));
 
-    if ($(e.currentTarget).hasClass('qty-minus') && currentValue > 1) {
-        $input.val(currentValue - 1);
+    if ($(e.currentTarget).hasClass('qty-minus')) {
+        if (currentValue > 1) {
+            $input.val(currentValue - 1);
+        }
 
+        // Добавляем атрибут disabled, если значение равно 1
+        if (currentValue <= 2) {
+            $(e.currentTarget).attr('disabled', true);
+        }
+
+        // Убираем disabled у кнопки плюс, если значение меньше максимального
         if (currentValue - 1 < maxValue) {
             $(e.currentTarget).parent().find('.qty-plus').removeAttr('disabled');
         }
     }
 
-    if ($(e.currentTarget).hasClass('qty-plus') && currentValue < maxValue) {
-        $input.val(currentValue + 1);
+    if ($(e.currentTarget).hasClass('qty-plus')) {
+        if (currentValue < maxValue) {
+            $input.val(currentValue + 1);
+        }
 
+        // Убираем disabled у кнопки минус, если значение больше 1
+        if (currentValue > 0) {
+            $(e.currentTarget).parent().find('.qty-minus').removeAttr('disabled');
+        }
+
+        // Добавляем disabled, если значение достигло максимума
         if (currentValue + 1 === maxValue) {
             $(e.currentTarget).attr('disabled', true);
         }
@@ -314,9 +329,10 @@ $('.qty-input input').on('input', (e) => {
         $input.parent().find('.qty-plus').attr('disabled', true);
     }
 
-    // Дополнительная проверка на минимальное значение
-    if (currentValue < 1 || isNaN(currentValue)) {
-        $input.val(1);
+    if (currentValue > 1) {
+        $input.parent().find('.qty-minus').removeAttr('disabled');
+    } else {
+        $input.parent().find('.qty-minus').attr('disabled', true);
     }
 });
 

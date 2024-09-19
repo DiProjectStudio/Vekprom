@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Типовая страница (шаблон)</title>
+    <title>Сравнение товаров</title>
     <!-- Scripts::Start-->
     <script data-skip-moving="true">
       const home_dir = './';
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
-  <body class="sample-page">
+  <body class="page-compare">
     <!-- Header::Start-->
     <header class="header" id="header">
       <div class="container">
@@ -561,68 +561,277 @@
               <div class="breadcrumbs">
                 <div class="breadcrumbs-wrapper">
                   <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
-                  <div class="breadcrumbs-item"><span>Длинный заголовок первого порядка в две строки</span></div>
+                  <div class="breadcrumbs-item"><span>Сравнение товаров</span></div>
                 </div>
               </div>
-              <h1 class="main-title">Длинный заголовок первого порядка в две строки</h1>
+              <div class="compare-header-wrap">
+                <h1 class="main-title">Сравнение товаров<span>(13)</span></h1>
+                <div class="clear-btn">
+                    <svg class="icon icon-Trash">
+                      <use xlink:href="./assets/spritemap.svg#Trash"></use>
+                    </svg>Очистить все
+                </div>
+              </div>
+              <div class="catalog-header">
+                <div class="compare-categories">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="compare-category swiper-slide active">Вертикально-сверлильные станки<span>4</span></div>
+                      <div class="compare-category swiper-slide">Вертикально-сверлильные станки<span>3</span></div>
+                      <div class="compare-category swiper-slide">Вертикально-сверлильные станки<span>3</span></div>
+                      <div class="compare-category swiper-slide">Вертикально-сверлильные станки<span>3</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-      <section class="section-sample">
+      <div class="compare-bar">
+        <div class="compare-bar__item">
+          <div class="switch">
+            <input id="switch" type="checkbox" name="switch">
+            <label for="switch" data-text="Только отличия"></label>
+          </div>
+        </div>
+        <div class="compare-bar__item">
+          <div class="share">
+              <svg class="icon icon-Share">
+                <use xlink:href="./assets/spritemap.svg#Share"></use>
+              </svg>Поделиться
+          </div>
+        </div>
+        <div class="compare-bar__item">
+          <div class="clear">
+              <svg class="icon icon-Trash">
+                <use xlink:href="./assets/spritemap.svg#Trash"></use>
+              </svg>Очистить категорию
+          </div>
+        </div>
+      </div>
+      <section class="section-compare">
         <div class="container">
-          <div class="section-sample__inner">
-            <div class="section-sidebar">
-              <div class="section-sidebar__wrapper">
-                <div class="section-sidebar-info single-column"><a class="info-row active" href="#id1">
-                    <div class="info-cell">Заголовок второго порядка</div></a><a class="info-row" href="#id2">
-                    <div class="info-cell">Заголовок второго порядка</div></a><a class="info-row" href="#id3">
-                    <div class="info-cell">Заголовок второго порядка</div></a></div>
+          <div class="compare" id="compare">
+            <div class="compare-item">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide card-item card-white">
+                    <div class="card-tag tag-instock">
+                        <svg class="icon icon-Check">
+                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                        </svg>В наличии
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action__item card-remove"></div>
+                      <div class="card-action__item card-favourite"></div>
+                    </div>
+                    <div class="card-item__img"><img src="./assets/images/image.png" alt="img">
+                    </div>
+                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок лазерный станок Tokagama TG-CM 1510</a></div>
+                    <div class="card-item__price">3 553 232 ₽
+                      <div class="discount">3 850 600 ₽</div>
+                    </div>
+                    <div class="card-item__buy">
+                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                      <div class="card-action__item card-favourite"></div>
+                      <div class="card-item__buy-add btn btn-cart">
+                          <svg class="icon icon-Basket">
+                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-item card-white">
+                    <div class="card-tag tag-instock">
+                        <svg class="icon icon-Check">
+                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                        </svg>В наличии
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action__item card-remove"></div>
+                      <div class="card-action__item card-favourite"></div>
+                    </div>
+                    <div class="card-item__img"><img src="./assets/images/image.png" alt="img">
+                    </div>
+                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama TG-CM 1428</a></div>
+                    <div class="card-item__price">3 553 232 ₽
+                      <div class="discount">3 850 600 ₽</div>
+                    </div>
+                    <div class="card-item__buy">
+                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                      <div class="card-action__item card-favourite"></div>
+                      <div class="card-item__buy-add btn btn-cart">
+                          <svg class="icon icon-Basket">
+                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-item card-white">
+                    <div class="card-tag tag-instock">
+                        <svg class="icon icon-Check">
+                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                        </svg>В наличии
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action__item card-remove"></div>
+                      <div class="card-action__item card-favourite"></div>
+                    </div>
+                    <div class="card-item__img"><img src="./assets/images/image.png" alt="img">
+                    </div>
+                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Lokagama TG-ПЕ 0010</a></div>
+                    <div class="card-item__price">3 553 232 ₽
+                      <div class="discount">3 850 600 ₽</div>
+                    </div>
+                    <div class="card-item__buy">
+                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                      <div class="card-action__item card-favourite"></div>
+                      <div class="card-item__buy-add btn btn-cart">
+                          <svg class="icon icon-Basket">
+                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-item card-white">
+                    <div class="card-tag tag-instock">
+                        <svg class="icon icon-Check">
+                          <use xlink:href="./assets/spritemap.svg#Check"></use>
+                        </svg>В наличии
+                    </div>
+                    <div class="card-action">
+                      <div class="card-action__item card-remove"></div>
+                      <div class="card-action__item card-favourite"></div>
+                    </div>
+                    <div class="card-item__img"><img src="./assets/images/image.png" alt="img">
+                    </div>
+                    <div class="card-item__name"><a href="#">Оптоволоконный лазерный станок  Tokagama VB-CM 1220</a></div>
+                    <div class="card-item__price">3 553 232 ₽
+                      <div class="discount">3 850 600 ₽</div>
+                    </div>
+                    <div class="card-item__buy">
+                      <div class="card-item__buy-fast btn btn--primary">Заказать в 1 клик</div>
+                      <div class="card-action__item card-favourite"></div>
+                      <div class="card-item__buy-add btn btn-cart">
+                          <svg class="icon icon-Basket">
+                            <use xlink:href="./assets/spritemap.svg#Basket"></use>
+                          </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-navigation">
+                <div class="swiper-button swiper-button-prev"></div><span class="slide-counter"></span>
+                <div class="swiper-button swiper-button-next"></div>
               </div>
             </div>
-            <div class="section-content">
-              <div class="section-content-wrapper">
-                <div class="content-text" id="id1">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>
-                    4 апреля в МГТУ им. Н.Э. Баумана прошла ярмарка ведущих работодателей страны с их карьерными предложениями для студентов и выпускников университета. Центр карьеры предоставил возможность студентам личнопообщаться с работодателями и получить возможность пройти стажировку или предложение о трудоустройстве.</p>
-                </div>
-                <div class="content-action"><a class="btn btn-mini" href="javascript:void(0)"><span>Подробнее</span>
-                      <svg class="icon icon-Arrow-narrow-up-right">
-                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
-                      </svg></a></div>
-                <div class="content-image-block image-small">
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Панель управления</figcaption>
-                  </figure>
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Панель управления</figcaption>
-                  </figure>
-                </div>
-                <div class="content-text" id="id2">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>Сегодня в линейке бренда <span>Tokagama</span> — свыше 30 позиций. Представленное оборудование является комплексным решением для самых нетривиальных задач по раскрою металлов, сварке, очистке, гравировке и маркировке.</p>
-                  <p>
-                    Лазерные комплексы данной марки отличаются высокой точностью и повторяемостью действий благодаря использованию системы компьютерного управления, которая позволяет программировать необходимые параметры и получать одинаковыерезультаты каждый раз. Автоматизированные функции помогают обрабатывать большие объёмы материала за короткий период времени, увеличивая тем самым производительность труда. А широкий спектр возможностей по настройке и
-                    программированию работы делает станки гибкими и адаптивными к различным задачам и материалам.
-                  </p>
-                </div>
-                <div class="content-image-block image-large">
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Гайка предварительного натяжения 3-осевого винта компании «YSA», Тайвань</figcaption>
-                  </figure>
-                </div>
-                <div class="content-text" id="id3">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>Сегодня в линейке бренда <span>Tokagama</span> — свыше 30 позиций. Представленное оборудование является комплексным решением для самых нетривиальных задач по раскрою металлов, сварке, очистке, гравировке и маркировке.</p>
-                  <p>
-                    Лазерные комплексы данной марки отличаются высокой точностью и повторяемостью действий благодаря использованию системы компьютерного управления, которая позволяет программировать необходимые параметры и получать одинаковыерезультаты каждый раз. Автоматизированные функции помогают обрабатывать большие объёмы материала за короткий период времени, увеличивая тем самым производительность труда. А широкий спектр возможностей по настройке и
-                    программированию работы делает станки гибкими и адаптивными к различным задачам и материалам.
-                  </p>
-                </div>
+          </div>
+          <div class="compare-desc">
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Мощность</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">1.1 кВт</p>
+                <p data-item="2">2.1 кВт</p>
+                <p data-item="3">1.3 кВт</p>
+                <p data-item="4">3.1 кВт</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Макс. диаметр сверления</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">28 мм</p>
+                <p data-item="2">15 мм</p>
+                <p data-item="3">22 мм</p>
+                <p data-item="4">26 мм</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Посадочное отверстие шпинделя</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">КМ6</p>
+                <p data-item="2">КМ2</p>
+                <p data-item="3">КМ3</p>
+                <p data-item="4">КМ9</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Напряжение</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">200 В</p>
+                <p data-item="2">600 В</p>
+                <p data-item="3">400 В</p>
+                <p data-item="4">800 В</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Реверс</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">Да</p>
+                <p data-item="2">Нет</p>
+                <p data-item="3">Да</p>
+                <p data-item="4">Нет</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Макс. диаметр глубокого сверления</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">22 мм</p>
+                <p data-item="2">11 мм</p>
+                <p data-item="3">25 мм</p>
+                <p data-item="4">17 мм</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Мощность</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">2.1 кВт</p>
+                <p data-item="2">1.3 кВт</p>
+                <p data-item="3">4.1 кВт</p>
+                <p data-item="4">1.1 кВт</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Макс. диаметр сверления</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">25 мм</p>
+                <p data-item="2">24 мм</p>
+                <p data-item="3">21 мм</p>
+                <p data-item="4">20 мм</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Посадочное отверстие шпинделя</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">КМ2</p>
+                <p data-item="2">КМ4</p>
+                <p data-item="3">КМ3</p>
+                <p data-item="4">КМ9</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Напряжение</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">200 В</p>
+                <p data-item="2">100 В</p>
+                <p data-item="3">400 В</p>
+                <p data-item="4">700 В</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Реверс</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">Да</p>
+                <p data-item="2">Нет</p>
+                <p data-item="3">Да</p>
+                <p data-item="4">Нет</p>
+              </div>
+            </div>
+            <div class="compare-desc__row">
+              <div class="compare-desc__title">Макс. диаметр глубокого сверления</div>
+              <div class="compare-desc__value js-compare-desc">
+                <p data-item="1">21 мм</p>
+                <p data-item="2">15 мм</p>
+                <p data-item="3">19 мм</p>
+                <p data-item="4">27 мм</p>
               </div>
             </div>
           </div>

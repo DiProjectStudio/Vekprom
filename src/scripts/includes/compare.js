@@ -1,16 +1,18 @@
 export function initializeCompare() {
-    const stickyElement = $('#compare');
-    const stickyOffset = stickyElement.offset().top;
+    if ($('#compare').length) {
+        const stickyElement = $('#compare');
+        const stickyOffset = stickyElement.offset().top;
 
-    const toggleStickyClass = () => {
-        if ($(window).scrollTop() > stickyOffset) {
-            stickyElement.addClass('sticky');
-        } else {
-            stickyElement.removeClass('sticky');
-        }
-    };
+        const toggleStickyClass = () => {
+            if ($(window).scrollTop() > stickyOffset) {
+                stickyElement.addClass('sticky');
+            } else {
+                stickyElement.removeClass('sticky');
+            }
+        };
 
-    toggleStickyClass();
+        toggleStickyClass();
 
-    $(window).scroll(toggleStickyClass);
+        $(window).scroll(toggleStickyClass);
+    }
 }

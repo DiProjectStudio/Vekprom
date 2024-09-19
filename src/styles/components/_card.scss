@@ -93,7 +93,7 @@
     &.active {
         display: block;
 
-        & .icon:not(.icon-Compare) {
+        & .icon:not(.icon-Compare, .icon-Trash) {
             stroke: #f5851a !important;
             fill: #f5851a !important;
         }

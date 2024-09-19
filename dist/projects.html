@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Типовая страница (шаблон)</title>
+    <title>Страница каталога</title>
     <!-- Scripts::Start-->
     <script data-skip-moving="true">
       const home_dir = './';
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
-  <body class="sample-page">
+  <body class="page-projects">
     <!-- Header::Start-->
     <header class="header" id="header">
       <div class="container">
@@ -561,71 +561,245 @@
               <div class="breadcrumbs">
                 <div class="breadcrumbs-wrapper">
                   <div class="breadcrumbs-item"><a href="/">Главная</a></div><span class="breadcrumbs-separator">/</span>
-                  <div class="breadcrumbs-item"><span>Длинный заголовок первого порядка в две строки</span></div>
+                  <div class="breadcrumbs-item"><span>Проекты</span></div>
                 </div>
               </div>
-              <h1 class="main-title">Длинный заголовок первого порядка в две строки</h1>
+              <h1 class="main-title">Проекты<span>(80)</span></h1>
+              <div class="catalog-header">
+                <div class="sorting">
+                  <div class="sorting__btn js-sorting">
+                      <svg class="icon icon-Arrow-switch-horizontal">
+                        <use xlink:href="./assets/spritemap.svg#Arrow-switch-horizontal"></use>
+                      </svg>Сначала новые
+                  </div>
+                  <div class="sorting__dropdown">
+                    <div class="radio">
+                      <input id="sort-new" type="radio" name="sorting" checked>
+                      <label for="sort-new">Сначала новые</label>
+                    </div>
+                    <div class="radio">
+                      <input id="sort-old" type="radio" name="sorting">
+                      <label for="sort-old">Сначала старые</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-      <section class="section-sample">
+      <section>
         <div class="container">
-          <div class="section-sample__inner">
-            <div class="section-sidebar">
-              <div class="section-sidebar__wrapper">
-                <div class="section-sidebar-info single-column"><a class="info-row active" href="#id1">
-                    <div class="info-cell">Заголовок второго порядка</div></a><a class="info-row" href="#id2">
-                    <div class="info-cell">Заголовок второго порядка</div></a><a class="info-row" href="#id3">
-                    <div class="info-cell">Заголовок второго порядка</div></a></div>
+          <div class="projects-inner">
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Пуско-наладочные работы лазерного раскройщика Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="section-content">
-              <div class="section-content-wrapper">
-                <div class="content-text" id="id1">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>
-                    4 апреля в МГТУ им. Н.Э. Баумана прошла ярмарка ведущих работодателей страны с их карьерными предложениями для студентов и выпускников университета. Центр карьеры предоставил возможность студентам личнопообщаться с работодателями и получить возможность пройти стажировку или предложение о трудоустройстве.</p>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Пуско-наладочные работы тяжелого токарно-винторезного универсального станка Feiya CWА61100</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
                 </div>
-                <div class="content-action"><a class="btn btn-mini" href="javascript:void(0)"><span>Подробнее</span>
-                      <svg class="icon icon-Arrow-narrow-up-right">
-                        <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
-                      </svg></a></div>
-                <div class="content-image-block image-small">
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Панель управления</figcaption>
-                  </figure>
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Панель управления</figcaption>
-                  </figure>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Пуско-наладочные работы лазерного раскройщика Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
                 </div>
-                <div class="content-text" id="id2">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>Сегодня в линейке бренда <span>Tokagama</span> — свыше 30 позиций. Представленное оборудование является комплексным решением для самых нетривиальных задач по раскрою металлов, сварке, очистке, гравировке и маркировке.</p>
-                  <p>
-                    Лазерные комплексы данной марки отличаются высокой точностью и повторяемостью действий благодаря использованию системы компьютерного управления, которая позволяет программировать необходимые параметры и получать одинаковыерезультаты каждый раз. Автоматизированные функции помогают обрабатывать большие объёмы материала за короткий период времени, увеличивая тем самым производительность труда. А широкий спектр возможностей по настройке и
-                    программированию работы делает станки гибкими и адаптивными к различным задачам и материалам.
-                  </p>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Пуско-наладочные работы тяжелого токарно-винторезного универсального станка Feiya CWА61100</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
                 </div>
-                <div class="content-image-block image-large">
-                  <figure>
-                    <div class="image-wrapper"><img src="./assets/images/image-46.jpg" alt="img">
-                    </div>
-                    <figcaption>Гайка предварительного натяжения 3-осевого винта компании «YSA», Тайвань</figcaption>
-                  </figure>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Пуско-наладочные работы тяжелого токарно-винторезного универсального станка Feiya CWА61100</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
                 </div>
-                <div class="content-text" id="id3">
-                  <div class="content-text__title">Заголовок второго порядка</div>
-                  <p>Сегодня в линейке бренда <span>Tokagama</span> — свыше 30 позиций. Представленное оборудование является комплексным решением для самых нетривиальных задач по раскрою металлов, сварке, очистке, гравировке и маркировке.</p>
-                  <p>
-                    Лазерные комплексы данной марки отличаются высокой точностью и повторяемостью действий благодаря использованию системы компьютерного управления, которая позволяет программировать необходимые параметры и получать одинаковыерезультаты каждый раз. Автоматизированные функции помогают обрабатывать большие объёмы материала за короткий период времени, увеличивая тем самым производительность труда. А широкий спектр возможностей по настройке и
-                    программированию работы делает станки гибкими и адаптивными к различным задачам и материалам.
-                  </p>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="projects__item"> 
+              <div class="projects__item-label">Производство из металла</div>
+              <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+              </div>
+              <div class="projects__item-wrap"><a class="projects__item-title" href="#">Лазерный раскройщик Tokagama CUT Smart</a>
+                <div class="projects__item-info">
+                  <div class="projects__item-row">
+                    <p>Клиент</p>
+                    <p>ООО «АЛЬФАМОБИЛЬ»</p>
+                  </div>
+                  <div class="projects__item-row">
+                    <p>Дата шеф-монтажа</p>
+                    <p>5 апреля 2024</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="pagination"><a class="pagination-item pagination-arrow disabled" href="prev" title="Предыдущая страница">
+                <svg class="icon icon-Chevron-left">
+                  <use xlink:href="./assets/spritemap.svg#Chevron-left"></use>
+                </svg></a><a class="pagination-item active" href="1" title="Страница 1">1</a><a class="pagination-item" href="2" title="Страница 2">2</a><a class="pagination-item pagination-dots" href="...">...</a><a class="pagination-item" href="7" title="Страница 10">20</a><a class="pagination-item pagination-arrow" href="next" title="Следующая страница">
+                <svg class="icon icon-Chevron-right">
+                  <use xlink:href="./assets/spritemap.svg#Chevron-right"></use>
+                </svg></a></div>
         </div>
       </section>
     </main>

@@ -302,7 +302,9 @@ export function initializeSlider() {
 
     // Слайдер на странице "Сравнение"
     const compareItems = document.querySelectorAll('.compare-item');
-    const compareContainer = document.querySelector('.compare');
+    const compareContainer = document.querySelector('.compare')
+        ? document.querySelector('.compare')
+        : null;
     const compareListMobile = {
         activeSlideIndexSlider1: 1,
         activeSlideIndexSlider2: 2
@@ -350,12 +352,16 @@ export function initializeSlider() {
         const isMobile = window.innerWidth < 1280; // Установите ширину для мобильных устройств
 
         // Удаляем все клонированные элементы
-        const clonedItems = compareContainer.querySelectorAll('.compare-item.clone');
-        clonedItems.forEach((item) => item.remove());
+        if (compareContainer) {
+            const clonedItems = compareContainer.querySelectorAll('.compare-item.clone');
+            clonedItems.forEach((item) => item.remove());
+        }
 
         if (isMobile) {
             // Проверяем, есть ли уже клон
-            const existingClone = compareContainer.querySelector('.compare-item.clone');
+            const existingClone = compareContainer
+                ? compareContainer.querySelector('.compare-item.clone')
+                : null;
             if (!existingClone) {
                 compareItems.forEach((item) => {
                     const clone = item.cloneNode(true);
