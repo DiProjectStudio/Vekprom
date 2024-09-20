@@ -1,0 +1,176 @@
+.popup-active {
+    & .fancybox__container {
+        --fancybox-bg: rgba(40, 49, 66, 0.3);
+    }
+
+    & .fancybox__carousel {
+        flex: 1;
+    }
+
+    & .fancybox__viewport {
+        padding: 0;
+    }
+
+    & .fancybox__slide {
+        padding: 0;
+    }
+}
+
+.popup.fancybox__content > button.is-close-btn[data-fancybox-close] {
+    --f-button-svg-width: 18px;
+    --f-button-svg-height: 18px;
+    --f-button-width: 24px;
+    --f-button-height: 24px;
+    --f-button-bg: transparent;
+    --f-button-color: #c9cbd0;
+    --f-button-hover-bg: transparent;
+    --f-button-hover-color: #c9cbd0;
+    margin: 0;
+    top: 20px;
+    right: 20px;
+
+    @include breakpoint(lg) {
+        top: 24px;
+        right: 24px;
+    }
+}
+
+.popup {
+    padding: 20px;
+    background: var(--bg-surface1, #fff);
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 20px;
+
+    @include breakpoint(lg) {
+        padding: 24px;
+        max-width: 454px;
+    }
+
+    & .input {
+        & label {
+            @include breakpoint(lg) {
+                font: var(--font-body-m);
+            }
+        }
+    }
+
+    & input {
+        @include breakpointMax(lg) {
+            height: 40px;
+        }
+    }
+
+    & .btn {
+        margin-top: 20px;
+        height: 48px;
+
+        @include breakpoint(lg) {
+            margin-top: 28px;
+            height: 60px;
+        }
+    }
+}
+
+.popup__back {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    display: flex;
+    width: max-content;
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
+    user-select: none;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        top: 30px;
+        left: 24px;
+    }
+
+    & .icon {
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+        stroke: var(--fg-soft, #9398a0);
+    }
+}
+
+.popup__title {
+    margin: 0 auto 20px;
+    max-width: 280px;
+    font: var(--font-heading-h3);
+    letter-spacing: var(--lp-heading-h3);
+    text-align: center;
+
+    @include breakpoint(lg) {
+        margin-bottom: 28px;
+        max-width: 406px;
+        font: var(--font-display-xs-strong);
+        letter-spacing: var(--font-display-xs-strong);
+    }
+}
+
+.popup__toward {
+    margin-bottom: 20px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 28px;
+    }
+
+    & p {
+        font: var(--font-body-m);
+        color: var(--fg-soft, #9398a0);
+
+        @include breakpoint(lg) {
+            font: var(--font-body-l);
+        }
+    }
+
+    & span {
+        color: var(--fg-default, #283142);
+    }
+
+    & b {
+        font: var(--font-body-m-strong);
+        color: var(--fg-default, #283142);
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.popup__form {
+    display: grid;
+    row-gap: 12px;
+
+    @include breakpoint(lg) {
+        row-gap: 16px;
+    }
+}
+
+.popup__count {
+    margin-top: 20px;
+    color: var(--fg-soft, #9398a0);
+    text-align: center;
+
+    @include breakpoint(lg) {
+        margin-top: 28px;
+    }
+}
+
+.popup__send {
+    margin: 20px auto 0;
+    display: none;
+    width: max-content;
+    color: var(--accent-default, #f5851a);
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        margin-top: 28px;
+    }
+}

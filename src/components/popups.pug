@@ -1,0 +1,133 @@
+#popup-auth-phone.popup.popup-auth-phone
+
+    .popup__title Войти или&nbsp;зарегистрироваться
+
+    .popup__form
+
+        .input
+            label(for="popup_auth_phone") Номер телефона
+            input#popup_auth_phone(type="text" name="phone" autocomplete="off" data-phone-number)
+    
+    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+    .btn.btn--primary Продолжить
+
+#popup-auth-email.popup.popup-auth-email
+
+    .popup__title Войти или&nbsp;зарегистрироваться
+
+    .popup__form
+
+        .input
+            label(for="popup_email") Электронная почта
+            input#popup_email(type="email" name="email" autocomplete="off")
+    
+    .btn.btn--primary Продолжить
+
+#popup-auth-sms.popup.popup-auth-sms
+
+    .popup__title Введите код из SMS
+
+    .popup__toward.popup__toward--center
+        p SMS-сообщение с кодом подтверждения отправлено на номер 
+            b +7 (999) 123-45-67
+
+    .popup__form
+
+        .input-code
+            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+        
+    #countdown.popup__count
+    #send-code.popup__send Отправить повторно
+
+    #form-submit
+
+#popup-password.popup.popup-password
+
+    .popup__back
+        +svg('Chevron-left')
+        |Назад
+
+    .popup__title Введите пароль
+
+    .popup__toward
+        p Для почты 
+            span example@mail.ru
+
+    .popup__form
+    
+        .input.error
+            label(for="popup_reg_password") Пароль
+            .input-password
+                input#popup_reg_password(type="password" name="password" autocomplete="off")
+                .pass-eye
+                    include ../icons/Eye-open.svg
+            p Неверный пароль
+        
+    .btn.btn--primary Войти
+
+#popup-registration-phone.popup.popup-registration-phone
+
+    .popup__title Регистрация
+
+    .popup__form
+    
+        .input.required
+            label(for="popup_reg_name2") Имя
+            input#popup_reg_name2(type="text" name="name" autocomplete="off")
+        
+        .input.required
+            label(for="popup_reg_lastname2") Фамилия
+            input#popup_reg_lastname2(type="text" name="lastname" autocomplete="off")
+        
+        .input.required
+            label(for="popup_reg_phone2") Номер телефона
+            input#popup_reg_phone2(type="text" name="phone" autocomplete="off" data-phone-number)
+        
+        .input.required
+            label(for="popup_reg_email2") Электронная почта
+            input#popup_reg_email2(type="email" name="email" autocomplete="off")
+    
+    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
+
+    .btn.btn--primary Зарегистрироваться
+
+#popup-registration-email.popup.popup-registration-email
+
+    .popup__back
+        +svg('Chevron-left')
+        |Назад
+
+    .popup__title Регистрация
+
+    .popup__form
+    
+        .input.required
+            label(for="popup_reg_name") Имя
+            input#popup_reg_name(type="text" name="name" autocomplete="off")
+        
+        .input.required
+            label(for="popup_reg_lastname") Фамилия
+            input#popup_reg_lastname(type="text" name="lastname" autocomplete="off")
+        
+        .input.required
+            label(for="popup_reg_phone") Номер телефона
+            input#popup_reg_phone(type="text" name="phone" autocomplete="off" data-phone-number)
+        
+        .input
+            label(for="popup_reg_email") Email
+            input#popup_reg_email(type="email" name="email" autocomplete="off")
+        
+        .input.required
+            label(for="popup_reg_password2") Пароль
+            .input-password
+                input#popup_reg_password2(type="password" name="password" autocomplete="off")
+                .pass-eye
+                    include ../icons/Eye-open.svg
+    
+    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
+
+    .btn.btn--primary Зарегистрироваться

@@ -2,705 +2,706 @@ extends /layout/layout
 
 block title
     - var title = 'Страница товара'
-    - var page = 'page-product'
 
 block main
 
-    include ../components/_breadcrumbs
-    +breadcrumbs('', 'Каталог', 'Обработка металла', 'Сверление и обработка отверстий', 'Вертикально-сверлильные станки')
+    .page-product
 
-    section
+        include ../components/_breadcrumbs
+        +breadcrumbs('', 'Каталог', 'Обработка металла', 'Сверление и обработка отверстий', 'Вертикально-сверлильные станки')
 
-        .container
+        section
 
-            .product
+            .container
 
-                .product__gallery
+                .product
 
-                    .product__main
+                    .product__gallery
 
-                        a.product__label-link(href="#")
-                            +svg('Eye-open')
-                            |Смотреть в демозале
+                        .product__main
 
-                        .swiper
+                            a.product__label-link(href="#")
+                                +svg('Eye-open')
+                                |Смотреть в демозале
 
-                            .swiper-wrapper
+                            .swiper
 
-                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
-                                    +img('image-product.jpg')
-                                    .zoom-in
-                                        +svg('Zoom-in')
-                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
-                                    +img('image-product.jpg')
-                                    .zoom-in
-                                        +svg('Zoom-in')
-                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
-                                    +img('image-product.jpg')
-                                    .zoom-in
-                                        +svg('Zoom-in')
-                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
-                                    +img('image-product.jpg')
-                                    .zoom-in
-                                        +svg('Zoom-in')
-                                .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
-                                    +img('image-product.jpg')
-                                    .zoom-in
-                                        +svg('Zoom-in')
-                                .swiper-slide(data-src="./assets/images/demo.mp4" data-fancybox="gallery")
-                                    video(playsinline muted autoplay loop)
-                                        source(src="./assets/images/demo.mp4" type="video/mp4")
-                                    .zoom-in
-                                        +svg('Zoom-in')
+                                .swiper-wrapper
 
-                        .swiper-pagination
+                                    .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
+                                        +img('image-product.jpg')
+                                        .zoom-in
+                                            +svg('Zoom-in')
+                                    .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
+                                        +img('image-product.jpg')
+                                        .zoom-in
+                                            +svg('Zoom-in')
+                                    .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
+                                        +img('image-product.jpg')
+                                        .zoom-in
+                                            +svg('Zoom-in')
+                                    .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
+                                        +img('image-product.jpg')
+                                        .zoom-in
+                                            +svg('Zoom-in')
+                                    .swiper-slide(data-src="./assets/images/image-product.jpg" data-fancybox="gallery")
+                                        +img('image-product.jpg')
+                                        .zoom-in
+                                            +svg('Zoom-in')
+                                    .swiper-slide(data-src="./assets/images/demo.mp4" data-fancybox="gallery")
+                                        video(playsinline muted autoplay loop)
+                                            source(src="./assets/images/demo.mp4" type="video/mp4")
+                                        .zoom-in
+                                            +svg('Zoom-in')
 
-                    .product__thumbs
+                            .swiper-pagination
 
-                        .swiper
+                        .product__thumbs
 
-                            .swiper-wrapper
+                            .swiper
 
-                                .swiper-slide
-                                    +img('image-product.jpg')
-                                .swiper-slide
-                                    +img('image-product.jpg')
-                                .swiper-slide
-                                    +img('image-product.jpg')
-                                .swiper-slide
-                                    +img('image-product.jpg')
-                                .swiper-slide
-                                    +img('image-product.jpg')
-                                .swiper-slide
-                                    .thumb-play
-                                        +svg('Play')
+                                .swiper-wrapper
 
-                .product__info
+                                    .swiper-slide
+                                        +img('image-product.jpg')
+                                    .swiper-slide
+                                        +img('image-product.jpg')
+                                    .swiper-slide
+                                        +img('image-product.jpg')
+                                    .swiper-slide
+                                        +img('image-product.jpg')
+                                    .swiper-slide
+                                        +img('image-product.jpg')
+                                    .swiper-slide
+                                        .thumb-play
+                                            +svg('Play')
 
-                    .product__title Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
+                    .product__info
 
-                    .product__block
-                        .product__block-action
-                            .product__block-btn.product-compare
-                                +svg('Compare')
-                                p Сравнить
-                            #copy-link.product__block-btn
-                                +svg('Share')
-                                p Поделиться
-                            .product__block-btn.product-favourite
-                                +svg('Heart')
-                                p В избранное
+                        .product__title Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
 
-                        .product__block-wrap
-                            .product__price
-                                .product__price-special
-                                    .product__price-label(style="background-color: #FEF3E8;color: #F5851A;") Специальная цена
-                                    .product__price-label(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
-                                .product__price-current 35 246 000 ₽
-                                .product__price-discount 35 850 600 ₽
+                        .product__block
+                            .product__block-action
+                                .product__block-btn.product-compare
+                                    +svg('Compare')
+                                    p Сравнить
+                                #copy-link.product__block-btn
+                                    +svg('Share')
+                                    p Поделиться
+                                .product__block-btn.product-favourite
+                                    +svg('Heart')
+                                    p В избранное
 
-                            .product__btn
-                                .product__btn-fast.btn.btn--sm.btn--primary Заказать в 1 клик
-                                .product__btn-cart.btn.btn--sm.btn--secondary-orange
-                                    p В корзину
-                                    +svg('Basket')
+                            .product__block-wrap
+                                .product__price
+                                    .product__price-special
+                                        .product__price-label(style="background-color: #FEF3E8;color: #F5851A;") Специальная цена
+                                        .product__price-label(style="background-color: #E8F5FF;color: #1998FF") Лизинг 0%
+                                    .product__price-current 35 246 000 ₽
+                                    .product__price-discount 35 850 600 ₽
 
-                        .product__block-leasing
-                            p Этот товар можно приобрести в лизинг
-                            a(href="#") Подробнее
-                                +svg('Arrow-narrow-up-right')
+                                .product__btn
+                                    .product__btn-fast.btn.btn--sm.btn--primary Заказать в 1 клик
+                                    .product__btn-cart.btn.btn--sm.btn--secondary-orange
+                                        p В корзину
+                                        +svg('Basket')
 
-                    .product__stock
-                        .product__article
-                            p Артикул:
-                                #article 3006 3236
-                            #copy-article.article-copy
-                                +svg('Copy')
+                            .product__block-leasing
+                                p Этот товар можно приобрести в лизинг
+                                a(href="#") Подробнее
+                                    +svg('Arrow-narrow-up-right')
 
-                        .product__status
-                            +svg('Check')
-                            |В наличии
+                        .product__stock
+                            .product__article
+                                p Артикул:
+                                    #article 3006 3236
+                                #copy-article.article-copy
+                                    +svg('Copy')
 
-                    .product__internals
+                            .product__status
+                                +svg('Check')
+                                |В наличии
 
-                        .product__type
-                            .product__internals-title Модель
-                            .product__type-wrap
-                                .product__type-item.selected VМС1160
-                                .product__type-item VМС1161
-                                .product__type-item VМС1162
+                        .product__internals
 
-                        .product__props
-                            .product__internals-title Основные характеристики
-                            .product__props-wrap
-                                .product__props-item
-                                    .product__props-name Производитель
-                                    .product__props-value АТТА
-                                .product__props-item
-                                    .product__props-name Страна
-                                    .product__props-value Китай
-                                .product__props-item
-                                    .product__props-name Размер стола, мм
-                                    .product__props-value 1200х600
-                                .product__props-item
-                                    .product__props-name Мощность шпинделя, кВт
-                                    .product__props-value 11/18.5
-                                .product__props-item
-                                    .product__props-name Вес, кг
-                                    .product__props-value 7000
+                            .product__type
+                                .product__internals-title Модель
+                                .product__type-wrap
+                                    .product__type-item.selected VМС1160
+                                    .product__type-item VМС1161
+                                    .product__type-item VМС1162
 
-                            #props-anchor.product__props-anchor
-                                |Все характеристики
+                            .product__props
+                                .product__internals-title Основные характеристики
+                                .product__props-wrap
+                                    .product__props-item
+                                        .product__props-name Производитель
+                                        .product__props-value АТТА
+                                    .product__props-item
+                                        .product__props-name Страна
+                                        .product__props-value Китай
+                                    .product__props-item
+                                        .product__props-name Размер стола, мм
+                                        .product__props-value 1200х600
+                                    .product__props-item
+                                        .product__props-name Мощность шпинделя, кВт
+                                        .product__props-value 11/18.5
+                                    .product__props-item
+                                        .product__props-name Вес, кг
+                                        .product__props-value 7000
+
+                                #props-anchor.product__props-anchor
+                                    |Все характеристики
+                                    +svg('Chevron-down')
+
+                        .product__features
+                            .product__features-item
+                                .product__features-icon
+                                    +svg('Sheild')
+                                .product__features-wrap
+                                    .product__features-title Гарантия
+                                    .product__features-value от 12 мес
+                                        .tooltip
+                                            .tooltip__icon
+                                                +svg('Help-circle-contained')
+                                            .tooltip__content
+                                                .tooltip__title Гарантия предоставляется заводом изготовителем
+                                                .tooltip__text Гарантийный ремонт осуществляется в отделе гарантийного обслуживания нашей компаии
+                                                a.tooltip__link(href="#") Подробнее про гарантию
+                                                    +svg('Arrow-narrow-up-right')
+
+                            .product__features-item
+                                .product__features-icon
+                                    +svg('Truck')
+                                .product__features-wrap
+                                    .product__features-title Доставка
+                                    .product__features-value от 1 дня
+                                        .tooltip
+                                            .tooltip__icon
+                                                +svg('Help-circle-contained')
+                                            .tooltip__content
+                                                .tooltip__title Доставка осуществляется по М+МО до Вашего склада/офиса, до терминала ТК, в аэропорт
+                                                .tooltip__text Если оборудование является крупногабаритным, то действуют индивидуальные условия доставки. Возможен самовывоз с нашего склада в МО, г. Жуковский по предварительному согласованию
+                                                a.tooltip__link(href="#") Подробнее про доставку
+                                                    +svg('Arrow-narrow-up-right')
+
+                            .product__features-item
+                                .product__features-icon
+                                    +svg('settings')
+                                .product__features-wrap
+                                    .product__features-title Сервис 24/7
+                                    .product__features-value установим, обслужим
+                                        .tooltip
+                                            .tooltip__icon
+                                                +svg('Help-circle-contained')
+                                            .tooltip__content
+                                                .tooltip__title Установка и шеф монтаж на вашей территории, пусконаладка оборудования
+                                                .tooltip__text ВЕКПРОМ предлагает шеф-монтаж сложного оборудования на территории заказчика. Технические специалисты ВЕКПРОМ выполнят установку и запуск станка, а также проведут инструктаж и обучение ваших специалистов (по необходимости).
+                                                a.tooltip__link(href="#") Все сервисы и услуги
+                                                    +svg('Arrow-narrow-up-right')
+
+                            .product__features-item
+                                .product__features-icon
+                                    +svg('Card-down')
+                                .product__features-wrap
+                                    .product__features-title Оплата
+                                    .product__features-value картой или на счет
+                                        .tooltip
+                                            .tooltip__icon
+                                                +svg('Help-circle-contained')
+                                            .tooltip__content
+                                                .tooltip__title Оплата производится в рублях на расчетный счет компании или картой при получении на складе.
+                                                a.tooltip__link(href="#") Подробнее про оплату
+                                                    +svg('Arrow-narrow-up-right')
+
+        section.section-details
+
+            .container
+
+                .details
+
+                    .tabs
+                        .tab(data-show=1).active
+                            .tab__item
+                                +svg('Info')
+                                |Описание
+                        .tab(data-show=2)
+                            .tab__item
+                                +svg('Gear-lg')
+                                |Характеристики
+                        .tab(data-show=3)
+                            .tab__item
+                                +svg('File-check')
+                                |Комплектация
+                        .tab(data-show=4)
+                            .tab__item
+                                +svg('Wrench')
+                                |Запасные части
+                        .tab(data-show=5)
+                            .tab__item
+                                +svg('Package-plus')
+                                |Расходные материалы
+                        .tab(data-show=6)
+                            .tab__item
+                                +svg('File')
+                                |Документация
+
+                    .detail(data-active=1).active
+
+                        .detail-desc.hidden-block
+
+                            .detail-desc__wrap
+                                .content-block
+                                    h2 Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
+                                    p V1160L предназначен для фрезерной обработки деталей, тяжелых работ. Благодаря станине, изготовленной по технологии «минерального литья» он обладает лучшим поглощением вибрации, более низким коэффициентом теплового расширения и более низким коэффициентом теплопроводности.
+                                        br
+                                        br
+                                        |Суппорт, стол и шпиндельная бабка изготовлены по немецкой технологии сварки стали, что позволяет повысить жесткость, уменьшить вес движущихся частей, уменьшить инерцию движения, а также повысить скорость отклика станка и точность перемещения. Он сочетает конструкцию с поперечным перемещением стола и линейные направляющие. 
+
+                                .content-block
+                                    h2 Сильное поглощение вибрации
+                                    p Вибропоглощение минеральных (композитных) материалов в 10 раз выше, чем у чугуна. При больших динамических нагрузках гарантируется общая точность и стабильность станка, качество обработки поверхности заготовки повышается на 20 %, а срок службы инструмента увеличивается на 10 %. Общий ресурс работы оборудования также увеличивается.
+
+                                    +img('img-2423.jpg')
+
+                                .content-block
+                                    h2 Преимущества станка
+
+                                    +img('img-32569.jpg')
+
+                                    p Основание и колонны изготовлены методом «МИНЕРАЛЬНОГО ЛИТЬЯ» по немецкой технологии
+
+                                .content-block
+                                    h2 Превосходная термическая стабильность
+
+                                    p Теплопроводность составляет 1/20 от таковой у чугуна, а удельная теплоемкость в 2,1 раза больше, чем у чугуна. Он обладает превосходной термической стабильностью, которая эффективно контролирует деформацию станка из-за перепадов температуры и обеспечивает стабильность точности обработки станка.
+                                        br
+                                        |- Высокие антикоррозийные свойств
+                                        br
+                                        |- Высокая точность.
+                                        br
+                                        br
+                                        |Станки для инструментальной обработки на станинах из минерального литья, такие как токарные, фрезерные и шлифовальные, работают со значительно большей точностью и позволяют достичь более высокого качества поверхности обрабатываемой детали. Также заметно сокращается износ инструмента.
+
+                                .content-block
+                                    h2 Управляющее программное обеспечение
+                                    p Мощное управление FANUC 0i-MF имеет комплект программного обеспечения, включающего вращение координат, масштабирование, спиральную интерполяцию, жесткую нарезку резьбы, ориентацию шпинделя, которые входят в число многих стандартных функций. Подключение Ethernet, легкий доступ, слот для карт памяти спереди, USB также входят в число многих стандартных функций. Этот элемент управления обеспечивает наиболее популярную функцию в рамках его стандартных функций. Дополнительный режим высокоскоростной обработки AICC обеспечивает функцию предварительного просмотра до 200 блоков и плавную интерполяцию. Это самый мощный и ценный элемент управления в своем классе.
+
+                            .expand-btn
                                 +svg('Chevron-down')
 
-                    .product__features
-                        .product__features-item
-                            .product__features-icon
-                                +svg('Sheild')
-                            .product__features-wrap
-                                .product__features-title Гарантия
-                                .product__features-value от 12 мес
-                                    .tooltip
-                                        .tooltip__icon
-                                            +svg('Help-circle-contained')
-                                        .tooltip__content
-                                            .tooltip__title Гарантия предоставляется заводом изготовителем
-                                            .tooltip__text Гарантийный ремонт осуществляется в отделе гарантийного обслуживания нашей компаии
-                                            a.tooltip__link(href="#") Подробнее про гарантию
-                                                +svg('Arrow-narrow-up-right')
+                    .detail(data-active=2)
 
-                        .product__features-item
-                            .product__features-icon
-                                +svg('Truck')
-                            .product__features-wrap
-                                .product__features-title Доставка
-                                .product__features-value от 1 дня
-                                    .tooltip
-                                        .tooltip__icon
-                                            +svg('Help-circle-contained')
-                                        .tooltip__content
-                                            .tooltip__title Доставка осуществляется по М+МО до Вашего склада/офиса, до терминала ТК, в аэропорт
-                                            .tooltip__text Если оборудование является крупногабаритным, то действуют индивидуальные условия доставки. Возможен самовывоз с нашего склада в МО, г. Жуковский по предварительному согласованию
-                                            a.tooltip__link(href="#") Подробнее про доставку
-                                                +svg('Arrow-narrow-up-right')
+                        .detail-props
 
-                        .product__features-item
-                            .product__features-icon
-                                +svg('settings')
-                            .product__features-wrap
-                                .product__features-title Сервис 24/7
-                                .product__features-value установим, обслужим
-                                    .tooltip
-                                        .tooltip__icon
-                                            +svg('Help-circle-contained')
-                                        .tooltip__content
-                                            .tooltip__title Установка и шеф монтаж на вашей территории, пусконаладка оборудования
-                                            .tooltip__text ВЕКПРОМ предлагает шеф-монтаж сложного оборудования на территории заказчика. Технические специалисты ВЕКПРОМ выполнят установку и запуск станка, а также проведут инструктаж и обучение ваших специалистов (по необходимости).
-                                            a.tooltip__link(href="#") Все сервисы и услуги
-                                                +svg('Arrow-narrow-up-right')
-
-                        .product__features-item
-                            .product__features-icon
-                                +svg('Card-down')
-                            .product__features-wrap
-                                .product__features-title Оплата
-                                .product__features-value картой или на счет
-                                    .tooltip
-                                        .tooltip__icon
-                                            +svg('Help-circle-contained')
-                                        .tooltip__content
-                                            .tooltip__title Оплата производится в рублях на расчетный счет компании или картой при получении на складе.
-                                            a.tooltip__link(href="#") Подробнее про оплату
-                                                +svg('Arrow-narrow-up-right')
-
-    section.section-details
-
-        .container
-
-            .details
-
-                .tabs
-                    .tab(data-show=1).active
-                        .tab__item
-                            +svg('Info')
-                            |Описание
-                    .tab(data-show=2)
-                        .tab__item
-                            +svg('Gear-lg')
-                            |Характеристики
-                    .tab(data-show=3)
-                        .tab__item
-                            +svg('File-check')
-                            |Комплектация
-                    .tab(data-show=4)
-                        .tab__item
-                            +svg('Wrench')
-                            |Запасные части
-                    .tab(data-show=5)
-                        .tab__item
-                            +svg('Package-plus')
-                            |Расходные материалы
-                    .tab(data-show=6)
-                        .tab__item
-                            +svg('File')
-                            |Документация
-
-                .detail(data-active=1).active
-
-                    .detail-desc.hidden-block
-
-                        .detail-desc__wrap
-                            .content-block
-                                h2 Вертикальный обрабатывающий центр ATTA Prime VМС1160 Fanuc 0i MF(5) с прямым приводом материал карбон
-                                p V1160L предназначен для фрезерной обработки деталей, тяжелых работ. Благодаря станине, изготовленной по технологии «минерального литья» он обладает лучшим поглощением вибрации, более низким коэффициентом теплового расширения и более низким коэффициентом теплопроводности.
-                                    br
-                                    br
-                                    |Суппорт, стол и шпиндельная бабка изготовлены по немецкой технологии сварки стали, что позволяет повысить жесткость, уменьшить вес движущихся частей, уменьшить инерцию движения, а также повысить скорость отклика станка и точность перемещения. Он сочетает конструкцию с поперечным перемещением стола и линейные направляющие. 
-
-                            .content-block
-                                h2 Сильное поглощение вибрации
-                                p Вибропоглощение минеральных (композитных) материалов в 10 раз выше, чем у чугуна. При больших динамических нагрузках гарантируется общая точность и стабильность станка, качество обработки поверхности заготовки повышается на 20 %, а срок службы инструмента увеличивается на 10 %. Общий ресурс работы оборудования также увеличивается.
-
-                                +img('img-2423.jpg')
-
-                            .content-block
-                                h2 Преимущества станка
-
-                                +img('img-32569.jpg')
-
-                                p Основание и колонны изготовлены методом «МИНЕРАЛЬНОГО ЛИТЬЯ» по немецкой технологии
-
-                            .content-block
-                                h2 Превосходная термическая стабильность
-
-                                p Теплопроводность составляет 1/20 от таковой у чугуна, а удельная теплоемкость в 2,1 раза больше, чем у чугуна. Он обладает превосходной термической стабильностью, которая эффективно контролирует деформацию станка из-за перепадов температуры и обеспечивает стабильность точности обработки станка.
-                                    br
-                                    |- Высокие антикоррозийные свойств
-                                    br
-                                    |- Высокая точность.
-                                    br
-                                    br
-                                    |Станки для инструментальной обработки на станинах из минерального литья, такие как токарные, фрезерные и шлифовальные, работают со значительно большей точностью и позволяют достичь более высокого качества поверхности обрабатываемой детали. Также заметно сокращается износ инструмента.
-
-                            .content-block
-                                h2 Управляющее программное обеспечение
-                                p Мощное управление FANUC 0i-MF имеет комплект программного обеспечения, включающего вращение координат, масштабирование, спиральную интерполяцию, жесткую нарезку резьбы, ориентацию шпинделя, которые входят в число многих стандартных функций. Подключение Ethernet, легкий доступ, слот для карт памяти спереди, USB также входят в число многих стандартных функций. Этот элемент управления обеспечивает наиболее популярную функцию в рамках его стандартных функций. Дополнительный режим высокоскоростной обработки AICC обеспечивает функцию предварительного просмотра до 200 блоков и плавную интерполяцию. Это самый мощный и ценный элемент управления в своем классе.
-
-                        .expand-btn
-                            +svg('Chevron-down')
-
-                .detail(data-active=2)
-
-                    .detail-props
-
-                        h2 Характеристики
-
-                        table
-                            tr
-                                th Производитель
-                                td АТТА
-                                    a(href="#")
-                                        +svg('Arrow-narrow-up-right')
-                            tr
-                                th Конус шпинделя
-                                td BT40
-                            tr
-                                th Крутящий момент шпинделя, Нм
-                                td 52,5/118
-                            tr
-                                th Размер стола, мм
-                                td 1200х600
-                            tr
-                                th Мощность шпинделя, кВт
-                                td 11/18,5
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Y, мм
-                                td 1100
-                            tr
-                                th Габариты (Д*Ш*В)
-                                td 2900x2800x3200 мм
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-                            tr
-                                th Перемещение по оси Х, мм
-                                td 1100
-
-                .detail(data-active=3)
-
-                    .detail-props
-
-                        .wrapper
-
-                            h2 Стандартная комплектация
+                            h2 Характеристики
 
                             table
                                 tr
-                                    th 1
-                                    td Шпиндель
+                                    th Производитель
+                                    td АТТА
+                                        a(href="#")
+                                            +svg('Arrow-narrow-up-right')
                                 tr
-                                    th 2
-                                    td Шпиндель
+                                    th Конус шпинделя
+                                    td BT40
                                 tr
-                                    th 3
-                                    td Шпиндель
+                                    th Крутящий момент шпинделя, Нм
+                                    td 52,5/118
                                 tr
-                                    th 4
-                                    td Шпиндель
+                                    th Размер стола, мм
+                                    td 1200х600
                                 tr
-                                    th 5
-                                    td Шпиндель
-
-                            h2 Дополнительная комплектация
-
-                            table
+                                    th Мощность шпинделя, кВт
+                                    td 11/18,5
                                 tr
-                                    th 1
-                                    td Шпиндель
+                                    th Перемещение по оси Х, мм
+                                    td 1100
                                 tr
-                                    th 2
-                                    td Шпиндель
+                                    th Перемещение по оси Y, мм
+                                    td 1100
                                 tr
-                                    th 3
-                                    td Шпиндель
+                                    th Габариты (Д*Ш*В)
+                                    td 2900x2800x3200 мм
                                 tr
-                                    th 4
-                                    td Шпиндель
+                                    th Перемещение по оси Х, мм
+                                    td 1100
                                 tr
-                                    th 5
-                                    td Шпиндель
-
-                .detail(data-active=4)
-
-                    .detail-card
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                .detail(data-active=5)
-
-                    .detail-card
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .card-item__buy-add.btn.btn-cart
-                                    +svg('Basket')
-
-                        .card-item
-                            .card-tag.tag-order
-                                +svg('clock-forward')
-                                |Под заказ
-
-                            .card-item__img
-                                +img('img-342.jpg')
-
-                            .card-item__name
-                                a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
-
-                            .card-item__price 550 ₽
-                            .card-item__buy
-                                .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
-                                .qty-input
-                                    .qty.qty-minus
-                                        +svg('Minus')
-                                    input(type="text" name="qty" value="1" max-number="99")
-                                    .qty.qty-plus
-                                        +svg('Plus')
-
-                .detail(data-active=6)
-
-                    .detail-docs
-
-                        h2 Документация
-
-                        a.detail-docs__item(href="#")
-                            .detail-docs__icon
-                                +svg('Document-pdf')
-                            |Чертежи
-
-                        a.detail-docs__item(href="#")
-                            .detail-docs__icon
-                                +svg('Document-xls')
-                            |ГОСТ
-
-                        a.detail-docs__item(href="#")
-                            .detail-docs__icon
-                                +svg('Document-doc')
-                            |Документация
-
-    include ../components/sections/_section-slider
-
-    section.section-banner
-
-        .container
-
-            .banner
-
-                .banner__img
-                    +img('Bg-Image_2.jpg')
-                .banner__title Поможем с выбором, ответим на вопросы
-                .banner__wrap
-                    .banner__block
-                        .banner__block-item
-                            .banner__block-item-icon
-                                +svg('Rub')
-                            p Подберем оборудование под ваши задачи и бюджет
-                        .banner__block-item
-                            .banner__block-item-icon
-                                +svg('flash-on')
-                            p Желаемую производительность и назначение
-                        .banner__block-item
-                            .banner__block-item-icon
-                                +svg('Gear-lg')
-                            p Технические требования к точности обработки деталей, габаритов, требования к установке и безопасности, доступность электрических подключений
-
-                    .banner__link.btn.btn-promo.btn--primary
-                        +svg('Arrow-narrow-up-right')
-                        |Подобрать оборудование
-
-    section.section-slider
-
-        .container
-
-            .head-block
-
-                .title Вы смотрели
-
-            .slider
-
-                .swiper.main-swiper
-
-                    .swiper-wrapper
-
-                        include ../components/_card-white
-                        .swiper-slide.slider__item
-                            +card
-
-                        .swiper-slide.slider__item
-                            +card('Под заказ')
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+                                tr
+                                    th Перемещение по оси Х, мм
+                                    td 1100
+
+                    .detail(data-active=3)
+
+                        .detail-props
+
+                            .wrapper
+
+                                h2 Стандартная комплектация
+
+                                table
+                                    tr
+                                        th 1
+                                        td Шпиндель
+                                    tr
+                                        th 2
+                                        td Шпиндель
+                                    tr
+                                        th 3
+                                        td Шпиндель
+                                    tr
+                                        th 4
+                                        td Шпиндель
+                                    tr
+                                        th 5
+                                        td Шпиндель
+
+                                h2 Дополнительная комплектация
+
+                                table
+                                    tr
+                                        th 1
+                                        td Шпиндель
+                                    tr
+                                        th 2
+                                        td Шпиндель
+                                    tr
+                                        th 3
+                                        td Шпиндель
+                                    tr
+                                        th 4
+                                        td Шпиндель
+                                    tr
+                                        th 5
+                                        td Шпиндель
+
+                    .detail(data-active=4)
+
+                        .detail-card
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                    .detail(data-active=5)
+
+                        .detail-card
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .card-item__buy-add.btn.btn-cart
+                                        +svg('Basket')
+
+                            .card-item
+                                .card-tag.tag-order
+                                    +svg('clock-forward')
+                                    |Под заказ
+
+                                .card-item__img
+                                    +img('img-342.jpg')
+
+                                .card-item__name
+                                    a(href="#") Сетчатый масляный фильтр WU-63x100-J для CKE 6163Z/1500G-CM 1510
+
+                                .card-item__price 550 ₽
+                                .card-item__buy
+                                    .card-item__buy-fast.btn.btn--primary Заказать в 1 клик
+                                    .qty-input
+                                        .qty.qty-minus
+                                            +svg('Minus')
+                                        input(type="text" name="qty" value="1" max-number="99")
+                                        .qty.qty-plus
+                                            +svg('Plus')
+
+                    .detail(data-active=6)
+
+                        .detail-docs
+
+                            h2 Документация
+
+                            a.detail-docs__item(href="#")
+                                .detail-docs__icon
+                                    +svg('Document-pdf')
+                                |Чертежи
+
+                            a.detail-docs__item(href="#")
+                                .detail-docs__icon
+                                    +svg('Document-xls')
+                                |ГОСТ
+
+                            a.detail-docs__item(href="#")
+                                .detail-docs__icon
+                                    +svg('Document-doc')
+                                |Документация
+
+        include ../components/sections/_section-slider
+
+        section.section-banner
+
+            .container
+
+                .banner
+
+                    .banner__img
+                        +img('Bg-Image_2.jpg')
+                    .banner__title Поможем с выбором, ответим на вопросы
+                    .banner__wrap
+                        .banner__block
+                            .banner__block-item
+                                .banner__block-item-icon
+                                    +svg('Rub')
+                                p Подберем оборудование под ваши задачи и бюджет
+                            .banner__block-item
+                                .banner__block-item-icon
+                                    +svg('flash-on')
+                                p Желаемую производительность и назначение
+                            .banner__block-item
+                                .banner__block-item-icon
+                                    +svg('Gear-lg')
+                                p Технические требования к точности обработки деталей, габаритов, требования к установке и безопасности, доступность электрических подключений
+
+                        .banner__link.btn.btn-promo.btn--primary
+                            +svg('Arrow-narrow-up-right')
+                            |Подобрать оборудование
+
+        section.section-slider
+
+            .container
+
+                .head-block
+
+                    .title Вы смотрели
+
+                .slider
+
+                    .swiper.main-swiper
+
+                        .swiper-wrapper
+
+                            include ../components/_card-white
+                            .swiper-slide.slider__item
+                                +card
+
+                            .swiper-slide.slider__item
+                                +card('Под заказ')

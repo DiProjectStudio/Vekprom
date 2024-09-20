@@ -738,6 +738,15 @@ video {
         }
     }
 
+    &.required {
+        & label::after {
+            content: '*';
+            margin-left: 4px;
+            font: var(--font-body-s);
+            color: var(--fg-soft, #9398a0);
+        }
+    }
+
     &.error {
         & input {
             border-color: var(--base-error);
@@ -747,6 +756,57 @@ video {
             margin-top: 4px;
             color: var(--base-error, #d91528);
         }
+    }
+}
+
+.input-code {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+
+    & input {
+        padding: 16px 20px;
+        background: var(--bg-surface1, #fff);
+        flex-shrink: 0;
+        width: 52px;
+        height: 54px;
+        border: var(--Number, 1px) solid var(--border-default, #eaeaec);
+        border-radius: 12px;
+    }
+}
+
+.input-password {
+    position: relative;
+}
+
+.pass-eye {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    height: 16px;
+    user-select: none;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        right: 24px;
+        bottom: 19px;
+    }
+}
+
+.agreement {
+    margin-top: 12px;
+    font: var(--font-description-l);
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpoint(lg) {
+        margin-top: 16px;
+        max-width: 390px;
+    }
+
+    & a {
+        display: inline;
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
     }
 }
 

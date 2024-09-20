@@ -13,6 +13,16 @@ export function initializePopup() {
             NEXT: 'Следующий',
             PREV: 'Предыдущий',
             MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
+        },
+
+        on: {
+            init: (fancybox, slide) => {
+                document.body.classList.add('popup-active');
+            },
+
+            destroy: (fancybox) => {
+                document.body.classList.remove('popup-active');
+            }
         }
     });
 

@@ -1,15 +1,14 @@
 extends /layout/layout
 
 block title
-    - var title = 'Страница каталога'
-    - var page = 'page-projects'
+    - var title = 'Страница проектов'
 
 block main
 
     include ../components/_breadcrumbs
     +breadcrumbs('Проекты','Проекты')
 
-    section
+    section.page-projects
 
         .container
 

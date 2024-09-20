@@ -1,5 +1,6 @@
 // Import Plugins
 import Inputmask from 'inputmask';
+import '../../node_modules/jquery-pincode-autotab/dist/js/jquery-pincode-autotab.js';
 
 // Import Scripts
 import { getBrowserName } from './includes/checkbrowser.js';
@@ -621,4 +622,118 @@ $('.compare-category').on('click', (e) => {
         $parent.find('.compare-category').removeClass('active');
         $currentCategory.addClass('active');
     }
+});
+
+// Иконка отображения пароля
+$('.pass-eye').on('click', (e) => {
+    if ($(e.currentTarget).prev('input').attr('type') != 'text') {
+        $(e.currentTarget).prev('input').attr('type', 'text');
+        $(e.currentTarget)
+            .find('svg')
+            .html(
+                '<path d="M13.6 13L3.59998 3M6.79998 6.96105C6.55103 7.2355 6.39998 7.59602 6.39998 7.99087C6.39998 8.85073 7.11632 9.54778 7.99998 9.54778C8.4074 9.54778 8.77926 9.39959 9.06174 9.15559M13.6258 9.54778C14.1767 8.72322 14.4 8.05075 14.4 8.05075C14.4 8.05075 12.9436 3.4 7.99998 3.4C7.72244 3.4 7.45589 3.41466 7.19998 3.44233M11.6 11.5663C10.6817 12.1521 9.49953 12.5663 7.99998 12.5418C3.11792 12.462 1.59998 8.05075 1.59998 8.05075C1.59998 8.05075 2.30521 5.79872 4.39998 4.42888" stroke="#283142" stroke-width="1.33333" stroke-linecap="round"/>'
+            );
+    } else {
+        $(e.currentTarget).prev('input').attr('type', 'password');
+        $(e.currentTarget)
+            .find('svg')
+            .html(
+                '<path fill-rule="evenodd" clip-rule="evenodd" d="M2.3143 8.06873C2.3586 8.16974 2.42095 8.30296 2.50322 8.45908C2.70287 8.83795 3.01608 9.34455 3.46735 9.85192C4.36255 10.8584 5.7965 11.8677 8.01088 11.9039C10.2109 11.9399 11.6354 10.9386 12.5287 9.91621C12.9794 9.4004 13.2928 8.88005 13.493 8.48871C13.5785 8.3215 13.6427 8.17933 13.6874 8.07317C13.6439 7.96456 13.581 7.81845 13.4966 7.6462C13.3006 7.24647 12.9922 6.71417 12.5445 6.18418C11.6571 5.13358 10.2308 4.0953 7.99998 4.0953C5.76919 4.0953 4.34281 5.13358 3.45543 6.18418C3.00778 6.71417 2.69936 7.24647 2.50337 7.6462C2.42006 7.81611 2.35778 7.96059 2.3143 8.06873ZM14.4 8.07938C15.0362 7.88015 15.0361 7.87983 15.036 7.8795L15.0357 7.87873L15.0351 7.87688L15.0336 7.87191L15.0287 7.85695C15.0247 7.84479 15.0191 7.82828 15.0119 7.80771C14.9976 7.76659 14.9768 7.70918 14.949 7.63781C14.8935 7.49519 14.8099 7.29606 14.6938 7.05921C14.4622 6.58692 14.0975 5.95652 13.5631 5.32383C12.4864 4.04905 10.7128 2.76196 7.99998 2.76196C5.28717 2.76196 3.51355 4.04905 2.43683 5.32383C1.90242 5.95652 1.53777 6.58692 1.3062 7.05921C1.19007 7.29606 1.10641 7.49519 1.05092 7.63781C1.02315 7.70918 1.00236 7.76659 0.988023 7.80771C0.980855 7.82828 0.975294 7.84479 0.971276 7.85695L0.966395 7.87191L0.964805 7.87688L0.964221 7.87873L0.96398 7.8795C0.963875 7.87983 0.963775 7.88015 1.59998 8.07938L0.963775 7.88015L0.898315 8.08918L0.969588 8.2963L1.59998 8.07938C0.969588 8.2963 0.969698 8.29663 0.969814 8.29696L0.970077 8.29772L0.970711 8.29955L0.972415 8.3044L0.977593 8.31888C0.981837 8.33061 0.987682 8.34647 0.995186 8.36617C1.01019 8.40558 1.03185 8.46045 1.06066 8.5286C1.11822 8.6648 1.20457 8.85472 1.32365 9.08069C1.56118 9.53142 1.93259 10.1326 2.47107 10.738C3.55535 11.9571 5.3214 13.1934 7.98907 13.237C10.6711 13.2809 12.4466 12.0366 13.5328 10.7935C14.0718 10.1766 14.443 9.55918 14.68 9.09597C14.7989 8.86367 14.885 8.66811 14.9423 8.52795C14.971 8.4578 14.9925 8.40135 15.0074 8.36088C15.0148 8.34064 15.0206 8.32439 15.0248 8.3124L15.0299 8.29764L15.0316 8.29273L15.0322 8.2909L15.0324 8.29014C15.0326 8.28981 15.0327 8.28949 14.4 8.07938ZM14.4 8.07938L15.0327 8.28949L15.1004 8.08539L15.0362 7.88015L14.4 8.07938ZM2.23568 8.28019C2.2356 8.28043 2.23561 8.28041 2.23571 8.28011L2.23568 8.28019ZM7.99998 7.12926C7.46723 7.12926 7.06664 7.54488 7.06664 8.0195C7.06664 8.49412 7.46723 8.90974 7.99998 8.90974C8.53272 8.90974 8.93331 8.49412 8.93331 8.0195C8.93331 7.54488 8.53272 7.12926 7.99998 7.12926ZM5.73331 8.0195C5.73331 6.77442 6.76541 5.79593 7.99998 5.79593C9.23454 5.79593 10.2666 6.77442 10.2666 8.0195C10.2666 9.26459 9.23454 10.2431 7.99998 10.2431C6.76541 10.2431 5.73331 9.26459 5.73331 8.0195Z" fill="#283142"/>'
+            );
+    }
+});
+
+// Код из СМС
+const inputElements = $('.input-code input');
+
+// Добавляем кастомный псевдоселектор :focusable для jQuery
+jQuery.extend(jQuery.expr[':'], {
+    focusable: function (el) {
+        var nodeName = el.nodeName.toLowerCase(),
+            tabIndex = $(el).attr('tabindex');
+        if (tabIndex) {
+            return tabIndex >= 0;
+        }
+        if (nodeName === 'input' || nodeName === 'select' || nodeName === 'textarea') {
+            return !el.disabled;
+        }
+        if (nodeName === 'a') {
+            return el.href || tabIndex >= 0;
+        }
+        return false;
+    }
+});
+
+if (inputElements.length) {
+    inputElements.jqueryPincodeAutotab();
+}
+
+// Функция для проверки, заполнены ли все поля
+const checkSmsCode = () => {
+    let smsCodeArray = inputElements
+        .map(function () {
+            return $(this).val();
+        })
+        .get();
+
+    if (smsCodeArray.join('').length === inputElements.length) {
+        $('#form-submit').trigger('click');
+        inputElements.val('');
+    }
+};
+
+inputElements.on('keyup', function () {
+    checkSmsCode();
+});
+
+// Обработчик для кнопки отправки формы
+$('#form-submit').on('click', function () {
+    alert('successful');
+});
+
+// Вставка из буфера обмена
+inputElements.first().on('paste', function () {
+    $('#form-submit').trigger('click');
+});
+
+// Фокус на первый input при касании
+inputElements.first().on('touchstart', function () {
+    $(this).focus();
+});
+
+// Таймер обратного отсчёта
+let totalSeconds;
+let countdown;
+
+function startCountdown() {
+    if (countdown) {
+        clearInterval(countdown);
+    }
+
+    totalSeconds = 179;
+
+    countdown = setInterval(function () {
+        const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+        const seconds = String(totalSeconds % 60).padStart(2, '0');
+
+        $('#countdown').text(`Новый код можно запросить через ${minutes} : ${seconds}`);
+
+        totalSeconds--;
+
+        if (totalSeconds < 0) {
+            clearInterval(countdown);
+            $('.popup__count').hide();
+            $('.popup__send').show();
+        }
+    }, 1000);
+}
+
+startCountdown();
+
+// Обработчик клика на кнопку #send-code
+$('#send-code').on('click', function () {
+    $('#countdown').show();
+    $('#send-code').hide();
+
+    startCountdown();
 });
