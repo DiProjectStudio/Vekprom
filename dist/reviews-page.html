@@ -21,11 +21,12 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script type="module" src="./assets/js/vendor.min.js"></script>
+    <script type="module" src="./assets/js/jquery.min.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
-  <body class="reviews-page">
+  <body>
     <!-- Header::Start-->
     <header class="header" id="header">
       <div class="container">
@@ -48,10 +49,10 @@
               </li>
             </ul>
             <ul class="header__bar">
-              <li class="header__bar-item"><a class="header__callback">Заказать звонок</a></li>
+              <li class="header__bar-item"><a class="header__callback" data-src="#popup-callback" data-fancybox>Заказать звонок</a></li>
               <li class="header__bar-item"><a class="header__phone" href="tel:+74952151645">+7 (495) 215-16-45</a></li>
               <li class="header__bar-item">
-                <div class="header__location">
+                <div class="header__location" data-src="#popup-city" data-fancybox>
                     <svg class="icon icon-Map">
                       <use xlink:href="./assets/spritemap.svg#Map"></use>
                     </svg>
@@ -89,7 +90,7 @@
               </div>
             </form>
           </div>
-          <button class="header__selection btn btn--primary">Подобрать станок</button>
+          <button class="header__selection btn btn--primary" data-src="#popup-selection" data-fancybox>Подобрать станок</button>
           <div class="header__icons"><a class="header__icons-item header-home" href="#">
               <div class="icon-item">
                   <svg class="icon icon-Home">
@@ -120,7 +121,7 @@
                     <use xlink:href="./assets/spritemap.svg#Basket"></use>
                   </svg>
               </div>
-              <p>Корзина</p></a><a class="header__icons-item header-user" href="#">
+              <p>Корзина</p></a><a class="header__icons-item header-user" href="#popup-auth-phone" data-fancybox>
               <div class="icon-item">
                   <svg class="icon icon-User">
                     <use xlink:href="./assets/spritemap.svg#User"></use>
@@ -545,7 +546,7 @@
             <div class="header__catalog-banner-img"><img src="./assets/images/banner-bg-image.jpg" alt="img">
             </div>
             <p>Подберем станок под ваши задачи и бюджет</p>
-            <div class="btn btn-promo btn--primary">
+            <div class="btn btn-promo btn--primary" data-src="#popup-selection" data-fancybox>
                 <svg class="icon icon-Arrow-narrow-up-right">
                   <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
                 </svg>Подобрать станок
@@ -682,7 +683,7 @@
                   <svg class="icon icon-Youtube">
                     <use xlink:href="./assets/spritemap.svg#Youtube"></use>
                   </svg></a></div>
-            <div class="footer__contacts-btn btn btn-promo btn--primary">
+            <div class="footer__contacts-btn btn btn-promo btn--primary" data-src="#popup-contact" data-fancybox>
                 <svg class="icon icon-Arrow-narrow-up-right">
                   <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
                 </svg>Написать нам
@@ -695,5 +696,334 @@
       </div>
     </footer>
     <!-- Footer::End-->
+    <!-- Popups::Start-->
+    <div class="popups-wrap">
+      <div class="popup popup-auth-phone" id="popup-auth-phone">
+        <div class="popup__title">Войти или&nbsp;зарегистрироваться</div>
+        <div class="popup__form">
+          <div class="input">
+            <label for="popup_auth_phone">Номер телефона</label>
+            <input id="popup_auth_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Продолжить</div>
+      </div>
+      <div class="popup popup-auth-email" id="popup-auth-email">
+        <div class="popup__title">Войти или&nbsp;зарегистрироваться</div>
+        <div class="popup__form">
+          <div class="input">
+            <label for="popup_email">Электронная почта</label>
+            <input id="popup_email" type="email" name="email" autocomplete="none">
+          </div>
+        </div>
+        <div class="btn btn--primary">Продолжить</div>
+      </div>
+      <div class="popup popup-auth-sms" id="popup-auth-sms">
+        <div class="popup__title">Введите код из SMS</div>
+        <div class="popup__toward popup__toward--center">
+          <p>SMS-сообщение с кодом подтверждения отправлено на номер <b>+7 (999) 123-45-67</b></p>
+        </div>
+        <div class="popup__form">
+          <div class="input-code">
+            <input type="text" name="pin" maxlength="1" autocomplete="one-time-code">
+            <input type="text" name="pin" maxlength="1" autocomplete="one-time-code">
+            <input type="text" name="pin" maxlength="1" autocomplete="one-time-code">
+            <input type="text" name="pin" maxlength="1" autocomplete="one-time-code">
+          </div>
+        </div>
+        <div class="popup__count" id="countdown"></div>
+        <div class="popup__send" id="send-code">Отправить повторно</div>
+        <div id="form-submit"></div>
+      </div>
+      <div class="popup popup-password" id="popup-password">
+        <div class="popup__back">
+            <svg class="icon icon-Chevron-left">
+              <use xlink:href="./assets/spritemap.svg#Chevron-left"></use>
+            </svg>Назад
+        </div>
+        <div class="popup__title">Введите пароль</div>
+        <div class="popup__toward">
+          <p>Для почты <span>example@mail.ru</span></p>
+        </div>
+        <div class="popup__form">
+          <div class="input error">
+            <label for="popup_reg_password">Пароль</label>
+            <div class="input-password">
+              <input id="popup_reg_password" type="password" name="password" autocomplete="none">
+              <div class="pass-eye"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="16px / Eye-open">
+<path id="Icon (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M2.31442 8.56849C2.35872 8.6695 2.42107 8.80272 2.50334 8.95884C2.703 9.3377 3.0162 9.8443 3.46747 10.3517C4.36267 11.3582 5.79662 12.3674 8.011 12.4036C10.211 12.4396 11.6355 11.4384 12.5288 10.416C12.9795 9.90016 13.2929 9.37981 13.4931 8.98846C13.5787 8.82126 13.6428 8.67909 13.6876 8.57293C13.644 8.46431 13.5812 8.31821 13.4967 8.14595C13.3007 7.74622 12.9923 7.21393 12.5446 6.68394C11.6573 5.63334 10.2309 4.59505 8.0001 4.59505C5.76931 4.59505 4.34293 5.63334 3.45556 6.68394C3.00791 7.21393 2.69949 7.74622 2.50349 8.14595C2.42018 8.31587 2.35791 8.46035 2.31442 8.56849ZM14.4001 8.57914C15.0363 8.37991 15.0362 8.37959 15.0361 8.37925L15.0359 8.37849L15.0353 8.37664L15.0337 8.37167L15.0288 8.35671C15.0248 8.34454 15.0192 8.32803 15.012 8.30747C14.9977 8.26635 14.9769 8.20894 14.9492 8.13757C14.8937 7.99494 14.81 7.79581 14.6939 7.55896C14.4623 7.08668 14.0976 6.45628 13.5632 5.82358C12.4865 4.54881 10.7129 3.26172 8.0001 3.26172C5.2873 3.26172 3.51367 4.54881 2.43695 5.82358C1.90255 6.45628 1.53789 7.08668 1.30632 7.55896C1.19019 7.79581 1.10653 7.99494 1.05104 8.13757C1.02327 8.20894 1.00248 8.26635 0.988146 8.30747C0.980977 8.32803 0.975416 8.34454 0.971398 8.35671L0.966517 8.37167L0.964928 8.37664L0.964343 8.37849L0.964103 8.37925C0.963997 8.37959 0.963897 8.37991 1.6001 8.57914L0.963897 8.37991L0.898438 8.58894L0.96971 8.79606L1.6001 8.57914C0.96971 8.79606 0.96982 8.79638 0.969937 8.79672L0.970199 8.79748L0.970833 8.7993L0.972537 8.80416L0.977715 8.81864C0.981959 8.83037 0.987804 8.84622 0.995308 8.86593C1.01031 8.90533 1.03197 8.9602 1.06078 9.02836C1.11834 9.16456 1.2047 9.35448 1.32377 9.58044C1.5613 10.0312 1.93271 10.6324 2.47119 11.2378C3.55548 12.4569 5.32153 13.6932 7.9892 13.7368C10.6712 13.7806 12.4468 12.5363 13.5329 11.2933C14.0719 10.6763 14.4432 10.0589 14.6801 9.59573C14.799 9.36342 14.8851 9.16787 14.9424 9.0277C14.9711 8.95756 14.9926 8.9011 15.0075 8.86064C15.015 8.8404 15.0208 8.82414 15.0249 8.81215L15.03 8.7974L15.0317 8.79248L15.0323 8.79066L15.0326 8.7899C15.0327 8.78956 15.0328 8.78925 14.4001 8.57914ZM14.4001 8.57914L15.0328 8.78925L15.1006 8.58514L15.0363 8.37991L14.4001 8.57914ZM2.2358 8.77994C2.23573 8.78019 2.23573 8.78016 2.23583 8.77987L2.2358 8.77994ZM8.0001 7.62902C7.46736 7.62902 7.06676 8.04463 7.06676 8.51926C7.06676 8.99388 7.46736 9.4095 8.0001 9.4095C8.53284 9.4095 8.93343 8.99388 8.93343 8.51926C8.93343 8.04463 8.53284 7.62902 8.0001 7.62902ZM5.73343 8.51926C5.73343 7.27417 6.76553 6.29569 8.0001 6.29569C9.23467 6.29569 10.2668 7.27417 10.2668 8.51926C10.2668 9.76434 9.23467 10.7428 8.0001 10.7428C6.76553 10.7428 5.73343 9.76434 5.73343 8.51926Z" fill="#283142"/>
+</g>
+</svg>
+
+              </div>
+            </div>
+            <p>Неверный пароль</p>
+          </div>
+        </div>
+        <div class="btn btn--primary">Войти</div>
+      </div>
+      <div class="popup popup-registration-phone" id="popup-registration-phone">
+        <div class="popup__title">Регистрация</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_reg_name2">Имя</label>
+            <input id="popup_reg_name2" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_reg_lastname2">Фамилия</label>
+            <input id="popup_reg_lastname2" type="text" name="lastname" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_reg_phone2">Номер телефона</label>
+            <input id="popup_reg_phone2" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_reg_email2">Электронная почта</label>
+            <input id="popup_reg_email2" type="email" name="email" autocomplete="none">
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных</div>
+        <div class="btn btn--primary">Зарегистрироваться</div>
+      </div>
+      <div class="popup popup-registration-email" id="popup-registration-email">
+        <div class="popup__back">
+            <svg class="icon icon-Chevron-left">
+              <use xlink:href="./assets/spritemap.svg#Chevron-left"></use>
+            </svg>Назад
+        </div>
+        <div class="popup__title">Регистрация</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_reg_name">Имя</label>
+            <input id="popup_reg_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_reg_lastname">Фамилия</label>
+            <input id="popup_reg_lastname" type="text" name="lastname" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_reg_phone">Номер телефона</label>
+            <input id="popup_reg_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input">
+            <label for="popup_reg_email">Email</label>
+            <input id="popup_reg_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_reg_password2">Пароль</label>
+            <div class="input-password">
+              <input id="popup_reg_password2" type="password" name="password" autocomplete="none">
+              <div class="pass-eye"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="16px / Eye-open">
+<path id="Icon (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M2.31442 8.56849C2.35872 8.6695 2.42107 8.80272 2.50334 8.95884C2.703 9.3377 3.0162 9.8443 3.46747 10.3517C4.36267 11.3582 5.79662 12.3674 8.011 12.4036C10.211 12.4396 11.6355 11.4384 12.5288 10.416C12.9795 9.90016 13.2929 9.37981 13.4931 8.98846C13.5787 8.82126 13.6428 8.67909 13.6876 8.57293C13.644 8.46431 13.5812 8.31821 13.4967 8.14595C13.3007 7.74622 12.9923 7.21393 12.5446 6.68394C11.6573 5.63334 10.2309 4.59505 8.0001 4.59505C5.76931 4.59505 4.34293 5.63334 3.45556 6.68394C3.00791 7.21393 2.69949 7.74622 2.50349 8.14595C2.42018 8.31587 2.35791 8.46035 2.31442 8.56849ZM14.4001 8.57914C15.0363 8.37991 15.0362 8.37959 15.0361 8.37925L15.0359 8.37849L15.0353 8.37664L15.0337 8.37167L15.0288 8.35671C15.0248 8.34454 15.0192 8.32803 15.012 8.30747C14.9977 8.26635 14.9769 8.20894 14.9492 8.13757C14.8937 7.99494 14.81 7.79581 14.6939 7.55896C14.4623 7.08668 14.0976 6.45628 13.5632 5.82358C12.4865 4.54881 10.7129 3.26172 8.0001 3.26172C5.2873 3.26172 3.51367 4.54881 2.43695 5.82358C1.90255 6.45628 1.53789 7.08668 1.30632 7.55896C1.19019 7.79581 1.10653 7.99494 1.05104 8.13757C1.02327 8.20894 1.00248 8.26635 0.988146 8.30747C0.980977 8.32803 0.975416 8.34454 0.971398 8.35671L0.966517 8.37167L0.964928 8.37664L0.964343 8.37849L0.964103 8.37925C0.963997 8.37959 0.963897 8.37991 1.6001 8.57914L0.963897 8.37991L0.898438 8.58894L0.96971 8.79606L1.6001 8.57914C0.96971 8.79606 0.96982 8.79638 0.969937 8.79672L0.970199 8.79748L0.970833 8.7993L0.972537 8.80416L0.977715 8.81864C0.981959 8.83037 0.987804 8.84622 0.995308 8.86593C1.01031 8.90533 1.03197 8.9602 1.06078 9.02836C1.11834 9.16456 1.2047 9.35448 1.32377 9.58044C1.5613 10.0312 1.93271 10.6324 2.47119 11.2378C3.55548 12.4569 5.32153 13.6932 7.9892 13.7368C10.6712 13.7806 12.4468 12.5363 13.5329 11.2933C14.0719 10.6763 14.4432 10.0589 14.6801 9.59573C14.799 9.36342 14.8851 9.16787 14.9424 9.0277C14.9711 8.95756 14.9926 8.9011 15.0075 8.86064C15.015 8.8404 15.0208 8.82414 15.0249 8.81215L15.03 8.7974L15.0317 8.79248L15.0323 8.79066L15.0326 8.7899C15.0327 8.78956 15.0328 8.78925 14.4001 8.57914ZM14.4001 8.57914L15.0328 8.78925L15.1006 8.58514L15.0363 8.37991L14.4001 8.57914ZM2.2358 8.77994C2.23573 8.78019 2.23573 8.78016 2.23583 8.77987L2.2358 8.77994ZM8.0001 7.62902C7.46736 7.62902 7.06676 8.04463 7.06676 8.51926C7.06676 8.99388 7.46736 9.4095 8.0001 9.4095C8.53284 9.4095 8.93343 8.99388 8.93343 8.51926C8.93343 8.04463 8.53284 7.62902 8.0001 7.62902ZM5.73343 8.51926C5.73343 7.27417 6.76553 6.29569 8.0001 6.29569C9.23467 6.29569 10.2668 7.27417 10.2668 8.51926C10.2668 9.76434 9.23467 10.7428 8.0001 10.7428C6.76553 10.7428 5.73343 9.76434 5.73343 8.51926Z" fill="#283142"/>
+</g>
+</svg>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных</div>
+        <div class="btn btn--primary">Зарегистрироваться</div>
+      </div>
+      <div class="popup popup-request" id="popup-request">
+        <div class="popup__title">Форма заявки</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_request_name">Имя</label>
+            <input id="popup_request_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_request_phone">Номер телефона</label>
+            <input id="popup_request_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_request_email">Электронная почта</label>
+            <input id="popup_request_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_request_comment">Комметарий к заказу</label>
+            <input id="popup_request_comment" type="text" name="text" autocomplete="none">
+          </div>
+        </div>
+        <div class="input-file">
+          <input id="request_file" type="file" name="file">
+          <label for="request_file">
+              <svg class="icon icon-Paperclip">
+                <use xlink:href="./assets/spritemap.svg#Paperclip"></use>
+              </svg>
+            <p>Прикрепить файл</p>
+          </label>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Отправить</div>
+      </div>
+      <div class="popup popup-contact" id="popup-contact">
+        <div class="popup__title">Напишите нам</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_contact_name">Имя</label>
+            <input id="popup_contact_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_contact_phone">Номер телефона</label>
+            <input id="popup_contact_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_contact_email">Электронная почта</label>
+            <input id="popup_contact_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_contact_comment">Комметарий к заказу</label>
+            <input id="popup_contact_comment" type="text" name="text" autocomplete="none">
+          </div>
+        </div>
+        <div class="input-file">
+          <input id="contact_file" type="file" name="file">
+          <label for="contact_file">
+              <svg class="icon icon-Paperclip">
+                <use xlink:href="./assets/spritemap.svg#Paperclip"></use>
+              </svg>
+            <p>Прикрепить файл</p>
+          </label>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Отправить</div>
+      </div>
+      <div class="popup popup-selection" id="popup-selection">
+        <div class="popup__title">Подобрать станок</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_selection_name">Имя</label>
+            <input id="popup_selection_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_selection_phone">Номер телефона</label>
+            <input id="popup_selection_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_selection_email">Электронная почта</label>
+            <input id="popup_selection_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_selection_comment">Комметарий к заказу</label>
+            <input id="popup_selection_comment" type="text" name="text" autocomplete="none">
+          </div>
+        </div>
+        <div class="input-file">
+          <input id="selection_file" type="file" name="file">
+          <label for="selection_file">
+              <svg class="icon icon-Paperclip">
+                <use xlink:href="./assets/spritemap.svg#Paperclip"></use>
+              </svg>
+            <p>Прикрепить файл</p>
+          </label>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Отправить</div>
+      </div>
+      <div class="popup popup-order" id="popup-order">
+        <div class="popup__title">Заказать в 1 клик</div>
+        <div class="popup__order">
+          <div class="popup__order-img"><img src="./assets/images/image-sample.jpg" alt="img">
+          </div>
+          <div class="popup__order-title">Оптоволоконный лазерный станок  Tokagama TG-CM 1510</div>
+          <div class="popup__order-price">3 553 232 ₽
+            <div class="discount">3 850 600 ₽</div>
+          </div>
+          <div class="popup__order-qty qty-input">
+            <div class="qty qty-minus" disabled>
+                <svg class="icon icon-Minus">
+                  <use xlink:href="./assets/spritemap.svg#Minus"></use>
+                </svg>
+            </div>
+            <input type="text" name="qty" value="1" max-number="99">
+            <div class="qty qty-plus">
+                <svg class="icon icon-Plus">
+                  <use xlink:href="./assets/spritemap.svg#Plus"></use>
+                </svg>
+            </div>
+          </div>
+        </div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_order_name">Имя</label>
+            <input id="popup_order_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_order_phone">Номер телефона</label>
+            <input id="popup_order_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_order_email">Электронная почта</label>
+            <input id="popup_order_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_order_comment">Комметарий к заказу</label>
+            <input id="popup_order_comment" type="text" name="text" autocomplete="none">
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Заказать</div>
+      </div>
+      <div class="popup popup-callback" id="popup-callback">
+        <div class="popup__title">Заказать звонок</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_callback_name">Имя</label>
+            <input id="popup_callback_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_callback_phone">Номер телефона</label>
+            <input id="popup_callback_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Заказать звонок</div>
+      </div>
+      <div class="popup popup-sign-showroom" id="popup-sign-showroom">
+        <div class="popup__title">Записаться в демозал</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_sign-showroom_name">Имя</label>
+            <input id="popup_sign-showroom_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_sign-showroom_phone">Номер телефона</label>
+            <input id="popup_sign-showroom_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Оставить заявку</div>
+      </div>
+      <div class="popup popup-city" id="popup-city">
+        <div class="popup__title">Укажите ваш город</div>
+        <div class="popup__input">
+          <div class="input">
+            <input id="city-input" type="text" name="search-city" placeholder="Поиск города" autocomplete="none">
+              <svg class="icon icon-Search">
+                <use xlink:href="./assets/spritemap.svg#Search"></use>
+              </svg>
+          </div>
+          <ul id="city-list">
+            <li>Москва</li>
+            <li>Санкт-Петербург</li>
+            <li>Пермь</li>
+            <li>Уфа</li>
+            <li>Самара</li>
+            <li>Екатеринбург</li>
+            <li>Пермь</li>
+            <li>Уфа</li>
+            <li>Самара</li>
+            <li>Самара</li>
+            <li>Самара</li>
+            <li>Екатеринбург</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Popups::End-->
   </body>
 </html>

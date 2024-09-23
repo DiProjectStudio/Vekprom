@@ -737,3 +737,21 @@ $('#send-code').on('click', function () {
 
     startCountdown();
 });
+
+// Загрузка файла в форме заявки
+$('.input-file').on('change', (e) => {
+    $(e.currentTarget).find('p').text($(e.currentTarget).find('input')[0].files[0].name);
+});
+
+// Поиск городов
+$('#city-input').on('keyup', function () {
+    const input = $(this).val().toLowerCase();
+    $('#city-list li').each(function () {
+        const city = $(this).text().toLowerCase();
+        if (city.includes(input)) {
+            $(this).show(); // Показываем элемент, если он соответствует
+        } else {
+            $(this).hide(); // Скрываем элемент, если он не соответствует
+        }
+    });
+});

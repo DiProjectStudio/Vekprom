@@ -1,133 +1,330 @@
-#popup-auth-phone.popup.popup-auth-phone
+.popups-wrap
 
-    .popup__title Войти или&nbsp;зарегистрироваться
+    #popup-auth-phone.popup.popup-auth-phone
 
-    .popup__form
+        .popup__title Войти или&nbsp;зарегистрироваться
 
-        .input
-            label(for="popup_auth_phone") Номер телефона
-            input#popup_auth_phone(type="text" name="phone" autocomplete="off" data-phone-number)
-    
-    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+        .popup__form
 
-    .btn.btn--primary Продолжить
-
-#popup-auth-email.popup.popup-auth-email
-
-    .popup__title Войти или&nbsp;зарегистрироваться
-
-    .popup__form
-
-        .input
-            label(for="popup_email") Электронная почта
-            input#popup_email(type="email" name="email" autocomplete="off")
-    
-    .btn.btn--primary Продолжить
-
-#popup-auth-sms.popup.popup-auth-sms
-
-    .popup__title Введите код из SMS
-
-    .popup__toward.popup__toward--center
-        p SMS-сообщение с кодом подтверждения отправлено на номер 
-            b +7 (999) 123-45-67
-
-    .popup__form
-
-        .input-code
-            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
-            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
-            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
-            input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+            .input
+                label(for="popup_auth_phone") Номер телефона
+                input#popup_auth_phone(type="text" name="phone" autocomplete="none" data-phone-number)
         
-    #countdown.popup__count
-    #send-code.popup__send Отправить повторно
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
 
-    #form-submit
+        .btn.btn--primary Продолжить
 
-#popup-password.popup.popup-password
+    #popup-auth-email.popup.popup-auth-email
 
-    .popup__back
-        +svg('Chevron-left')
-        |Назад
+        .popup__title Войти или&nbsp;зарегистрироваться
 
-    .popup__title Введите пароль
+        .popup__form
 
-    .popup__toward
-        p Для почты 
-            span example@mail.ru
-
-    .popup__form
-    
-        .input.error
-            label(for="popup_reg_password") Пароль
-            .input-password
-                input#popup_reg_password(type="password" name="password" autocomplete="off")
-                .pass-eye
-                    include ../icons/Eye-open.svg
-            p Неверный пароль
+            .input
+                label(for="popup_email") Электронная почта
+                input#popup_email(type="email" name="email" autocomplete="none")
         
-    .btn.btn--primary Войти
+        .btn.btn--primary Продолжить
 
-#popup-registration-phone.popup.popup-registration-phone
+    #popup-auth-sms.popup.popup-auth-sms
 
-    .popup__title Регистрация
+        .popup__title Введите код из SMS
 
-    .popup__form
-    
-        .input.required
-            label(for="popup_reg_name2") Имя
-            input#popup_reg_name2(type="text" name="name" autocomplete="off")
+        .popup__toward.popup__toward--center
+            p SMS-сообщение с кодом подтверждения отправлено на номер 
+                b +7 (999) 123-45-67
+
+        .popup__form
+
+            .input-code
+                input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+                input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+                input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+                input(type="text" name="pin" maxlength="1" autocomplete="one-time-code")
+            
+        #countdown.popup__count
+        #send-code.popup__send Отправить повторно
+
+        #form-submit
+
+    #popup-password.popup.popup-password
+
+        .popup__back
+            +svg('Chevron-left')
+            |Назад
+
+        .popup__title Введите пароль
+
+        .popup__toward
+            p Для почты 
+                span example@mail.ru
+
+        .popup__form
         
-        .input.required
-            label(for="popup_reg_lastname2") Фамилия
-            input#popup_reg_lastname2(type="text" name="lastname" autocomplete="off")
-        
-        .input.required
-            label(for="popup_reg_phone2") Номер телефона
-            input#popup_reg_phone2(type="text" name="phone" autocomplete="off" data-phone-number)
-        
-        .input.required
-            label(for="popup_reg_email2") Электронная почта
-            input#popup_reg_email2(type="email" name="email" autocomplete="off")
-    
-    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
+            .input.error
+                label(for="popup_reg_password") Пароль
+                .input-password
+                    input#popup_reg_password(type="password" name="password" autocomplete="none")
+                    .pass-eye
+                        include ../icons/Eye-open.svg
+                p Неверный пароль
+            
+        .btn.btn--primary Войти
 
-    .btn.btn--primary Зарегистрироваться
+    #popup-registration-phone.popup.popup-registration-phone
 
-#popup-registration-email.popup.popup-registration-email
+        .popup__title Регистрация
 
-    .popup__back
-        +svg('Chevron-left')
-        |Назад
-
-    .popup__title Регистрация
-
-    .popup__form
-    
-        .input.required
-            label(for="popup_reg_name") Имя
-            input#popup_reg_name(type="text" name="name" autocomplete="off")
+        .popup__form
         
-        .input.required
-            label(for="popup_reg_lastname") Фамилия
-            input#popup_reg_lastname(type="text" name="lastname" autocomplete="off")
+            .input.required
+                label(for="popup_reg_name2") Имя
+                input#popup_reg_name2(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_reg_lastname2") Фамилия
+                input#popup_reg_lastname2(type="text" name="lastname" autocomplete="none")
+            
+            .input.required
+                label(for="popup_reg_phone2") Номер телефона
+                input#popup_reg_phone2(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input.required
+                label(for="popup_reg_email2") Электронная почта
+                input#popup_reg_email2(type="email" name="email" autocomplete="none")
         
-        .input.required
-            label(for="popup_reg_phone") Номер телефона
-            input#popup_reg_phone(type="text" name="phone" autocomplete="off" data-phone-number)
-        
-        .input
-            label(for="popup_reg_email") Email
-            input#popup_reg_email(type="email" name="email" autocomplete="off")
-        
-        .input.required
-            label(for="popup_reg_password2") Пароль
-            .input-password
-                input#popup_reg_password2(type="password" name="password" autocomplete="off")
-                .pass-eye
-                    include ../icons/Eye-open.svg
-    
-    .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
 
-    .btn.btn--primary Зарегистрироваться
+        .btn.btn--primary Зарегистрироваться
+
+    #popup-registration-email.popup.popup-registration-email
+
+        .popup__back
+            +svg('Chevron-left')
+            |Назад
+
+        .popup__title Регистрация
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_reg_name") Имя
+                input#popup_reg_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_reg_lastname") Фамилия
+                input#popup_reg_lastname(type="text" name="lastname" autocomplete="none")
+            
+            .input.required
+                label(for="popup_reg_phone") Номер телефона
+                input#popup_reg_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input
+                label(for="popup_reg_email") Email
+                input#popup_reg_email(type="email" name="email" autocomplete="none")
+            
+            .input.required
+                label(for="popup_reg_password2") Пароль
+                .input-password
+                    input#popup_reg_password2(type="password" name="password" autocomplete="none")
+                    .pass-eye
+                        include ../icons/Eye-open.svg
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных
+
+        .btn.btn--primary Зарегистрироваться
+
+    #popup-request.popup.popup-request
+
+        .popup__title Форма заявки
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_request_name") Имя
+                input#popup_request_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_request_phone") Номер телефона
+                input#popup_request_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input.required
+                label(for="popup_request_email") Электронная почта
+                input#popup_request_email(type="email" name="email" autocomplete="none")
+
+            .input
+                label(for="popup_request_comment") Комметарий к заказу
+                input#popup_request_comment(type="text" name="text" autocomplete="none")
+            
+        .input-file
+            input#request_file(type="file", name="file")
+            label(for="request_file")
+                +svg('Paperclip')
+                p Прикрепить файл
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Отправить
+
+    #popup-contact.popup.popup-contact
+
+        .popup__title Напишите нам
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_contact_name") Имя
+                input#popup_contact_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_contact_phone") Номер телефона
+                input#popup_contact_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input.required
+                label(for="popup_contact_email") Электронная почта
+                input#popup_contact_email(type="email" name="email" autocomplete="none")
+
+            .input
+                label(for="popup_contact_comment") Комметарий к заказу
+                input#popup_contact_comment(type="text" name="text" autocomplete="none")
+            
+        .input-file
+            input#contact_file(type="file", name="file")
+            label(for="contact_file")
+                +svg('Paperclip')
+                p Прикрепить файл
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Отправить
+
+    #popup-selection.popup.popup-selection
+
+        .popup__title Подобрать станок
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_selection_name") Имя
+                input#popup_selection_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_selection_phone") Номер телефона
+                input#popup_selection_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input.required
+                label(for="popup_selection_email") Электронная почта
+                input#popup_selection_email(type="email" name="email" autocomplete="none")
+
+            .input
+                label(for="popup_selection_comment") Комметарий к заказу
+                input#popup_selection_comment(type="text" name="text" autocomplete="none")
+            
+        .input-file
+            input#selection_file(type="file", name="file")
+            label(for="selection_file")
+                +svg('Paperclip')
+                p Прикрепить файл
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Отправить
+
+    #popup-order.popup.popup-order
+
+        .popup__title Заказать в 1 клик
+
+        .popup__order
+
+            .popup__order-img
+                +img('image-sample.jpg')
+            
+            .popup__order-title Оптоволоконный лазерный станок  Tokagama TG-CM 1510
+            .popup__order-price 3 553 232 ₽
+                .discount 3 850 600 ₽
+            .popup__order-qty.qty-input
+                .qty.qty-minus(disabled)
+                    +svg('Minus')
+                input(type="text" name="qty" value="1" max-number="99")
+                .qty.qty-plus
+                    +svg('Plus')
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_order_name") Имя
+                input#popup_order_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_order_phone") Номер телефона
+                input#popup_order_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+            
+            .input.required
+                label(for="popup_order_email") Электронная почта
+                input#popup_order_email(type="email" name="email" autocomplete="none")
+
+            .input
+                label(for="popup_order_comment") Комметарий к заказу
+                input#popup_order_comment(type="text" name="text" autocomplete="none")
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Заказать
+
+    #popup-callback.popup.popup-callback
+
+        .popup__title Заказать звонок
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_callback_name") Имя
+                input#popup_callback_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_callback_phone") Номер телефона
+                input#popup_callback_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Заказать звонок
+
+    #popup-sign-showroom.popup.popup-sign-showroom
+
+        .popup__title Записаться в демозал
+
+        .popup__form
+        
+            .input.required
+                label(for="popup_sign-showroom_name") Имя
+                input#popup_sign-showroom_name(type="text" name="name" autocomplete="none")
+            
+            .input.required
+                label(for="popup_sign-showroom_phone") Номер телефона
+                input#popup_sign-showroom_phone(type="text" name="phone" autocomplete="none" data-phone-number)
+        
+        .agreement Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a>
+
+        .btn.btn--primary Оставить заявку
+
+    #popup-city.popup.popup-city
+
+        .popup__title Укажите ваш город
+
+        .popup__input
+            .input
+                input#city-input(type="text" name="search-city" placeholder="Поиск города" autocomplete="none")
+                +svg('Search')
+            ul#city-list
+                li Москва
+                li Санкт-Петербург
+                li Пермь
+                li Уфа
+                li Самара
+                li Екатеринбург
+                li Пермь
+                li Уфа
+                li Самара
+                li Самара
+                li Самара
+                li Екатеринбург

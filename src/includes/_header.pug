@@ -38,13 +38,13 @@ block header
                     ul.header__bar
 
                         li.header__bar-item
-                            a.header__callback Заказать звонок
+                            a.header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
 
                         li.header__bar-item
                             a.header__phone(href="tel:+74952151645") +7 (495) 215-16-45
 
                         li.header__bar-item
-                            .header__location
+                            .header__location(data-src="#popup-city" data-fancybox)
                                 +svg('Map')
                                 p Москва
 
@@ -68,7 +68,7 @@ block header
                             .input-search__clear
                                 +svg('X')
 
-                button.header__selection.btn.btn--primary Подобрать станок
+                button.header__selection.btn.btn--primary(data-src="#popup-selection" data-fancybox) Подобрать станок
 
                 .header__icons
                     a(href="#").header__icons-item.header-home
@@ -96,7 +96,7 @@ block header
                             +svg('Basket')
                         p Корзина
 
-                    a(href="#").header__icons-item.header-user
+                    a(href="#popup-auth-phone" data-fancybox).header__icons-item.header-user
                         .icon-item
                             +svg('User')
                         p Войти
@@ -660,104 +660,6 @@ block header
                     .header__catalog-banner-img
                         +img('banner-bg-image.jpg')
                     p Подберем станок под ваши задачи и бюджет
-                    .btn.btn-promo.btn--primary
+                    .btn.btn-promo.btn--primary(data-src="#popup-selection" data-fancybox)
                         +svg('Arrow-narrow-up-right')
                         |Подобрать станок
-
-        //- #mobile-menu.mobile-menu
-
-            .header__search
-                form
-                    .input-search
-                        button(type="submit" aria-label="Поиск").search-icon
-                            +svg('Search')
-                        input#header_search(type="search", name="header_search", placeholder="Поиск по сайту", autocomplete="off")
-
-            .header__category
-                .header__category-item
-                    a(href="#")
-                        +svg('saw')
-                        p Металлообработка
-                    .header__subcategory
-                        a(href="#" data-count=123) Сверление и обработка отверстий
-                        a(href="#" data-count=123) Металлорежущий инструмент
-                        a(href="#" data-count=123) Обработка кромки, снятие фаски
-                        a(href="#" data-count=123) Шлифовка и полировка
-                        a(href="#" data-count=123) Труборезы
-                        a(href="#" data-count=123) Обработка профиля
-                        a(href="#" data-count=123) Фрезерные станки
-                        a(href="#" data-count=123) Токарные станки
-
-                .header__category-item
-                    a(href="#")
-                        +svg('laser')
-                        p Лазерное оборудование
-
-                .header__category-item
-                    a(href="#")
-                        +svg('press')
-                        p Прессовое оборудование
-
-                .header__category-item
-                    a(href="#")
-                        +svg('welder')
-                        p Сварочное оборудование
-
-                .header__category-item
-                    a(href="#")
-                        +svg('helmet')
-                        p Строительное оборудование
-
-                .header__category-item
-                    a(href="#")
-                        +svg('crane')
-                        p Инструмент
-
-                .header__category-item
-                    a(href="#")
-                        +svg('gear')
-                        p Запасные части
-
-            nav.header__nav
-                ul.header__menu
-                    li.header__menu-item.has-child
-                        a.header__menu-link О компании
-                        ul.submenu
-                            li
-                                a(href="#") О компании
-                            li
-                                a(href="#") Пресс-центр
-                            li
-                                a(href="#") Проекты
-                            li
-                                a(href="#") Лицензии
-                            li
-                                a(href="#") Отзывы
-
-                    li.header__menu-item
-                        a.header__menu-link(href="#") Контакты
-
-                    li.header__menu-item
-                        a.header__menu-link(href="#") Вакансии
-
-                    li.header__menu-item
-                        a.header__menu-link(href="#") Сервис и поддержка
-
-                    li.header__menu-item
-                        a.header__menu-link(href="#") Демозал
-                        +img('badge-3d.svg')
-
-                ul.header__bar
-
-                    li.header__bar-item
-                        a.header__callback Заказать звонок
-
-                    li.header__bar-item
-                        a.header__phone(href="tel:+74952151645") +7 (495) 215-16-45
-
-                    li.header__bar-item
-                        .header__location
-                            +svg('Map')
-                            p Москва
-
-            button.header__selection.btn.btn--primary Подобрать станок

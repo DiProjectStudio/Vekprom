@@ -7,6 +7,94 @@ block main
 
     section
 
+        style.
+            header, footer {
+                display: none;
+            }
+
+            body {
+                padding: 50px;
+            }
+
+            .page-popups {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .item {
+                padding: 16px;
+                background: #535353;
+                color: #fff;
+                text-align: center;
+                border-radius: 16px;
+            }
+
+            .btn {
+                height: 48px;
+            }
+
+            code {
+                margin-top: 10px;
+                display: inline-block;
+            }
+
         .container
 
-            .btn.btn--primary(data-src="#popup-auth-sms" data-fancybox style="width: 250px; height: 48px") POPUP
+            .page-popups
+
+                .item
+                    .btn.btn--primary(onclick="popupSuccess();") Попап успешной отправки
+                    code popupSuccess();
+
+                .item
+                    .btn.btn--primary(data-src="#popup-auth-phone" data-fancybox) Войти или зарегистрироваться по телефону
+                    code popup("#popup-auth-phone");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-auth-email" data-fancybox) Войти или зарегистрироваться по e-mail
+                    code popup("#popup-auth-email");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-auth-sms" data-fancybox) Введите код из SMS
+                    code popup("#popup-auth-sms");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-password" data-fancybox) Введите пароль
+                    code popup("#popup-password");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-registration-phone" data-fancybox) Регистрация после ввода номера телефона
+                    code popup("#popup-registration-phone");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-registration-email" data-fancybox) Регистрация после ввода e-mail
+                    code popup("#popup-registration-email");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-request" data-fancybox) Форма заявки
+                    code popup("#popup-request");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-contact" data-fancybox) Напишите нам
+                    code popup("#popup-contact");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-selection" data-fancybox) Подобрать станок
+                    code popup("#popup-selection");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-order" data-fancybox) Заказать в 1 клик
+                    code popup("#popup-order");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-callback" data-fancybox) Заказать звонок
+                    code popup("#popup-callback");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-sign-showroom" data-fancybox) Записаться в демозал
+                    code popup("#popup-sign-showroom");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-city" data-fancybox) Выбор города
+                    code popup("#popup-city");

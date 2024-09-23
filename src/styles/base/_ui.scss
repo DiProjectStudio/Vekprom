@@ -779,6 +779,29 @@ video {
     position: relative;
 }
 
+.input-file {
+    display: flex;
+
+    & input {
+        display: none;
+    }
+
+    & label {
+        display: inline-flex;
+        align-items: center;
+        font: var(--font-body-m);
+        user-select: none;
+        cursor: pointer;
+    }
+
+    & .icon {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+        stroke: var(--fg-default);
+    }
+}
+
 .pass-eye {
     position: absolute;
     right: 20px;
@@ -800,7 +823,6 @@ video {
 
     @include breakpoint(lg) {
         margin-top: 16px;
-        max-width: 390px;
     }
 
     & a {
