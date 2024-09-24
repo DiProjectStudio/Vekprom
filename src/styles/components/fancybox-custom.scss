@@ -39,6 +39,10 @@
     max-width: 800px;
 }
 
+.fancybox__slide {
+    height: calc(100vh - 330px);
+}
+
 .is-compact .fancybox__footer {
     margin-top: 20px;
     background: none;

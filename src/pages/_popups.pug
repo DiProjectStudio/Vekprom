@@ -8,8 +8,12 @@ block main
     section
 
         style.
-            header, footer {
+            header, footer, .page-header, .section-sidebar {
                 display: none;
+            }
+
+            .section-sample__inner, .section-content-wrapper {
+                display: block!important;
             }
 
             body {
@@ -80,6 +84,10 @@ block main
                     code popup("#popup-contact");
 
                 .item
+                    .btn.btn--primary(data-src="#popup-review" data-fancybox) Оставьте свой отзыв
+                    code popup("#popup-review");
+
+                .item
                     .btn.btn--primary(data-src="#popup-selection" data-fancybox) Подобрать станок
                     code popup("#popup-selection");
 
@@ -98,3 +106,7 @@ block main
                 .item
                     .btn.btn--primary(data-src="#popup-city" data-fancybox) Выбор города
                     code popup("#popup-city");
+
+                .item
+                    .btn.btn--primary(data-src="#popup-remove" data-fancybox) Удаление товара
+                    code popup("#popup-remove");

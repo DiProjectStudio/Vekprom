@@ -54,6 +54,10 @@
             @include breakpoint(lg) {
                 font: var(--font-body-m);
             }
+
+            & span {
+                color: var(--fg-soft, #9398a0);
+            }
         }
     }
 
@@ -365,6 +369,82 @@
             @include breakpoint(lg) {
                 font: var(--font-body-m-strong);
             }
+        }
+    }
+}
+
+.popup-active-remove {
+    & .fancybox__carousel {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+
+    & .fancybox__slide::before,
+    & .fancybox__slide::after {
+        @include breakpointMax(lg) {
+            content: none;
+        }
+    }
+
+    & .popup {
+        padding: 20px 16px 16px;
+        max-width: 100%;
+
+        @include breakpointMax(lg) {
+            margin-top: auto;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        @include breakpoint(lg) {
+            padding: 16px;
+            max-width: 562px;
+        }
+
+        & h2 {
+            margin-bottom: 24px;
+            font: var(--font-heading-h2);
+            letter-spacing: var(--lp-heading-h2);
+            color: var(--fg-default, #283142);
+
+            @include breakpoint(lg) {
+                padding: 7px 12px;
+            }
+        }
+
+        & p {
+            margin-bottom: 22px;
+            max-width: 296px;
+            font: var(--font-body-m);
+            color: var(--fg-soft, #9398a0);
+
+            @include breakpoint(lg) {
+                margin-bottom: 24px;
+                padding: 0 12px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    & .fancybox__footer {
+        margin-top: 0;
+    }
+}
+
+.popup-remove__btn {
+    @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+    }
+
+    & .btn {
+        margin-top: 10px;
+
+        @include breakpoint(lg) {
+            margin: 0;
+            height: 48px;
         }
     }
 }

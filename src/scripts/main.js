@@ -1,6 +1,6 @@
 // Import Plugins
 import Inputmask from 'inputmask';
-import '../../node_modules/jquery-pincode-autotab/dist/js/jquery-pincode-autotab.js';
+import './includes/jquery-pincode-autotab.js';
 
 // Import Scripts
 import { getBrowserName } from './includes/checkbrowser.js';
@@ -334,14 +334,6 @@ $('.qty-input input').on('input', (e) => {
         $input.parent().find('.qty-minus').removeAttr('disabled');
     } else {
         $input.parent().find('.qty-minus').attr('disabled', true);
-    }
-});
-
-// Для выбора модели (карточка товара)
-$('.product__type-item').on('click', (e) => {
-    if (!$(e.currentTarget).hasClass('selected')) {
-        $(e.currentTarget).parent().find('.product__type-item').removeClass('selected');
-        $(e.currentTarget).addClass('selected');
     }
 });
 

@@ -21,7 +21,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script type="module" src="./assets/js/vendor.min.js"></script>
-    <script type="module" src="./assets/js/jquery.min.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
     <link rel="stylesheet" href="./assets/css/plugins.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
@@ -559,7 +558,7 @@
     <!-- Main::Start-->
     <main>
       <section>
-        <style>footer,header{display:none}body{padding:5rem}.page-popups{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}.item{background:#535353;border-radius:16px;color:#fff;padding:16px;text-align:center}.btn{height:4.8rem}code{display:inline-block;margin-top:10px}</style>
+        <style>.page-header,.section-sidebar,footer,header{display:none}.section-content-wrapper,.section-sample__inner{display:block!important}body{padding:5rem}.page-popups{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}.item{background:#535353;border-radius:16px;color:#fff;padding:16px;text-align:center}.btn{height:4.8rem}code{display:inline-block;margin-top:10px}</style>
         <div class="container">
           <div class="page-popups">
             <div class="item">
@@ -590,6 +589,9 @@
               <div class="btn btn--primary" data-src="#popup-contact" data-fancybox>Напишите нам</div><code>popup("#popup-contact");</code>
             </div>
             <div class="item">
+              <div class="btn btn--primary" data-src="#popup-review" data-fancybox>Оставьте свой отзыв</div><code>popup("#popup-review");</code>
+            </div>
+            <div class="item">
               <div class="btn btn--primary" data-src="#popup-selection" data-fancybox>Подобрать станок</div><code>popup("#popup-selection");</code>
             </div>
             <div class="item">
@@ -603,6 +605,9 @@
             </div>
             <div class="item">
               <div class="btn btn--primary" data-src="#popup-city" data-fancybox>Выбор города</div><code>popup("#popup-city");</code>
+            </div>
+            <div class="item">
+              <div class="btn btn--primary" data-src="#popup-remove" data-fancybox>Удаление товара</div><code>popup("#popup-remove");</code>
             </div>
           </div>
         </div>
@@ -681,7 +686,7 @@
       <div class="popup popup-auth-sms" id="popup-auth-sms">
         <div class="popup__title">Введите код из SMS</div>
         <div class="popup__toward popup__toward--center">
-          <p>SMS-сообщение с кодом подтверждения отправлено на номер <b>+7 (999) 123-45-67</b></p>
+          <p>SMS-сообщение с кодом подтверждения отправлено на номер<b>+7 (999) 123-45-67</b></p>
         </div>
         <div class="popup__form">
           <div class="input-code">
@@ -703,7 +708,7 @@
         </div>
         <div class="popup__title">Введите пароль</div>
         <div class="popup__toward">
-          <p>Для почты <span>example@mail.ru</span></p>
+          <p>Для почты<span>example@mail.ru</span></p>
         </div>
         <div class="popup__form">
           <div class="input error">
@@ -851,6 +856,37 @@
         <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
         <div class="btn btn--primary">Отправить</div>
       </div>
+      <div class="popup popup-review" id="popup-review">
+        <div class="popup__title">Оставьте свой отзыв</div>
+        <div class="popup__form">
+          <div class="input required">
+            <label for="popup_review_name">Имя</label>
+            <input id="popup_review_name" type="text" name="name" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_review_company">Ваша компания</label>
+            <input id="popup_review_company" type="text" name="company" autocomplete="none">
+          </div>
+          <div class="input required">
+            <label for="popup_review_phone">Номер телефона</label>
+            <input id="popup_review_phone" type="text" name="phone" autocomplete="none" data-phone-number>
+          </div>
+          <div class="input required">
+            <label for="popup_review_email">Электронная почта</label>
+            <input id="popup_review_email" type="email" name="email" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_review_text">Ваш отзыв</label>
+            <input id="popup_review_text" type="text" name="text" autocomplete="none">
+          </div>
+          <div class="input">
+            <label for="popup_review_link">Ссылка на видео <span>(YouTube, ВК, RuTube)</span></label>
+            <input id="popup_review_link" type="text" name="text" autocomplete="none">
+          </div>
+        </div>
+        <div class="agreement">Нажимая на кнопку, я соглашаюсь с <a href="/policy/">Политикой конфиденциальности</a></div>
+        <div class="btn btn--primary">Отправить</div>
+      </div>
       <div class="popup popup-selection" id="popup-selection">
         <div class="popup__title">Подобрать станок</div>
         <div class="popup__form">
@@ -980,6 +1016,14 @@
             <li>Самара</li>
             <li>Екатеринбург</li>
           </ul>
+        </div>
+      </div>
+      <div class="popup popup-remove" id="popup-remove">
+        <h2>Удаление товара</h2>
+        <p>Удалить выбранный товар? Действие нельзя отменить</p>
+        <div class="popup-remove__btn">
+          <div class="btn btn--red">Удалить</div>
+          <div class="btn btn--tertialy" onclick="Fancybox.close();">Оставить</div>
         </div>
       </div>
     </div>

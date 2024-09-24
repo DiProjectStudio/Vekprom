@@ -281,6 +281,11 @@ video {
     }
 }
 
+.btn--red {
+    background: var(--error-400, #e14453);
+    color: var(--accent-on-accent, #fff);
+}
+
 .btn-promo {
     padding: 6px 6px 6px 12px;
     display: inline-flex;
