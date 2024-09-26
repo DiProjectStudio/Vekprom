@@ -34,3 +34,5 @@
 -   [Доставка](https://diprojectstudio.github.io/Vekprom/dist/delivery)
 -   [Отзывы](https://diprojectstudio.github.io/Vekprom/dist/reviews-page)
 -   [Контакты](https://diprojectstudio.github.io/Vekprom/dist/contacts)
+
+-   [Попапы](https://diprojectstudio.github.io/Vekprom/dist/_popups_)

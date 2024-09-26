@@ -1,205 +1,208 @@
 mixin breadcrumbs(title, ...items)
 
-    .page-header
+    if page != 'page-demo'
 
-        .breadcrumbs
+        .page-header
 
-            .breadcrumbs-wrapper
+            .breadcrumbs
 
-                .breadcrumbs-item
-                    a(href='/') Главная
+                .breadcrumbs-wrapper
 
-                each item in items
+                    .breadcrumbs-item
+                        a(href='/') Главная
 
-                    if item == items[items.length - 1]
-                        span.breadcrumbs-separator /
-                        .breadcrumbs-item
-                            span= item
+                    each item in items
 
-                    else
-                        span.breadcrumbs-separator /
-                        .breadcrumbs-item
-                            a(href="#")= item
+                        if item == items[items.length - 1]
+                            span.breadcrumbs-separator /
+                            .breadcrumbs-item
+                                span= item
 
-        if page == 'page-catalog'
+                        else
+                            span.breadcrumbs-separator /
+                            .breadcrumbs-item
+                                a(href="#")= item
 
-            h1.main-title= title
-                span (34)
-
-            .catalog-header
-
-                .filter-search
-                    form(action="/")
-                        .input-search
-                            button(type="submit" aria-label="Поиск").search-icon
-                                +svg('Search')
-                            input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
-
-                .filter-btn.js-filter-btn
-                    +svg('Filter-edit')
-
-                .sorting
-                    .sorting__btn.js-sorting
-                        +svg('Arrow-switch-horizontal')
-                        | Сначала новые
-                    .sorting__dropdown
-                        .radio
-                            input#sort-new(type="radio" name="sorting" checked)
-                            label(for="sort-new") Сначала новые
-                        .radio
-                            input#sort-old(type="radio" name="sorting")
-                            label(for="sort-old") Сначала старые
-
-                .filter-props
-                    .filter-props__item В наличии
-                        .filter-props__remove
-                            +svg('Close')
-                    .filter-props__item Металлорежущий инструмент
-                        .filter-props__remove
-                            +svg('Close')
-                    .filter-props__item.filter-reset Сбросить фильтры
-                        .filter-props__remove
-                            +svg('Close')
-
-                .view-style
-                    .view-style__item.js-view.active
-                        +svg('tile')
-                    .view-style__item.js-view.js-table-list
-                        +svg('list-line')
-
-        if page == 'page-compare'
-
-            .compare-header-wrap
-                h1.main-title= title
-                    span (13)
-
-                .clear-btn
-                    +svg('Trash')
-                    |Очистить все
-
-            .catalog-header
-
-                .compare-categories
-                    .swiper
-                        .swiper-wrapper
-                            .compare-category.swiper-slide.active Вертикально-сверлильные станки
-                                span 4
-                            .compare-category.swiper-slide Вертикально-сверлильные станки
-                                span 3
-                            .compare-category.swiper-slide Вертикально-сверлильные станки
-                                span 3
-                            .compare-category.swiper-slide Вертикально-сверлильные станки
-                                span 3
-
-        else if page == 'news-page'
-
-            h1.main-title= title
-                span (34)
-
-            .catalog-header
-
-                .sorting
-                    .sorting__btn.js-sorting
-                        +svg('Arrow-switch-horizontal')
-                        | Сначала новые
-                    .sorting__dropdown
-                        .radio
-                            input#sort-new(type="radio" name="sorting" checked)
-                            label(for="sort-new") Сначала новые
-                        .radio
-                            input#sort-old(type="radio" name="sorting")
-                            label(for="sort-old") Сначала старые
-
-        else if page == 'page-projects'
-
-            h1.main-title= title
-                span (80)
-
-            .catalog-header
-
-                .sorting
-                    .sorting__btn.js-sorting
-                        +svg('Arrow-switch-horizontal')
-                        | Сначала новые
-                    .sorting__dropdown
-                        .radio
-                            input#sort-new(type="radio" name="sorting" checked)
-                            label(for="sort-new") Сначала новые
-                        .radio
-                            input#sort-old(type="radio" name="sorting")
-                            label(for="sort-old") Сначала старые
-
-        else if page == 'page-search'
-
-            h1.main-title= title
-
-            .catalog-header
-
-                .result <span>1234</span> товара в <span>4</span> категориях
-
-                .sorting
-                    .sorting__btn.js-sorting
-                        +svg('Arrow-switch-horizontal')
-                        | Сначала популярные
-                    .sorting__dropdown
-                        .radio
-                            input#sort-new(type="radio" name="sorting" checked)
-                            label(for="sort-new") Сначала популярные
-                        .radio
-                            input#sort-old(type="radio" name="sorting")
-                            label(for="sort-old") Сначала старые
-
-                .view-style
-                    .view-style__item.js-view.active
-                        +svg('tile')
-                    .view-style__item.js-view.js-table-list
-                        +svg('list-line')
-
-        else if page == 'brands-page'
-
-            h1.main-title= title
-
-
-            .brands-header
-
-                .filter-btn.js-filter-btn
-                    +svg('Filter-edit')
-
-
-
-        else if page == 'project-page'
-
-            h1.main-title= title
-
-            .messengers
-                .messengers-wrapper
-
-                    .messenger
-                        +svg('TG')
-                    .messenger
-                        +svg('WhatsApp')
-
-        else if page == 'news-inner-page'
-
-            h1.main-title= title
-
-            .date
-                .tag-date 24 июня
-
-            .messengers
-                .messengers-wrapper
-
-                    .messenger
-                        +svg('TG')
-                    .messenger
-                        +svg('WhatsApp')
-        else if page == 'licenses-page'
-
-            h1.main-title= title
-                span (34)
-
-        else
-
-            if (page != 'page-product' && page != 'page-cart')
+            if page == 'page-catalog'
 
                 h1.main-title= title
+                    span (34)
+
+                .catalog-header
+
+                    .filter-search
+                        form(action="/")
+                            .input-search
+                                button(type="submit" aria-label="Поиск").search-icon
+                                    +svg('Search')
+                                input(type="search" name="search" placeholder="Поиск по категории" autocomplete="off")
+
+                    .filter-btn.js-filter-btn
+                        +svg('Filter-edit')
+
+                    .sorting
+                        .sorting__btn.js-sorting
+                            +svg('Arrow-switch-horizontal')
+                            | Сначала новые
+                        .sorting__dropdown
+                            .radio
+                                input#sort-new(type="radio" name="sorting" checked)
+                                label(for="sort-new") Сначала новые
+                            .radio
+                                input#sort-old(type="radio" name="sorting")
+                                label(for="sort-old") Сначала старые
+
+                    .filter-props
+                        .filter-props__item В наличии
+                            .filter-props__remove
+                                +svg('Close')
+                        .filter-props__item Металлорежущий инструмент
+                            .filter-props__remove
+                                +svg('Close')
+                        .filter-props__item.filter-reset Сбросить фильтры
+                            .filter-props__remove
+                                +svg('Close')
+
+                    .view-style
+                        .view-style__item.js-view.active
+                            +svg('tile')
+                        .view-style__item.js-view.js-table-list
+                            +svg('list-line')
+
+            if page == 'page-compare'
+
+                .compare-header-wrap
+                    h1.main-title= title
+                        span (13)
+
+                    .clear-btn
+                        +svg('Trash')
+                        |Очистить все
+
+                .catalog-header
+
+                    .compare-categories
+                        .swiper
+                            .swiper-wrapper
+                                .compare-category.swiper-slide.active Вертикально-сверлильные станки
+                                    span 4
+                                .compare-category.swiper-slide Вертикально-сверлильные станки
+                                    span 3
+                                .compare-category.swiper-slide Вертикально-сверлильные станки
+                                    span 3
+                                .compare-category.swiper-slide Вертикально-сверлильные станки
+                                    span 3
+
+            else if page == 'page-news'
+
+                h1.main-title= title
+                    span (34)
+
+                .catalog-header
+
+                    .sorting
+                        .sorting__btn.js-sorting
+                            +svg('Arrow-switch-horizontal')
+                            | Сначала новые
+                        .sorting__dropdown
+                            .radio
+                                input#sort-new(type="radio" name="sorting" checked)
+                                label(for="sort-new") Сначала новые
+                            .radio
+                                input#sort-old(type="radio" name="sorting")
+                                label(for="sort-old") Сначала старые
+
+            else if page == 'page-projects'
+
+                h1.main-title= title
+                    span (80)
+
+                .catalog-header
+
+                    .sorting
+                        .sorting__btn.js-sorting
+                            +svg('Arrow-switch-horizontal')
+                            | Сначала новые
+                        .sorting__dropdown
+                            .radio
+                                input#sort-new(type="radio" name="sorting" checked)
+                                label(for="sort-new") Сначала новые
+                            .radio
+                                input#sort-old(type="radio" name="sorting")
+                                label(for="sort-old") Сначала старые
+
+            else if page == 'page-search'
+
+                h1.main-title= title
+
+                .catalog-header
+
+                    .result <span>1234</span> товара в <span>4</span> категориях
+
+                    .sorting
+                        .sorting__btn.js-sorting
+                            +svg('Arrow-switch-horizontal')
+                            | Сначала популярные
+                        .sorting__dropdown
+                            .radio
+                                input#sort-new(type="radio" name="sorting" checked)
+                                label(for="sort-new") Сначала популярные
+                            .radio
+                                input#sort-old(type="radio" name="sorting")
+                                label(for="sort-old") Сначала старые
+
+                    .view-style
+                        .view-style__item.js-view.active
+                            +svg('tile')
+                        .view-style__item.js-view.js-table-list
+                            +svg('list-line')
+
+            else if page == 'page-brands'
+
+                h1.main-title= title
+
+
+                .brands-header
+
+                    .filter-btn.js-filter-btn
+                        +svg('Filter-edit')
+
+
+
+            else if page == 'page-project'
+
+                h1.main-title= title
+
+                .messengers
+                    .messengers-wrapper
+
+                        .messenger
+                            +svg('TG')
+                        .messenger
+                            +svg('WhatsApp')
+
+            else if page == 'page-news-inner'
+
+                h1.main-title= title
+
+                .date
+                    .tag-date 24 июня
+
+                .messengers
+                    .messengers-wrapper
+
+                        .messenger
+                            +svg('TG')
+                        .messenger
+                            +svg('WhatsApp')
+                            
+            else if page == 'page-licenses'
+
+                h1.main-title= title
+                    span (34)
+
+            else
+
+                if (page != 'page-catalog' && page != 'page-product' && page != 'page-cart')
+
+                    h1.main-title= title

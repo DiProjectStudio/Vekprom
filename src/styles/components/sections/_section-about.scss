@@ -95,7 +95,6 @@
 }
 
 .about-banner {
-    padding: 10px;
     position: relative;
     display: flex;
     align-items: flex-start;
@@ -109,14 +108,17 @@
     }
 
     @include breakpoint(md) {
-        padding: 16px;
         height: 420px;
     }
 
     @include breakpoint(lg) {
         margin: 0 32px;
-        padding: 32px;
         height: 756px;
+    }
+
+    & iframe {
+        height: 600px;
+        border-radius: 12px;
     }
 }
 

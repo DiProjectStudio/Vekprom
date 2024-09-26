@@ -86,6 +86,8 @@
 }
 
 .filter__item {
+    overflow: hidden;
+
     & label span {
         margin-left: 5px;
         color: var(--fg-muted, #c9cbd0);

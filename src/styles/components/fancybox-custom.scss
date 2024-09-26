@@ -39,7 +39,7 @@
     max-width: 800px;
 }
 
-.fancybox__slide {
+body:not(.popup-active) .fancybox__slide {
     height: calc(100vh - 330px);
 }
 

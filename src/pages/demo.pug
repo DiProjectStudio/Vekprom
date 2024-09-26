@@ -1,0 +1,108 @@
+extends /layout/layout
+
+block title
+    - var title = 'Страница демозал'
+    - var page = 'page-demo'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Демозал', 'Демозал')
+
+    section.about.showroom-about
+        .container
+            .about-wrapper
+                .about-banner
+
+                    .about-banner__image
+                        +img('banner-img.jpg')
+
+                    .about-banner__head
+
+                        .about-banner__title.title Демозал площадью более 3000 м2
+
+                        .about-banner__link.btn.btn--white Смотреть видео
+                            +svg('Play')
+
+    section.equipment.general-list-section
+        .container
+            .general-list__inner
+                .general-list__inner-title 120+ единиц оборудования в одном большом зале
+                .general-list__inner-list
+                    ul
+                        li металлообрабатывающее оборудование
+                        li cтанки с ЧПУ
+                        li лазерные маркираторы
+                        li сварочное оборудование
+                        li коллаборативные роботы - обрабатывающий инструмент
+                        li строительное оборудование
+                .general-list__inner-btn.btn.btn-promo.btn--white
+                    +svg('Arrow-narrow-up-right')
+                    | Записаться на просмотр
+
+
+    section.about.showroom-tour
+        .container
+            .about-wrapper
+                .about-wrapper__title 3D-тур по демозалу
+                .about-banner
+
+                    .about-banner__image
+                        +img('banner-img.jpg')
+                    .about-banner__text 3D тур
+
+    section.section-slider.showroom-slider
+
+        .container
+
+            .head-block
+
+                .title В демозале представлены
+
+            .slider
+
+                .swiper.main-swiper
+
+                    .swiper-wrapper
+
+                        include ../components/_card-white
+                        .swiper-slide.slider__item
+                            +card
+
+                        .swiper-slide.slider__item
+                            +card('Под заказ')
+
+                        .swiper-slide.slider__item
+                            +card
+
+                        .swiper-slide.slider__item
+                            +card('Под заказ')
+
+    section.section-banner.showroom-banner
+
+        .container
+
+            .banner
+
+                .banner__img
+                    +img('banner-img.jpg')
+                .banner__title Запишитесь на демонстрацию оборудования
+                .banner__wrap
+                    .about-banner__contacts
+                        .about-banner__contacts-item.about-banner__contacts-item--address
+                            .about-banner__contacts-item-icon
+                                +svg('Map')
+                            .about-banner__contacts-info
+                                p Московская область<br>Раменский городской округ<br>поселок Спартак, с48/4
+                                a.about-banner__contacts-info-link(href="#") Смотреть на карте
+                                    +svg('Arrow-narrow-up-right')
+                        .about-banner__contacts-item.about-banner__contacts-item--worktime
+                            .about-banner__contacts-item-icon
+                                +svg('Clock')
+                            .about-banner__contacts-info
+                                p Пн-Пт 09:00-18:00
+                                a(href="tel:+74952606090") + 7 (495) 260 60 90
+
+                        .about-banner__btn.btn.btn-promo.btn--primary
+                            +svg('Arrow-narrow-up-right')
+                            | Записаться в демозал

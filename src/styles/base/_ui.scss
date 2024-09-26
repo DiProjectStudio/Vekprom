@@ -509,25 +509,24 @@ video {
 }
 
 .checkbox {
-    width: max-content;
-
     & input {
         display: none;
     }
 
     & label {
         display: flex;
-        align-items: center;
         user-select: none;
         cursor: pointer;
 
         &::before {
             content: '';
             margin-right: 12px;
+            flex-shrink: 0;
             width: 16px;
             height: 16px;
             border-radius: 4px;
             border: 1px solid var(--fg-muted, #c9cbd0);
+            transform: translateY(2px);
         }
     }
 
@@ -553,17 +552,18 @@ video {
 
     & label {
         display: flex;
-        align-items: center;
         user-select: none;
         cursor: pointer;
 
         &::before {
             content: '';
             margin-right: 12px;
+            flex-shrink: 0;
             width: 16px;
             height: 16px;
             border-radius: 50%;
             border: 1px solid var(--fg-muted, #c9cbd0);
+            transform: translateY(2px);
         }
     }
 
@@ -621,6 +621,7 @@ video {
 }
 
 .range {
+    padding-bottom: 8px;
     position: relative;
 }
 

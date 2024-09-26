@@ -47,8 +47,8 @@ export function initializeFilter() {
                 right: `${100 - maxPercent}%`
             });
 
-            $minValue.val(minValue);
-            $maxValue.val(maxValue);
+            $minValue.attr('value', minValue);
+            $maxValue.attr('value', maxValue);
         }
 
         $min.on('input', updateValues);
