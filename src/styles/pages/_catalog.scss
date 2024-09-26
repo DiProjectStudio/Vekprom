@@ -156,25 +156,55 @@
 
 .filter__action {
     @include breakpointMax(lg) {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
         display: none;
+        grid-template-columns: 200px 200px;
+        column-gap: 8px;
+        width: max-content;
+        transform: translate(-50%);
+        z-index: 5;
+    }
+
+    @include breakpointMax(md) {
+        grid-template-columns: 156px 156px;
     }
 
     @include breakpoint(lg) {
         margin-top: 40px;
     }
 
+    .catalog__aside.show & {
+        display: grid;
+    }
+
     & .btn {
         height: 46px;
 
         & ~ .btn {
+            @include breakpointMax(lg) {
+                order: -1;
+            }
+
             @include breakpoint(lg) {
                 margin-top: 12px;
+            }
+        }
+
+        & p {
+            @include breakpointMax(lg) {
+                display: none;
             }
         }
 
         & span {
             @include breakpointMax(lg) {
                 margin-left: 5px;
+            }
+
+            @include breakpoint(lg) {
+                display: none;
             }
         }
     }

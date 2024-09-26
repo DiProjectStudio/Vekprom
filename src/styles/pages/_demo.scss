@@ -13,12 +13,10 @@
 
     .about-banner {
         height: 340px;
-        padding: 16px 14px;
         border-radius: 16px;
         margin: 0;
 
         @include breakpoint(lg) {
-            padding: 32px;
             height: 600px;
         }
     }
