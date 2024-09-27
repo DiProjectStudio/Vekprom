@@ -6,13 +6,32 @@ block title
 
 block main
 
-    //include ../components/_breadcrumbs
-    //+breadcrumbs('О компании', 'О компании')
+    section.section-intro
+
+        .container
+
+            .intro(style="background-image: url(./assets/images/screenshot_img-about.jpg)")
+
+                .title Векпром — интегратор решений для создания высокотехнологичных производств
+
+                .nav-tab
+
+                    .nav-tab__item Стратегия
+                    .nav-tab__item История
+                    .nav-tab__item Компания в цифрах
+                    .nav-tab__item Наши преимущества
+                    .nav-tab__item Проекты
+                    .nav-tab__item Демозал
+                    .nav-tab__item Академия Векпром
 
     section.general-list-section
+
         .container
+
             .general-list__inner
+
                 .general-list__inner-title С 2008 года мы содействуем развитию российской промышленности
+                
                 .general-list__inner-list
                     ul
                         li решаем технические задачи клиентов
@@ -20,6 +39,7 @@ block main
                         li поставляем партнерам комплексное оборудование, предназначенное для выполнения любых производственных задач
                         li проводим технический инструктаж и/или обучение персонала покупателя
                         li обеспечиваем монтаж, запуск, наладку, диагностику, сервисное обслуживание оборудования на протяжении его жизненного цикла, модернизацию производственных процессов
+                
                 .equipment__inner-btn.btn.btn-promo.btn--white
                     +svg('Arrow-narrow-up-right')
                     | Миссия, видение и ценности
