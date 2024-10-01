@@ -557,9 +557,48 @@
     <!-- Header::End-->
     <!-- Main::Start-->
     <main>
-      <!--include ../components/_breadcrumbs-->
-      <!--+breadcrumbs('О компании', 'О компании')-->
-      <section class="general-list-section">
+      <section class="section-intro">
+        <div class="container">
+          <div class="intro" style="background-image:url(.../images/screenshot_img-about.jpg)">
+            <div class="title">Векпром — интегратор решений для создания высокотехнологичных производств</div>
+            <div class="nav-tab js-nav-tab">
+              <div class="nav-tab__item" data-anchor="#section-general">Стратегия</div>
+              <div class="nav-tab__item" data-anchor="#general-list-section">История</div>
+              <div class="nav-tab__item" data-anchor="#section-about-1">Компания в цифрах</div>
+              <div class="nav-tab__item" data-anchor="#section-features">Наши преимущества</div>
+              <div class="nav-tab__item" data-anchor="#section-projects">Проекты</div>
+              <div class="nav-tab__item" data-anchor="#section-about-2">Демозал</div>
+              <div class="nav-tab__item" data-anchor="#section-academy">Академия Векпром</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-general" id="section-general">
+        <div class="container">
+          <div class="general">
+            <div class="general-bg">
+              <picture>
+                <source srcset="./assets/images/bg-about-4.png" media="(min-width: 1440px)">
+                <source srcset="./assets/images/bg-about-3.png" media="(min-width: 1280px)">
+                <source srcset="./assets/images/bg-about-2.png" media="(min-width: 768px)"><img src="./assets/images/bg-about-1.png" alt="img">
+              </picture>
+            </div>
+            <div class="general__ceo">
+              <div class="general__ceo-img"><img src="./assets/images/ceo-img.jpg" alt="img">
+              </div>
+              <div class="general__ceo-title">Вадим Фролов</div>
+              <div class="general__ceo-label">Генеральный директор ООО&nbsp;«ПГ Векпром»</div>
+            </div>
+            <div class="general__text">
+                <svg class="icon icon-bxs_quote-alt-left">
+                  <use xlink:href="./assets/spritemap.svg#bxs_quote-alt-left"></use>
+                </svg>
+              <p>Стратегия компании — стремление к&nbsp;максимальному повышению производительности труда и эффективности производства наших клиентов путем предоставления самых качественных продуктов и решений</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="general-list-section" id="general-list-section">
         <div class="container">
           <div class="general-list__inner">
             <div class="general-list__inner-title">С 2008 года мы содействуем развитию российской промышленности</div>
@@ -572,7 +611,7 @@
                 <li>обеспечиваем монтаж, запуск, наладку, диагностику, сервисное обслуживание оборудования на протяжении его жизненного цикла, модернизацию производственных процессов</li>
               </ul>
             </div>
-            <div class="equipment__inner-btn btn btn-promo btn--white">
+            <div class="general-list__inner-btn btn btn-promo btn--white">
                 <svg class="icon icon-Arrow-narrow-up-right">
                   <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
                 </svg>Миссия, видение и ценности
@@ -580,7 +619,7 @@
           </div>
         </div>
       </section>
-      <section class="section-about">
+      <section class="section-about section-about-1 section-about-page" id="section-about-1">
         <div class="container">
           <div class="about-wrapper">
             <div class="about">
@@ -607,32 +646,228 @@
           </div>
         </div>
       </section>
-      <section class="section-about">
+      <section class="section-history">
         <div class="container">
-          <div class="about-wrapper">
-            <div class="about">
-              <div class="about__title title">О компании</div>
-              <div class="about__text">Векпром — интегратор решений для создания высокотехнологичных производств. С 2008 года мы развиваем российскую промышленность, решая сложные задачи наших клиентов.</div>
-              <div class="about__info">
-                <div class="about__info-item">
-                  <p>15 000 м²</p>
-                  <p>Складских помещений</p>
+          <div class="history">
+            <div class="history__title">История компании</div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2008</div>
+                    <div class="history__item-event">
+                      <p>Год основания компании</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="about__info-item">
-                  <p>500+</p>
-                  <p>Проектов реализовано</p>
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2011</div>
+                    <div class="history__item-event">
+                      <p>Создание сервисного центра</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="about__info-item">
-                  <p>50 000+</p>
-                  <p>Позиций в ассортименте</p>
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2015</div>
+                    <div class="history__item-event">
+                      <p>Открытие демозала на 600 м2</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="about__link btn btn-promo btn--white">
-                  <svg class="icon icon-Arrow-narrow-up-right">
-                    <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
-                  </svg>Подробнее
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2018</div>
+                    <div class="history__item-event">
+                      <p>Усовершенствование логистического парка</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2019</div>
+                    <div class="history__item-event">
+                      <p>Увеличение штата до 100 человек</p>
+                      <p>Создание брендов CTM, Tokagama, ATTA</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2020</div>
+                    <div class="history__item-event">
+                      <p>Внедрение адресного хранения на складах</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="history__item swiper-slide">
+                  <div class="history__item-border"></div>
+                  <div class="history__item-wrap">
+                    <div class="history__item-year">2021</div>
+                    <div class="history__item-event">
+                      <p>Запуск филиала в Саратове</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="swiper-scrollbar-custom">
+              <div class="swiper-scrollbar-divider"></div>
+            </div>
+            <div class="logo-icon">
+                <svg class="icon icon-logo-icon">
+                  <use xlink:href="./assets/spritemap.svg#logo-icon"></use>
+                </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-features" id="section-features">
+        <div class="container">
+          <div class="features">
+            <div class="features__title">Наши преимущества</div>
+            <div class="features__thumbs">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="features__thumbs-item swiper-slide"><img src="./assets/images/img-248242.jpg" alt="img">
+                  </div>
+                  <div class="features__thumbs-item swiper-slide"><img src="./assets/images/img-248242.jpg" alt="img">
+                  </div>
+                  <div class="features__thumbs-item swiper-slide"><img src="./assets/images/img-248242.jpg" alt="img">
+                  </div>
+                  <div class="features__thumbs-item swiper-slide"><img src="./assets/images/img-248242.jpg" alt="img">
+                  </div>
+                  <div class="features__thumbs-item swiper-slide"><img src="./assets/images/img-248242.jpg" alt="img">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="features__slide">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="features__slide-item swiper-slide">
+                    <h3>Сервис высокого уровня</h3>
+                    <p>Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-наладку. Ремонтное сопровождение.</p>
+                  </div>
+                  <div class="features__slide-item swiper-slide">
+                    <h3>Сервис высокого уровня</h3>
+                    <p>Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н</p>
+                  </div>
+                  <div class="features__slide-item swiper-slide">
+                    <h3>Сервис высокого уровня</h3>
+                    <p>Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н</p>
+                  </div>
+                  <div class="features__slide-item swiper-slide">
+                    <h3>Сервис высокого уровня</h3>
+                    <p>Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н</p>
+                  </div>
+                  <div class="features__slide-item swiper-slide">
+                    <h3>Сервис высокого уровня</h3>
+                    <p>Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="features__bar">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-navigation">
+                <div class="swiper-button swiper-button-prev"></div>
+                <div class="swiper-button swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-realization">
+        <div class="container">
+          <div class="realization">
+            <h2>Реализовали более 500 проектов для разных отраслей</h2>
+            <p>Реализованный проект — не просто продажа и доставка технически сложного оборудования, это полное сопровождение клиента: с момента заявки до шеф-монтажа и пуско-наладки</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-projects section-about-page" id="section-projects">
+        <div class="container">
+          <div class="projects">
+            <div class="projects-wrapper swiper-wrapper">
+              <div class="projects__item swiper-slide">
+                <div class="projects__item-label">Обработка металла</div>
+                <div class="projects__item-img"><img src="./assets/images/unsplash_omrpeqLz6Po.jpg" alt="img">
+                </div>
+                <div class="projects__item-wrap"><a class="projects__item-title" href="#">Универсальный токарно-винторезный станок 1В625/1500 с УЦИ</a>
+                  <div class="projects__item-desc">
+                    <div class="projects__item-info">
+                      <div class="projects__item-row">
+                        <p>Клиент</p>
+                        <p>АО "ЭЛДИН"</p>
+                      </div>
+                      <div class="projects__item-row">
+                        <p>Дата шеф-монтажа</p>
+                        <p>05.06.2024</p>
+                      </div>
+                    </div><a class="btn btn-promo btn--white" href="#">
+                        <svg class="icon icon-Arrow-narrow-up-right">
+                          <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                        </svg>Читать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__item swiper-slide">
+                <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+                </div>
+                <div class="projects__item-wrap"><a class="projects__item-title" href="#">Универсальный токарно-винторезный станок 1В625/1500 с УЦИ</a>
+                  <div class="projects__item-desc">
+                    <div class="projects__item-info">
+                      <div class="projects__item-row">
+                        <p>Клиент</p>
+                        <p>АО "ЭЛДИН"</p>
+                      </div>
+                      <div class="projects__item-row">
+                        <p>Дата шеф-монтажа</p>
+                        <p>05.06.2024</p>
+                      </div>
+                    </div><a class="btn btn-promo btn--white" href="#">
+                        <svg class="icon icon-Arrow-narrow-up-right">
+                          <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                        </svg>Читать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__item swiper-slide">
+                <div class="projects__item-img"><img src="./assets/images/image-37.jpg" alt="img">
+                </div>
+                <div class="projects__item-wrap"><a class="projects__item-title" href="#">Универсальный токарно-винторезный станок 1В625/1500 с УЦИ</a>
+                  <div class="projects__item-desc">
+                    <div class="projects__item-info">
+                      <div class="projects__item-row">
+                        <p>Клиент</p>
+                        <p>АО "ЭЛДИН"</p>
+                      </div>
+                      <div class="projects__item-row">
+                        <p>Дата шеф-монтажа</p>
+                        <p>05.06.2024</p>
+                      </div>
+                    </div><a class="btn btn-promo btn--white" href="#">
+                        <svg class="icon icon-Arrow-narrow-up-right">
+                          <use xlink:href="./assets/spritemap.svg#Arrow-narrow-up-right"></use>
+                        </svg>Читать</a>
+                  </div>
+                </div>
+              </div><a class="projects-link btn btn--md btn--primary" href="#">Все проекты</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-about section-about-2 section-about-page" id="section-about-2">
+        <div class="container">
+          <div class="about-wrapper">
             <div class="about-banner">
               <div class="about-banner__image"><img src="./assets/images/banner-img.jpg" alt="img">
               </div>
@@ -674,6 +909,50 @@
                     </svg>Записаться в демозал
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-academy" id="section-academy">
+        <div class="container">
+          <div class="academy">
+            <div class="academy__inner">
+              <div class="academy__title">Академия Векпром</div>
+              <div class="academy__text">
+                <p>Академия ВЕКПРОМ - это основа формирования квалифицированных специалистов. Мы создаем обучающие программы, нацеленные на стратегическое развитие бизнеса и рынка</p>
+              </div>
+            </div>
+            <div class="academy__img"><img src="./assets/images/image-050.jpg" alt="img">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-working">
+        <div class="container">
+          <div class="working">
+            <div class="working__block">
+              <div class="working__title">Специальная оценка условий труда</div>
+              <div class="working__img"><img src="./assets/images/image-251.jpg" alt="img">
+              </div>
+            </div>
+            <div class="working__inner">
+              <div class="working__inner-text">
+                <p>Обеспечение достойных условий труда работников является одной из основных задач, реализуемых ООО «ПГ Векпром» в рамках своей деятельности.<br><br>Работа по улучшению условий труда на рабочих местах основывается на риск-ориентированном подходе, при этом ключевую роль играют результаты специальной оценки условий труда, которая проводится в соответствии с требованиями Федерального закона от 28.12.2013 № 426-ФЗ. В данном разделе представлены сводные данные о результатах проведения специальной оценки условий труда и перечень мероприятий по улучшению условий и охраны труда работников, на рабочих местах которых проводилась специальная оценка условий труда.</p>
+              </div>
+              <div class="working__inner-title">Результаты СОУТ</div>
+              <div class="working__inner-files"><a href="#" download>
+                  <div class="icon-file">
+                      <svg class="icon icon-PDF">
+                        <use xlink:href="./assets/spritemap.svg#PDF"></use>
+                      </svg>
+                  </div>
+                  <p>Сводная ведомость</p></a><a href="#" download>
+                  <div class="icon-file">
+                      <svg class="icon icon-PDF">
+                        <use xlink:href="./assets/spritemap.svg#PDF"></use>
+                      </svg>
+                  </div>
+                  <p>Перечень мероприятий</p></a></div>
             </div>
           </div>
         </div>

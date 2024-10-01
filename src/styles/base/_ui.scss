@@ -765,6 +765,11 @@ video {
     }
 }
 
+.alert-danger {
+    margin-top: 4px;
+    color: var(--base-error, #d91528);
+}
+
 .input-code {
     display: flex;
     justify-content: center;

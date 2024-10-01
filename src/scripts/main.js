@@ -473,15 +473,6 @@ $('.card-action__item').on('click', (e) => {
     }
 });
 
-// Кнопка избранное и сравнение в карточке товара '.product'
-$('.product__block-btn').on('click', (e) => {
-    if (!$(e.currentTarget).hasClass('active')) {
-        $(e.currentTarget).addClass('active');
-    } else {
-        $(e.currentTarget).removeClass('active');
-    }
-});
-
 // Табы в карточке товара
 $('.tab').on('click', (e) => {
     $(e.currentTarget).closest('.tabs').find('.tab').removeClass('active');
@@ -747,3 +738,58 @@ $('#city-input').on('keyup', function () {
         }
     });
 });
+
+// Табы на странице "О Компании"
+const tabs = document.querySelectorAll('[data-anchor]');
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            const id = entry.target.getAttribute('id');
+            const correspondingTab = document.querySelector(`[data-anchor="#${id}"]`);
+
+            if (entry.isIntersecting) {
+                tabs.forEach((tab) => tab.classList.remove('active'));
+                correspondingTab ? correspondingTab.classList.add('active') : null;
+            }
+        });
+    },
+    { threshold: 0.5 } // 50% элемента должно быть видно, чтобы он считался видимым
+);
+
+sections.forEach((section) => {
+    observer.observe(section);
+});
+
+const anchor = document.querySelectorAll('[data-anchor]');
+if (anchor.length > 0) {
+    anchor.forEach((el) => {
+        el.onclick = function (e) {
+            e.preventDefault();
+            document
+                .querySelector(`#${el.getAttribute('data-anchor').split('#')[1]}`)
+                .scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth'
+                });
+        };
+    });
+}
+
+const fixedTab = () => {
+    const scrollTop = $(window).scrollTop();
+    const body = $('body');
+    const navTab = $('.js-nav-tab');
+    const isFixedTab = body.hasClass('fixed-tab');
+
+    if (scrollTop > 350 && !isFixedTab) {
+        body.addClass('fixed-tab');
+        $('main').prepend(navTab);
+    } else if (scrollTop <= 200 && isFixedTab) {
+        body.removeClass('fixed-tab');
+        $('.intro').append(navTab);
+    }
+};
+
+$(window).on('scroll', fixedTab);

@@ -14,24 +14,47 @@ block main
 
                 .title Векпром — интегратор решений для создания высокотехнологичных производств
 
-                .nav-tab
+                .nav-tab.js-nav-tab
 
-                    .nav-tab__item Стратегия
-                    .nav-tab__item История
-                    .nav-tab__item Компания в цифрах
-                    .nav-tab__item Наши преимущества
-                    .nav-tab__item Проекты
-                    .nav-tab__item Демозал
-                    .nav-tab__item Академия Векпром
+                    .nav-tab__item(data-anchor='#section-general') Стратегия
+                    .nav-tab__item(data-anchor='#general-list-section') История
+                    .nav-tab__item(data-anchor='#section-about-1') Компания в цифрах
+                    .nav-tab__item(data-anchor='#section-features') Наши преимущества
+                    .nav-tab__item(data-anchor='#section-projects') Проекты
+                    .nav-tab__item(data-anchor='#section-about-2') Демозал
+                    .nav-tab__item(data-anchor='#section-academy') Академия Векпром
 
-    section.general-list-section
+    section#section-general.section-general
+
+        .container
+
+            .general
+
+                .general-bg
+                    picture
+                        source(srcset="./assets/images/bg-about-4.png" media="(min-width: 1440px)")
+                        source(srcset="./assets/images/bg-about-3.png" media="(min-width: 1280px)")
+                        source(srcset="./assets/images/bg-about-2.png" media="(min-width: 768px)")
+                        img(src="./assets/images/bg-about-1.png", alt="img")
+
+                .general__ceo
+                    .general__ceo-img
+                        +img('ceo-img.jpg')
+                    .general__ceo-title Вадим Фролов
+                    .general__ceo-label Генеральный директор ООО&nbsp;«ПГ Векпром»
+
+                .general__text
+                    +svg('bxs_quote-alt-left')
+                    p Стратегия компании — стремление к&nbsp;максимальному повышению производительности труда и эффективности производства наших клиентов путем предоставления самых качественных продуктов и решений
+
+    section#general-list-section.general-list-section
 
         .container
 
             .general-list__inner
 
                 .general-list__inner-title С 2008 года мы содействуем развитию российской промышленности
-                
+
                 .general-list__inner-list
                     ul
                         li решаем технические задачи клиентов
@@ -39,12 +62,12 @@ block main
                         li поставляем партнерам комплексное оборудование, предназначенное для выполнения любых производственных задач
                         li проводим технический инструктаж и/или обучение персонала покупателя
                         li обеспечиваем монтаж, запуск, наладку, диагностику, сервисное обслуживание оборудования на протяжении его жизненного цикла, модернизацию производственных процессов
-                
-                .equipment__inner-btn.btn.btn-promo.btn--white
+
+                .general-list__inner-btn.btn.btn-promo.btn--white
                     +svg('Arrow-narrow-up-right')
                     | Миссия, видение и ценности
 
-    section.section-about
+    section#section-about-1.section-about.section-about-1.section-about-page
 
         .container
 
@@ -68,32 +91,200 @@ block main
                             p 300+
                             p Профессионалов в штате
 
+    section.section-history
 
-    section.section-about
+        .container
+
+            .history
+
+                .history__title История компании
+
+                .swiper
+
+                    .swiper-wrapper
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2008
+                                .history__item-event
+                                    p Год основания компании
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2011
+                                .history__item-event
+                                    p Создание сервисного центра
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2015
+                                .history__item-event
+                                    p Открытие демозала на 600 м2
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2018
+                                .history__item-event
+                                    p Усовершенствование логистического парка
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2019
+                                .history__item-event
+                                    p Увеличение штата до 100 человек
+                                    p Создание брендов CTM, Tokagama, ATTA
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2020
+                                .history__item-event
+                                    p Внедрение адресного хранения на складах
+
+                        .history__item.swiper-slide
+                            .history__item-border
+                            .history__item-wrap
+                                .history__item-year 2021
+                                .history__item-event
+                                    p Запуск филиала в Саратове
+
+                .swiper-scrollbar-custom
+                    .swiper-scrollbar-divider
+
+                .logo-icon
+                    +svg('logo-icon')
+
+    section#section-features.section-features
+
+        .container
+
+            .features
+
+                .features__title Наши преимущества
+
+                .features__thumbs
+                    .swiper
+                        .swiper-wrapper
+                            .features__thumbs-item.swiper-slide
+                                +img('img-248242.jpg')
+                            .features__thumbs-item.swiper-slide
+                                +img('img-248242.jpg')
+                            .features__thumbs-item.swiper-slide
+                                +img('img-248242.jpg')
+                            .features__thumbs-item.swiper-slide
+                                +img('img-248242.jpg')
+                            .features__thumbs-item.swiper-slide
+                                +img('img-248242.jpg')
+
+                .features__slide
+                    .swiper
+                        .swiper-wrapper
+                            .features__slide-item.swiper-slide
+                                h3 Сервис высокого уровня
+                                p Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-наладку. Ремонтное сопровождение.
+                            .features__slide-item.swiper-slide
+                                h3 Сервис высокого уровня
+                                p Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н
+                            .features__slide-item.swiper-slide
+                                h3 Сервис высокого уровня
+                                p Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н
+                            .features__slide-item.swiper-slide
+                                h3 Сервис высокого уровня
+                                p Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н
+                            .features__slide-item.swiper-slide
+                                h3 Сервис высокого уровня
+                                p Поддержка клиента начинается с заявки и продолжается даже после истечения гарантийного срока. В рамках сервисной поддержки наши специалисты продемонстрируют оборудование, запустят и произведут пуско-н
+
+                .features__bar
+                    .swiper-pagination
+                    .swiper-navigation
+                        .swiper-button.swiper-button-prev
+                        .swiper-button.swiper-button-next
+
+    section.section-realization
+
+        .container
+
+            .realization
+
+                h2 Реализовали более 500 проектов для разных отраслей
+                p Реализованный проект — не просто продажа и доставка технически сложного оборудования, это полное сопровождение клиента: с момента заявки до шеф-монтажа и пуско-наладки
+
+    section#section-projects.section-projects.section-about-page
+
+        .container
+
+            .projects
+
+                .projects-wrapper.swiper-wrapper
+
+                    .projects__item.swiper-slide
+                        .projects__item-label Обработка металла
+                        .projects__item-img
+                            +img('unsplash_omrpeqLz6Po.jpg')
+                        .projects__item-wrap
+                            a(href="#").projects__item-title Универсальный токарно-винторезный станок 1В625/1500 с УЦИ
+                            .projects__item-desc
+                                .projects__item-info
+                                    .projects__item-row
+                                        p Клиент
+                                        p АО "ЭЛДИН"
+                                    .projects__item-row
+                                        p Дата шеф-монтажа
+                                        p 05.06.2024
+
+                                a(href="#").btn.btn-promo.btn--white
+                                    +svg('Arrow-narrow-up-right')
+                                    |Читать
+
+                    .projects__item.swiper-slide
+                        .projects__item-img
+                            +img('image-37.jpg')
+                        .projects__item-wrap
+                            a(href="#").projects__item-title Универсальный токарно-винторезный станок 1В625/1500 с УЦИ
+                            .projects__item-desc
+                                .projects__item-info
+                                    .projects__item-row
+                                        p Клиент
+                                        p АО "ЭЛДИН"
+                                    .projects__item-row
+                                        p Дата шеф-монтажа
+                                        p 05.06.2024
+
+                                a(href="#").btn.btn-promo.btn--white
+                                    +svg('Arrow-narrow-up-right')
+                                    |Читать
+
+                    .projects__item.swiper-slide
+                        .projects__item-img
+                            +img('image-37.jpg')
+                        .projects__item-wrap
+                            a(href="#").projects__item-title Универсальный токарно-винторезный станок 1В625/1500 с УЦИ
+                            .projects__item-desc
+                                .projects__item-info
+                                    .projects__item-row
+                                        p Клиент
+                                        p АО "ЭЛДИН"
+                                    .projects__item-row
+                                        p Дата шеф-монтажа
+                                        p 05.06.2024
+
+                                a(href="#").btn.btn-promo.btn--white
+                                    +svg('Arrow-narrow-up-right')
+                                    |Читать
+
+                    a(href="#").projects-link.btn.btn--md.btn--primary Все проекты
+
+    section#section-about-2.section-about.section-about-2.section-about-page
 
         .container
 
             .about-wrapper
-
-                .about
-
-                    .about__title.title О компании
-                    .about__text Векпром — интегратор решений для создания высокотехнологичных производств. С 2008 года мы развиваем российскую промышленность, решая сложные задачи наших клиентов.
-
-                    .about__info
-                        .about__info-item
-                            p 15 000 м²
-                            p Складских помещений
-                        .about__info-item
-                            p 500+
-                            p Проектов реализовано
-                        .about__info-item
-                            p 50 000+
-                            p Позиций в ассортименте
-
-                    .about__link.btn.btn-promo.btn--white
-                        +svg('Arrow-narrow-up-right')
-                        | Подробнее
 
                 .about-banner
 
@@ -124,6 +315,54 @@ block main
 
                         .about-banner__btn.btn.btn-promo.btn--primary
                             +svg('Arrow-narrow-up-right')
-                            | Записаться в демозал
+                            |Записаться в демозал
+
+    section#section-academy.section-academy
+
+        .container
 
 
+            .academy
+
+                .academy__inner
+
+                    .academy__title Академия Векпром
+
+                    .academy__text
+                            p Академия ВЕКПРОМ - это основа формирования квалифицированных специалистов. Мы создаем обучающие программы, нацеленные на стратегическое развитие бизнеса и рынка
+
+                .academy__img
+                    +img('image-050.jpg')
+
+    section.section-working
+
+        .container
+
+            .working
+
+                .working__block
+
+                    .working__title Специальная оценка условий труда
+
+                    .working__img
+                        +img('image-251.jpg')
+
+                .working__inner
+
+                    .working__inner-text
+                        p Обеспечение достойных условий труда работников является одной из основных задач, реализуемых ООО «ПГ Векпром» в рамках своей деятельности.
+                            br
+                            br
+                            |Работа по улучшению условий труда на рабочих местах основывается на риск-ориентированном подходе, при этом ключевую роль играют результаты специальной оценки условий труда, которая проводится в соответствии с требованиями Федерального закона от 28.12.2013 № 426-ФЗ. В данном разделе представлены сводные данные о результатах проведения специальной оценки условий труда и перечень мероприятий по улучшению условий и охраны труда работников, на рабочих местах которых проводилась специальная оценка условий труда.
+
+                    .working__inner-title Результаты СОУТ
+                    .working__inner-files
+                        a(href="#" download)
+                            .icon-file
+                                +svg('PDF')
+                            p Сводная ведомость
+
+                        a(href="#" download)
+                            .icon-file
+                                +svg('PDF')
+                            p Перечень мероприятий

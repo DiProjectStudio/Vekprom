@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar } from 'swiper/modules';
 
 export function initializeSlider() {
     // Получаем значение 'data-autoplay'
@@ -412,4 +412,57 @@ export function initializeSlider() {
 
     // Добавляем обработчик события изменения размера окна
     window.addEventListener('resize', handleMobileResize);
+
+    // Скроллбар для хронологии
+    const historySlider = new Swiper('.history .swiper', {
+        modules: [Scrollbar, FreeMode],
+        slidesPerView: 'auto',
+        freeMode: true,
+        grabCursor: true,
+        slidesOffsetBefore: 30,
+        slidesOffsetAfter: 30,
+
+        scrollbar: {
+            el: '.swiper-scrollbar-custom',
+            draggable: true,
+            dragSize: 72
+        }
+    });
+
+    // Слайдер в преимуществах страницы "о компании"
+    const featuresThumbs = new Swiper('.features__thumbs .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        direction: 'horizontal',
+        allowTouchMove: false,
+
+        on: {
+            slideChange: function () {
+                features.slideTo(this.activeIndex);
+            }
+        }
+    });
+
+    // Слайдер в преимуществах страницы "о компании"
+    const features = new Swiper('.features__slide .swiper', {
+        modules: [Navigation, Pagination, Thumbs],
+        slidesPerView: 1,
+        spaceBetween: 30,
+        allowTouchMove: false,
+
+        thumbs: {
+            swiper: featuresThumbs
+        },
+
+        navigation: {
+            nextEl: '.features__bar .swiper-button-next',
+            prevEl: '.features__bar .swiper-button-prev'
+        },
+
+        pagination: {
+            el: '.features__bar .swiper-pagination',
+            clickable: true
+        }
+    });
 }

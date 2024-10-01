@@ -63,11 +63,9 @@
 .nav-tab {
     padding: 8px;
     background: var(--bg-surface1, #fff);
-    // position: sticky;
-    // top: calc(100vh - 48px);
     border-radius: 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-    z-index: 20;
+    z-index: 100;
 
     @include breakpointMax(lg) {
         display: none;
@@ -76,7 +74,992 @@
     @include breakpoint(lg) {
         position: absolute;
         left: 50%;
-        bottom: 0;
+        bottom: 24px;
         display: flex;
+        column-gap: 8px;
+        transform: translateX(-50%);
+    }
+
+    .fixed-tab & {
+        position: fixed;
+        bottom: 24px;
+    }
+}
+
+.nav-tab__item {
+    padding: 5px 8px;
+    flex-shrink: 0;
+    width: max-content;
+    font: var(--font-body-m);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.active {
+        background: var(--accent-50, #fef3e8);
+        color: var(--accent-default, #f5851a);
+    }
+}
+
+.section-general {
+    margin-top: 10px;
+}
+
+.general {
+    padding: 10px;
+    background: var(--bg-surface1, #fff);
+    position: relative;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    isolation: isolate;
+
+    @include breakpointMax(lg) {
+        flex-direction: column-reverse;
+    }
+
+    @include breakpoint(lg) {
+        padding: 16px;
+    }
+
+    @include breakpoint(xl) {
+        padding: 20px;
+    }
+}
+
+.general-bg {
+    position: absolute;
+    top: 35px;
+    right: -120px;
+    width: 375px;
+    aspect-ratio: 1;
+    z-index: -1;
+
+    @include breakpoint(lg) {
+        top: auto;
+        bottom: 0;
+        right: -60px;
+        width: 436px;
+    }
+
+    @include breakpoint(xl) {
+        right: -30px;
+        width: 456px;
+    }
+
+    & picture {
+        display: block;
+        height: 100%;
+    }
+}
+
+.general__ceo {
+    margin-top: 100px;
+
+    @include breakpointMax(lg) {
+        display: grid;
+        max-width: 330px;
+        grid-template-columns: 100px auto;
+        column-gap: 16px;
+    }
+
+    @include breakpoint(md) {
+        margin-top: 64px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 0;
+    }
+}
+
+.general__ceo-img {
+    grid-row: 1 / 4;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include breakpoint(lg) {
+        margin-bottom: 24px;
+        width: 213px;
+        height: 213px;
+    }
+}
+
+.general__ceo-title {
+    margin-bottom: 6px;
+    font: var(--font-body-l-strong);
+
+    @include breakpoint(lg) {
+        font: var(--font-heading-h3);
+    }
+}
+
+.general__ceo-label {
+    grid-column: 2;
+
+    @include breakpoint(lg) {
+        font: var(--font-body-m);
+    }
+}
+
+.general__text {
+    font: var(--font-body-l);
+
+    @include breakpoint(md) {
+        padding: 48px 24px 0 78px;
+        display: flex;
+        column-gap: 16px;
+        font: var(--font-display-xs);
+    }
+
+    @include breakpoint(lg) {
+        padding: 110px 78px 110px 90px;
+        column-gap: 20px;
+        font: var(--font-display-s);
+    }
+
+    @include breakpoint(xl) {
+        padding: 110px 64px 110px 156px;
+        font: var(--font-display-m);
+    }
+
+    & .icon {
+        margin-bottom: 24px;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        fill: var(--neutral-500);
+
+        @include breakpoint(lg) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    & p {
+        @include breakpointMax(lg) {
+            padding: 0;
+        }
+    }
+}
+
+.general-list-section {
+    margin-top: 10px;
+
+    @include breakpoint(lg) {
+        margin-top: 16px;
+    }
+    @include breakpoint(xl) {
+        margin-top: 20px;
+    }
+}
+
+.general-list__inner {
+    padding: 20px 10px 10px;
+    background-color: var(--static-white);
+    display: grid;
+    grid-template-columns: 100%;
+    border-radius: 16px;
+
+    @include breakpointMax(lg) {
+        gap: 32px;
+    }
+
+    @include breakpoint(md) {
+        padding: 32px 20px 10px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 24px 32px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: 43% 50%;
+        justify-content: space-between;
+    }
+}
+
+.general-list__inner-title {
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
+
+    @include breakpoint(md) {
+        font: var(--font-display-s-strong);
+        letter-spacing: var(--lp-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    @include breakpoint(xl) {
+        font: var(--font-display-m-strong);
+        letter-spacing: var(--lp-display-m-strong);
+    }
+}
+
+.general-list__inner-list {
+    font: var(--font-body-s);
+    letter-spacing: var(--lp-body-s);
+
+    @include breakpoint(lg) {
+        grid-column: 2/3;
+        grid-row: span 2;
+    }
+
+    & ul {
+        & li {
+            padding: 16px 0;
+            list-style-type: none;
+            text-indent: 0;
+            display: flex;
+            gap: 10px;
+
+            &::before {
+                content: '●';
+                display: block;
+                color: var(--accent-default);
+                font-size: 25px;
+                line-height: 0.8;
+            }
+
+            @include breakpoint(lg) {
+                padding: 24px 0;
+            }
+        }
+
+        & li ~ li {
+            border-top: 1px solid var(--border-default);
+        }
+    }
+}
+
+.general-list__inner-btn {
+    width: 168px;
+
+    @include breakpoint(lg) {
+        padding-right: 12px;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        align-self: flex-end;
+        width: 220px;
+        font: var(--font-body-m-strong);
+    }
+
+    & .icon {
+        @include breakpoint(lg) {
+            transform: translateX(6px);
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.section-history {
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+        margin-top: 16px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+}
+
+.history {
+    padding: 20px 0;
+    background: var(--bg-surface5, #181d28);
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include breakpoint(md) {
+        padding: 24px 0;
+    }
+
+    & .logo-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        & .icon {
+            width: 138px;
+            height: 138px;
+            fill: #fff;
+
+            @include breakpoint(xl) {
+                width: 154px;
+                height: 154px;
+            }
+        }
+
+        @include breakpointMax(lg) {
+            display: none;
+        }
+    }
+
+    & .swiper {
+        margin-top: 146px;
+
+        @include breakpoint(md) {
+            margin-top: 212px;
+        }
+    }
+
+    & .swiper-scrollbar-custom {
+        margin: 12px 20px 0;
+    }
+
+    & .swiper-scrollbar-divider {
+        position: relative;
+
+        &::after {
+            content: '';
+            background-image: linear-gradient(
+                to right,
+                transparent 49%,
+                var(--border-hard, #c9cbd0) 49%,
+                var(--border-hard, #c9cbd0) 51%,
+                transparent 51%
+            );
+            background-size: 15px 100%;
+            background-repeat: repeat-x;
+            position: absolute;
+            top: 12px;
+            left: 0;
+            right: 0;
+            height: 8px;
+
+            @include breakpoint(md) {
+                background-size: 21px 100%;
+            }
+        }
+    }
+
+    & .swiper-scrollbar-drag {
+        width: 72px;
+        height: 32px;
+        min-width: 72px;
+        border-radius: 16px;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA3MiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiNGNTg1MUEiLz4KPHBhdGggZD0iTTE2Ljc1IDkuNDM3NUwxMC41IDE2TTEwLjUgMTZMMTYuNzUgMjIuNTYyNU0xMC41IDE2TDI1LjUgMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS45OTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTUuMjUgOS40Mzc1TDYxLjUgMTZNNjEuNSAxNkw1NS4yNSAyMi41NjI1TTYxLjUgMTZMNDYuNSAxNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjk5NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=');
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.history__title {
+    padding: 0 16px;
+    font: var(--font-display-xs-strong);
+    color: var(--accent-on-accent, #fff);
+
+    @include breakpoint(md) {
+        padding: 0 20px;
+        font: var(--font-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        padding: 0 32px;
+        font: var(--font-display-m-strong);
+    }
+}
+
+.history__item {
+    display: flex;
+    column-gap: 16px;
+    width: 230px;
+    height: 243px;
+    user-select: none;
+
+    @include breakpoint(md) {
+        width: 290px;
+    }
+}
+
+.history__item-border {
+    position: relative;
+    height: 100%;
+
+    &::before {
+        content: '';
+        background: var(--accent-default);
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        background: var(--border-soft);
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+        transform: translateX(-50%);
+        opacity: 0.1;
+    }
+}
+
+.history__item-year {
+    margin-bottom: 24px;
+    font: var(--font-display-xs-strong);
+    color: var(--bg-surface1, #fff);
+
+    @include breakpoint(md) {
+        font: var(--font-display-s-strong);
+    }
+}
+
+.history__item-event {
+    width: 193px;
+    font: var(--font-body-m);
+    color: var(--fg-soft, #9398a0);
+
+    @include breakpoint(md) {
+        font: var(--font-body-l);
+    }
+
+    & p ~ p {
+        margin-top: 24px;
+    }
+}
+
+section.section-about-page {
+    margin-top: 10px;
+    padding: 0;
+
+    @include breakpoint(md) {
+        margin-top: 16px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+
+    & .about-banner {
+        margin: 10px 0 0;
+
+        @include breakpoint(md) {
+            margin-top: 16px;
+        }
+
+        @include breakpoint(lg) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.section-features {
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+        margin-top: 16px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+}
+
+.features {
+    padding: 20px 16px 10px;
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
+
+    @include breakpoint(lg) {
+        padding: 32px 16px 16px 32px;
+        width: calc(100% / 12 * 8 - 8px);
+    }
+
+    @include breakpoint(xl) {
+        width: calc(100% / 12 * 7 - 10px);
+    }
+}
+
+.features__title {
+    margin-bottom: 80px;
+    font: var(--font-display-xs-strong);
+
+    @include breakpoint(md) {
+        font: var(--font-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 200px;
+        font: var(--font-display-l-strong);
+    }
+
+    @include breakpoint(xl) {
+        margin-bottom: 180px;
+    }
+}
+
+.features__thumbs {
+    margin-bottom: 32px;
+    width: 160px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include breakpoint(lg) {
+        position: absolute;
+        top: 0;
+        right: var(--container);
+        width: calc(100% / 12 * 4 - var(--container));
+        height: 100%;
+    }
+
+    @include breakpoint(xl) {
+        width: calc(100% / 12 * 5 - var(--container));
+    }
+
+    & .swiper {
+        height: 100%;
+    }
+}
+
+.features__thumbs-item {
+    position: relative;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background: linear-gradient(0deg, rgba(245, 133, 26, 0) 0%, #f5851a 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.features__slide {
+    margin-bottom: 32px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 24px;
+    }
+}
+
+.features__slide-item {
+    & h3 {
+        margin-bottom: 16px;
+        font: var(--font-heading-h3);
+        letter-spacing: var(--lp-heading-h3);
+
+        @include breakpoint(md) {
+            letter-spacing: var(--lp-heading-h2);
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 32px;
+            max-width: 456px;
+            font: var(--font-display-m-strong);
+            letter-spacing: var(--lp-display-m-strong);
+        }
+    }
+
+    & p {
+        max-width: 468px;
+
+        @include breakpoint(lg) {
+            font: var(--font-body-m);
+        }
+
+        @include breakpoint(xl) {
+            max-width: 436px;
+        }
+    }
+}
+
+.features__bar {
+    display: flex;
+    column-gap: 16px;
+
+    & .swiper-pagination {
+        padding: 0;
+        align-items: center;
+        column-gap: 6px;
+
+        @include breakpoint(lg) {
+            max-width: 470px;
+        }
+    }
+
+    & .swiper-pagination-bullet {
+        background: var(--bg-surface4, #c9cbd0);
+        border-radius: 4px;
+
+        &-active {
+            background: var(--fg-default, #283142);
+        }
+    }
+
+    & .swiper-navigation {
+        display: flex;
+        column-gap: 16px;
+
+        @include breakpoint(lg) {
+            margin-left: auto;
+        }
+    }
+
+    & .swiper-button {
+        --swiper-navigation-size: 14px;
+        margin: 0;
+        width: 24px;
+        height: 24px;
+        font-weight: bold;
+        color: var(--fg-default);
+
+        @include breakpoint(lg) {
+            background: var(--bg-surface1, #fff);
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            border: 1px solid var(--border-default, #eaeaec);
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.section-realization {
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+        margin-top: 16px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+}
+
+.realization {
+    padding: 20px 16px 10px;
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
+
+    @include breakpoint(lg) {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 32px;
+    }
+
+    & h2 {
+        margin-bottom: 48px;
+        max-width: 440px;
+        font: var(--font-display-xs-strong);
+        letter-spacing: var(--lp-display-xs-strong);
+
+        @include breakpoint(md) {
+            margin-bottom: 72px;
+            max-width: 704px;
+            font: var(--font-display-m-strong);
+            letter-spacing: var(--font-display-m-strong);
+        }
+
+        @include breakpoint(lg) {
+            padding: 32px 32px 120px;
+            max-width: 100%;
+        }
+
+        @include breakpoint(xl) {
+            font: var(--font-display-l-strong);
+            letter-spacing: var(--font-display-l-strong);
+        }
+    }
+
+    & p {
+        @include breakpoint(md) {
+            @include breakpointMax(lg) {
+                max-width: 704px;
+            }
+        }
+
+        @include breakpoint(lg) {
+            padding: 24px 32px 24px 0;
+            font: var(--font-body-l);
+        }
+
+        @include breakpoint(xl) {
+            padding-right: 98px;
+        }
+    }
+}
+
+.section-academy {
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+        margin-top: 16px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+}
+
+.academy {
+    padding: 20px 16px;
+    border-radius: 16px;
+
+    @include breakpointMax(lg) {
+        background: var(--bg-surface1, #fff);
+    }
+
+    @include breakpoint(md) {
+        padding: 20px 16px;
+        position: relative;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0;
+    }
+}
+
+.academy__title {
+    margin-bottom: 48px;
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
+
+    @include breakpoint(md) {
+        font: var(--font-display-s-strong);
+        letter-spacing: var(--lp-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        font: var(--font-display-m-strong);
+        letter-spacing: var(--lp-display-m-strong);
+    }
+
+    @include breakpoint(xl) {
+        font: var(--font-display-l-strong);
+        letter-spacing: var(--lp-display-l-strong);
+    }
+}
+
+.academy__inner {
+    @include breakpoint(md) {
+        width: calc(100% - 184px);
+    }
+
+    @include breakpoint(lg) {
+        padding: 32px 32px 24px;
+        background: var(--bg-surface1, #fff);
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 8px);
+        min-height: 600px;
+        border-radius: 16px;
+    }
+
+    @include breakpoint(xl) {
+        width: calc(50% - 10px);
+    }
+}
+
+.academy__text {
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+        min-height: 120px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: auto;
+        margin-bottom: 0;
+        max-width: 400px;
+        min-height: auto;
+        font: var(--font-body-m);
+    }
+}
+
+.academy__img {
+    position: relative;
+    flex-shrink: 0;
+    width: 160px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include breakpoint(md) {
+        position: absolute;
+        top: 108px;
+        right: 16px;
+    }
+
+    @include breakpoint(lg) {
+        top: 0;
+        right: 0;
+        width: calc(50% - 8px);
+        height: 600px;
+    }
+
+    @include breakpoint(xl) {
+        width: calc(50% - 10px);
+    }
+
+    &::before {
+        content: '';
+        background: linear-gradient(0deg, rgba(245, 133, 26, 0) 0%, #f5851a 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.section-working {
+    margin: 10px 0 24px;
+
+    @include breakpoint(md) {
+        margin: 16px 0 80px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 20px;
+    }
+}
+
+.working {
+    padding: 20px 16px;
+    background: var(--bg-surface1, #fff);
+    border-radius: 16px;
+
+    @include breakpoint(lg) {
+        padding: 24px 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+    }
+}
+
+.working__block {
+    @include breakpoint(lg) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.working__title {
+    margin-bottom: 48px;
+    font: var(--font-display-xs-strong);
+    letter-spacing: var(--lp-display-xs-strong);
+
+    @include breakpoint(md) {
+        font: var(--font-display-s-strong);
+        letter-spacing: var(--lp-display-s-strong);
+    }
+
+    @include breakpoint(lg) {
+        padding-left: 10px;
+        max-width: 560px;
+        font: var(--font-display-m-strong);
+        letter-spacing: var(--lp-display-m-strong);
+    }
+
+    @include breakpoint(xl) {
+        max-width: 590px;
+    }
+}
+
+.working__img {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: auto;
+        width: 417px;
+        height: 254px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+}
+
+.working__inner-text {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    font: var(--font-body-m);
+    border-bottom: 1px solid var(--border-default, #eaeaec);
+
+    @include breakpoint(lg) {
+        padding-right: 50px;
+    }
+
+    @include breakpoint(xl) {
+        padding-right: 118px;
+        font: var(--font-body-l);
+    }
+}
+
+.working__inner-title {
+    margin-bottom: 32px;
+    font: var(--font-heading-h3);
+    letter-spacing: var(--lp-heading-h3);
+
+    @include breakpoint(lg) {
+        margin-bottom: 48px;
+        font: var(--font-heading-h2);
+        letter-spacing: var(--lp-heading-h2);
+    }
+}
+
+.working__inner-files {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    @include breakpoint(lg) {
+        flex-direction: row;
+        column-gap: 24px;
+    }
+
+    & a {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        width: max-content;
+    }
+
+    & .icon-file {
+        background: var(--bg-surface2, #f4f5f6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+    }
+
+    & .icon {
+        width: 24px;
+        height: 24px;
+        fill: var(--fg-default);
     }
 }
