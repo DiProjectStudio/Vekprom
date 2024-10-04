@@ -1,5 +1,8 @@
 .header {
     margin-top: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 30;
 
     @include breakpointMax(lg) {
         --header-height: 60px;
@@ -16,6 +19,22 @@
     & a:hover {
         color: var(--base-accent, #f5851a);
     }
+}
+
+:root {
+    @include breakpoint(lg) {
+        --headerHeight: 131px;
+    }
+
+    @include breakpoint(xl) {
+        --headerHeight: 144px;
+    }
+}
+
+.header__inner {
+    background-color: var(--bg-surface2);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 .header__top {

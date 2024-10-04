@@ -793,3 +793,21 @@ const fixedTab = () => {
 };
 
 $(window).on('scroll', fixedTab);
+
+// 3D ТУР (Демозал)
+const iframe = $('#myIframe');
+const currentUrl = window.location.href;
+const tail = currentUrl.split('?')[1]; // Получаем хвост после ?
+
+if (tail) {
+    iframe.attr('src', iframe.attr('src') + '?' + tail); // Добавляем хвост к текущему src
+}
+
+if (tail && iframe) {
+    $('html, body').animate(
+        {
+            scrollTop: iframe.offset().top - $('header').height()
+        },
+        1000
+    );
+}

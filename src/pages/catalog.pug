@@ -86,7 +86,11 @@ block main
 
                             .filter__item
                                 .filter__item-name Тип привода
-
+                                    .smart-filter-popup-result(style="display:inline-block;")
+                                        a.smart-result-wrap(href="#")
+                                            | Показать  (
+                                            span 2
+                                            | )
                                 .checkbox
                                     input#type-1(type="checkbox" name="type")
                                     label(for="type-1") Электрический
@@ -177,3 +181,20 @@ block main
                         +card('Под заказ')
 
                     include ../components/_pagination
+
+    style.
+        .smart-filter-popup-result {
+            margin-top: -9px;
+            margin-left: 10px;
+            padding: 0 10px;
+            position: absolute;
+            display: none;
+            min-height: 37px;
+            font-size: 13px;
+            font-weight: normal;
+            white-space: nowrap;
+            line-height: 18px;
+            color: #3f3f3f;
+            border: 1px solid #c6dce7;
+            z-index: 915;
+        }

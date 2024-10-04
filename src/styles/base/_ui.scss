@@ -528,6 +528,11 @@ video {
             border: 1px solid var(--fg-muted, #c9cbd0);
             transform: translateY(2px);
         }
+
+        &.disabled {
+            color: var(--fg-muted);
+            cursor: default;
+        }
     }
 
     & input:checked + label {
@@ -537,6 +542,11 @@ video {
             background-image: $check;
             background-size: contain;
             border-color: var(--accent-default, #f5851a);
+        }
+
+        &.disabled::before {
+            background-color: var(--fg-muted);
+            border-color: var(--fg-muted);
         }
     }
 

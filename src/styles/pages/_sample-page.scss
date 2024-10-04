@@ -197,7 +197,7 @@
 
   @include breakpoint(lg) {
     position: sticky;
-    top: 10px;
+    top: calc(10px + var(--headerHeight));
   }
 
   .section-sidebar__wrapper {

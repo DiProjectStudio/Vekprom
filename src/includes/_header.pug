@@ -4,662 +4,664 @@ block header
 
         .container
 
-            .header__top
+            .header__inner
 
-                nav.header__nav
-                    ul.header__menu
-                        li.header__menu-item.has-child
-                            a.header__menu-link О компании
-                            ul.submenu
-                                li
-                                    a(href="#") О компании
-                                li
-                                    a(href="#") Пресс-центр
-                                li
-                                    a(href="#") Проекты
-                                li
-                                    a(href="#") Лицензии
-                                li
-                                    a(href="#") Отзывы
+                .header__top
 
-                        li.header__menu-item
-                            a.header__menu-link(href="#") Контакты
+                    nav.header__nav
+                        ul.header__menu
+                            li.header__menu-item.has-child
+                                a.header__menu-link О компании
+                                ul.submenu
+                                    li
+                                        a(href="#") О компании
+                                    li
+                                        a(href="#") Пресс-центр
+                                    li
+                                        a(href="#") Проекты
+                                    li
+                                        a(href="#") Лицензии
+                                    li
+                                        a(href="#") Отзывы
 
-                        li.header__menu-item
-                            a.header__menu-link(href="#") Вакансии
+                            li.header__menu-item
+                                a.header__menu-link(href="#") Контакты
 
-                        li.header__menu-item
-                            a.header__menu-link(href="#") Сервис и поддержка
+                            li.header__menu-item
+                                a.header__menu-link(href="#") Вакансии
 
-                        li.header__menu-item
-                            a.header__menu-link(href="#") Демозал
-                            +img('badge-3d.svg')
+                            li.header__menu-item
+                                a.header__menu-link(href="#") Сервис и поддержка
 
-                    ul.header__bar
+                            li.header__menu-item
+                                a.header__menu-link(href="#") Демозал
+                                +img('badge-3d.svg')
 
-                        li.header__bar-item
-                            a.header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
+                        ul.header__bar
 
-                        li.header__bar-item
-                            a.header__phone(href="tel:+74952151645") +7 (495) 215-16-45
+                            li.header__bar-item
+                                a.header__callback(data-src="#popup-callback" data-fancybox) Заказать звонок
 
-                        li.header__bar-item
-                            .header__location(data-src="#popup-city" data-fancybox)
-                                +svg('Map')
-                                p Москва
+                            li.header__bar-item
+                                a.header__phone(href="tel:+74952151645") +7 (495) 215-16-45
 
-            .header__main
+                            li.header__bar-item
+                                .header__location(data-src="#popup-city" data-fancybox)
+                                    +svg('Map')
+                                    p Москва
 
-                .header__logo
-                    a(href="/")
-                        +img('Logo_main.svg')
+                .header__main
 
-                button#header-catalog-btn.header-catalog-btn
-                    +svg('catalog')
-                    +svg('X')
-                    p Каталог
+                    .header__logo
+                        a(href="/")
+                            +img('Logo_main.svg')
 
-                .header__search
-                    form(action="/")
-                        .input-search
-                            button(type="submit" aria-label="Поиск").search-icon
-                                +svg('Search')
-                            input#header_search(type="search", name="header_search", placeholder="Поиск по сайту" autocomplete="off")
-                            .input-search__clear
-                                +svg('X')
-
-                button.header__selection.btn.btn--primary(data-src="#popup-selection" data-fancybox) Подобрать станок
-
-                .header__icons
-                    a(href="#").header__icons-item.header-home
-                        .icon-item
-                            +svg('Home')
-                        p Главная
-
-                    a(href="#").header__icons-item.header-catalog
-                        .icon-item
-                            +svg('catalog')
+                    button#header-catalog-btn.header-catalog-btn
+                        +svg('catalog')
+                        +svg('X')
                         p Каталог
 
-                    a(href="#").header__icons-item.header-compare
-                        .icon-item(data-count=3)
-                            +svg('Compare')
-                        p Сравнение
+                    .header__search
+                        form(action="/")
+                            .input-search
+                                button(type="submit" aria-label="Поиск").search-icon
+                                    +svg('Search')
+                                input#header_search(type="search", name="header_search", placeholder="Поиск по сайту" autocomplete="off")
+                                .input-search__clear
+                                    +svg('X')
 
-                    a(href="#").header__icons-item.header-favourite
-                        .icon-item(data-count=3)
-                            +svg('Heart')
-                        p Избранное
+                    button.header__selection.btn.btn--primary(data-src="#popup-selection" data-fancybox) Подобрать станок
 
-                    a(href="#").header__icons-item.header-basket
-                        .icon-item(data-count=3)
-                            +svg('Basket')
-                        p Корзина
+                    .header__icons
+                        a(href="#").header__icons-item.header-home
+                            .icon-item
+                                +svg('Home')
+                            p Главная
 
-                    a(href="#popup-auth-phone" data-fancybox).header__icons-item.header-user
-                        .icon-item
-                            +svg('User')
-                        p Войти
+                        a(href="#").header__icons-item.header-catalog
+                            .icon-item
+                                +svg('catalog')
+                            p Каталог
 
-                .header__category
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('saw')
-                            p Металлообработка
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="123") Сверление и обработка отверстий
-                                li
-                                    a(href="#" data-count="120") Металлорежущий инструмент
-                                li
-                                    a(href="#" data-count="19") Обработка кромки, снятие фаски
-                                li
-                                    a(href="#" data-count="286") Шлифовка и полировка
-                                li
-                                    a(href="#" data-count="44") Ленточнопильные станки
-                                li
-                                    a(href="#" data-count="120") Труборезы
-                                li
-                                    a(href="#" data-count="120") Обработка профиля
-                                li
-                                    a(href="#" data-count="120") Обработка листа
-                                li
-                                    a(href="#" data-count="120") Термическая резка
-                                li
-                                    a(href="#" data-count="120") Фрезерные станки
-                                li
-                                    a(href="#" data-count="120") Токарные станки
+                        a(href="#").header__icons-item.header-compare
+                            .icon-item(data-count=3)
+                                +svg('Compare')
+                            p Сравнение
 
-                            .header__subcategory-banner
-                                +img('category-001.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                        a(href="#").header__icons-item.header-favourite
+                            .icon-item(data-count=3)
+                                +svg('Heart')
+                            p Избранное
+
+                        a(href="#").header__icons-item.header-basket
+                            .icon-item(data-count=3)
+                                +svg('Basket')
+                            p Корзина
+
+                        a(href="#popup-auth-phone" data-fancybox).header__icons-item.header-user
+                            .icon-item
+                                +svg('User')
+                            p Войти
+
+                    .header__category
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('saw')
+                                p Металлообработка
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="123") Сверление и обработка отверстий
+                                    li
+                                        a(href="#" data-count="120") Металлорежущий инструмент
+                                    li
+                                        a(href="#" data-count="19") Обработка кромки, снятие фаски
+                                    li
+                                        a(href="#" data-count="286") Шлифовка и полировка
+                                    li
+                                        a(href="#" data-count="44") Ленточнопильные станки
+                                    li
+                                        a(href="#" data-count="120") Труборезы
+                                    li
+                                        a(href="#" data-count="120") Обработка профиля
+                                    li
+                                        a(href="#" data-count="120") Обработка листа
+                                    li
+                                        a(href="#" data-count="120") Термическая резка
+                                    li
+                                        a(href="#" data-count="120") Фрезерные станки
+                                    li
+                                        a(href="#" data-count="120") Токарные станки
+
+                                .header__subcategory-banner
+                                    +img('category-001.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('laser')
-                            p Лазерное оборудование
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="123") Лазерные установки резки
-                                li
-                                    a(href="#" data-count="120") Лазерная сварка
-                                li
-                                    a(href="#" data-count="19") Лазерная очистка
-                                li
-                                    a(href="#" data-count="286") Лазерные граверы-резчики
-                                li
-                                    a(href="#" data-count="44") Лазерные маркираторы
-                                li
-                                    a(href="#" data-count="120") Оснастка для лазерного оборудования
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('laser')
+                                p Лазерное оборудование
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="123") Лазерные установки резки
+                                    li
+                                        a(href="#" data-count="120") Лазерная сварка
+                                    li
+                                        a(href="#" data-count="19") Лазерная очистка
+                                    li
+                                        a(href="#" data-count="286") Лазерные граверы-резчики
+                                    li
+                                        a(href="#" data-count="44") Лазерные маркираторы
+                                    li
+                                        a(href="#" data-count="120") Оснастка для лазерного оборудования
 
-                            .header__subcategory-banner
-                                +img('category-002.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-002.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('press')
-                            p Прессовое оборудование
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="120") Роликовые вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные позиционеры
-                                li
-                                    a(href="#" data-count="120") Трубные вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные колонны
-                                li
-                                    a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
-                                li
-                                    a(href="#" data-count="120") Автоматизация и механизация сварки
-                                li
-                                    a(href="#" data-count="120") Роботизация сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
-                                li
-                                    a(href="#" data-count="120") Орбитальная сварка
-                                li
-                                    a(href="#" data-count="120") Машины контактной сварки
-                                li
-                                    a(href="#" data-count="120") Подготовка кромки под сварку
-                                li
-                                    a(href="#" data-count="120") Оборудование для ручной сварки
-                                li
-                                    a(href="#" data-count="120") Средства защиты
-                                li
-                                    a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные горелки MIG/TIG
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('press')
+                                p Прессовое оборудование
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="120") Роликовые вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные позиционеры
+                                    li
+                                        a(href="#" data-count="120") Трубные вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные колонны
+                                    li
+                                        a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
+                                    li
+                                        a(href="#" data-count="120") Автоматизация и механизация сварки
+                                    li
+                                        a(href="#" data-count="120") Роботизация сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
+                                    li
+                                        a(href="#" data-count="120") Орбитальная сварка
+                                    li
+                                        a(href="#" data-count="120") Машины контактной сварки
+                                    li
+                                        a(href="#" data-count="120") Подготовка кромки под сварку
+                                    li
+                                        a(href="#" data-count="120") Оборудование для ручной сварки
+                                    li
+                                        a(href="#" data-count="120") Средства защиты
+                                    li
+                                        a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные горелки MIG/TIG
 
-                            .header__subcategory-banner
-                                +img('category-003.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-003.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('welder')
-                            p Сварочное оборудование
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="120") Роликовые вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные позиционеры
-                                li
-                                    a(href="#" data-count="120") Трубные вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные колонны
-                                li
-                                    a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
-                                li
-                                    a(href="#" data-count="120") Автоматизация и механизация сварки
-                                li
-                                    a(href="#" data-count="120") Роботизация сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
-                                li
-                                    a(href="#" data-count="120") Орбитальная сварка
-                                li
-                                    a(href="#" data-count="120") Машины контактной сварки
-                                li
-                                    a(href="#" data-count="120") Подготовка кромки под сварку
-                                li
-                                    a(href="#" data-count="120") Оборудование для ручной сварки
-                                li
-                                    a(href="#" data-count="120") Средства защиты
-                                li
-                                    a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные горелки MIG/TIG
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('welder')
+                                p Сварочное оборудование
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="120") Роликовые вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные позиционеры
+                                    li
+                                        a(href="#" data-count="120") Трубные вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные колонны
+                                    li
+                                        a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
+                                    li
+                                        a(href="#" data-count="120") Автоматизация и механизация сварки
+                                    li
+                                        a(href="#" data-count="120") Роботизация сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
+                                    li
+                                        a(href="#" data-count="120") Орбитальная сварка
+                                    li
+                                        a(href="#" data-count="120") Машины контактной сварки
+                                    li
+                                        a(href="#" data-count="120") Подготовка кромки под сварку
+                                    li
+                                        a(href="#" data-count="120") Оборудование для ручной сварки
+                                    li
+                                        a(href="#" data-count="120") Средства защиты
+                                    li
+                                        a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные горелки MIG/TIG
 
-                            .header__subcategory-banner
-                                +img('category-004.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-004.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('helmet')
-                            p Строительное оборудование
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="120") Роликовые вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные позиционеры
-                                li
-                                    a(href="#" data-count="120") Трубные вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные колонны
-                                li
-                                    a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
-                                li
-                                    a(href="#" data-count="120") Автоматизация и механизация сварки
-                                li
-                                    a(href="#" data-count="120") Роботизация сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
-                                li
-                                    a(href="#" data-count="120") Орбитальная сварка
-                                li
-                                    a(href="#" data-count="120") Машины контактной сварки
-                                li
-                                    a(href="#" data-count="120") Подготовка кромки под сварку
-                                li
-                                    a(href="#" data-count="120") Оборудование для ручной сварки
-                                li
-                                    a(href="#" data-count="120") Средства защиты
-                                li
-                                    a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные горелки MIG/TIG
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('helmet')
+                                p Строительное оборудование
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="120") Роликовые вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные позиционеры
+                                    li
+                                        a(href="#" data-count="120") Трубные вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные колонны
+                                    li
+                                        a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
+                                    li
+                                        a(href="#" data-count="120") Автоматизация и механизация сварки
+                                    li
+                                        a(href="#" data-count="120") Роботизация сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
+                                    li
+                                        a(href="#" data-count="120") Орбитальная сварка
+                                    li
+                                        a(href="#" data-count="120") Машины контактной сварки
+                                    li
+                                        a(href="#" data-count="120") Подготовка кромки под сварку
+                                    li
+                                        a(href="#" data-count="120") Оборудование для ручной сварки
+                                    li
+                                        a(href="#" data-count="120") Средства защиты
+                                    li
+                                        a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные горелки MIG/TIG
 
-                            .header__subcategory-banner
-                                +img('category-005.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-005.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('crane')
-                            p Инструмент
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="120") Роликовые вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные позиционеры
-                                li
-                                    a(href="#" data-count="120") Трубные вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные колонны
-                                li
-                                    a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
-                                li
-                                    a(href="#" data-count="120") Автоматизация и механизация сварки
-                                li
-                                    a(href="#" data-count="120") Роботизация сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
-                                li
-                                    a(href="#" data-count="120") Орбитальная сварка
-                                li
-                                    a(href="#" data-count="120") Машины контактной сварки
-                                li
-                                    a(href="#" data-count="120") Подготовка кромки под сварку
-                                li
-                                    a(href="#" data-count="120") Оборудование для ручной сварки
-                                li
-                                    a(href="#" data-count="120") Средства защиты
-                                li
-                                    a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные горелки MIG/TIG
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('crane')
+                                p Инструмент
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="120") Роликовые вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные позиционеры
+                                    li
+                                        a(href="#" data-count="120") Трубные вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные колонны
+                                    li
+                                        a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
+                                    li
+                                        a(href="#" data-count="120") Автоматизация и механизация сварки
+                                    li
+                                        a(href="#" data-count="120") Роботизация сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
+                                    li
+                                        a(href="#" data-count="120") Орбитальная сварка
+                                    li
+                                        a(href="#" data-count="120") Машины контактной сварки
+                                    li
+                                        a(href="#" data-count="120") Подготовка кромки под сварку
+                                    li
+                                        a(href="#" data-count="120") Оборудование для ручной сварки
+                                    li
+                                        a(href="#" data-count="120") Средства защиты
+                                    li
+                                        a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные горелки MIG/TIG
 
-                            .header__subcategory-banner
-                                +img('category-006.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-006.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                    .header__category-item
-                        a.header__category-link(href="#")
-                            +svg('gear')
-                            p Запасные части
-                        .header__subcategory
-                            ul
-                                li
-                                    a(href="#" data-count="120") Роликовые вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные позиционеры
-                                li
-                                    a(href="#" data-count="120") Трубные вращатели
-                                li
-                                    a(href="#" data-count="120") Сварочные колонны
-                                li
-                                    a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
-                                li
-                                    a(href="#" data-count="120") Автоматизация и механизация сварки
-                                li
-                                    a(href="#" data-count="120") Роботизация сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
-                                li
-                                    a(href="#" data-count="120") Орбитальная сварка
-                                li
-                                    a(href="#" data-count="120") Машины контактной сварки
-                                li
-                                    a(href="#" data-count="120") Подготовка кромки под сварку
-                                li
-                                    a(href="#" data-count="120") Оборудование для ручной сварки
-                                li
-                                    a(href="#" data-count="120") Средства защиты
-                                li
-                                    a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
-                                li
-                                    a(href="#" data-count="120") Сварочные горелки MIG/TIG
+                        .header__category-item
+                            a.header__category-link(href="#")
+                                +svg('gear')
+                                p Запасные части
+                            .header__subcategory
+                                ul
+                                    li
+                                        a(href="#" data-count="120") Роликовые вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные позиционеры
+                                    li
+                                        a(href="#" data-count="120") Трубные вращатели
+                                    li
+                                        a(href="#" data-count="120") Сварочные колонны
+                                    li
+                                        a(href="#" data-count="120") Шлифовка, полировка днищ и корпусов емкостей
+                                    li
+                                        a(href="#" data-count="120") Автоматизация и механизация сварки
+                                    li
+                                        a(href="#" data-count="120") Роботизация сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные каретки MIG и тракторы SAW
+                                    li
+                                        a(href="#" data-count="120") Орбитальная сварка
+                                    li
+                                        a(href="#" data-count="120") Машины контактной сварки
+                                    li
+                                        a(href="#" data-count="120") Подготовка кромки под сварку
+                                    li
+                                        a(href="#" data-count="120") Оборудование для ручной сварки
+                                    li
+                                        a(href="#" data-count="120") Средства защиты
+                                    li
+                                        a(href="#" data-count="120") Сварочные магниты и приспособления для сварки
+                                    li
+                                        a(href="#" data-count="120") Сварочные горелки MIG/TIG
 
-                            .header__subcategory-banner
-                                +img('category-007.jpg')
-                                a(href="#").btn.btn-promo.btn--white
-                                    +svg('Arrow-narrow-up-right')
-                                    |Все товары
+                                .header__subcategory-banner
+                                    +img('category-007.jpg')
+                                    a(href="#").btn.btn-promo.btn--white
+                                        +svg('Arrow-narrow-up-right')
+                                        |Все товары
 
-                button(aria-label="Меню")#burger.header__burger
-                    +svg('Burger')
-                    +svg('X')
+                    button(aria-label="Меню")#burger.header__burger
+                        +svg('Burger')
+                        +svg('X')
 
-            #header-catalog.header__catalog
-                .header__catalog-wrap
-                    .header__catalog-item(data-catalog=1)
-                        a.header__catalog-link(href="#")
-                            +svg('bxs_discount')
-                            p Распродажа
+                #header-catalog.header__catalog
+                    .header__catalog-wrap
+                        .header__catalog-item(data-catalog=1)
+                            a.header__catalog-link(href="#")
+                                +svg('bxs_discount')
+                                p Распродажа
 
-                    .header__catalog-item.active(data-catalog=2)
-                        a.header__catalog-link(href="#")
-                            +svg('saw')
-                            p Металлообработка
+                        .header__catalog-item.active(data-catalog=2)
+                            a.header__catalog-link(href="#")
+                                +svg('saw')
+                                p Металлообработка
 
-                    .header__catalog-item(data-catalog=3)
-                        a.header__catalog-link(href="#")
-                            +svg('laser')
-                            p Лазерное оборудование
+                        .header__catalog-item(data-catalog=3)
+                            a.header__catalog-link(href="#")
+                                +svg('laser')
+                                p Лазерное оборудование
 
-                    .header__catalog-item
-                        a.header__catalog-link(href="#")
-                            +svg('press')
-                            p Прессовое оборудование
+                        .header__catalog-item
+                            a.header__catalog-link(href="#")
+                                +svg('press')
+                                p Прессовое оборудование
 
-                    .header__catalog-item
-                        a.header__catalog-link(href="#")
-                            +svg('welder')
-                            p Сварочное оборудование
+                        .header__catalog-item
+                            a.header__catalog-link(href="#")
+                                +svg('welder')
+                                p Сварочное оборудование
 
-                    .header__catalog-item
-                        a.header__catalog-link(href="#")
-                            +svg('helmet')
-                            p Строительное оборудование
+                        .header__catalog-item
+                            a.header__catalog-link(href="#")
+                                +svg('helmet')
+                                p Строительное оборудование
 
-                    .header__catalog-item
-                        a.header__catalog-link(href="#")
-                            +svg('crane')
-                            p Инструмент
+                        .header__catalog-item
+                            a.header__catalog-link(href="#")
+                                +svg('crane')
+                                p Инструмент
 
-                    .header__catalog-item
-                        a.header__catalog-link(href="#")
-                            +svg('gear')
-                            p Запасные части
+                        .header__catalog-item
+                            a.header__catalog-link(href="#")
+                                +svg('gear')
+                                p Запасные части
 
-                .header__subcatalog(data-active=1)
-                    ul
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
-                            ul.header__sublist
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
+                    .header__subcatalog(data-active=1)
+                        ul
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
-                                li
-                                    a(href="#") Оснастка для заточных станков
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
+                                    li
+                                        a(href="#") Оснастка для заточных станков
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                .header__subcatalog.active(data-active=2)
-                    ul
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
-                            ul.header__sublist
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
+                    .header__subcatalog.active(data-active=2)
+                        ul
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
-                                li
-                                    a(href="#") Оснастка для заточных станков
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
+                                    li
+                                        a(href="#") Оснастка для заточных станков
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="286") Шлифовка и полировка
-                            ul.header__sublist
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="286") Шлифовка и полировка
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="44") Ленточнопильные станки
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
-                                li
-                                    a(href="#") Оснастка для заточных станков
-                                li
-                                    a(href="#") Отрезные станки
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="44") Ленточнопильные станки
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
+                                    li
+                                        a(href="#") Оснастка для заточных станков
+                                    li
+                                        a(href="#") Отрезные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Труборезы
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Труборезы
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Труборезы
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Труборезы
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
-                            ul.header__sublist
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
-                                li
-                                    a(href="#") Оснастка для заточных станков
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
+                                    li
+                                        a(href="#") Оснастка для заточных станков
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                .header__subcatalog(data-active=3)
-                    ul
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
-                            ul.header__sublist
-                                li
-                                    a(href="#") Магнитные сверлильные станки
-                                li
-                                    a(href="#") Вертикально-сверлильные станки
-                                li
-                                    a(href="#") Радиально-сверлильные станки
-                                li
-                                    a(href="#") Магнитные сверлильные станки
+                    .header__subcatalog(data-active=3)
+                        ul
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="123") Сверление и обработка отверстий
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
+                                    li
+                                        a(href="#") Вертикально-сверлильные станки
+                                    li
+                                        a(href="#") Радиально-сверлильные станки
+                                    li
+                                        a(href="#") Магнитные сверлильные станки
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
-                                li
-                                    a(href="#") Оснастка для заточных станков
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
+                                    li
+                                        a(href="#") Оснастка для заточных станков
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
-                            ul.header__sublist
-                                li
-                                    a(href="#") Фаскосъемные станки
-                                li
-                                    a(href="#") Торцеватели для труб
-                                li
-                                    a(href="#") Оснастка для обработки кромки, снятия фаски
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="19") Обработка кромки, снятие фаски
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Фаскосъемные станки
+                                    li
+                                        a(href="#") Торцеватели для труб
+                                    li
+                                        a(href="#") Оснастка для обработки кромки, снятия фаски
 
-                        li.header__subcatalog-item
-                            a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
-                            ul.header__sublist
-                                li
-                                    a(href="#") Отрезные станки
-                                li
-                                    a(href="#") Заточные станки
-                                li
-                                    a(href="#") Расточные станки
+                            li.header__subcatalog-item
+                                a.header__subcatalog-link(href="#" data-count="120") Металлорежущий инструмент
+                                ul.header__sublist
+                                    li
+                                        a(href="#") Отрезные станки
+                                    li
+                                        a(href="#") Заточные станки
+                                    li
+                                        a(href="#") Расточные станки
 
-                .header__catalog-banner
-                    .header__catalog-banner-img
-                        +img('banner-bg-image.jpg')
-                    p Подберем станок под ваши задачи и бюджет
-                    .btn.btn-promo.btn--primary(data-src="#popup-selection" data-fancybox)
-                        +svg('Arrow-narrow-up-right')
-                        |Подобрать станок
+                    .header__catalog-banner
+                        .header__catalog-banner-img
+                            +img('banner-bg-image.jpg')
+                        p Подберем станок под ваши задачи и бюджет
+                        .btn.btn-promo.btn--primary(data-src="#popup-selection" data-fancybox)
+                            +svg('Arrow-narrow-up-right')
+                            |Подобрать станок

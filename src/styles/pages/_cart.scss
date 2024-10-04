@@ -361,7 +361,7 @@
 .cart-total__wrap {
     @include breakpoint(lg) {
         position: sticky;
-        top: 16px;
+        top: calc(16px + var(--headerHeight));
     }
 }
 

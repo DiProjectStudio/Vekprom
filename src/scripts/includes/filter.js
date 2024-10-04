@@ -49,6 +49,8 @@ export function initializeFilter() {
 
             $minValue.attr('value', minValue);
             $maxValue.attr('value', maxValue);
+            $minValue.val(minValue);
+            $maxValue.val(maxValue);
         }
 
         $min.on('input', updateValues);

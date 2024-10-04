@@ -72,7 +72,7 @@
     &.sticky {
         padding: 0;
         position: sticky;
-        top: 0;
+        top: var(--headerHeight);
         z-index: 15;
 
         @include breakpointMax(lg) {
