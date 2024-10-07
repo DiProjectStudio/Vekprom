@@ -156,64 +156,50 @@ export function initializeSlider() {
     let projectsSlider = initSwiper();
 
     const initSlider = () => {
-        if (window.innerWidth < 1280) {
-            const sliderItem = document.querySelectorAll('.slider');
-            const sliders = [];
+        const sliderItem = document.querySelectorAll('.slider');
+        const sliders = [];
 
-            sliderItem.forEach((slider) => {
-                const swiperElement = slider.querySelector('.main-swiper');
-                if (swiperElement) {
-                    // Инициализируем слайдер для каждого найденного элемента .main-swiper
-                    sliders.push(
-                        new Swiper(swiperElement, {
-                            modules: [FreeMode],
-                            slidesPerView: 'auto',
-                            spaceBetween: 10,
-                            freeMode: true,
-                            slidesOffsetBefore: 10,
-                            slidesOffsetAfter: 10,
+        sliderItem.forEach((slider) => {
+            const swiperElement = slider.querySelector('.main-swiper');
+            if (swiperElement) {
+                // Инициализируем слайдер для каждого найденного элемента .main-swiper
+                sliders.push(
+                    new Swiper(swiperElement, {
+                        modules: [FreeMode],
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
+                        freeMode: true,
+                        slidesOffsetBefore: 10,
+                        slidesOffsetAfter: 10,
 
-                            breakpoints: {
-                                768: {
-                                    slidesOffsetBefore: 16,
-                                    slidesOffsetAfter: 16
-                                }
+                        breakpoints: {
+                            768: {
+                                slidesOffsetBefore: 16,
+                                slidesOffsetAfter: 16
                             }
-                        })
-                    );
-                }
-            });
+                        }
+                    })
+                );
+            }
+        });
 
-            return sliders;
-        } else {
-            return [];
-        }
+        return sliders;
     };
 
-    let sliders = initSlider();
+    initSlider();
 
     const destroySliders = () => {
         if (projectsSlider) {
             projectsSlider.destroy(true, true);
             projectsSlider = null;
         }
-
-        if (sliders.length > 0) {
-            sliders.forEach((swiperInstance) => {
-                if (swiperInstance && swiperInstance.destroy) {
-                    swiperInstance.destroy(true, true);
-                }
-            });
-            sliders = [];
-        }
     };
 
     const handleResize = () => {
-        if (window.innerWidth >= 1280 && (projectsSlider || sliders.length > 0)) {
+        if (window.innerWidth >= 1280 && projectsSlider) {
             destroySliders();
-        } else if (window.innerWidth < 1280 && (!projectsSlider || sliders.length === 0)) {
+        } else if (window.innerWidth < 1280 && !projectsSlider) {
             projectsSlider = initSwiper();
-            sliders = initSlider();
         }
     };
 
