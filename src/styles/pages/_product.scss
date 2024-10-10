@@ -1273,12 +1273,16 @@
 .detail-desc__wrap {
     position: relative;
 
+    @include breakpoint(md) {
+        font: var(--font-body-m);
+    }
+
     .hidden-block & {
-        height: 240px;
+        // height: 240px;
         overflow: hidden;
 
         @include breakpoint(md) {
-            height: 360px;
+            // height: 360px;
         }
 
         &::after {
@@ -1310,7 +1314,7 @@
 .expand-btn {
     padding: 6px 10px;
     background: var(--bg-surface2, #f4f5f6);
-    display: flex;
+    display: none;
     align-items: center;
     width: max-content;
     border-radius: 10px;
@@ -1382,9 +1386,9 @@
             padding: 6px 0 8px;
             display: flex;
             align-items: center;
-            width: max-content;
+            justify-content: flex-end;
 
-            & a {
+            & a.link {
                 margin-left: 10px;
                 width: 16px;
                 height: 16px;

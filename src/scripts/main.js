@@ -454,13 +454,32 @@ if ($('body').hasClass('page-product')) {
 }
 
 // Кнопка "Развернуть"
+if ($('.detail-desc__wrap').innerHeight() <= 360) {
+    $('.detail-desc').removeClass('hidden-block');
+} else {
+    $('.expand-btn').css('display', 'flex');
+
+    if ($(window).width() < 768) {
+        $('.detail-desc__wrap').css('height', 240 + 'px');
+    } else {
+        $('.detail-desc__wrap').css('height', 360 + 'px');
+    }
+}
+
 $('.expand-btn').on('click', (e) => {
     if (!$(e.currentTarget).hasClass('expanded')) {
         $(e.currentTarget).addClass('expanded');
         $(e.currentTarget).closest('.detail-desc').removeClass('hidden-block');
+        $(e.currentTarget).parent().find('.detail-desc__wrap').css('height', 'auto');
     } else {
         $(e.currentTarget).removeClass('expanded');
         $(e.currentTarget).closest('.detail-desc').addClass('hidden-block');
+
+        if ($(window).width() < 768) {
+            $('.detail-desc__wrap').css('height', 240 + 'px');
+        } else {
+            $('.detail-desc__wrap').css('height', 360 + 'px');
+        }
     }
 });
 
