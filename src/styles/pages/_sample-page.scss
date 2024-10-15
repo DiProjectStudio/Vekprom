@@ -309,10 +309,6 @@
         ul {
             padding-left: calc($container + 5px);
         }
-
-        p {
-            padding-bottom: 24px;
-        }
     }
 
     .content-image-block {
@@ -395,7 +391,7 @@
     }
 
     .content-action {
-        //margin-bottom: 24px;
+        margin: 24px 0;
 
         .btn {
             font: var(--font-body-s);
